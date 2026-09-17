@@ -1,0 +1,945 @@
+{
+  "generatedAt": "2026-09-17T08:14:08.723Z",
+  "phase": "scroll",
+  "relayouts": 8,
+  "steps": 40,
+  "isolation": "browser-per-config",
+  "rows": [
+    {
+      "boxes": 500,
+      "mode": "plain",
+      "rep": 0,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "scrollHeight": 54828,
+        "items": 500
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 2.08,
+          "perRelayout": 0.26,
+          "total": 2.08
+        },
+        "Paint": {
+          "n": 39,
+          "ms": 32.5,
+          "perRelayout": 4.063,
+          "total": 32.5
+        },
+        "RasterTask": {
+          "n": 216,
+          "ms": 15.47,
+          "perRelayout": 1.934,
+          "total": 15.47
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 500,
+      "mode": "plain",
+      "rep": 1,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "scrollHeight": 54828,
+        "items": 500
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 2.41,
+          "perRelayout": 0.301,
+          "total": 2.41
+        },
+        "Paint": {
+          "n": 39,
+          "ms": 33.31,
+          "perRelayout": 4.164,
+          "total": 33.31
+        },
+        "RasterTask": {
+          "n": 216,
+          "ms": 15.06,
+          "perRelayout": 1.883,
+          "total": 15.06
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 500,
+      "mode": "plain",
+      "rep": 2,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "scrollHeight": 54828,
+        "items": 500
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 1.8,
+          "perRelayout": 0.225,
+          "total": 1.8
+        },
+        "Paint": {
+          "n": 39,
+          "ms": 25.1,
+          "perRelayout": 3.138,
+          "total": 25.1
+        },
+        "RasterTask": {
+          "n": 216,
+          "ms": 11.61,
+          "perRelayout": 1.451,
+          "total": 11.61
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 500,
+      "mode": "cv-auto",
+      "rep": 0,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "scrollHeight": 76608,
+        "items": 500
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 57,
+          "ms": 10.55,
+          "perRelayout": 1.319,
+          "total": 10.55
+        },
+        "Layout": {
+          "n": 57,
+          "ms": 31.45,
+          "perRelayout": 3.931,
+          "total": 31.45
+        },
+        "PrePaint": {
+          "n": 138,
+          "ms": 39.07,
+          "perRelayout": 4.883,
+          "total": 39.07
+        },
+        "Paint": {
+          "n": 86,
+          "ms": 25.7,
+          "perRelayout": 3.212,
+          "total": 25.7
+        },
+        "RasterTask": {
+          "n": 564,
+          "ms": 13.06,
+          "perRelayout": 1.633,
+          "total": 13.06
+        },
+        "InvalidateLayout": {
+          "n": 57,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 500,
+      "mode": "cv-auto",
+      "rep": 1,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "scrollHeight": 76608,
+        "items": 500
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 57,
+          "ms": 7.8,
+          "perRelayout": 0.974,
+          "total": 7.8
+        },
+        "Layout": {
+          "n": 57,
+          "ms": 25.76,
+          "perRelayout": 3.22,
+          "total": 25.76
+        },
+        "PrePaint": {
+          "n": 138,
+          "ms": 35.64,
+          "perRelayout": 4.455,
+          "total": 35.64
+        },
+        "Paint": {
+          "n": 86,
+          "ms": 22.38,
+          "perRelayout": 2.798,
+          "total": 22.38
+        },
+        "RasterTask": {
+          "n": 564,
+          "ms": 14.75,
+          "perRelayout": 1.843,
+          "total": 14.75
+        },
+        "InvalidateLayout": {
+          "n": 57,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 500,
+      "mode": "cv-auto",
+      "rep": 2,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "scrollHeight": 76608,
+        "items": 500
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 57,
+          "ms": 9.63,
+          "perRelayout": 1.204,
+          "total": 9.63
+        },
+        "Layout": {
+          "n": 57,
+          "ms": 37.08,
+          "perRelayout": 4.636,
+          "total": 37.08
+        },
+        "PrePaint": {
+          "n": 138,
+          "ms": 55.3,
+          "perRelayout": 6.913,
+          "total": 55.3
+        },
+        "Paint": {
+          "n": 86,
+          "ms": 35,
+          "perRelayout": 4.375,
+          "total": 35
+        },
+        "RasterTask": {
+          "n": 563,
+          "ms": 20.31,
+          "perRelayout": 2.538,
+          "total": 20.31
+        },
+        "InvalidateLayout": {
+          "n": 57,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 2000,
+      "mode": "plain",
+      "rep": 0,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 2000,
+        "mode": "plain",
+        "scrollHeight": 218328,
+        "items": 2000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 4.52,
+          "perRelayout": 0.565,
+          "total": 4.52
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 180.31,
+          "perRelayout": 22.539,
+          "total": 180.31
+        },
+        "RasterTask": {
+          "n": 349,
+          "ms": 89.72,
+          "perRelayout": 11.215,
+          "total": 89.72
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 2000,
+      "mode": "plain",
+      "rep": 1,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 2000,
+        "mode": "plain",
+        "scrollHeight": 218328,
+        "items": 2000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 3.67,
+          "perRelayout": 0.459,
+          "total": 3.67
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 178.19,
+          "perRelayout": 22.274,
+          "total": 178.19
+        },
+        "RasterTask": {
+          "n": 328,
+          "ms": 103.65,
+          "perRelayout": 12.956,
+          "total": 103.65
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 2000,
+      "mode": "plain",
+      "rep": 2,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 2000,
+        "mode": "plain",
+        "scrollHeight": 218328,
+        "items": 2000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 2.02,
+          "perRelayout": 0.253,
+          "total": 2.02
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 60.53,
+          "perRelayout": 7.566,
+          "total": 60.53
+        },
+        "RasterTask": {
+          "n": 349,
+          "ms": 14.69,
+          "perRelayout": 1.836,
+          "total": 14.69
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 2000,
+      "mode": "cv-auto",
+      "rep": 0,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 2000,
+        "mode": "cv-auto",
+        "scrollHeight": 307608,
+        "items": 2000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 71,
+          "ms": 21.23,
+          "perRelayout": 2.654,
+          "total": 21.23
+        },
+        "Layout": {
+          "n": 71,
+          "ms": 247.64,
+          "perRelayout": 30.955,
+          "total": 247.64
+        },
+        "PrePaint": {
+          "n": 153,
+          "ms": 407.16,
+          "perRelayout": 50.895,
+          "total": 407.16
+        },
+        "Paint": {
+          "n": 89,
+          "ms": 112.78,
+          "perRelayout": 14.098,
+          "total": 112.78
+        },
+        "RasterTask": {
+          "n": 620,
+          "ms": 31.34,
+          "perRelayout": 3.917,
+          "total": 31.34
+        },
+        "InvalidateLayout": {
+          "n": 71,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 2000,
+      "mode": "cv-auto",
+      "rep": 1,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 2000,
+        "mode": "cv-auto",
+        "scrollHeight": 307608,
+        "items": 2000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 71,
+          "ms": 11.45,
+          "perRelayout": 1.431,
+          "total": 11.45
+        },
+        "Layout": {
+          "n": 71,
+          "ms": 101.54,
+          "perRelayout": 12.692,
+          "total": 101.54
+        },
+        "PrePaint": {
+          "n": 153,
+          "ms": 130.21,
+          "perRelayout": 16.276,
+          "total": 130.21
+        },
+        "Paint": {
+          "n": 89,
+          "ms": 49,
+          "perRelayout": 6.125,
+          "total": 49
+        },
+        "RasterTask": {
+          "n": 622,
+          "ms": 21.42,
+          "perRelayout": 2.678,
+          "total": 21.42
+        },
+        "InvalidateLayout": {
+          "n": 71,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 2000,
+      "mode": "cv-auto",
+      "rep": 2,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 2000,
+        "mode": "cv-auto",
+        "scrollHeight": 307608,
+        "items": 2000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 71,
+          "ms": 10.73,
+          "perRelayout": 1.341,
+          "total": 10.73
+        },
+        "Layout": {
+          "n": 71,
+          "ms": 103.11,
+          "perRelayout": 12.889,
+          "total": 103.11
+        },
+        "PrePaint": {
+          "n": 153,
+          "ms": 141.32,
+          "perRelayout": 17.665,
+          "total": 141.32
+        },
+        "Paint": {
+          "n": 89,
+          "ms": 54.33,
+          "perRelayout": 6.791,
+          "total": 54.33
+        },
+        "RasterTask": {
+          "n": 622,
+          "ms": 17.98,
+          "perRelayout": 2.247,
+          "total": 17.98
+        },
+        "InvalidateLayout": {
+          "n": 71,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 8000,
+      "mode": "plain",
+      "rep": 0,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 8000,
+        "mode": "plain",
+        "scrollHeight": 872328,
+        "items": 8000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 3.01,
+          "perRelayout": 0.377,
+          "total": 3.01
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 179.68,
+          "perRelayout": 22.459,
+          "total": 179.68
+        },
+        "RasterTask": {
+          "n": 353,
+          "ms": 15.38,
+          "perRelayout": 1.922,
+          "total": 15.38
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 8000,
+      "mode": "plain",
+      "rep": 1,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 8000,
+        "mode": "plain",
+        "scrollHeight": 872328,
+        "items": 8000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 2.71,
+          "perRelayout": 0.339,
+          "total": 2.71
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 164.18,
+          "perRelayout": 20.523,
+          "total": 164.18
+        },
+        "RasterTask": {
+          "n": 353,
+          "ms": 14.06,
+          "perRelayout": 1.757,
+          "total": 14.06
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 8000,
+      "mode": "plain",
+      "rep": 2,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 8000,
+        "mode": "plain",
+        "scrollHeight": 872328,
+        "items": 8000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 2.54,
+          "perRelayout": 0.318,
+          "total": 2.54
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 160.37,
+          "perRelayout": 20.046,
+          "total": 160.37
+        },
+        "RasterTask": {
+          "n": 353,
+          "ms": 14.51,
+          "perRelayout": 1.814,
+          "total": 14.51
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 8000,
+      "mode": "cv-auto",
+      "rep": 0,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "scrollHeight": 1231608,
+        "items": 8000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 79,
+          "ms": 24.96,
+          "perRelayout": 3.12,
+          "total": 24.96
+        },
+        "Layout": {
+          "n": 79,
+          "ms": 570.45,
+          "perRelayout": 71.307,
+          "total": 570.45
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 615.97,
+          "perRelayout": 76.997,
+          "total": 615.97
+        },
+        "Paint": {
+          "n": 97,
+          "ms": 232.91,
+          "perRelayout": 29.114,
+          "total": 232.91
+        },
+        "RasterTask": {
+          "n": 692,
+          "ms": 18.12,
+          "perRelayout": 2.265,
+          "total": 18.12
+        },
+        "InvalidateLayout": {
+          "n": 79,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 8000,
+      "mode": "cv-auto",
+      "rep": 1,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "scrollHeight": 1231608,
+        "items": 8000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 79,
+          "ms": 24.83,
+          "perRelayout": 3.104,
+          "total": 24.83
+        },
+        "Layout": {
+          "n": 79,
+          "ms": 586.39,
+          "perRelayout": 73.299,
+          "total": 586.39
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 644.56,
+          "perRelayout": 80.57,
+          "total": 644.56
+        },
+        "Paint": {
+          "n": 97,
+          "ms": 239.03,
+          "perRelayout": 29.879,
+          "total": 239.03
+        },
+        "RasterTask": {
+          "n": 692,
+          "ms": 21.55,
+          "perRelayout": 2.694,
+          "total": 21.55
+        },
+        "InvalidateLayout": {
+          "n": 79,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "boxes": 8000,
+      "mode": "cv-auto",
+      "rep": 2,
+      "phase": "scroll",
+      "relayouts": 8,
+      "steps": 40,
+      "state": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "scrollHeight": 1231608,
+        "items": 8000
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 79,
+          "ms": 25.2,
+          "perRelayout": 3.15,
+          "total": 25.2
+        },
+        "Layout": {
+          "n": 79,
+          "ms": 595.94,
+          "perRelayout": 74.493,
+          "total": 595.94
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 650.28,
+          "perRelayout": 81.285,
+          "total": 650.28
+        },
+        "Paint": {
+          "n": 97,
+          "ms": 239.35,
+          "perRelayout": 29.919,
+          "total": 239.35
+        },
+        "RasterTask": {
+          "n": 692,
+          "ms": 21.02,
+          "perRelayout": 2.627,
+          "total": 21.02
+        },
+        "InvalidateLayout": {
+          "n": 79,
+          "ms": 0,
+          "perRelayout": 0,
+          "total": 0
+        }
+      }
+    }
+  ]
+}
