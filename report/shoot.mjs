@@ -74,14 +74,19 @@ const connect = async url => {
 
 /** 실제로 무언가 그려진 마지막 지점. scrollHeight 는 body 여백까지 포함해 과대평가된다. */
 const MEASURE = `(() => {
+  const pb = parseFloat(getComputedStyle(document.body).paddingBottom || 0);
+  // 페이지 컨테이너가 있으면 그 바닥을 쓴다.
+  // 요소를 전부 훑으면 overflow:hidden 안에서 삐져나간 것까지 세어 과대평가된다.
+  const wrap = document.querySelector('.wrap');
+  if (wrap) return Math.ceil(wrap.getBoundingClientRect().bottom + window.scrollY + pb);
   let bottom = 0;
   for (const el of document.body.querySelectorAll('*')) {
     const r = el.getBoundingClientRect();
     if (r.width === 0 && r.height === 0) continue;
     bottom = Math.max(bottom, r.bottom + window.scrollY);
   }
-  const pb = parseFloat(getComputedStyle(document.body).paddingBottom || 0);
-  return Math.ceil(bottom + pb + 8);
+  const docH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+  return Math.ceil(Math.min(bottom + pb + 8, docH + 8));
 })()`;
 
 const run = async () => {
