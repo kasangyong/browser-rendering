@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>01 · 렌더링 파이프라인 라이브</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  .pipe { position:relative; padding:26px 20px 20px; background:var(--stage);
+          border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .lane { display:flex; align-items:center; gap:0; margin-bottom:26px; position:relative; }
+  .lane:last-child { margin-bottom:0; }
+  .lane-label { width:96px; flex:none; font:600 10px var(--mono); letter-spacing:.08em;
+                color:var(--muted); text-transform:uppercase; line-height:1.3; }
+
+  .node { position:relative; flex:1; min-width:0; }
+  .node .box {
+    height:46px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+    font:600 12.5px system-ui; color:#fff; background:var(--nodebg);
+    border:2px solid transparent; transition:transform .18s, box-shadow .18s, opacity .25s;
+    position:relative; z-index:2;
+  }
+  .node.main .box { --nodebg:#3c6eb4; }
+  .node.impl .box { --nodebg:#1f7a4d; }
+  .node.viz  .box { --nodebg:#a5761b; }
+
+  /* 이번 프레임에 '일을 하는' 단계 */
+  .node.hot .box { box-shadow:0 0 0 3px var(--hotring), 0 6px 18px -4px var(--hotring); }
+  /* 호출은 되지만 할 일이 없는 단계 */
+  .node.idle .box { opacity:.34; }
+  .node.off .box  { opacity:.12; }
+
+  .node .cost { margin-top:6px; text-align:center; font:10.5px var(--mono); color:var(--muted);
+                height:14px; transition:color .2s; }
+  .node.hot .cost { color:var(--accent); font-weight:700; }
+
+  .link { position:absolute; top:23px; right:-9px; width:18px; height:2px;
+          background:var(--line); z-index:1; }
+  .node:last-child .link { display:none; }
+
+  /* 흘러가는 펄스 */
+  #pulse { position:absolute; width:14px; height:14px; border-radius:99px;
+           background:var(--accent); box-shadow:0 0 14px 3px var(--accent);
+           opacity:0; pointer-events:none; z-index:5; }
+
+  .legendrow { display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:12px; color:var(--muted); }
+  .lg { display:flex; align-items:center; gap:6px; }
+  .lg i { width:11px; height:11px; border-radius:3px; display:inline-block; }
+  .lg.ring i { box-shadow:0 0 0 2px var(--accent); background:transparent; }
+  .lg.dim i { background:var(--muted); opacity:.34; }
+
+  .probe { display:flex; gap:10px; align-items:center; }
+  .probe .box2 { width:34px; height:34px; border-radius:7px; background:var(--accent); }
+  #probeTrack { position:relative; height:52px; flex:1; background:var(--stage);
+                border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  #probeBox { position:absolute; top:9px; left:8px; width:34px; height:34px; border-radius:7px;
+              background:var(--accent); }
+
+  @keyframes runLeft { from{left:8px} to{left:calc(100% - 42px)} }
+  @keyframes runTf   { from{transform:translateX(0)} to{transform:translateX(var(--d,600px))} }
+  @keyframes runOp   { from{opacity:1} to{opacity:.15} }
+  @keyframes runBg   { from{background:var(--accent)} to{background:#3c6eb4} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 01</span>
+  <h1>렌더링 파이프라인 라이브</h1>
+  <p>CSS 속성 하나를 바꾸면 파이프라인의 <b>어느 단계가 실제로 일을 하는지</b> 달라진다.
+     아래 실측값은 이 저장소의 <a href="../../experiments/track-a/a1-pipeline-skip/RESULTS.md">A1 실험</a>에서 잰 것이다.</p>
+</header>
+
+<div class="controls" id="ctl"></div>
+
+<div class="pipe" id="pipe">
+  <div class="lane" id="laneMain">
+    <div class="lane-label">Main<br>thread</div>
+  </div>
+  <div class="lane" id="laneImpl">
+    <div class="lane-label">Compositor<br>(impl)</div>
+  </div>
+  <div class="lane" id="laneViz">
+    <div class="lane-label">Viz<br>process</div>
+  </div>
+  <div id="pulse"></div>
+</div>
+
+<div class="legendrow">
+  <span class="lg ring"><i></i>이번 프레임에 실제로 일하는 단계</span>
+  <span class="lg dim"><i></i>호출되지만 할 일이 없어 즉시 반환</span>
+  <span class="lg"><i style="background:#3c6eb4"></i>메인 스레드</span>
+  <span class="lg"><i style="background:#1f7a4d"></i>컴포지터</span>
+  <span class="lg"><i style="background:#a5761b"></i>Viz / GPU</span>
+</div>
+
+<div class="grid2" style="margin-top:14px">
+  <div class="card">
+    <h2>지금 고른 속성이 실제로 도는 모습</h2>
+    <div class="probe">
+      <div id="probeTrack"><div id="probeBox"></div></div>
+    </div>
+    <p class="note" id="probeNote">—</p>
+  </div>
+  <div class="card">
+    <h2>A1 실측 — 482프레임 동안의 이벤트 횟수</h2>
+    <table id="tbl">
+      <thead><tr><th>단계</th><th><code>left</code></th><th><code>transform</code></th><th>배율</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="note">Style·PrePaint 는 <b>양쪽 모두 482회</b> — 단계를 건너뛰는 게 아니라 할 일이 없어 즉시 반환한다.</p>
+  </div>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter } from '../lib/demo.js';
+
+// ── 파이프라인 정의 ────────────────────────────────────────
+const STAGES = [
+  { id:'style',    lane:'main', label:'Style',     cost:'0.19ms' },
+  { id:'layout',   lane:'main', label:'Layout',    cost:'0.13ms' },
+  { id:'prepaint', lane:'main', label:'PrePaint',  cost:'0.13ms' },
+  { id:'paint',    lane:'main', label:'Paint',     cost:'0.40ms' },
+  { id:'commit',   lane:'main', label:'Commit',    cost:'0.12ms' },
+  { id:'layerize', lane:'impl', label:'Layerize',  cost:'—' },
+  { id:'raster',   lane:'impl', label:'Raster',    cost:'0.09ms' },
+  { id:'activate', lane:'impl', label:'Activate',  cost:'—' },
+  { id:'draw',     lane:'impl', label:'Draw',      cost:'—' },
+  { id:'aggregate',lane:'viz',  label:'Aggregate', cost:'—' },
+  { id:'display',  lane:'viz',  label:'Display',   cost:'—' },
+];
+
+// 속성별로 '실제 비용이 드는' 단계 (A1 실측 근거)
+const CASES = {
+  'transform': {
+    label:'transform 애니메이션', anim:'runTf',
+    hot:['commit','layerize','raster','activate','draw','aggregate','display'],
+    idle:['style','layout','prepaint','paint'],
+    note:'Layout 482→15회, Paint 2,832→30회. Style·PrePaint 는 호출되지만 할 일이 없다.',
+  },
+  'opacity': {
+    label:'opacity 애니메이션', anim:'runOp',
+    hot:['commit','layerize','activate','draw','aggregate','display'],
+    idle:['style','layout','prepaint','paint','raster'],
+    note:'transform 과 같은 지름길. 래스터된 타일의 불투명도만 합성 단계에서 바꾼다.',
+  },
+  'left': {
+    label:'left 애니메이션', anim:'runLeft',
+    hot:['style','layout','prepaint','paint','commit','layerize','raster','activate','draw','aggregate','display'],
+    idle:[],
+    note:'매 프레임 Layout 을 무효화한다. A1 에서 InvalidateLayout 497회 관측.',
+  },
+  'background': {
+    label:'background-color 애니메이션', anim:'runBg',
+    hot:['style','prepaint','paint','commit','layerize','raster','activate','draw','aggregate','display'],
+    idle:['layout'],
+    note:'기하가 안 바뀌므로 Layout 은 건너뛴다. 하지만 다시 칠해야 하므로 Paint·Raster 는 돈다.',
+  },
+};
+
+const lanes = { main:document.getElementById('laneMain'),
+                impl:document.getElementById('laneImpl'),
+                viz:document.getElementById('laneViz') };
+const nodes = {};
+for (const s of STAGES) {
+  const n = document.createElement('div');
+  n.className = `node ${s.lane}`;
+  n.innerHTML = `<div class="box">${s.label}</div><div class="cost">${s.cost}</div><div class="link"></div>`;
+  lanes[s.lane].appendChild(n);
+  nodes[s.id] = n;
+}
+
+let current = 'transform';
+const probeBox = document.getElementById('probeBox');
+const probeNote = document.getElementById('probeNote');
+
+function apply(key) {
+  current = key;
+  const c = CASES[key];
+  for (const s of STAGES) {
+    const n = nodes[s.id];
+    n.classList.toggle('hot',  c.hot.includes(s.id));
+    n.classList.toggle('idle', c.idle.includes(s.id));
+  }
+  // 실제로 그 속성으로 도는 박스
+  const d = document.getElementById('probeTrack').clientWidth - 50;
+  probeBox.style.setProperty('--d', d + 'px');
+  probeBox.style.animation = 'none';
+  void probeBox.offsetWidth;                       // 애니메이션 재시작
+  probeBox.style.animation = `${c.anim} 1.8s linear infinite alternate`;
+  probeNote.innerHTML = `<b>${c.label}</b> — ${c.note}`;
+  for (const b of document.querySelectorAll('#ctl button')) b.dataset.on = b.dataset.k === key ? '1' : '0';
+}
+
+// ── 펄스: 프레임 하나가 파이프라인을 통과하는 모습 ──
+const pulse = document.getElementById('pulse');
+const pipe = document.getElementById('pipe');
+let stopped = false;
+
+async function pulseLoop() {
+  while (!stopped) {
+    const c = CASES[current];
+    const path = STAGES.filter(s => c.hot.includes(s.id) || c.idle.includes(s.id));
+    pulse.style.opacity = '1';
+    for (const s of path) {
+      const n = nodes[s.id];
+      const r = n.getBoundingClientRect(), p = pipe.getBoundingClientRect();
+      const x = r.left - p.left + r.width / 2 - 7;
+      const y = r.top - p.top + 16;
+      const skip = c.idle.includes(s.id);
+      pulse.style.transition = 'transform .16s linear, opacity .16s';
+      pulse.style.transform = `translate(${x}px, ${y}px)`;
+      pulse.style.opacity = skip ? '.28' : '1';
+      n.classList.add('pulsing');
+      await new Promise(r2 => setTimeout(r2, skip ? 70 : 190));
+      n.classList.remove('pulsing');
+      if (stopped) return;
+    }
+    pulse.style.opacity = '0';
+    await new Promise(r2 => setTimeout(r2, 420));
+  }
+}
+
+// ── 컨트롤 ──
+const ctl = document.getElementById('ctl');
+for (const [k, v] of Object.entries(CASES)) {
+  const b = document.createElement('button');
+  b.textContent = v.label.replace(' 애니메이션', '');
+  b.dataset.k = k;
+  b.onclick = () => apply(k);
+  ctl.appendChild(b);
+}
+
+// ── A1 실측 표 ──
+const A1 = [
+  ['UpdateLayoutTree (Style)', 482, 482, '1× 동일'],
+  ['Layout', 482, 15, '32×'],
+  ['PrePaint', 482, 482, '1× 동일'],
+  ['Paint', 2832, 30, '94×'],
+  ['RasterTask', 979, 15, '65×'],
+  ['InvalidateLayout', 497, 0, '∞'],
+];
+document.querySelector('#tbl tbody').innerHTML = A1.map(([n, l, t, r]) =>
+  `<tr><td>${n}</td><td class="num">${l.toLocaleString()}</td>
+   <td class="num" style="color:var(--good);font-weight:700">${t}</td>
+   <td class="num">${r}</td></tr>`).join('');
+
+apply('transform');
+pulseLoop();
+mountFooter('01', 'A1 · 파이프라인 단계 스킵', '../../experiments/track-a/a1-pipeline-skip/RESULTS.md');
+</script>
+</body>
+</html>
