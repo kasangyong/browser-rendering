@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>09 · INP 분해 실험실</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  #hit{width:100%;padding:26px;font:700 17px system-ui;background:var(--accent);color:#fff;
+       border:none;border-radius:12px;cursor:pointer}
+  #hit:active{transform:translateY(1px)}
+  #proof{height:34px;border-radius:9px;background:var(--line);margin-top:10px;
+         display:flex;align-items:center;justify-content:center;font:600 12px var(--mono);color:var(--bg)}
+
+  .bars{margin-top:12px}
+  .barrow{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+  .barrow .lbl{width:92px;flex:none;font:11px var(--mono);color:var(--muted);text-align:right}
+  .bartrack{flex:1;height:26px;background:var(--stage);border-radius:6px;position:relative;overflow:hidden}
+  .barfill{position:absolute;inset:0 auto 0 0;border-radius:6px;
+           transition:width .3s cubic-bezier(.2,.8,.3,1);display:flex;align-items:center;
+           padding-left:8px;font:600 11px var(--mono);color:#fff;white-space:nowrap}
+  .barfill.delay{background:#7a4fb4}
+  .barfill.proc {background:#3c6eb4}
+  .barfill.pres {background:#a5761b}
+  .barfill.wait {background:var(--accent)}
+  .marker{position:absolute;top:0;bottom:0;width:2px;background:var(--accent)}
+  .marker span{position:absolute;top:-17px;left:50%;transform:translateX(-50%);
+               font:700 10px var(--mono);color:var(--accent);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 09</span>
+  <h1>INP 분해 실험실 — 지표가 좋다고 빠른 게 아니다</h1>
+  <p>같은 200ms 작업을 5가지로 처리한다. 버튼을 누르면 <b>Event Timing 이 실제로 기록한</b>
+     input delay / processing / presentation 이 막대로 쌓인다.
+     함께 재는 <b>화면 갱신까지의 시간</b>이 INP 와 얼마나 어긋나는지가 이 데모의 요점이다.</p>
+</header>
+
+<div class="controls" id="ctl">
+  <button data-s="sync">sync</button>
+  <button data-s="yield">yield</button>
+  <button data-s="paint-first">paint-first</button>
+  <button data-s="paint-first+yield" data-on="1">paint-first + yield</button>
+  <button data-s="worker">worker</button>
+  <div class="sep"></div>
+  <label>작업량 <input type="range" id="work" min="40" max="500" step="20" value="200" style="width:120px"><b id="workV">200ms</b></label>
+  <button id="reset" class="ghost">리셋</button>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h2>눌러보기</h2>
+    <button id="hit">클릭</button>
+    <div id="proof">결과가 여기에 반영된다</div>
+    <p class="note" id="stratNote">—</p>
+  </div>
+
+  <div class="card">
+    <h2>마지막 클릭 분해</h2>
+    <div class="bars">
+      <div class="barrow"><span class="lbl">input delay</span>
+        <div class="bartrack"><div class="barfill delay" id="bDelay"></div></div></div>
+      <div class="barrow"><span class="lbl">processing</span>
+        <div class="bartrack"><div class="barfill proc" id="bProc"></div></div></div>
+      <div class="barrow"><span class="lbl">presentation</span>
+        <div class="bartrack"><div class="barfill pres" id="bPres"></div></div></div>
+      <div class="barrow"><span class="lbl">= INP</span>
+        <div class="bartrack"><div class="barfill wait" id="bInp"></div>
+          <div class="marker" id="mk200"><span>200ms 기준</span></div></div></div>
+      <div class="barrow"><span class="lbl">화면 갱신까지</span>
+        <div class="bartrack"><div class="barfill" id="bVis" style="background:var(--good)"></div></div></div>
+    </div>
+    <p class="note" id="gapNote">—</p>
+  </div>
+</div>
+
+<div class="grid3" style="margin-top:14px">
+  <div class="card"><div class="metric"><div class="k">INP p75</div><div class="v" id="mInp">—<small>ms</small></div></div></div>
+  <div class="card"><div class="metric"><div class="k">화면 갱신 p75</div><div class="v" id="mVis">—<small>ms</small></div></div></div>
+  <div class="card"><div class="metric"><div class="k">LoAF blocking 합</div><div class="v" id="mBlk">—<small>ms</small></div></div></div>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <h2>A5 실측 — 작업량 200ms 고정, 클릭 12회 × 3반복</h2>
+  <table>
+    <thead><tr><th>전략</th><th>INP p75</th><th>실제 화면 갱신</th><th>LoAF blocking</th></tr></thead>
+    <tbody>
+      <tr><td><code>sync</code></td><td class="num">208 ms</td><td class="num">201.6 ms</td><td class="num">1,805 ms</td></tr>
+      <tr><td><code>yield</code></td><td class="num" style="color:var(--good);font-weight:700">&lt;16 ms</td>
+          <td class="num" style="color:var(--accent);font-weight:700">210.4 ms</td><td class="num">0 ms</td></tr>
+      <tr><td><code>paint-first</code></td><td class="num">16 ms</td><td class="num">≈16 ms</td><td class="num">1,801 ms</td></tr>
+      <tr><td><code>paint-first+yield</code></td><td class="num" style="color:var(--good);font-weight:700">16 ms</td>
+          <td class="num" style="color:var(--good);font-weight:700">17.6 ms</td><td class="num">0 ms</td></tr>
+      <tr><td><code>worker</code></td><td class="num">16 ms</td><td class="num">15.3 ms</td><td class="num">0 ms</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b><code>yield</code> 만 하면 INP 는 16ms 미만인데 화면은 210ms 뒤에 바뀐다.</b>
+     핸들러가 아무것도 안 바꾸고 양보하면 브라우저는 빈 프레임을 내고 INP 는 초록불이 된다.
+     12번 중 10~12번이 임계값 미달로 <b>기록조차 안 됐다</b>.</p>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter, blockMain, nextPaint, fmt } from '../lib/demo.js';
+
+let strat = 'paint-first+yield', WORK = 200, worker = null, hue = 0;
+const proof = document.getElementById('proof');
+const events = [], visuals = [], loafs = [];
+let clickAt = 0;
+
+const yieldToMain = () => globalThis.scheduler?.yield
+  ? scheduler.yield() : new Promise(r => setTimeout(r, 0));
+
+function repaint(tag) {
+  hue = (hue + 47) % 360;
+  proof.style.background = `hsl(${hue} 62% 52%)`;
+  proof.textContent = tag;
+  const t0 = clickAt;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    if (t0) { visuals.push(performance.now() - t0); paint(); }
+  }));
+}
+
+const NOTES = {
+  'sync': '핸들러 안에서 작업을 통째로 처리한다. 다음 페인트가 그만큼 밀린다.',
+  'yield': '5ms 씩 쪼개며 양보한다. INP 는 좋아지지만 화면 갱신은 작업이 끝난 뒤다.',
+  'paint-first': '화면부터 바꾸고 작업을 뒤로 미룬다. INP 는 좋지만 메인은 계속 막혀 있다.',
+  'paint-first+yield': '화면부터 바꾸고 + 작업도 쪼갠다. 지표와 체감이 함께 좋아진다.',
+  'worker': '계산을 워커로 보낸다. 메인 스레드를 거의 쓰지 않는다.',
+};
+
+const STRATS = {
+  'sync': () => { blockMain(WORK); repaint('완료'); },
+  'yield': async () => {
+    let left = WORK;
+    while (left > 0) { const c = Math.min(5, left); blockMain(c); left -= c; await yieldToMain(); }
+    repaint('완료');
+  },
+  'paint-first': async () => { repaint('먼저 갱신'); await yieldToMain(); blockMain(WORK); },
+  'paint-first+yield': async () => {
+    repaint('먼저 갱신');
+    let left = WORK;
+    while (left > 0) { const c = Math.min(5, left); blockMain(c); left -= c; await yieldToMain(); }
+  },
+  'worker': async () => {
+    if (!worker) {
+      const src = `onmessage=e=>{const t=performance.now();while(performance.now()-t<e.data);postMessage(1)}`;
+      worker = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+    }
+    repaint('워커에 위임');
+    worker.postMessage(WORK);
+    await new Promise(r => { worker.onmessage = r; });
+  },
+};
+
+document.getElementById('hit').addEventListener('click', () => {
+  clickAt = performance.now();
+  STRATS[strat]();
+});
+
+// ── 계측 ──
+if (PerformanceObserver.supportedEntryTypes.includes('event')) {
+  new PerformanceObserver(list => {
+    for (const e of list.getEntries()) {
+      if (e.name !== 'click') continue;
+      events.push({
+        dur: e.duration,
+        delay: e.processingStart - e.startTime,
+        proc: e.processingEnd - e.processingStart,
+        pres: e.startTime + e.duration - e.processingEnd,
+      });
+    }
+    paint();
+  }).observe({ type: 'event', durationThreshold: 16, buffered: true });
+}
+if (PerformanceObserver.supportedEntryTypes.includes('long-animation-frame')) {
+  new PerformanceObserver(list => {
+    for (const e of list.getEntries()) loafs.push(e.blockingDuration ?? 0);
+    paint();
+  }).observe({ type: 'long-animation-frame', buffered: true });
+}
+
+const p75 = a => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length * .75)]; };
+
+function paint() {
+  const last = events.at(-1);
+  const scale = Math.max(240, (last?.dur ?? 0) * 1.1, (visuals.at(-1) ?? 0) * 1.1);
+  const set = (id, ms, label) => {
+    const el = document.getElementById(id);
+    el.style.width = Math.max(2, (ms / scale) * 100) + '%';
+    el.textContent = ms > 18 ? `${label} ${ms.toFixed(0)}ms` : '';
+  };
+  if (last) {
+    set('bDelay', last.delay, 'delay');
+    set('bProc', last.proc, 'proc');
+    set('bPres', last.pres, 'pres');
+    set('bInp', last.dur, 'INP');
+  } else {
+    for (const id of ['bDelay','bProc','bPres','bInp']) {
+      const el = document.getElementById(id); el.style.width = '2px'; el.textContent = '';
+    }
+  }
+  const v = visuals.at(-1);
+  if (v != null) set('bVis', v, '화면');
+  document.getElementById('mk200').style.left = Math.min(100, (200 / scale) * 100) + '%';
+
+  document.getElementById('mInp').innerHTML = (events.length ? fmt(p75(events.map(e => e.dur)), 0) : '<16') + '<small>ms</small>';
+  document.getElementById('mVis').innerHTML = (visuals.length ? fmt(p75(visuals), 0) : '—') + '<small>ms</small>';
+  document.getElementById('mBlk').innerHTML = fmt(loafs.reduce((a, b) => a + b, 0), 0) + '<small>ms</small>';
+
+  const inp = events.length ? p75(events.map(e => e.dur)) : 0;
+  const vis = visuals.length ? p75(visuals) : 0;
+  const gap = vis - inp;
+  document.getElementById('gapNote').innerHTML = !visuals.length ? '버튼을 몇 번 눌러보세요.'
+    : gap > 60
+      ? `⚠️ INP 는 <b>${fmt(inp, 0)}ms</b> 인데 사용자가 결과를 본 건 <b>${fmt(vis, 0)}ms</b> —
+         <b>${fmt(gap, 0)}ms 차이</b>. 지표만 좋아진 상태다.`
+      : `INP <b>${fmt(inp, 0)}ms</b>, 화면 갱신 <b>${fmt(vis, 0)}ms</b> — 지표와 체감이 일치한다.`;
+}
+
+for (const b of document.querySelectorAll('[data-s]')) {
+  b.onclick = () => {
+    strat = b.dataset.s;
+    for (const o of document.querySelectorAll('[data-s]')) o.dataset.on = o === b ? '1' : '0';
+    events.length = visuals.length = loafs.length = 0;
+    document.getElementById('stratNote').innerHTML = `<b>${strat}</b> — ${NOTES[strat]}`;
+    paint();
+  };
+}
+document.getElementById('reset').onclick = () => {
+  events.length = visuals.length = loafs.length = 0; paint();
+};
+document.getElementById('work').oninput = e => {
+  WORK = +e.target.value;
+  document.getElementById('workV').textContent = WORK + 'ms';
+};
+
+document.getElementById('stratNote').innerHTML = `<b>${strat}</b> — ${NOTES[strat]}`;
+window.__DEMO = { setStrategy: s => { strat = s;
+  for (const o of document.querySelectorAll('[data-s]')) o.dataset.on = o.dataset.s === s ? '1' : '0';
+  document.getElementById('stratNote').innerHTML = `<b>${s}</b> — ${NOTES[s]}`; },
+  click: () => document.getElementById('hit').click() };
+
+paint();
+mountFooter('09', 'A5 · INP와 LoAF', '../../experiments/track-a/a5-inp-loaf/RESULTS.md');
+</script>
+</body>
+</html>
