@@ -1,0 +1,1143 @@
+{
+  "experiment": "c1-initial-load",
+  "generatedAt": "2026-09-17T23:19:10.398Z",
+  "repeat": 3,
+  "isolation": "browser-per-config",
+  "cacheDisabled": true,
+  "rows": [
+    {
+      "boxes": 200,
+      "mode": "plain",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 1.15
+        },
+        "UpdateLayoutTree": {
+          "n": 1,
+          "ms": 1.61
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 29.84
+        },
+        "PrePaint": {
+          "n": 1,
+          "ms": 1.27
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.96
+        },
+        "RasterTask": {
+          "n": 43,
+          "ms": 2.84
+        },
+        "Commit": {
+          "n": 33,
+          "ms": 3.37
+        },
+        "InvalidateLayout": {
+          "n": 1,
+          "ms": 0
+        }
+      },
+      "fcpMs": 154.6,
+      "lcpMs": 154.6,
+      "scrollH": 22126
+    },
+    {
+      "boxes": 200,
+      "mode": "plain",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 2.18
+        },
+        "UpdateLayoutTree": {
+          "n": 1,
+          "ms": 2.87
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 29.02
+        },
+        "PrePaint": {
+          "n": 1,
+          "ms": 1.44
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 1.07
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 1.99
+        },
+        "Commit": {
+          "n": 6,
+          "ms": 1.1
+        },
+        "InvalidateLayout": {
+          "n": 1,
+          "ms": 0
+        }
+      },
+      "fcpMs": 71.1,
+      "lcpMs": 71.1,
+      "scrollH": 22126
+    },
+    {
+      "boxes": 200,
+      "mode": "plain",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 1.28
+        },
+        "UpdateLayoutTree": {
+          "n": 1,
+          "ms": 1.41
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 27.7
+        },
+        "PrePaint": {
+          "n": 1,
+          "ms": 1.46
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 1.27
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.49
+        },
+        "Commit": {
+          "n": 4,
+          "ms": 0.85
+        },
+        "InvalidateLayout": {
+          "n": 1,
+          "ms": 0
+        }
+      },
+      "fcpMs": 56,
+      "lcpMs": 56,
+      "scrollH": 22126
+    },
+    {
+      "boxes": 200,
+      "mode": "cv-auto",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 5.36
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 2.34
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 30.78
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 1.39
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.56
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 1.97
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.36
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 86.7,
+      "lcpMs": 86.7,
+      "scrollH": 21874
+    },
+    {
+      "boxes": 200,
+      "mode": "cv-auto",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 1.82
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 1.17
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 33.47
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 0.74
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.68
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 2.9
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.3
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 71.3,
+      "lcpMs": 71.3,
+      "scrollH": 21874
+    },
+    {
+      "boxes": 200,
+      "mode": "cv-auto",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 1.48
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 1.16
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 27.41
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 0.76
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.56
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 2.07
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.09
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 62.4,
+      "lcpMs": 62.4,
+      "scrollH": 21874
+    },
+    {
+      "boxes": 200,
+      "mode": "cv-nosize",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 1.26
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 1.36
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 27.02
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 0.94
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 1.14
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 1.86
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.17
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 61.8,
+      "lcpMs": 61.8,
+      "scrollH": 11414
+    },
+    {
+      "boxes": 200,
+      "mode": "cv-nosize",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 1.37
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 1.56
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 25.99
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 0.93
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 1.34
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 1.53
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.09
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 63.6,
+      "lcpMs": 63.6,
+      "scrollH": 11414
+    },
+    {
+      "boxes": 200,
+      "mode": "cv-nosize",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 2.36
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 2.48
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 25.51
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 1.14
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 1.2
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 1.51
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.21
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 55.2,
+      "lcpMs": 55.2,
+      "scrollH": 11414
+    },
+    {
+      "boxes": 1000,
+      "mode": "plain",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 6.68
+        },
+        "UpdateLayoutTree": {
+          "n": 1,
+          "ms": 8.7
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 53.65
+        },
+        "PrePaint": {
+          "n": 2,
+          "ms": 6.19
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 1.03
+        },
+        "RasterTask": {
+          "n": 39,
+          "ms": 3.09
+        },
+        "Commit": {
+          "n": 30,
+          "ms": 3.28
+        },
+        "InvalidateLayout": {
+          "n": 1,
+          "ms": 0
+        }
+      },
+      "fcpMs": 105.1,
+      "lcpMs": 105.1,
+      "scrollH": 110439
+    },
+    {
+      "boxes": 1000,
+      "mode": "plain",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 4.61
+        },
+        "UpdateLayoutTree": {
+          "n": 1,
+          "ms": 5.24
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 56.9
+        },
+        "PrePaint": {
+          "n": 2,
+          "ms": 6.34
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 1.11
+        },
+        "RasterTask": {
+          "n": 37,
+          "ms": 2.69
+        },
+        "Commit": {
+          "n": 28,
+          "ms": 2.8
+        },
+        "InvalidateLayout": {
+          "n": 1,
+          "ms": 0
+        }
+      },
+      "fcpMs": 104.9,
+      "lcpMs": 104.9,
+      "scrollH": 110439
+    },
+    {
+      "boxes": 1000,
+      "mode": "plain",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 6.66
+        },
+        "UpdateLayoutTree": {
+          "n": 1,
+          "ms": 6.11
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 66.16
+        },
+        "PrePaint": {
+          "n": 2,
+          "ms": 6.72
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 1.22
+        },
+        "RasterTask": {
+          "n": 41,
+          "ms": 3.36
+        },
+        "Commit": {
+          "n": 32,
+          "ms": 3.09
+        },
+        "InvalidateLayout": {
+          "n": 1,
+          "ms": 0
+        }
+      },
+      "fcpMs": 113,
+      "lcpMs": 113,
+      "scrollH": 110439
+    },
+    {
+      "boxes": 1000,
+      "mode": "cv-auto",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 4.83
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 2.74
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 26.72
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 1.84
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.74
+        },
+        "RasterTask": {
+          "n": 24,
+          "ms": 2.71
+        },
+        "Commit": {
+          "n": 16,
+          "ms": 1.9
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 64.7,
+      "lcpMs": 64.7,
+      "scrollH": 109074
+    },
+    {
+      "boxes": 1000,
+      "mode": "cv-auto",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 4.77
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 2.58
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 28.24
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 2.23
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.91
+        },
+        "RasterTask": {
+          "n": 29,
+          "ms": 2.7
+        },
+        "Commit": {
+          "n": 20,
+          "ms": 2.49
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 70.1,
+      "lcpMs": 70.1,
+      "scrollH": 109074
+    },
+    {
+      "boxes": 1000,
+      "mode": "cv-auto",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 4.76
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 2.65
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 23.55
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 1.84
+        },
+        "Paint": {
+          "n": 1,
+          "ms": 0.6
+        },
+        "RasterTask": {
+          "n": 27,
+          "ms": 2.17
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.87
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 62.9,
+      "lcpMs": 62.9,
+      "scrollH": 109074
+    },
+    {
+      "boxes": 1000,
+      "mode": "cv-nosize",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 5.26
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 2.86
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 29.69
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 2.47
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 1.49
+        },
+        "RasterTask": {
+          "n": 26,
+          "ms": 2.46
+        },
+        "Commit": {
+          "n": 17,
+          "ms": 1.95
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 72.4,
+      "lcpMs": 72.4,
+      "scrollH": 40214
+    },
+    {
+      "boxes": 1000,
+      "mode": "cv-nosize",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 4.35
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 2.85
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 24.84
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 2.1
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 1.36
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 1.55
+        },
+        "Commit": {
+          "n": 7,
+          "ms": 1.25
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 56.1,
+      "lcpMs": 56.1,
+      "scrollH": 40214
+    },
+    {
+      "boxes": 1000,
+      "mode": "cv-nosize",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 4.68
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 3.09
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 24.73
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 2.93
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 1.54
+        },
+        "RasterTask": {
+          "n": 27,
+          "ms": 2.34
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.23
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 63.2,
+      "lcpMs": 63.2,
+      "scrollH": 40214
+    },
+    {
+      "boxes": 4000,
+      "mode": "plain",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 7,
+          "ms": 24.1
+        },
+        "UpdateLayoutTree": {
+          "n": 4,
+          "ms": 30.26
+        },
+        "Layout": {
+          "n": 4,
+          "ms": 187.97
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 39.93
+        },
+        "Paint": {
+          "n": 4,
+          "ms": 3.74
+        },
+        "RasterTask": {
+          "n": 74,
+          "ms": 5.57
+        },
+        "Commit": {
+          "n": 68,
+          "ms": 6.26
+        },
+        "InvalidateLayout": {
+          "n": 4,
+          "ms": 0
+        }
+      },
+      "fcpMs": 103.5,
+      "lcpMs": 103.5,
+      "scrollH": 441611
+    },
+    {
+      "boxes": 4000,
+      "mode": "plain",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 18.34
+        },
+        "UpdateLayoutTree": {
+          "n": 2,
+          "ms": 23.53
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 158.57
+        },
+        "PrePaint": {
+          "n": 2,
+          "ms": 27.9
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 2.5
+        },
+        "RasterTask": {
+          "n": 68,
+          "ms": 4.58
+        },
+        "Commit": {
+          "n": 57,
+          "ms": 5.2
+        },
+        "InvalidateLayout": {
+          "n": 2,
+          "ms": 0
+        }
+      },
+      "fcpMs": 156.2,
+      "lcpMs": 156.2,
+      "scrollH": 441611
+    },
+    {
+      "boxes": 4000,
+      "mode": "plain",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 5,
+          "ms": 21.97
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 21.75
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 150.39
+        },
+        "PrePaint": {
+          "n": 3,
+          "ms": 33.91
+        },
+        "Paint": {
+          "n": 3,
+          "ms": 3.87
+        },
+        "RasterTask": {
+          "n": 70,
+          "ms": 4.79
+        },
+        "Commit": {
+          "n": 60,
+          "ms": 5.68
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 129.4,
+      "lcpMs": 129.4,
+      "scrollH": 441611
+    },
+    {
+      "boxes": 4000,
+      "mode": "cv-auto",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 17.85
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 9.88
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 28.99
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 7.3
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 1.72
+        },
+        "RasterTask": {
+          "n": 35,
+          "ms": 2.98
+        },
+        "Commit": {
+          "n": 25,
+          "ms": 3.25
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 81.4,
+      "lcpMs": 81.4,
+      "scrollH": 436074
+    },
+    {
+      "boxes": 4000,
+      "mode": "cv-auto",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 17.73
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 8.99
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 29.19
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 6.07
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 1.16
+        },
+        "RasterTask": {
+          "n": 34,
+          "ms": 2.59
+        },
+        "Commit": {
+          "n": 25,
+          "ms": 2.7
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 80.1,
+      "lcpMs": 80.1,
+      "scrollH": 436074
+    },
+    {
+      "boxes": 4000,
+      "mode": "cv-auto",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 4,
+          "ms": 18.82
+        },
+        "UpdateLayoutTree": {
+          "n": 3,
+          "ms": 11.25
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 30.11
+        },
+        "PrePaint": {
+          "n": 4,
+          "ms": 6.91
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 1.39
+        },
+        "RasterTask": {
+          "n": 41,
+          "ms": 3.77
+        },
+        "Commit": {
+          "n": 30,
+          "ms": 3.47
+        },
+        "InvalidateLayout": {
+          "n": 3,
+          "ms": 0
+        }
+      },
+      "fcpMs": 87.6,
+      "lcpMs": 87.6,
+      "scrollH": 436074
+    },
+    {
+      "boxes": 4000,
+      "mode": "cv-nosize",
+      "rep": 0,
+      "stage": {
+        "ParseHTML": {
+          "n": 6,
+          "ms": 33.95
+        },
+        "UpdateLayoutTree": {
+          "n": 5,
+          "ms": 17.59
+        },
+        "Layout": {
+          "n": 5,
+          "ms": 48.21
+        },
+        "PrePaint": {
+          "n": 6,
+          "ms": 12.73
+        },
+        "Paint": {
+          "n": 4,
+          "ms": 3.75
+        },
+        "RasterTask": {
+          "n": 60,
+          "ms": 6.67
+        },
+        "Commit": {
+          "n": 52,
+          "ms": 11.3
+        },
+        "InvalidateLayout": {
+          "n": 5,
+          "ms": 0
+        }
+      },
+      "fcpMs": 115.8,
+      "lcpMs": 115.8,
+      "scrollH": 148214
+    },
+    {
+      "boxes": 4000,
+      "mode": "cv-nosize",
+      "rep": 1,
+      "stage": {
+        "ParseHTML": {
+          "n": 5,
+          "ms": 21.83
+        },
+        "UpdateLayoutTree": {
+          "n": 4,
+          "ms": 12.65
+        },
+        "Layout": {
+          "n": 4,
+          "ms": 33.63
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 9.82
+        },
+        "Paint": {
+          "n": 3,
+          "ms": 2.6
+        },
+        "RasterTask": {
+          "n": 47,
+          "ms": 4.08
+        },
+        "Commit": {
+          "n": 37,
+          "ms": 9.02
+        },
+        "InvalidateLayout": {
+          "n": 4,
+          "ms": 0
+        }
+      },
+      "fcpMs": 83.7,
+      "lcpMs": 83.7,
+      "scrollH": 148214
+    },
+    {
+      "boxes": 4000,
+      "mode": "cv-nosize",
+      "rep": 2,
+      "stage": {
+        "ParseHTML": {
+          "n": 5,
+          "ms": 19.2
+        },
+        "UpdateLayoutTree": {
+          "n": 4,
+          "ms": 10.28
+        },
+        "Layout": {
+          "n": 4,
+          "ms": 30.59
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 7.33
+        },
+        "Paint": {
+          "n": 3,
+          "ms": 2.3
+        },
+        "RasterTask": {
+          "n": 41,
+          "ms": 3.26
+        },
+        "Commit": {
+          "n": 34,
+          "ms": 4.24
+        },
+        "InvalidateLayout": {
+          "n": 4,
+          "ms": 0
+        }
+      },
+      "fcpMs": 87.7,
+      "lcpMs": 87.7,
+      "scrollH": 148214
+    }
+  ]
+}

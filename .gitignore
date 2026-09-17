@@ -16,3 +16,6 @@ node_modules/
 # 측정 중 임시로 생기는 Chrome 프로필 / 프레임 (스크래치패드에 생성되므로 보통 여기 안 남는다)
 **/chrome-profile*/
 **/frames-*/
+
+# C1 이 gen.mjs 로 만들어내는 정적 페이지 (합계 4.7MB) — `node gen.mjs` 로 재생성
+experiments/track-c/c1-initial-load/pages/
