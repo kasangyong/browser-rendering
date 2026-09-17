@@ -17,6 +17,10 @@ const OUT = path.resolve(import.meta.dirname, 'images');
 
 const arg = (n, d) => { const m = process.argv.find(a => a.startsWith(`--${n}=`)); return m ? Number(m.split('=')[1]) : d; };
 const [, , URL_ARG, NAME] = process.argv;
+const argStr = (n, d) => { const m = process.argv.find(a => a.startsWith(`--${n}=`)); return m ? m.slice(n.length + 3) : d; };
+const EXEC = argStr('exec', '');          // 녹화 시작 시 한 번 실행할 표현식
+const SETUP = argStr('setup', '');        // 녹화 전에 실행할 표현식
+const OUTW = arg('outw', 900);            // GIF 가로 크기
 const SEC = arg('sec', 6), BLOCK = arg('block', 1500), FPS = arg('fps', 20);
 const W = arg('w', 900), H = arg('h', 330), PORT = arg('port', 9955);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -65,7 +69,8 @@ const run = async () => {
   const page = new CDP(ws);
   await page.send('Page.enable'); await page.send('Runtime.enable');
   await page.send('Emulation.setDeviceMetricsOverride', { width: W, height: H, deviceScaleFactor: 1, mobile: false });
-  await sleep(1500);
+  await sleep(1600);
+  if (SETUP) { page.fire(SETUP); await sleep(900); }
 
   let n = 0;
   const marks = [];           // 프레임이 도착한 시각 — 블로킹 중에도 오는지 확인용
@@ -78,23 +83,33 @@ const run = async () => {
 
   await page.send('Page.startScreencast', { format: 'png', everyNthFrame: 1, maxWidth: W, maxHeight: H });
 
-  // 타임라인: 정상 → 블록 → 정상 (반복)
   const t0 = Date.now();
-  await sleep(1200);
-  const blockStart = Date.now();
-  page.fire(`__DEMO.block(${BLOCK})`);
-  await sleep(BLOCK + 900);
-  const blockEnd = Date.now();
-  page.fire(`__DEMO.block(${BLOCK})`);
-  await sleep(BLOCK + 900);
-  while (Date.now() - t0 < SEC * 1000) await sleep(200);
+  let blockStart = t0, blockEnd = t0;
+  if (EXEC) {
+    await sleep(600);
+    page.fire(EXEC);
+    while (Date.now() - t0 < SEC * 1000) await sleep(200);
+  } else {
+    await sleep(1200);
+    blockStart = Date.now();
+    page.fire(`__DEMO.block(${BLOCK})`);
+    await sleep(BLOCK + 900);
+    blockEnd = Date.now();
+    page.fire(`__DEMO.block(${BLOCK})`);
+    await sleep(BLOCK + 900);
+    while (Date.now() - t0 < SEC * 1000) await sleep(200);
+  }
 
   await page.send('Page.stopScreencast').catch(() => {});
   await sleep(400);
 
-  const during = marks.filter(m => m > blockStart + 150 && m < blockEnd - 150).length;
-  console.log(`  프레임 ${n}장 수신 · 그중 메인 블로킹 구간(${BLOCK}ms)에 도착한 것 ${during}장`);
-  console.log(`  → screencast 는 메인 스레드에 ${during > 3 ? '걸리지 않는다 ✅' : '걸린다 ❌'}`);
+  if (!EXEC) {
+    const during = marks.filter(m => m > blockStart + 150 && m < blockEnd - 150).length;
+    console.log(`  프레임 ${n}장 수신 · 그중 메인 블로킹 구간(${BLOCK}ms)에 도착한 것 ${during}장`);
+    console.log(`  → screencast 는 메인 스레드에 ${during > 3 ? '걸리지 않는다 ✅' : '걸린다 ❌'}`);
+  } else {
+    console.log(`  프레임 ${n}장 수신`);
+  }
 
   try { proc.kill('SIGKILL'); } catch {}
 
@@ -105,9 +120,9 @@ const run = async () => {
 
   const pal = path.join(frameDir, 'palette.png');
   const gif = path.join(OUT, `${NAME}.gif`);
-  const vf = `fps=${FPS},scale=${W}:-1:flags=lanczos`;
+  const vf = `fps=${FPS},scale=${OUTW}:-1:flags=lanczos`;
   spawnSync(FFMPEG, ['-y', '-framerate', inFps, '-i', path.join(frameDir, 'f%04d.png'),
-                     '-vf', `${vf},palettegen=stats_mode=diff`, pal], { stdio: 'ignore' });
+                     '-vf', `${vf},palettegen=max_colors=${arg('colors', 128)}:stats_mode=diff`, pal], { stdio: 'ignore' });
   const r = spawnSync(FFMPEG, ['-y', '-framerate', inFps, '-i', path.join(frameDir, 'f%04d.png'),
                      '-i', pal, '-lavfi', `${vf} [x]; [x][1:v] paletteuse=dither=bayer:bayer_scale=3`,
                      '-loop', '0', gif], { stdio: 'ignore' });
