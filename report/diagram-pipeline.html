@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>렌더링 파이프라인 — 실측값 첨부</title>
+<style>
+  :root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6b6b;--line:#ddd8cf;
+        --main:#3c6eb4;--impl:#1f7a4d;--viz:#a5761b;--hot:#b4401f;
+        --mono:ui-monospace,"Cascadia Mono",Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);width:1100px;padding:26px 28px 22px;
+       font:14px/1.5 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+  h1{margin:0 0 3px;font-size:21px;letter-spacing:-.01em}
+  .sub{margin:0 0 20px;color:var(--muted);font-size:13px}
+  svg{width:100%;height:auto;display:block}
+  .lane{font:600 11px var(--mono);fill:var(--muted);letter-spacing:.06em}
+  .stage{font:600 12.5px system-ui;fill:#fff;text-anchor:middle}
+  .measure{font:11px var(--mono);fill:var(--muted);text-anchor:middle}
+  .measure b{font-weight:700}
+  .note{font:11.5px system-ui;fill:var(--muted)}
+  .hot{font:700 11px var(--mono);fill:var(--hot);text-anchor:middle}
+  .arrow{stroke:var(--muted);stroke-width:1.4;fill:none;marker-end:url(#ah)}
+  .skip{stroke:var(--hot);stroke-width:2;fill:none;stroke-dasharray:6 4;marker-end:url(#ahr)}
+  .procbox{fill:none;stroke:var(--line);stroke-width:1.5;rx:10}
+  .proclabel{font:700 11px var(--mono);fill:var(--muted);letter-spacing:.08em}
+  .legend{display:flex;gap:20px;margin-top:6px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+  .lg{display:flex;align-items:center;gap:6px}
+  .lg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .lg.dash i{width:20px;height:0;border-top:2px dashed var(--hot);border-radius:0}
+</style>
+</head>
+<body>
+<h1>브라우저 렌더링 파이프라인 — 실측값을 붙인 지도</h1>
+<p class="sub">Chromium RenderingNG 기준 · 회색 숫자는 이 저장소의 실험에서 직접 측정한 값이다</p>
+
+<svg viewBox="0 0 1044 470" role="img" aria-label="렌더링 파이프라인 다이어그램">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/></marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b4401f"/></marker>
+  </defs>
+
+  <!-- ── Renderer 프로세스 박스 ── -->
+  <rect class="procbox" x="8" y="26" width="782" height="264"/>
+  <text class="proclabel" x="20" y="45">RENDERER PROCESS</text>
+
+  <!-- main thread lane -->
+  <text class="lane" x="20" y="82">MAIN THREAD</text>
+  <g>
+    <rect x="118" y="62" width="104" height="34" rx="6" fill="#3c6eb4"/>
+    <text class="stage" x="170" y="84">Style</text>
+    <text class="measure" x="170" y="112">482회 · 482회</text>
+    <text class="hot"     x="170" y="126">스킵 안 됨</text>
+
+    <rect x="248" y="62" width="104" height="34" rx="6" fill="#3c6eb4"/>
+    <text class="stage" x="300" y="84">Layout</text>
+    <text class="measure" x="300" y="112">482회 → <tspan font-weight="700" fill="#1f7a4d">15회</tspan></text>
+    <text class="measure" x="300" y="126">32배 ↓</text>
+
+    <rect x="378" y="62" width="104" height="34" rx="6" fill="#3c6eb4"/>
+    <text class="stage" x="430" y="84">PrePaint</text>
+    <text class="measure" x="430" y="112">482회 · 482회</text>
+    <text class="hot"     x="430" y="126">스킵 안 됨</text>
+
+    <rect x="508" y="62" width="104" height="34" rx="6" fill="#3c6eb4"/>
+    <text class="stage" x="560" y="84">Paint</text>
+    <text class="measure" x="560" y="112">2,832회 → <tspan font-weight="700" fill="#1f7a4d">30회</tspan></text>
+    <text class="measure" x="560" y="126">94배 ↓</text>
+
+    <rect x="638" y="62" width="104" height="34" rx="6" fill="#555"/>
+    <text class="stage" x="690" y="84">Commit</text>
+    <text class="measure" x="690" y="112">레이어 1000개에서</text>
+    <text class="hot"     x="690" y="126">비용 7배 폭발</text>
+
+    <path class="arrow" d="M222,79 H246"/>
+    <path class="arrow" d="M352,79 H376"/>
+    <path class="arrow" d="M482,79 H506"/>
+    <path class="arrow" d="M612,79 H636"/>
+  </g>
+
+  <!-- compositor lane -->
+  <text class="lane" x="20" y="196">COMPOSITOR</text>
+  <text class="lane" x="20" y="211" font-size="10" opacity=".7">(impl thread)</text>
+  <g>
+    <rect x="118" y="176" width="104" height="34" rx="6" fill="#1f7a4d"/>
+    <text class="stage" x="170" y="198">Layerize</text>
+    <text class="measure" x="170" y="226">DOM 순서에 따라</text>
+    <text class="hot"     x="170" y="240">24 vs 15개</text>
+
+    <rect x="248" y="176" width="104" height="34" rx="6" fill="#1f7a4d"/>
+    <text class="stage" x="300" y="198">Raster</text>
+    <text class="measure" x="300" y="226">979회 → <tspan font-weight="700" fill="#1f7a4d">15회</tspan></text>
+    <text class="measure" x="300" y="240">65배 ↓</text>
+
+    <rect x="378" y="176" width="104" height="34" rx="6" fill="#1f7a4d"/>
+    <text class="stage" x="430" y="198">Activate</text>
+    <text class="measure" x="430" y="226">pending ↔ active</text>
+
+    <rect x="508" y="176" width="104" height="34" rx="6" fill="#1f7a4d"/>
+    <text class="stage" x="560" y="198">Draw</text>
+    <text class="measure" x="560" y="226">CompositorFrame</text>
+
+    <path class="arrow" d="M742,79 H768 V152 H196 V168"/>
+    <path class="arrow" d="M222,193 H246"/>
+    <path class="arrow" d="M352,193 H376"/>
+    <path class="arrow" d="M482,193 H506"/>
+  </g>
+
+  <!-- 스킵 경로: 메인 스레드를 통째로 우회해 컴포지터로 직행한다 -->
+  <path class="skip" d="M96,79 V193 H110"/>
+  <text class="hot" x="16" y="130" style="text-anchor:start" font-size="10">transform</text>
+  <text class="hot" x="16" y="143" style="text-anchor:start" font-size="10">opacity</text>
+  <text class="hot" x="16" y="156" style="text-anchor:start" font-size="10">지름길</text>
+
+  <!-- ── Viz 프로세스 ── -->
+  <rect class="procbox" x="800" y="26" width="236" height="264"/>
+  <text class="proclabel" x="812" y="45">VIZ PROCESS (GPU)</text>
+  <rect x="838" y="110" width="160" height="34" rx="6" fill="#a5761b"/>
+  <text class="stage" x="918" y="132">Aggregate</text>
+  <rect x="838" y="176" width="160" height="34" rx="6" fill="#a5761b"/>
+  <text class="stage" x="918" y="198">Display</text>
+  <text class="measure" x="918" y="226">Skia (Ganesh)</text>
+  <text class="measure" x="918" y="240">타일 예산 512MB</text>
+  <path class="arrow" d="M612,193 H700 V127 H836"/>
+  <path class="arrow" d="M918,144 V174"/>
+
+  <!-- ── 하단: 측정된 사실 ── -->
+  <line x1="8" y1="312" x2="1036" y2="312" stroke="#ddd8cf"/>
+  <text class="note" x="8" y="336" font-weight="700" fill="#1a1a1a">메인 스레드를 1.5초 막았을 때</text>
+  <text class="note" x="8" y="356">left 애니메이션 — 화면 제출 <tspan font-family="ui-monospace" font-weight="700" fill="#b4401f">0 프레임</tspan> (완전 정지)</text>
+  <text class="note" x="8" y="374">transform 애니메이션 — 화면 제출 <tspan font-family="ui-monospace" font-weight="700" fill="#1f7a4d">360 프레임</tspan> (계속 동작)</text>
+
+  <text class="note" x="360" y="336" font-weight="700" fill="#1a1a1a">레이어 1개의 GPU 메모리</text>
+  <text class="note" x="360" y="356">텍스처 = <tspan font-family="ui-monospace">roundUp(크기, 64)</tspan> 타일</text>
+  <text class="note" x="360" y="374">38×15 박스 → <tspan font-family="ui-monospace" font-weight="700">16KB</tspan> (실제 필요량의 7.2배)</text>
+
+  <text class="note" x="700" y="336" font-weight="700" fill="#1a1a1a">content-visibility</text>
+  <text class="note" x="700" y="356">Layout 87% ↓ · Style 82% ↓ · <tspan fill="#b4401f" font-weight="700">Paint 14% ↓</tspan></text>
+  <text class="note" x="700" y="374">화면 밖 Paint 는 <tspan font-weight="700">원래도 컬링</tspan>되고 있었다</text>
+
+  <line x1="8" y1="398" x2="1036" y2="398" stroke="#ddd8cf"/>
+  <text class="note" x="8" y="422" font-weight="700" fill="#1a1a1a">"스킵"의 정확한 뜻</text>
+  <text class="note" x="8" y="442">Style 과 PrePaint 는 <tspan font-weight="700">양쪽 모두 482회 호출된다.</tspan> 단계를 건너뛰는 게 아니라, 할 일이 없어 즉시 반환할 뿐이다.</text>
+  <text class="note" x="8" y="460">그래서 애니메이션 요소가 많아지면 transform 이라도 Style·Commit 이 새 병목이 된다 — 1000개에서 이득이 2.1배 → 1.5배로 감소.</text>
+</svg>
+
+<div class="legend">
+  <span class="lg"><i style="background:#3c6eb4"></i>Renderer · 메인 스레드</span>
+  <span class="lg"><i style="background:#1f7a4d"></i>Renderer · 컴포지터 스레드</span>
+  <span class="lg"><i style="background:#a5761b"></i>Viz 프로세스 (GPU)</span>
+  <span class="lg dash"><i></i>transform·opacity 가 타는 지름길</span>
+</div>
+</body>
+</html>
