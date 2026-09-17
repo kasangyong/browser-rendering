@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>06 · 강제 동기 레이아웃</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  #tl{position:relative;height:150px;background:var(--stage);border:1px solid var(--line);
+      border-radius:10px;overflow:hidden}
+  .op{position:absolute;bottom:26px;width:9px;border-radius:2px 2px 0 0}
+  .op.read{background:var(--cool)}
+  .op.write{background:var(--warn)}
+  .lay{position:absolute;bottom:0;width:3px;height:22px;background:var(--accent);border-radius:2px}
+  .axis{position:absolute;left:0;right:0;bottom:22px;height:1px;background:var(--line)}
+  .tllabel{position:absolute;left:10px;top:9px;font:10.5px var(--mono);color:var(--muted)}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:9px;font-size:12px;color:var(--muted)}
+  .lg{display:flex;align-items:center;gap:6px}
+  .lg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  .codebox{font:12px/1.75 var(--mono);background:var(--stage);border:1px solid var(--line);
+           border-radius:8px;padding:11px 13px;white-space:pre;overflow-x:auto}
+  .codebox .r{color:var(--cool);font-weight:700}
+  .codebox .w{color:var(--warn);font-weight:700}
+  .codebox .c{color:var(--muted)}
+  #cells{display:flex;flex-wrap:wrap;gap:3px;max-height:96px;overflow:hidden;
+         background:var(--stage);border:1px solid var(--line);border-radius:8px;padding:8px}
+  .cell{height:16px;background:var(--accent);border-radius:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 06</span>
+  <h1>강제 동기 레이아웃 — 읽기 한 줄이 프레임을 무너뜨린다</h1>
+  <p>레이아웃을 무효화한 뒤 <code>offsetWidth</code> 를 읽으면 브라우저가 <b>그 자리에서</b> 레이아웃을 끝내야 한다.
+     읽기·쓰기를 번갈아 하면 매번 강제된다. 아래 타임라인은 <b>실제로 측정한</b> 작업 순서다.</p>
+</header>
+
+<div class="controls">
+  <button data-m="batched" data-on="1">묶어서 — 읽기 전부 → 쓰기 전부</button>
+  <button data-m="interleaved">번갈아 — 읽기·쓰기 교대</button>
+  <div class="sep"></div>
+  <label>요소 <input type="number" id="n" value="120" min="10" max="2000" step="10" style="width:78px"></label>
+  <button id="run" class="primary">실행</button>
+</div>
+
+<div id="tl">
+  <span class="tllabel">한 프레임 안에서 일어난 일 (가로축 = 실제 시간)</span>
+  <div class="axis"></div>
+</div>
+<div class="legend">
+  <span class="lg"><i style="background:var(--cool)"></i>읽기 <code>offsetWidth</code></span>
+  <span class="lg"><i style="background:var(--warn)"></i>쓰기 <code>style.width</code></span>
+  <span class="lg"><i style="background:var(--accent)"></i>강제된 레이아웃</span>
+</div>
+
+<div class="grid3" style="margin-top:14px">
+  <div class="card"><div class="metric"><div class="k">강제 레이아웃</div><div class="v" id="mLay">—</div></div></div>
+  <div class="card"><div class="metric"><div class="k">총 소요</div><div class="v" id="mMs">—<small>ms</small></div></div></div>
+  <div class="card"><div class="metric"><div class="k">묶기 대비</div><div class="v" id="mRatio">—</div></div></div>
+</div>
+
+<div class="grid2" style="margin-top:14px">
+  <div class="card">
+    <h2>지금 도는 코드</h2>
+    <div class="codebox" id="code"></div>
+    <p class="note" id="codeNote">—</p>
+  </div>
+  <div class="card">
+    <h2>대상 요소</h2>
+    <div id="cells"></div>
+    <p class="note">각 요소의 <code>width</code> 를 읽고 1px 늘린다. 작업량은 두 방식이 완전히 같다 —
+       <b>순서만</b> 다르다.</p>
+  </div>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter, fmt } from '../lib/demo.js';
+
+const tl = document.getElementById('tl'), cells = document.getElementById('cells');
+let mode = 'batched', N = 120, items = [], baseline = null;
+
+const CODE = {
+  batched:
+`<span class="c">// 전부 읽고 → 전부 쓴다. 레이아웃은 한 번.</span>
+const w = items.map(el => el.<span class="r">offsetWidth</span>);
+items.forEach((el, i) =>
+  el.style.<span class="w">width</span> = w[i] + 1 + 'px');`,
+  interleaved:
+`<span class="c">// 읽기 → 쓰기 → 읽기 → 쓰기 … 매번 강제된다.</span>
+for (const el of items) {
+  const w = el.<span class="r">offsetWidth</span>;   <span class="c">// 여기서 레이아웃 강제</span>
+  el.style.<span class="w">width</span> = w + 1 + 'px'; <span class="c">// 다시 무효화</span>
+}`,
+};
+
+function build() {
+  N = Math.max(10, Math.min(2000, +document.getElementById('n').value || 120));
+  cells.textContent = '';
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < N; i++) {
+    const d = document.createElement('div');
+    d.className = 'cell';
+    d.style.width = (14 + (i % 26)) + 'px';
+    frag.appendChild(d);
+  }
+  cells.appendChild(frag);
+  items = [...cells.children];
+  document.getElementById('code').innerHTML = CODE[mode];
+}
+
+/** 실제로 돌리면서 읽기/쓰기 시각과 '강제 레이아웃'을 기록한다 */
+function measure() {
+  const ops = [];
+  const t0 = performance.now();
+
+  if (mode === 'interleaved') {
+    for (const el of items) {
+      const a = performance.now();
+      const w = el.offsetWidth;                 // 읽기 — 앞의 쓰기 때문에 레이아웃 강제
+      const b = performance.now();
+      ops.push({ t: a - t0, d: b - a, kind: 'read', forced: b - a > 0.02 });
+      const c = performance.now();
+      el.style.width = (w + 1) + 'px';          // 쓰기 — 무효화
+      ops.push({ t: c - t0, d: performance.now() - c, kind: 'write' });
+    }
+  } else {
+    const ws = [];
+    for (const el of items) {
+      const a = performance.now();
+      ws.push(el.offsetWidth);
+      const b = performance.now();
+      ops.push({ t: a - t0, d: b - a, kind: 'read', forced: b - a > 0.02 });
+    }
+    items.forEach((el, i) => {
+      const a = performance.now();
+      el.style.width = (ws[i] + 1) + 'px';
+      ops.push({ t: a - t0, d: performance.now() - a, kind: 'write' });
+    });
+  }
+
+  const total = performance.now() - t0;
+  return { ops, total, forced: ops.filter(o => o.forced).length };
+}
+
+function paint(res) {
+  const W = tl.clientWidth, span = Math.max(res.total, 0.5);
+  tl.querySelectorAll('.op,.lay').forEach(n => n.remove());
+  const frag = document.createDocumentFragment();
+  for (const o of res.ops) {
+    const x = (o.t / span) * (W - 14) + 6;
+    const d = document.createElement('div');
+    d.className = 'op ' + o.kind;
+    d.style.cssText = `left:${x.toFixed(1)}px;height:${o.kind === 'read' ? 46 : 30}px`;
+    frag.appendChild(d);
+    if (o.forced) {
+      const l = document.createElement('div');
+      l.className = 'lay';
+      l.style.left = x.toFixed(1) + 'px';
+      frag.appendChild(l);
+    }
+  }
+  tl.appendChild(frag);
+
+  document.getElementById('mLay').textContent = res.forced;
+  document.getElementById('mMs').innerHTML = fmt(res.total, 2) + '<small>ms</small>';
+  if (mode === 'batched') baseline = res.total;
+  document.getElementById('mRatio').textContent =
+    baseline ? (res.total / baseline).toFixed(1) + '×' : '—';
+  document.getElementById('codeNote').innerHTML = mode === 'interleaved'
+    ? `읽기 ${N}번이 모두 <b>앞선 쓰기</b> 뒤에 온다 → 매번 레이아웃을 기다린다.`
+    : `읽기 ${N}번이 <b>연속</b>이라 레이아웃은 첫 읽기에서 한 번만 끝난다.`;
+}
+
+function run() { build(); const r = measure(); paint(r); return { forced: r.forced, ms: +r.total.toFixed(2) }; }
+
+for (const b of document.querySelectorAll('[data-m]')) {
+  b.onclick = () => {
+    mode = b.dataset.m;
+    for (const o of document.querySelectorAll('[data-m]')) o.dataset.on = o === b ? '1' : '0';
+    run();
+  };
+}
+document.getElementById('run').onclick = run;
+document.getElementById('n').onchange = run;
+
+window.__DEMO = { setMode: m => { mode = m; return run(); }, run };
+
+run();
+mountFooter('06', 'B · 강제 동기 레이아웃', '../');
+</script>
+</body>
+</html>
