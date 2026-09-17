@@ -196,10 +196,13 @@
     // 'none' = 애니메이션 없는 대조군. 라이프사이클 자체의 바닥 비용을 잰다.
     const name = mode === 'left' ? 'moveLeft' : 'moveTransform';
     const wc = mode === 'willchange' ? 'transform' : 'auto';
-    for (const b of boxes) {
+    boxes.forEach((b, i) => {
       b.style.animation = mode === 'none' ? 'none' : `${name} 2s linear infinite alternate`;
+      // animation 단축 속성이 delay 를 0 으로 되돌리므로 매번 다시 준다.
+      // 없으면 모든 박스가 같은 위상으로 움직여 한 줄로 뭉친다.
+      b.style.animationDelay = (-(i % 40) * 0.05) + 's';
       b.style.willChange = wc;
-    }
+    });
     $('modeBadge').textContent = mode;
     $('modeBadge').className = 'badge on';
     for (const el of document.querySelectorAll('[data-mode]')) {
@@ -375,7 +378,7 @@
   // 자동화용 훅
   window.__A1 = {
     setMode: m => { mode = m; applyMode(); samples = []; },
-    setCount: n => build(n),
+    setCount: n => { build(n); $('count').value = n; },
     // A2용 — 레이어 하나의 크기를 바꿔 GPU 메모리와의 관계를 본다
     setBoxSize: (w, h) => {
       document.documentElement.style.setProperty('--bw', w + 'px');
