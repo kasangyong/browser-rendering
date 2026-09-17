@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10 · 무효화 전파</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  .split{display:grid;grid-template-columns:1fr 330px;gap:14px}
+  @media (max-width:900px){.split{grid-template-columns:1fr}}
+  #tree{height:520px;background:var(--stage);border:1px solid var(--line);
+        border-radius:10px;overflow:hidden;position:relative}
+  svg{width:100%;height:100%;display:block}
+  .edge{stroke:var(--line);stroke-width:1.4;fill:none;transition:stroke .2s}
+  .edge.hit{stroke:var(--accent);stroke-width:2.2}
+  .nd circle{fill:var(--panel);stroke:var(--line);stroke-width:1.6;
+             transition:fill .25s, stroke .25s, r .25s}
+  .nd text{font:9.5px var(--mono);fill:var(--muted);text-anchor:middle;dominant-baseline:middle}
+  .nd.style circle{fill:#3c6eb4;stroke:#3c6eb4}
+  .nd.layout circle{fill:#a5761b;stroke:#a5761b}
+  .nd.paint circle{fill:#1f7a4d;stroke:#1f7a4d}
+  .nd.origin circle{fill:var(--accent);stroke:var(--accent);r:11}
+  .nd.style text,.nd.layout text,.nd.paint text,.nd.origin text{fill:#fff;font-weight:700}
+  .nd.contained circle{stroke-dasharray:3 2;stroke-width:2.4;stroke:var(--good)}
+
+  .apis{font:11.5px/1.95 var(--mono)}
+  .apis div{display:flex;gap:8px;align-items:center;padding:3px 0}
+  .apis i{width:10px;height:10px;border-radius:3px;flex:none}
+  .apis b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 10</span>
+  <h1>무효화 전파 — 한 번의 변경이 트리에 번지는 모습</h1>
+  <p>노드를 누르면 그 자리에서 변경이 일어나고, <b>어디까지 다시 계산되는지</b> 물결로 번진다.
+     바꾸는 속성에 따라 번지는 범위가 달라지고, <code>contain</code> 을 켜면 <b>경계에서 멈춘다</b>.
+     각 단계의 무효화 API 는 <a href="../../docs/video/01-life-of-a-pixel-2020.md">Life of a Pixel</a> 의 invalidation 슬라이드에서 확인한 것.</p>
+</header>
+
+<div class="controls">
+  <button data-p="color" data-on="1">color — paint 만</button>
+  <button data-p="width">width — layout 부터</button>
+  <button data-p="fontsize">font-size — style 부터</button>
+  <div class="sep"></div>
+  <label><input type="checkbox" id="contain"> <code>contain: layout paint</code> 켜기</label>
+  <div class="sep"></div>
+  <button id="auto" class="primary">자동 반복</button>
+</div>
+
+<div class="split">
+  <div id="tree"><svg id="svg" viewBox="0 0 760 520"></svg></div>
+
+  <div>
+    <div class="card" style="margin-bottom:12px">
+      <h2>이번 변경의 파급</h2>
+      <div class="grid2" style="gap:10px">
+        <div class="metric"><div class="k">전체 노드</div><div class="v" id="mAll">—</div></div>
+        <div class="metric"><div class="k">재계산</div><div class="v" id="mHit" style="color:var(--accent)">—</div></div>
+      </div>
+      <p class="note" id="note">노드를 눌러보세요.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:12px">
+      <h2>단계별 무효화 API</h2>
+      <div class="apis">
+        <div><i style="background:#3c6eb4"></i><b>Node::SetNeedsStyleRecalc()</b></div>
+        <div><i style="background:#a5761b"></i><b>LayoutObject::SetNeedsLayout()</b></div>
+        <div><i style="background:#1f7a4d"></i><b>PaintInvalidator::InvalidatePaint()</b></div>
+        <div><i style="background:var(--muted)"></i><b>RasterInvalidator::Generate()</b></div>
+      </div>
+      <p class="note">"Outputs are reused from previous frames when possible" —
+         캐싱의 실체가 이 네 개의 플래그다.</p>
+    </div>
+
+    <div class="card">
+      <h2>속성별 파급 범위</h2>
+      <table>
+        <tbody>
+          <tr><td><code>color</code></td><td>자기 자신만 다시 칠함</td></tr>
+          <tr><td><code>width</code></td><td>조상·형제까지 레이아웃</td></tr>
+          <tr><td><code>font-size</code></td><td>후손 전체 스타일 + 레이아웃</td></tr>
+          <tr><td><code>transform</code></td><td class="num" style="color:var(--good)">무효화 0회 (A1)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter } from '../lib/demo.js';
+
+const svg = document.getElementById('svg');
+let prop = 'color', nodes = [], edges = [], autoOn = false;
+
+// 트리 생성 (깊이 4)
+function makeTree() {
+  nodes = []; edges = [];
+  const W = 760, levels = [1, 3, 7, 14, 22];
+  let id = 0;
+  const byLevel = [];
+  levels.forEach((count, L) => {
+    const row = [];
+    for (let i = 0; i < count; i++) {
+      const x = W * (i + 1) / (count + 1);
+      const y = 54 + L * 108;
+      const n = { id: id++, x, y, L, i, parent: null, kids: [], contained: false };
+      row.push(n); nodes.push(n);
+    }
+    byLevel.push(row);
+  });
+  // 부모 연결
+  for (let L = 1; L < byLevel.length; L++) {
+    byLevel[L].forEach((n, i) => {
+      const par = byLevel[L - 1][Math.floor(i * byLevel[L - 1].length / byLevel[L].length)];
+      n.parent = par; par.kids.push(n);
+      edges.push({ a: par, b: n });
+    });
+  }
+  // contain 경계로 쓸 노드 몇 개
+  byLevel[2].forEach((n, i) => { if (i % 3 === 1) n.containable = true; });
+}
+
+function draw(hit = new Set(), origin = null, kind = null) {
+  const useContain = document.getElementById('contain').checked;
+  let s = '';
+  for (const e of edges) {
+    const on = hit.has(e.a.id) && hit.has(e.b.id);
+    s += `<path class="edge${on ? ' hit' : ''}" d="M${e.a.x},${e.a.y} C${e.a.x},${(e.a.y + e.b.y) / 2} ${e.b.x},${(e.a.y + e.b.y) / 2} ${e.b.x},${e.b.y}"/>`;
+  }
+  for (const n of nodes) {
+    const cls = n === origin ? 'origin' : hit.has(n.id) ? kind : '';
+    const cont = useContain && n.containable ? ' contained' : '';
+    s += `<g class="nd ${cls}${cont}" data-id="${n.id}" style="cursor:pointer">
+            <circle cx="${n.x}" cy="${n.y}" r="${n === origin ? 11 : 9}"/>
+            <text x="${n.x}" y="${n.y}">${n.L}</text></g>`;
+  }
+  svg.innerHTML = s;
+  for (const g of svg.querySelectorAll('.nd'))
+    g.onclick = () => fire(nodes[+g.dataset.id]);
+}
+
+/** 속성별 전파 규칙 */
+function propagate(origin) {
+  const useContain = document.getElementById('contain').checked;
+  const hit = new Set([origin.id]);
+  let kind = 'paint', stopped = 0;
+
+  const addDesc = n => {
+    for (const k of n.kids) {
+      if (useContain && k.containable) { stopped++; continue; }   // 경계에서 멈춤
+      hit.add(k.id); addDesc(k);
+    }
+  };
+  const addAnc = n => { let p = n.parent; while (p) { hit.add(p.id); p = p.parent; } };
+
+  if (prop === 'color') {
+    kind = 'paint';                                   // 자기 자신만
+  } else if (prop === 'width') {
+    kind = 'layout'; addAnc(origin); addDesc(origin);  // 조상 + 후손
+  } else {
+    kind = 'style'; addDesc(origin); addAnc(origin);   // 상속되므로 후손 전체
+  }
+  return { hit, kind, stopped };
+}
+
+async function fire(origin) {
+  const { hit, kind, stopped } = propagate(origin);
+  // 물결처럼 단계적으로 번지게
+  const order = [...hit].map(id => nodes[id])
+    .sort((a, b) => (Math.abs(a.L - origin.L) + Math.abs(a.i - origin.i) * .1)
+                  - (Math.abs(b.L - origin.L) + Math.abs(b.i - origin.i) * .1));
+  const shown = new Set([origin.id]);
+  draw(shown, origin, kind);
+  for (const n of order) {
+    shown.add(n.id);
+    draw(shown, origin, kind);
+    await new Promise(r => setTimeout(r, 34));
+  }
+  document.getElementById('mAll').textContent = nodes.length;
+  document.getElementById('mHit').textContent = hit.size;
+  const pct = ((hit.size / nodes.length) * 100).toFixed(0);
+  const names = { paint:'Paint 만', layout:'Layout 부터', style:'Style 부터' };
+  document.getElementById('note').innerHTML =
+    `<b>${names[kind]}</b> 다시 돈다 — ${nodes.length}개 중 <b>${hit.size}개 (${pct}%)</b>.` +
+    (stopped ? ` <code>contain</code> 경계에서 <b>${stopped}개 가지</b>가 끊겼다.` : '');
+}
+
+document.getElementById('contain').onchange = () => draw();
+for (const b of document.querySelectorAll('[data-p]')) {
+  b.onclick = () => {
+    prop = b.dataset.p;
+    for (const o of document.querySelectorAll('[data-p]')) o.dataset.on = o === b ? '1' : '0';
+    draw();
+  };
+}
+document.getElementById('auto').onclick = e => {
+  autoOn = !autoOn; e.target.dataset.on = autoOn ? '1' : '0';
+  (async function loop() {
+    while (autoOn) {
+      const deep = nodes.filter(n => n.L >= 2);
+      await fire(deep[Math.floor(Math.random() * deep.length)]);
+      await new Promise(r => setTimeout(r, 900));
+    }
+  })();
+};
+
+window.__DEMO = {
+  setProp: p => { prop = p;
+    for (const o of document.querySelectorAll('[data-p]')) o.dataset.on = o.dataset.p === p ? '1' : '0'; draw(); },
+  fireAt: L => fire(nodes.find(n => n.L === L)),
+  auto: () => document.getElementById('auto').click(),
+};
+
+makeTree();
+draw();
+mountFooter('10', 'Life of a Pixel · invalidation', '../../docs/video/01-life-of-a-pixel-2020.md');
+</script>
+</body>
+</html>
