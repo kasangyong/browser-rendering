@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 · paint order</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  .split{display:grid;grid-template-columns:1fr 340px;gap:14px}
+  @media (max-width:900px){.split{grid-template-columns:1fr}}
+  #canvas{position:relative;height:380px;background:var(--stage);
+          border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .el{position:absolute;border-radius:9px;display:flex;align-items:flex-start;
+      padding:9px 11px;font:600 12.5px var(--mono);color:#fff;
+      border:2px solid rgba(255,255,255,.28);
+      transition:box-shadow .2s, outline-color .2s}
+  .el.sel{box-shadow:0 0 0 3px var(--accent),0 10px 26px -8px rgba(0,0,0,.5)}
+  .el .badge{position:absolute;right:8px;top:7px;background:rgba(0,0,0,.42);
+             border-radius:99px;padding:1px 8px;font:10px var(--mono)}
+
+  /* 페인트 순서 리스트 */
+  #order{list-style:none;margin:0;padding:0}
+  #order li{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:7px;
+            font:12px var(--mono);border:1px solid transparent;
+            transition:transform .35s cubic-bezier(.2,.8,.3,1), background .2s, border-color .2s}
+  #order li .sw{width:13px;height:13px;border-radius:4px;flex:none}
+  #order li .idx{color:var(--muted);width:18px;text-align:right}
+  #order li.moved{background:var(--stage);border-color:var(--accent)}
+  #order li .why{margin-left:auto;font-size:10.5px;color:var(--muted)}
+
+  .phases{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+  .ph{flex:1;min-width:88px;text-align:center;padding:7px 4px;border-radius:7px;
+      background:var(--stage);border:1px solid var(--line);font:11px var(--mono);color:var(--muted);
+      transition:background .25s,color .25s,border-color .25s}
+  .ph.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 05</span>
+  <h1>paint order — DOM 순서대로 그리지 않는다</h1>
+  <p>요소를 눌러 고른 뒤 속성을 켜보면 <b>그리는 순서가 재배열</b>된다.
+     오른쪽 목록이 실제 paint order 다. <code>z-index</code> 뿐 아니라
+     <code>opacity</code>·<code>transform</code>·<code>filter</code> 도 스택 컨텍스트를 만든다.</p>
+</header>
+
+<div class="controls" id="ctl">
+  <span class="tag" id="selTag">선택: A</span>
+  <div class="sep"></div>
+  <button data-p="zindex">z-index: 2</button>
+  <button data-p="opacity">opacity: .85</button>
+  <button data-p="transform">transform</button>
+  <button data-p="filter">filter: blur(0)</button>
+  <div class="sep"></div>
+  <button id="reset" class="ghost">전부 해제</button>
+  <button id="cycle" class="primary">순서 애니메이션</button>
+</div>
+
+<div class="split">
+  <div id="canvas"></div>
+
+  <div>
+    <div class="card" style="margin-bottom:12px">
+      <h2>실제 paint order (위 → 아래 = 먼저 → 나중)</h2>
+      <ul id="order"></ul>
+      <p class="note" id="orderNote">—</p>
+    </div>
+    <div class="card">
+      <h2>paint phase — 각 phase 가 스택 컨텍스트를 따로 순회한다</h2>
+      <div class="phases">
+        <div class="ph" data-ph="0">backgrounds</div>
+        <div class="ph" data-ph="1">floats</div>
+        <div class="ph" data-ph="2">foregrounds</div>
+        <div class="ph" data-ph="3">outlines</div>
+      </div>
+      <p class="note">A1 실측에서 <code>Paint</code> 이벤트가 요소 수보다 훨씬 많은 이유 —
+        같은 요소를 phase 마다 다시 방문한다.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter } from '../lib/demo.js';
+
+const COLORS = ['#b4401f','#1f7a4d','#3c6eb4','#a5761b','#7a4fb4'];
+const canvas = document.getElementById('canvas');
+const orderUl = document.getElementById('order');
+
+const els = ['A','B','C','D','E'].map((name, i) => ({
+  name, color: COLORS[i],
+  x: 40 + i * 92, y: 46 + (i % 3) * 64, w: 170, h: 120,
+  props: { zindex:false, opacity:false, transform:false, filter:false },
+  node: null,
+}));
+
+let selected = 0;
+
+function creates(e) {
+  const r = [];
+  if (e.props.zindex)    r.push('z-index');
+  if (e.props.opacity)   r.push('opacity');
+  if (e.props.transform) r.push('transform');
+  if (e.props.filter)    r.push('filter');
+  return r;
+}
+
+/** 실제 CSS 규칙에 따른 paint order 근사:
+ *  음수 z-index → 블록 → 스택 컨텍스트 없는 인라인 → z-index:0/auto 스택 컨텍스트 → 양수 z-index */
+function paintOrder() {
+  return els.map((e, i) => {
+    const sc = creates(e);
+    const z = e.props.zindex ? 2 : 0;
+    // 정렬 키: (z, 스택컨텍스트 여부, DOM 순서)
+    return { e, i, z, sc, key: [z, sc.length ? 1 : 0, i] };
+  }).sort((a, b) =>
+    a.key[0] - b.key[0] || a.key[1] - b.key[1] || a.key[2] - b.key[2]);
+}
+
+function render(animate = true) {
+  // 캔버스
+  canvas.textContent = '';
+  const order = paintOrder();
+  order.forEach((o, paintIdx) => {
+    const e = o.e;
+    const d = document.createElement('div');
+    d.className = 'el' + (els[selected] === e ? ' sel' : '');
+    d.style.cssText =
+      `left:${e.x}px;top:${e.y}px;width:${e.w}px;height:${e.h}px;background:${e.color};` +
+      `z-index:${paintIdx + 1};` +
+      (e.props.opacity ? 'opacity:.85;' : '') +
+      (e.props.transform ? 'transform:translateZ(0) rotate(-1.5deg);' : '') +
+      (e.props.filter ? 'filter:blur(0px);' : '');
+    d.innerHTML = `${e.name}<span class="badge">#${paintIdx + 1}</span>`;
+    d.onclick = () => { selected = els.indexOf(e); render(); };
+    canvas.appendChild(d);
+    e.node = d;
+  });
+
+  // 순서 목록
+  orderUl.innerHTML = order.map((o, i) => {
+    const sc = o.sc;
+    const why = o.e.props.zindex ? 'z-index: 2'
+              : sc.length ? sc[0] + ' → 스택 컨텍스트'
+              : 'DOM 순서';
+    return `<li data-n="${o.e.name}"><span class="idx">${i + 1}</span>
+      <span class="sw" style="background:${o.e.color}"></span>
+      <b>${o.e.name}</b><span class="why">${why}</span></li>`;
+  }).join('');
+
+  const moved = order.filter((o, i) => o.i !== i).length;
+  document.getElementById('orderNote').innerHTML = moved
+    ? `<b>${moved}개</b>가 DOM 순서와 다른 자리에 그려진다.`
+    : 'DOM 순서 그대로 그려진다. 속성을 켜면 재배열된다.';
+
+  document.getElementById('selTag').textContent = '선택: ' + els[selected].name;
+  for (const b of document.querySelectorAll('[data-p]'))
+    b.dataset.on = els[selected].props[b.dataset.p] ? '1' : '0';
+}
+
+for (const b of document.querySelectorAll('[data-p]')) {
+  b.onclick = () => {
+    const e = els[selected];
+    e.props[b.dataset.p] = !e.props[b.dataset.p];
+    render();
+  };
+}
+document.getElementById('reset').onclick = () => {
+  for (const e of els) e.props = { zindex:false, opacity:false, transform:false, filter:false };
+  render();
+};
+
+// paint phase 순회 애니메이션
+const phs = [...document.querySelectorAll('.ph')];
+let cycling = false;
+document.getElementById('cycle').onclick = e => {
+  cycling = !cycling; e.target.dataset.on = cycling ? '1' : '0';
+  (async function loop() {
+    while (cycling) {
+      for (const p of phs) {
+        phs.forEach(q => q.classList.toggle('on', q === p));
+        // 해당 phase 에서 요소들을 순서대로 훑는다
+        const order = paintOrder();
+        for (const o of order) {
+          if (!cycling) break;
+          o.e.node?.classList.add('sel');
+          await new Promise(r => setTimeout(r, 55));
+          o.e.node?.classList.remove('sel');
+        }
+      }
+    }
+    phs.forEach(q => q.classList.remove('on'));
+    render();
+  })();
+};
+
+window.__DEMO = {
+  set: (name, prop) => { selected = els.findIndex(e => e.name === name); els[selected].props[prop] = true; render(); },
+  cycle: () => document.getElementById('cycle').click(),
+};
+
+render();
+mountFooter('05', 'A1 · paint 단계와 stacking order', '../../experiments/track-a/a1-pipeline-skip/RESULTS.md');
+</script>
+</body>
+</html>
