@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>08 · 렌더 스킵 뷰어</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  .split{display:grid;grid-template-columns:1fr 330px;gap:14px}
+  @media (max-width:900px){.split{grid-template-columns:1fr}}
+  #viewport{height:520px;overflow-y:auto;background:var(--stage);
+            border:1px solid var(--line);border-radius:10px;padding:10px;position:relative}
+  .item{border:1px solid var(--line);border-radius:7px;background:var(--panel);
+        padding:10px 12px;margin-bottom:8px;position:relative}
+  .item h4{margin:0 0 5px;font-size:14px}
+  .item p{margin:0 0 6px;font-size:12.5px;color:var(--muted)}
+  .item .row{display:flex;gap:6px;flex-wrap:wrap}
+  .item .chip{font:10.5px var(--mono);border:1px solid var(--line);border-radius:99px;padding:1px 7px;color:var(--muted)}
+  .item .flag{position:absolute;right:9px;top:9px;font:9.5px var(--mono);
+              border-radius:99px;padding:1px 8px;letter-spacing:.03em}
+  .item.rendered .flag{background:var(--good);color:#fff}
+  .item.skipped  .flag{background:var(--muted);color:var(--bg);opacity:.75}
+  /* content-visibility 가 켜지면 화면 밖 항목의 '안쪽'을 렌더하지 않는다 */
+  #viewport.cv .item{content-visibility:auto;contain-intrinsic-size:auto 108px}
+  #viewport.cvbad .item{content-visibility:auto}
+
+  .minimap{position:relative;width:100%;height:340px;background:var(--stage);
+           border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .mm-item{position:absolute;left:6px;right:6px;border-radius:2px;background:var(--line)}
+  .mm-item.rendered{background:var(--good)}
+  .mm-vp{position:absolute;left:0;right:0;border:2px solid var(--accent);border-radius:3px;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 08</span>
+  <h1>렌더 스킵 뷰어 — 화면 밖은 정말 건너뛰는가</h1>
+  <p>스크롤하면 어느 항목이 <b>실제로 렌더됐는지</b> 실시간으로 표시된다.
+     판정은 추측이 아니라 <code>contentVisibilityAutoStateChange</code> 이벤트와
+     <code>checkVisibility()</code> 로 브라우저에 직접 물어본 값이다.
+     비용 스케일링은 <a href="../../experiments/track-a/a4-content-visibility/RESULTS.md">A4 실험</a>.</p>
+</header>
+
+<div class="controls">
+  <button data-m="plain" data-on="1">끄기</button>
+  <button data-m="cv">content-visibility: auto</button>
+  <button data-m="cvbad">intrinsic-size 없이</button>
+  <div class="sep"></div>
+  <label>항목 <input type="number" id="n" value="400" min="50" max="4000" step="50" style="width:78px"></label>
+  <button id="auto" class="primary">자동 스크롤</button>
+</div>
+
+<div class="split">
+  <div id="viewport"></div>
+
+  <div>
+    <div class="card" style="margin-bottom:12px">
+      <h2>지금 상태</h2>
+      <div class="grid2" style="gap:10px">
+        <div class="metric"><div class="k">전체 항목</div><div class="v" id="mAll">—</div></div>
+        <div class="metric"><div class="k">렌더된 항목</div><div class="v" id="mRen" style="color:var(--good)">—</div></div>
+      </div>
+      <div class="grid2" style="gap:10px;margin-top:10px">
+        <div class="metric"><div class="k">scrollHeight</div><div class="v" id="mSh" style="font-size:19px">—</div></div>
+        <div class="metric"><div class="k">오차</div><div class="v" id="mErr" style="font-size:19px">—</div></div>
+      </div>
+      <p class="note" id="note">—</p>
+    </div>
+
+    <div class="card">
+      <h2>미니맵 — 초록이 렌더된 구간</h2>
+      <div class="minimap" id="mm"></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <h2>A4 실측 — 비용은 줄지만 O(N) 은 그대로다</h2>
+  <table>
+    <thead><tr><th>N</th><th>plain Layout/회</th><th>cv-auto Layout/회</th><th>절감</th></tr></thead>
+    <tbody>
+      <tr><td>100</td><td class="num">1.01 ms</td><td class="num">0.47 ms</td><td class="num">54%</td></tr>
+      <tr><td>500</td><td class="num">4.89 ms</td><td class="num">0.78 ms</td><td class="num">84%</td></tr>
+      <tr><td>2,000</td><td class="num">18.55 ms</td><td class="num">2.58 ms</td><td class="num">86%</td></tr>
+      <tr><td>8,000</td><td class="num">78.50 ms</td><td class="num">10.00 ms</td><td class="num" style="color:var(--good);font-weight:700">87%</td></tr>
+    </tbody>
+  </table>
+  <p class="note">N이 80배 늘 때 plain 은 78.1배, cv-auto 는 <b>21.4배</b>. 차수는 그대로고 기울기만 바뀐다 —
+     요소 상자는 여전히 레이아웃되고 <b>서브트리만</b> 건너뛰기 때문. 그리고 화면 밖 <b>Paint 는 원래도 컬링</b>되고 있어
+     실제 Paint 절감은 14%뿐이다.</p>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter } from '../lib/demo.js';
+
+const vp = document.getElementById('viewport'), mm = document.getElementById('mm');
+let mode = 'plain', N = 400, items = [];
+
+const WORDS = '렌더링 파이프라인 레이아웃 페인트 합성 타일 래스터 프로퍼티 트리 display list paint chunk compositor'.split(' ');
+const txt = (s, k) => Array.from({ length: k }, (_, i) => WORDS[(s * 7 + i * 3) % WORDS.length]).join(' ');
+
+function build() {
+  N = Math.max(50, Math.min(4000, +document.getElementById('n').value || 400));
+  vp.className = mode === 'plain' ? '' : mode;
+  vp.textContent = '';
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < N; i++) {
+    const el = document.createElement('div');
+    el.className = 'item';
+    el.innerHTML = `<span class="flag">—</span><h4>항목 ${i}</h4><p>${txt(i, 12)}</p>
+      <div class="row"><span class="chip">${txt(i + 1, 2)}</span><span class="chip">${txt(i + 2, 2)}</span></div>`;
+    frag.appendChild(el);
+  }
+  vp.appendChild(frag);
+  items = [...vp.children];
+  buildMinimap();
+  update();
+}
+
+function buildMinimap() {
+  mm.textContent = '';
+  const h = mm.clientHeight - 4, per = h / N;
+  for (let i = 0; i < N; i++) {
+    const d = document.createElement('div');
+    d.className = 'mm-item';
+    d.style.cssText = `top:${(2 + i * per).toFixed(2)}px;height:${Math.max(1, per - .6).toFixed(2)}px`;
+    mm.appendChild(d);
+  }
+  const v = document.createElement('div');
+  v.className = 'mm-vp'; v.id = 'mmvp';
+  mm.appendChild(v);
+}
+
+function update() {
+  const top = vp.scrollTop, bot = top + vp.clientHeight;
+  let rendered = 0;
+  const mmKids = mm.querySelectorAll('.mm-item');
+
+  items.forEach((el, i) => {
+    // 브라우저에 직접 묻는다: 렌더를 건너뛴 상태인가?
+    const skipped = el.checkVisibility
+      ? !el.checkVisibility({ contentVisibilityAuto: true, visibilityProperty: true })
+      : false;
+    // content-visibility 를 안 쓰면 '화면 안인지'로만 표시
+    const inView = el.offsetTop + el.offsetHeight > top && el.offsetTop < bot;
+    const isRendered = mode === 'plain' ? true : !skipped;
+    el.classList.toggle('rendered', isRendered);
+    el.classList.toggle('skipped', !isRendered);
+    const f = el.querySelector('.flag');
+    if (f) f.textContent = mode === 'plain' ? (inView ? '화면 안' : '렌더됨') : (isRendered ? '렌더됨' : '건너뜀');
+    if (isRendered) rendered++;
+    mmKids[i]?.classList.toggle('rendered', isRendered);
+  });
+
+  const mv = document.getElementById('mmvp');
+  if (mv) {
+    const total = vp.scrollHeight || 1, mh = mm.clientHeight - 4;
+    mv.style.top = (2 + (top / total) * mh).toFixed(1) + 'px';
+    mv.style.height = Math.max(6, (vp.clientHeight / total) * mh).toFixed(1) + 'px';
+  }
+
+  const sh = vp.scrollHeight;
+  document.getElementById('mAll').textContent = N;
+  document.getElementById('mRen').textContent = rendered;
+  document.getElementById('mSh').textContent = sh.toLocaleString();
+  if (mode === 'plain') { trueHeight = sh; }
+  const err = trueHeight ? ((sh - trueHeight) / trueHeight) * 100 : 0;
+  const errEl = document.getElementById('mErr');
+  errEl.textContent = (err >= 0 ? '+' : '') + err.toFixed(0) + '%';
+  errEl.style.color = Math.abs(err) > 5 ? 'var(--accent)' : 'var(--muted)';
+
+  document.getElementById('note').innerHTML =
+    mode === 'plain'
+      ? `<b>전부 렌더된다.</b> 화면 밖 ${N - items.filter(e => e.offsetTop + e.offsetHeight > top && e.offsetTop < bot).length}개도 레이아웃 대상이다.`
+      : mode === 'cv'
+        ? `${N}개 중 <b>${rendered}개</b>만 렌더된다. 나머지는 <code>contain-intrinsic-size</code> 로 자리만 잡는다.`
+        : `<code>contain-intrinsic-size</code> 가 없어 건너뛴 항목 높이가 <b>0</b>이 된다 →
+           문서가 쪼그라들고 스크롤바가 망가진다.`;
+}
+let trueHeight = 0;
+
+vp.addEventListener('scroll', update, { passive: true });
+for (const b of document.querySelectorAll('[data-m]')) {
+  b.onclick = () => {
+    mode = b.dataset.m;
+    for (const o of document.querySelectorAll('[data-m]')) o.dataset.on = o === b ? '1' : '0';
+    build();
+  };
+}
+document.getElementById('n').onchange = build;
+
+let playing = false;
+document.getElementById('auto').onclick = e => {
+  playing = !playing; e.target.dataset.on = playing ? '1' : '0';
+  let dir = 1;
+  (function loop() {
+    if (!playing) return;
+    vp.scrollTop += dir * 9;
+    if (vp.scrollTop + vp.clientHeight >= vp.scrollHeight - 2) dir = -1;
+    else if (vp.scrollTop <= 0) dir = 1;
+    requestAnimationFrame(loop);
+  })();
+};
+
+window.__DEMO = { setMode: m => { mode = m; build(); }, auto: () => document.getElementById('auto').click(),
+                  scrollTo: y => { vp.scrollTop = y; update(); } };
+
+build();
+mountFooter('08', 'A4 · content-visibility', '../../experiments/track-a/a4-content-visibility/RESULTS.md');
+</script>
+</body>
+</html>
