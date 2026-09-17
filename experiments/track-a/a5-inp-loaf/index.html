@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>A5 · INP와 LoAF</title>
+<style>
+  :root {
+    --bg:#fbfaf8; --panel:#fff; --ink:#1a1a1a; --muted:#6b6b6b; --line:#e3e0da;
+    --accent:#b4401f; --good:#1f7a4d;
+    --mono: ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#14130f; --panel:#1d1b17; --ink:#eeebe4; --muted:#9a958a;
+      --line:#322e28; --accent:#e8794f; --good:#4fbd86;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); padding:0 16px 48px;
+         font:15px/1.5 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif; }
+  .wrap { max-width:860px; margin:0 auto; }
+  header { padding:20px 0 12px; border-bottom:1px solid var(--line); margin-bottom:12px; }
+  h1 { margin:0 0 4px; font-size:19px; }
+  header p { margin:0; color:var(--muted); font-size:14px; }
+  .controls { display:flex; flex-wrap:wrap; gap:8px; padding:10px; background:var(--panel);
+              border:1px solid var(--line); border-radius:8px; margin-bottom:10px; }
+  button { font:inherit; font-size:13px; padding:6px 11px; border-radius:6px;
+           border:1px solid var(--line); background:var(--panel); color:var(--ink); cursor:pointer; }
+  button[data-on="1"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+  #target { width:100%; padding:22px; font-size:16px; font-weight:600;
+            background:var(--accent); color:#fff; border:none; border-radius:8px; }
+  #out { font:12px/1.7 var(--mono); color:var(--muted); white-space:pre-wrap;
+         padding:10px; background:var(--panel); border:1px solid var(--line);
+         border-radius:8px; margin-top:10px; max-height:260px; overflow:auto; }
+  /* 클릭할 때마다 실제로 화면이 바뀌어야 INP 가 '다음 페인트'까지 잰다 */
+  #paintProof { height:28px; margin-top:10px; border-radius:6px; background:var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>A5 · INP와 LoAF</h1>
+  <p>같은 양의 작업을 <b>어떻게 처리하느냐</b>에 따라 INP가 얼마나 달라지는가.</p>
+</header>
+
+<div class="controls" id="ctl"></div>
+<button id="target">클릭 대상</button>
+<div id="paintProof"></div>
+<div id="out">대기 중…</div>
+
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const out = document.getElementById('out');
+  const target = document.getElementById('target');
+  const proof = document.getElementById('paintProof');
+
+  let strategy = 'sync';
+  let WORK_MS = 200;      // 클릭당 총 작업량
+  let CHUNK_MS = 5;       // 양보 전략의 청크 크기
+  let worker = null;
+  let hue = 0;
+
+  const busy = ms => { const t = performance.now(); while (performance.now() - t < ms); };
+
+  function yieldToMain() {
+    if (globalThis.scheduler?.yield) return scheduler.yield();
+    return new Promise(r => setTimeout(r, 0));
+  }
+
+  /** 화면을 실제로 바꿔야 INP 가 '다음 페인트'를 기다린다 */
+  let clickAt = 0;
+  const visualUpdates = [];   // 클릭 → 결과가 화면에 그려질 때까지 (사용자가 실제로 기다리는 시간)
+  const repaint = () => {
+    hue = (hue + 37) % 360;
+    proof.style.background = `hsl(${hue} 60% 55%)`;
+    const t0 = clickAt;
+    // 다음 프레임이 화면에 반영된 시점을 기록
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (t0) visualUpdates.push(+(performance.now() - t0).toFixed(1));
+    }));
+  };
+
+  const STRATEGIES = {
+    // 핸들러 안에서 작업을 통째로 처리 — 강의 02의 '즉시 렌더'
+    'sync': () => { busy(WORK_MS); repaint(); },
+
+    // CHUNK_MS 마다 메인 스레드를 양보 — 강의 02의 '양보 렌더'
+    'yield': async () => {
+      let left = WORK_MS;
+      while (left > 0) { const c = Math.min(CHUNK_MS, left); busy(c); left -= c; await yieldToMain(); }
+      repaint();
+    },
+
+    // 화면부터 먼저 바꾸고 작업은 뒤로 미룬다
+    'paint-first': async () => {
+      repaint();
+      await yieldToMain();
+      busy(WORK_MS);
+    },
+
+    // 두 가지를 합친 것: 화면부터 갱신하고 + 작업은 잘게 쪼개 양보
+    'paint-first+yield': async () => {
+      repaint();
+      let left = WORK_MS;
+      while (left > 0) { const c = Math.min(CHUNK_MS, left); busy(c); left -= c; await yieldToMain(); }
+    },
+
+    // 계산을 워커로 보낸다 — 메인 스레드는 거의 쓰지 않는다
+    'worker': async () => {
+      if (!worker) {
+        const src = `onmessage = e => { const t = performance.now();
+          while (performance.now() - t < e.data); postMessage('done'); };`;
+        worker = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+      }
+      repaint();
+      worker.postMessage(WORK_MS);
+      await new Promise(r => { worker.onmessage = r; });
+    },
+  };
+
+  target.addEventListener('click', () => { clickAt = performance.now(); STRATEGIES[strategy](); });
+
+  // ── 계측 ──────────────────────────────────────────
+  const events = [];   // event timing (INP 후보)
+  const loafs = [];    // long animation frames
+
+  if (PerformanceObserver.supportedEntryTypes.includes('event')) {
+    new PerformanceObserver(list => {
+      for (const e of list.getEntries()) {
+        if (e.name !== 'click') continue;
+        events.push({
+          duration: +e.duration.toFixed(1),                       // = INP 후보값
+          inputDelay: +(e.processingStart - e.startTime).toFixed(1),
+          processing: +(e.processingEnd - e.processingStart).toFixed(1),
+          presentationDelay: +(e.startTime + e.duration - e.processingEnd).toFixed(1),
+        });
+      }
+      render();
+    }).observe({ type: 'event', durationThreshold: 16, buffered: true });
+  }
+
+  if (PerformanceObserver.supportedEntryTypes.includes('long-animation-frame')) {
+    new PerformanceObserver(list => {
+      for (const e of list.getEntries()) {
+        const end = e.startTime + e.duration;
+        loafs.push({
+          duration: +e.duration.toFixed(1),
+          blocking: +(e.blockingDuration ?? 0).toFixed(1),
+          renderMs: e.renderStart ? +(end - e.renderStart).toFixed(1) : 0,
+          styleLayoutMs: e.styleAndLayoutStart ? +(end - e.styleAndLayoutStart).toFixed(1) : 0,
+          scripts: (e.scripts || []).length,
+        });
+      }
+      render();
+    }).observe({ type: 'long-animation-frame', buffered: true });
+  }
+
+  const p = (arr, q) => {
+    if (!arr.length) return 0;
+    const s = [...arr].sort((a, b) => a - b);
+    return +s[Math.min(s.length - 1, Math.floor(s.length * q))].toFixed(1);
+  };
+
+  function summary() {
+    const d = events.map(e => e.duration);
+    return {
+      strategy, workMs: WORK_MS, chunkMs: CHUNK_MS,
+      clicks: events.length,
+      inp_p75: p(d, 0.75), inp_p98: p(d, 0.98), inp_max: d.length ? Math.max(...d) : 0,
+      inputDelay_p75: p(events.map(e => e.inputDelay), 0.75),
+      processing_p75: p(events.map(e => e.processing), 0.75),
+      presentation_p75: p(events.map(e => e.presentationDelay), 0.75),
+      loafCount: loafs.length,
+      loafBlocking_total: +loafs.reduce((a, b) => a + b.blocking, 0).toFixed(1),
+      loafDuration_max: loafs.length ? Math.max(...loafs.map(l => l.duration)) : 0,
+      loafStyleLayout_total: +loafs.reduce((a, b) => a + b.styleLayoutMs, 0).toFixed(1),
+      visualUpdates: visualUpdates.length,
+      visualUpdate_p75: p(visualUpdates, 0.75),
+      visualUpdate_max: visualUpdates.length ? Math.max(...visualUpdates) : 0,
+    };
+  }
+
+  function render() {
+    const s = summary();
+    out.textContent = Object.entries(s).map(([k, v]) => `${k.padEnd(22)} ${v}`).join('\n');
+  }
+
+  const ctl = document.getElementById('ctl');
+  for (const name of Object.keys(STRATEGIES)) {
+    const b = document.createElement('button');
+    b.textContent = name; b.dataset.s = name;
+    b.onclick = () => { strategy = name; reset(); };
+    ctl.appendChild(b);
+  }
+
+  function reset() {
+    events.length = 0; loafs.length = 0; visualUpdates.length = 0; clickAt = 0;
+    for (const b of ctl.querySelectorAll('button')) b.dataset.on = b.dataset.s === strategy ? '1' : '0';
+    render();
+  }
+
+  window.__A5 = {
+    setStrategy: s => { if (!(s in STRATEGIES)) throw new Error('알 수 없는 전략: ' + s);
+                        strategy = s; reset(); },
+    setWork: (ms, chunk) => { WORK_MS = ms; if (chunk) CHUNK_MS = chunk; reset(); },
+    strategies: () => Object.keys(STRATEGIES),
+    reset,
+    summary,
+    raw: () => ({ events, loafs }),
+    supportsYield: () => !!globalThis.scheduler?.yield,
+  };
+
+  reset();
+})();
+</script>
+</body>
+</html>
