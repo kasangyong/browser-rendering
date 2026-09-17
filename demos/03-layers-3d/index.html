@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 · 레이어 3D 분해</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  #scene{height:500px;perspective:1700px;perspective-origin:50% 46%;
+         background:var(--stage);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+         display:flex;align-items:center;justify-content:center}
+  #stack{position:relative;width:430px;height:200px;transform-style:preserve-3d;
+         transition:transform .6s cubic-bezier(.22,.8,.3,1)}
+  .layer{position:absolute;inset:0;border-radius:8px;transform-style:preserve-3d;
+         transition:transform .7s cubic-bezier(.22,.8,.3,1), opacity .4s;
+         border:1.5px solid rgba(120,120,120,.45);
+         background:rgba(255,255,255,.055);
+         backdrop-filter:none;}
+  .layer .cap{position:absolute;left:8px;top:6px;font:10.5px var(--mono);
+              color:var(--muted);white-space:nowrap}
+  .layer .chip{position:absolute;border-radius:5px;font:9.5px/16px var(--mono);
+               color:#fff;text-align:center;height:16px}
+  .layer.promoted{border-color:var(--good);background:rgba(31,122,77,.10)}
+  .layer.squash{border-color:var(--cool);background:rgba(60,110,180,.10)}
+  .layer.root{border-color:var(--muted);background:rgba(120,120,120,.08)}
+
+  .countrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .pill{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);
+        border-radius:10px;padding:11px 13px}
+  .pill .k{font:600 10px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .pill .v{font:700 26px/1.15 var(--mono);font-variant-numeric:tabular-nums}
+  .pill.hot .v{color:var(--accent)}
+  .pill.good .v{color:var(--good)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 03</span>
+  <h1>레이어 3D 분해 — 순서만 바꿨는데 레이어가 갈라진다</h1>
+  <p>승격된 요소(P)와 평범한 요소(d)를 <b>번갈아</b> 두느냐 <b>묶어서</b> 두느냐.
+     요소 종류·개수·좌표가 완전히 같아도 합성 레이어 수가 달라진다.
+     실측은 <a href="../../experiments/track-a/a3-paint-chunks/RESULTS.md">A3 실험</a>.</p>
+</header>
+
+<div class="controls">
+  <button data-k="interleaved" data-on="1">번갈아  P d P d P d…</button>
+  <button data-k="grouped">묶음  P P P … d d d</button>
+  <div class="sep"></div>
+  <label>기울기 <input type="range" id="tilt" min="0" max="70" value="46" style="width:120px"></label>
+  <label>간격 <input type="range" id="gap" min="6" max="70" value="26" style="width:120px"></label>
+  <div class="sep"></div>
+  <button id="spin" class="ghost">회전</button>
+</div>
+
+<div id="scene"><div id="stack"></div></div>
+
+<div class="countrow">
+  <div class="pill"><div class="k">요소</div><div class="v" id="pEl">20</div></div>
+  <div class="pill good"><div class="k">WillChangeTransform</div><div class="v" id="pWc">10</div></div>
+  <div class="pill hot"><div class="k">Overlap 사유</div><div class="v" id="pOv">10</div></div>
+  <div class="pill"><div class="k">합성 레이어 (A3 실측)</div><div class="v" id="pLy">24</div></div>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <h2>왜 이렇게 되는가</h2>
+  <div class="grid2">
+    <div>
+      <p class="note" style="margin-top:0"><b>번갈아</b> — <code>d₁</code> 은 <code>P₀</code> 위, <code>P₂</code> 아래에 와야 한다.
+      아래로 병합할 수도, 다른 <code>d</code> 와 합칠 수도 없다(사이에 <code>P₂</code> 가 낀다).
+      결국 <b>자기 레이어를 가질 수밖에 없다</b> — 10개 전부.</p>
+    </div>
+    <div>
+      <p class="note" style="margin-top:0"><b>묶음</b> — <code>d</code> 10개가 <b>연속</b>이고 property state 가 같으니
+      하나의 squashing 레이어로 병합된다. <code>Overlap</code> 사유가 10개가 아니라 <b>1개</b>다.</p>
+    </div>
+  </div>
+  <p class="note">산술이 정확히 닫힌다 —
+     <code>번갈아 = 4(기본) + 10(WillChange) + 10(Overlap) = 24</code> ·
+     <code>묶음 = 4 + 10 + 1 = 15</code>. 차이 9개가 Overlap 사유 차이와 일치한다.</p>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter } from '../lib/demo.js';
+
+const stack = document.getElementById('stack');
+const tilt = document.getElementById('tilt'), gapR = document.getElementById('gap');
+let mode = 'interleaved', spinning = false, spin = 0;
+
+// A3 실측
+const DATA = {
+  interleaved: { layers: 24, overlap: 10, wc: 10 },
+  grouped:     { layers: 15, overlap: 1,  wc: 10 },
+};
+
+function build() {
+  const d = DATA[mode];
+  stack.textContent = '';
+
+  // 레이어 스택 구성: 기본 4 + 승격 10 + Overlap N
+  const defs = [];
+  defs.push({ cls:'root', cap:'root / scroll / viewport (기본 4개)', chips:[] });
+  if (mode === 'interleaved') {
+    for (let i = 0; i < 10; i++) {
+      defs.push({ cls:'promoted', cap:`P${i} · WillChangeTransform`, chips:[{x:10+i*3,c:'var(--good)',t:'P'+i}] });
+      defs.push({ cls:'squash',   cap:`d${i} · Overlap`,             chips:[{x:16+i*3,c:'var(--cool)',t:'d'+i}] });
+    }
+  } else {
+    for (let i = 0; i < 10; i++)
+      defs.push({ cls:'promoted', cap:`P${i} · WillChangeTransform`, chips:[{x:10+i*3,c:'var(--good)',t:'P'+i}] });
+    defs.push({ cls:'squash', cap:'d0–d9 · Overlap ×1 (squashing 하나로 병합)',
+                chips:Array.from({length:10},(_,i)=>({x:16+i*3,c:'var(--cool)',t:'d'+i})) });
+  }
+
+  defs.forEach((def, i) => {
+    const el = document.createElement('div');
+    el.className = 'layer ' + def.cls;
+    el.dataset.i = i;
+    el.innerHTML = `<div class="cap">${def.cap}</div>` +
+      def.chips.map(c => `<div class="chip" style="left:${c.x}%;top:${38 + (c.x % 7) * 6}%;width:34px;background:${c.c}">${c.t}</div>`).join('');
+    stack.appendChild(el);
+  });
+
+  document.getElementById('pEl').textContent = '20';
+  document.getElementById('pWc').textContent = d.wc;
+  document.getElementById('pOv').textContent = d.overlap;
+  document.getElementById('pLy').textContent = d.layers;
+  layout();
+}
+
+function layout() {
+  const g = +gapR.value;
+  [...stack.children].forEach((el, i) => {
+    el.style.transform = `translateZ(${i * g - (stack.children.length * g) / 2}px)`;
+  });
+  stack.style.transform = `rotateX(${tilt.value}deg) rotateZ(${spin}deg)`;
+}
+
+for (const b of document.querySelectorAll('[data-k]')) {
+  b.onclick = () => {
+    mode = b.dataset.k;
+    for (const o of document.querySelectorAll('[data-k]')) o.dataset.on = o === b ? '1' : '0';
+    build();
+  };
+}
+tilt.oninput = gapR.oninput = layout;
+document.getElementById('spin').onclick = e => {
+  spinning = !spinning; e.target.dataset.on = spinning ? '1' : '0';
+  (function loop() { if (!spinning) return; spin = (spin + .35) % 360; layout(); requestAnimationFrame(loop); })();
+};
+
+window.__DEMO = { setMode: m => { mode = m; build(); }, spin: () => document.getElementById('spin').click() };
+
+build();
+mountFooter('03', 'A3 · paint chunk 경계와 레이어화', '../../experiments/track-a/a3-paint-chunks/RESULTS.md');
+</script>
+</body>
+</html>
