@@ -10,6 +10,13 @@
 
 **내가 틀린 것 4개** · 폐기한 측정법 **4개**
 
+### ▶ [**데모 10개 지금 바로 실행하기**](https://kasangyong.github.io/browser-rendering/demos/)
+
+[![데모](https://img.shields.io/badge/%E2%96%B6%20%EB%8D%B0%EB%AA%A8%2010%EA%B0%9C-%EC%8B%A4%ED%96%89-2f6f4e?style=for-the-badge)](https://kasangyong.github.io/browser-rendering/demos/)
+[![대시보드](https://img.shields.io/badge/%F0%9F%93%8A%20%EC%8B%A4%EC%B8%A1%20%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EC%97%B4%EA%B8%B0-3b5b8c?style=for-the-badge)](https://kasangyong.github.io/browser-rendering/report/)
+
+설치 없이 브라우저에서 바로 열린다.
+
 </div>
 
 ---
@@ -99,10 +106,11 @@
 **전부 움직이고 조작할 수 있다.** 의존성 없는 단일 HTML 파일이고, 표시되는 숫자는
 아래 실험에서 **직접 측정한 값**이다. 각 데모 하단에 근거 실험 링크가 붙어 있다.
 
-> 📂 **[demos/](demos/)** — 저장소를 받아 `python -m http.server` 로 열면 전부 동작한다.
+> ▶ **[지금 바로 열기](https://kasangyong.github.io/browser-rendering/demos/)** — 설치 없이 동작한다.
+> 📂 소스는 [demos/](demos/) 에 있다. 받아서 `python -m http.server` 로 열어도 똑같다.
 
 <div align="center">
-  <a href="demos/"><img src="report/images/demos-index.png" width="100%" alt="데모 10선 목록"></a>
+  <a href="https://kasangyong.github.io/browser-rendering/demos/"><img src="report/images/demos-index.png" width="100%" alt="데모 10선 목록"></a>
 </div>
 
 ### 움직이는 것들
@@ -111,7 +119,7 @@
 <tr>
 <td width="50%" valign="top">
 
-**01 · 파이프라인 라이브**
+**[01 · 파이프라인 라이브](https://kasangyong.github.io/browser-rendering/demos/01-pipeline/)** ▶
 CSS 속성을 바꾸면 **어느 단계가 실제로 일하는지** 달라진다.
 테두리가 켜진 단계 = 일하는 단계, 흐린 단계 = 호출되지만 할 일 없음.
 
@@ -120,7 +128,7 @@ CSS 속성을 바꾸면 **어느 단계가 실제로 일하는지** 달라진다
 </td>
 <td width="50%" valign="top">
 
-**02 · 스레드 레이스**
+**[02 · 스레드 레이스](https://kasangyong.github.io/browser-rendering/demos/02-thread-race/)** ▶
 메인 스레드를 점유하면 `left` 는 멈추고 `transform` 은 계속 간다.
 아래 스트립차트는 **실제 프레임 간격** — 막힌 구간이 봉우리로 남는다.
 
@@ -131,7 +139,7 @@ CSS 속성을 바꾸면 **어느 단계가 실제로 일하는지** 달라진다
 <tr>
 <td width="50%" valign="top">
 
-**03 · 레이어 3D 분해**
+**[03 · 레이어 3D 분해](https://kasangyong.github.io/browser-rendering/demos/03-layers-3d/)** ▶
 DOM 순서만 바꾸면 레이어가 **24개 → 15개**로 갈라졌다 합쳐진다.
 초록 = 승격된 레이어, 파랑 = `Overlap` 때문에 생긴 레이어.
 
@@ -140,7 +148,7 @@ DOM 순서만 바꾸면 레이어가 **24개 → 15개**로 갈라졌다 합쳐�
 </td>
 <td width="50%" valign="top">
 
-**04 · 타일과 뷰포트**
+**[04 · 타일과 뷰포트](https://kasangyong.github.io/browser-rendering/demos/04-tiles/)** ▶
 레이어는 통째로 래스터되지 않는다. 스크롤에 따라
 초록(래스터됨) → 주황(선행) → 회색(버림) 으로 바뀐다.
 
@@ -154,12 +162,12 @@ DOM 순서만 바꾸면 레이어가 **24개 → 15개**로 갈라졌다 합쳐�
 
 | 데모 | 무엇을 보여주나 | 근거 |
 |---|---|---|
-| [**05 · paint order**](demos/05-paint-order/) | 요소를 고르고 `z-index`·`opacity`·`transform` 을 켜면 **그리는 순서가 재배열**된다. paint phase 4단계 순회도 애니메이션으로 | A1 |
-| [**06 · 강제 동기 레이아웃**](demos/06-thrash/) | 읽기·쓰기를 번갈아 하면 매번 레이아웃이 강제된다. **실제로 측정한** 작업 순서를 타임라인으로 | — |
-| [**07 · 프레임 예산**](demos/07-frame-budget/) | 요소 수를 올리면 막대가 **마감선을 넘고** 프레임이 죽는다. 단계별 비용은 Track A 실측값 | A1·A1b·A4 |
-| [**08 · 렌더 스킵 뷰어**](demos/08-render-skip/) | 화면 밖 항목이 정말 건너뛰어지는지 **브라우저에 직접 물어본다**(`checkVisibility`) | A4 |
-| [**09 · INP 분해 실험실**](demos/09-inp-lab/) | 클릭하면 input delay / processing / presentation 이 막대로 쌓인다. **INP 와 실제 화면 갱신의 간극**이 핵심 | A5 |
-| [**10 · 무효화 전파**](demos/10-invalidation/) | 노드를 누르면 재계산이 트리에 번진다. `contain` 을 켜면 **경계에서 멈춘다** | Life of a Pixel |
+| [**05 · paint order**](https://kasangyong.github.io/browser-rendering/demos/05-paint-order/) | 요소를 고르고 `z-index`·`opacity`·`transform` 을 켜면 **그리는 순서가 재배열**된다. paint phase 4단계 순회도 애니메이션으로 | A1 |
+| [**06 · 강제 동기 레이아웃**](https://kasangyong.github.io/browser-rendering/demos/06-thrash/) | 읽기·쓰기를 번갈아 하면 매번 레이아웃이 강제된다. **실제로 측정한** 작업 순서를 타임라인으로 | — |
+| [**07 · 프레임 예산**](https://kasangyong.github.io/browser-rendering/demos/07-frame-budget/) | 요소 수를 올리면 막대가 **마감선을 넘고** 프레임이 죽는다. 단계별 비용은 Track A 실측값 | A1·A1b·A4 |
+| [**08 · 렌더 스킵 뷰어**](https://kasangyong.github.io/browser-rendering/demos/08-render-skip/) | 화면 밖 항목이 정말 건너뛰어지는지 **브라우저에 직접 물어본다**(`checkVisibility`) | A4 |
+| [**09 · INP 분해 실험실**](https://kasangyong.github.io/browser-rendering/demos/09-inp-lab/) | 클릭하면 input delay / processing / presentation 이 막대로 쌓인다. **INP 와 실제 화면 갱신의 간극**이 핵심 | A5 |
+| [**10 · 무효화 전파**](https://kasangyong.github.io/browser-rendering/demos/10-invalidation/) | 노드를 누르면 재계산이 트리에 번진다. `contain` 을 켜면 **경계에서 멈춘다** | Life of a Pixel |
 
 <div align="center">
   <img src="report/images/demo-07-frame-budget.png" width="49%" alt="프레임 예산">
