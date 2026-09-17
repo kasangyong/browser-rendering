@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>브라우저 렌더링 데모 10선</title>
+<link rel="stylesheet" href="lib/demo.css">
+<style>
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(322px,1fr));gap:14px}
+  a.dcard{display:block;text-decoration:none;color:inherit;background:var(--panel);
+          border:1px solid var(--line);border-radius:12px;padding:16px 17px;
+          transition:border-color .18s, transform .18s, box-shadow .18s}
+  a.dcard:hover{border-color:var(--accent);transform:translateY(-2px);
+                box-shadow:0 10px 26px -14px rgba(0,0,0,.4)}
+  a.dcard .no{font:700 10.5px var(--mono);letter-spacing:.14em;color:var(--accent)}
+  a.dcard h3{margin:6px 0 6px;font-size:16.5px;letter-spacing:-.01em}
+  a.dcard p{margin:0 0 11px;font-size:13px;color:var(--muted);line-height:1.55}
+  a.dcard .src{font:10.5px var(--mono);color:var(--muted);
+               border-top:1px solid var(--line);padding-top:9px}
+  .thumb{height:66px;border-radius:8px;margin-bottom:11px;position:relative;overflow:hidden;
+         background:var(--stage);border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">INTERACTIVE</span>
+  <h1>브라우저 렌더링 데모 10선</h1>
+  <p>전부 움직이고 조작할 수 있다. 숫자는 이 저장소에서 <b>직접 측정한 값</b>이고,
+     각 데모 아래에 근거 실험 링크가 붙어 있다. 의존성 없는 단일 HTML.</p>
+</header>
+
+<div class="cards" id="cards"></div>
+
+<div class="card" style="margin-top:18px">
+  <h2>이 데모들이 기대는 실측</h2>
+  <table>
+    <thead><tr><th>실험</th><th>핵심 결과</th></tr></thead>
+    <tbody>
+      <tr><td><a href="../experiments/track-a/a1-pipeline-skip/RESULTS.md">A1</a></td>
+          <td><code>InvalidateLayout</code> 497 → 0회 · 메인 1.5초 점유 중 Swap 360 vs 0</td></tr>
+      <tr><td><a href="../experiments/track-a/a1-pipeline-skip/RESULTS-b.md">A1b</a></td>
+          <td>승격 한계 없음 · <code>transform</code> 이득은 250~500개에서 최대</td></tr>
+      <tr><td><a href="../experiments/track-a/a2-gpu-memory/RESULTS-source.md">A2b</a></td>
+          <td>타일 = <code>roundUp(크기, 64)</code> · 예산 512MB</td></tr>
+      <tr><td><a href="../experiments/track-a/a3-paint-chunks/RESULTS.md">A3</a></td>
+          <td>DOM 순서만으로 레이어 24 → 15개</td></tr>
+      <tr><td><a href="../experiments/track-a/a4-content-visibility/RESULTS.md">A4</a></td>
+          <td>여전히 O(N) · Paint 는 원래도 컬링</td></tr>
+      <tr><td><a href="../experiments/track-a/a5-inp-loaf/RESULTS.md">A5</a></td>
+          <td>INP 는 "결과가 보이는 시점"이 아니다</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<script type="module">
+import { DEMO_LIST } from './lib/demo.js';
+
+const DESC = {
+  '01': ['CSS 속성 하나를 바꾸면 파이프라인의 어느 단계가 실제로 일하는지 달라진다. 프레임이 12단계를 흘러간다.', 'A1 · 단계별 이벤트 카운트'],
+  '02': ['같은 애니메이션, 다른 속성. 메인 스레드를 점유하면 한쪽만 멈춘다. 프레임 간격이 그래프에 그대로 남는다.', 'A1 · S4 스레드 오프로딩'],
+  '03': ['승격 요소와 평범한 요소를 번갈아 두느냐 묶느냐. 좌표가 같아도 레이어 수가 달라진다.', 'A3 · paint chunk 경계'],
+  '04': ['레이어는 통째로 래스터되지 않는다. 스크롤에 따라 어느 타일이 준비되고 버려지는지.', 'A2b · 타일 크기와 예산'],
+  '05': ['DOM 순서대로 그리지 않는다. 속성을 켜면 paint order 가 재배열된다.', 'A1 · stacking order'],
+  '06': ['읽기 한 줄이 프레임을 무너뜨린다. 실제로 측정한 작업 순서를 타임라인으로.', '강제 동기 레이아웃'],
+  '07': ['16.7ms 안에 다 못 넣으면 프레임이 죽는다. 요소 수를 올리면 마감선을 넘는다.', 'Track A 종합'],
+  '08': ['화면 밖은 정말 건너뛰는가. 브라우저에 직접 물어본 렌더 여부를 실시간 표시.', 'A4 · content-visibility'],
+  '09': ['지표가 좋다고 빠른 게 아니다. INP 와 실제 화면 갱신 시점이 얼마나 어긋나는지.', 'A5 · INP와 LoAF'],
+  '10': ['한 번의 변경이 트리에 번지는 모습. contain 을 켜면 경계에서 멈춘다.', 'Life of a Pixel · invalidation'],
+};
+
+document.getElementById('cards').innerHTML = DEMO_LIST.map(([no, title, dir]) => `
+  <a class="dcard" href="${dir}/">
+    <div class="thumb" id="th${no}"></div>
+    <div class="no">DEMO ${no}</div>
+    <h3>${title}</h3>
+    <p>${DESC[no][0]}</p>
+    <div class="src">근거 · ${DESC[no][1]}</div>
+  </a>`).join('');
+
+// 카드 썸네일에 작은 움직임을 넣는다
+const C = ['#b4401f','#1f7a4d','#3c6eb4','#a5761b','#7a4fb4'];
+DEMO_LIST.forEach(([no], i) => {
+  const th = document.getElementById('th' + no);
+  const n = 7;
+  th.innerHTML = Array.from({ length: n }, (_, k) => {
+    const c = C[(i + k) % C.length];
+    return `<div style="position:absolute;width:15px;height:15px;border-radius:4px;background:${c};
+      top:${9 + (k % 3) * 17}px;left:8px;
+      animation:th${no} ${1.6 + (k % 4) * .25}s linear ${-k * .17}s infinite alternate"></div>`;
+  }).join('');
+  const st = document.createElement('style');
+  st.textContent = `@keyframes th${no}{from{transform:translateX(0)}to{transform:translateX(${240 + i * 6}px)}}`;
+  document.head.appendChild(st);
+});
+</script>
+</body>
+</html>
