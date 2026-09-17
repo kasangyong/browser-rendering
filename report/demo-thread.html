@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>메인 스레드를 막으면 무슨 일이 일어나는가</title>
+<style>
+  :root{--bg:#14130f;--panel:#1d1b17;--ink:#eeebe4;--muted:#9a958a;--line:#322e28;
+        --left:#e8794f;--tf:#4fbd86;--mono:ui-monospace,"Cascadia Mono",Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);width:900px;padding:22px;
+       font:15px/1.5 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+  h1{margin:0 0 3px;font-size:20px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+
+  .panels{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+  .panel h2{margin:0 0 2px;font:600 15px var(--mono)}
+  .panel .why{font-size:12px;color:var(--muted);margin:0 0 10px;height:32px}
+  .track{position:relative;height:62px;background:#0e0d0a;border-radius:7px;overflow:hidden}
+  .dot{position:absolute;top:17px;width:28px;height:28px;border-radius:7px}
+
+  /* 왼쪽: left 애니메이션 — 매 프레임 레이아웃이 필요하다 */
+  #boxL{background:var(--left);left:0;animation:moveLeft 1.6s linear infinite alternate}
+  @keyframes moveLeft{from{left:6px}to{left:calc(100% - 34px)}}
+
+  /* 오른쪽: transform 애니메이션 — 컴포지터에서 돈다 */
+  #boxT{background:var(--tf);left:6px;animation:moveTf 1.6s linear infinite alternate}
+  @keyframes moveTf{from{transform:translateX(0)}to{transform:translateX(calc(900px/2 - 75px))}}
+
+  .status{margin-top:16px;display:flex;align-items:center;gap:12px;
+          background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 15px}
+  .lamp{width:13px;height:13px;border-radius:99px;background:#4fbd86;flex:none}
+  .lamp.blocked{background:#e8794f}
+  #state{font:600 14px var(--mono)}
+  #hint{color:var(--muted);font-size:12.5px;margin-left:auto}
+  .tag{font:11px var(--mono);padding:2px 7px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+</style>
+</head>
+<body>
+  <h1>메인 스레드를 막으면 무슨 일이 일어나는가</h1>
+  <p class="sub">같은 애니메이션, 다른 CSS 속성. 아래 램프가 빨강일 때 메인 스레드는 JavaScript에 점유돼 있다.</p>
+
+  <div class="panels">
+    <div class="panel">
+      <h2>left <span class="tag">레이아웃 필요</span></h2>
+      <p class="why">매 프레임 Layout → Paint → Raster 를 다시 돈다. 메인 스레드가 막히면 <b>정지</b>.</p>
+      <div class="track"><div class="dot" id="boxL"></div></div>
+    </div>
+    <div class="panel">
+      <h2>transform <span class="tag">컴포지터</span></h2>
+      <p class="why">Layout·Paint 를 건너뛰고 합성만 한다. 메인 스레드와 <b>무관하게 계속</b>.</p>
+      <div class="track"><div class="dot" id="boxT"></div></div>
+    </div>
+  </div>
+
+  <div class="status">
+    <span class="lamp" id="lamp"></span>
+    <span id="state">메인 스레드 정상</span>
+    <span id="hint">A1 실험: 메인 1.5초 점유 중 transform 은 360프레임 제출, left 는 0</span>
+  </div>
+
+<script>
+  // 데모용: 주기적으로 메인 스레드를 점유해 차이를 눈으로 보이게 한다
+  const lamp = document.getElementById('lamp');
+  const state = document.getElementById('state');
+  const busy = ms => { const t = performance.now(); while (performance.now() - t < ms); };
+
+  window.__DEMO = {
+    block(ms) {
+      lamp.classList.add('blocked');
+      state.textContent = `메인 스레드 점유 중 (${ms}ms)`;
+      // 램프 변경이 화면에 반영된 뒤에 막는다
+      return new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => {
+        busy(ms);
+        lamp.classList.remove('blocked');
+        state.textContent = '메인 스레드 정상';
+        requestAnimationFrame(() => requestAnimationFrame(r));
+      })));
+    },
+  };
+</script>
+</body>
+</html>
