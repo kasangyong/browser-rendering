@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>04 · 타일과 뷰포트</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  .split{display:grid;grid-template-columns:1fr 320px;gap:14px}
+  @media (max-width:900px){.split{grid-template-columns:1fr}}
+  #board{position:relative;height:520px;background:var(--stage);border:1px solid var(--line);
+         border-radius:10px;overflow:hidden}
+  #layer{position:absolute;left:50%;transform:translateX(-50%);width:420px;
+         background:linear-gradient(180deg,rgba(60,110,180,.10),rgba(180,64,31,.10));
+         border-left:1px dashed var(--line);border-right:1px dashed var(--line)}
+  .tile{position:absolute;border:1px solid rgba(130,130,130,.38);
+        font:9.5px/1 var(--mono);color:var(--muted);
+        display:flex;align-items:center;justify-content:center;
+        transition:background .22s, border-color .22s, color .22s}
+  .tile.ready{background:rgba(31,122,77,.24);border-color:var(--good);color:var(--ink)}
+  .tile.soon {background:rgba(165,118,27,.16);border-color:var(--warn)}
+  .tile.evict{background:transparent}
+  #viewport{position:absolute;left:0;right:0;border:2px solid var(--accent);
+            border-radius:4px;pointer-events:none;
+            box-shadow:0 0 0 9999px rgba(0,0,0,.14)}
+  #vpLabel{position:absolute;right:8px;top:-1px;transform:translateY(-100%);
+           font:700 10.5px var(--mono);color:var(--accent);background:var(--bg);padding:2px 6px;border-radius:4px}
+  .calc{font:12px/1.9 var(--mono);color:var(--muted)}
+  .calc b{color:var(--ink)}
+  .calc .hl{color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 04</span>
+  <h1>타일과 뷰포트 — 레이어는 통째로 래스터되지 않는다</h1>
+  <p>레이어를 타일로 쪼개고, <b>뷰포트 근처만</b> 래스터한다.
+     스크롤하면 어느 타일이 준비되고 어느 타일이 버려지는지 보인다.
+     타일 크기 규칙과 메모리는 <a href="../../experiments/track-a/a2-gpu-memory/RESULTS-source.md">A2b</a>에서 Chromium 소스로 확인한 것.</p>
+</header>
+
+<div class="controls">
+  <label>스크롤 <input type="range" id="scroll" min="0" max="1000" value="120" style="width:220px"></label>
+  <div class="sep"></div>
+  <label>타일 <select id="tsize">
+    <option value="64">64 × 64</option>
+    <option value="128">128 × 128</option>
+    <option value="256" selected>256 × 256</option>
+  </select></label>
+  <label>선행 래스터 <select id="ahead">
+    <option value="0">뷰포트만</option>
+    <option value="1" selected>1 화면</option>
+    <option value="2">2 화면</option>
+  </select></label>
+  <div class="sep"></div>
+  <button id="play" class="primary">자동 스크롤</button>
+</div>
+
+<div class="split">
+  <div id="board">
+    <div id="layer"></div>
+    <div id="viewport"><span id="vpLabel">viewport</span></div>
+  </div>
+
+  <div>
+    <div class="card" style="margin-bottom:12px">
+      <h2>지금 상태</h2>
+      <div class="grid2" style="gap:10px">
+        <div class="metric"><div class="k">전체 타일</div><div class="v" id="mAll">—</div></div>
+        <div class="metric"><div class="k">래스터됨</div><div class="v" id="mReady" style="color:var(--good)">—</div></div>
+      </div>
+      <div class="grid2" style="gap:10px;margin-top:10px">
+        <div class="metric"><div class="k">GPU 메모리</div><div class="v" id="mMem">—<small>MB</small></div></div>
+        <div class="metric"><div class="k">전부 래스터하면</div><div class="v" id="mAllMem">—<small>MB</small></div></div>
+      </div>
+      <p class="note" id="saveNote">—</p>
+    </div>
+
+    <div class="card">
+      <h2>타일 크기 규칙 (Chromium 소스)</h2>
+      <div class="calc" id="calc">—</div>
+      <p class="note"><code>kTileRoundUp = 64</code> — 콘텐츠 크기를 <b>64의 배수</b>로 올림한다.
+         2의 거듭제곱이 아니다.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter, fmt } from '../lib/demo.js';
+
+const board = document.getElementById('board'), layer = document.getElementById('layer');
+const vp = document.getElementById('viewport');
+const scrollR = document.getElementById('scroll'), tsizeS = document.getElementById('tsize'), aheadS = document.getElementById('ahead');
+
+const LAYER_W = 420, LAYER_H = 3200;   // 가상의 긴 레이어
+const VP_H = 190;                      // 보드 안에서의 뷰포트 높이
+let tiles = [];
+
+function build() {
+  const ts = +tsizeS.value;
+  const cols = Math.ceil(LAYER_W / ts), rows = Math.ceil(LAYER_H / ts);
+  layer.style.height = LAYER_H + 'px';
+  layer.textContent = '';
+  tiles = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const el = document.createElement('div');
+      el.className = 'tile';
+      el.style.cssText = `left:${c * ts}px;top:${r * ts}px;width:${ts}px;height:${ts}px`;
+      el.textContent = `${c},${r}`;
+      layer.appendChild(el);
+      tiles.push({ el, top: r * ts, bottom: r * ts + ts });
+    }
+  }
+  update();
+}
+
+function update() {
+  const ts = +tsizeS.value, ahead = +aheadS.value;
+  const maxScroll = LAYER_H - VP_H;
+  const y = (+scrollR.value / 1000) * maxScroll;
+
+  layer.style.top = (-y + 40) + 'px';
+  vp.style.top = '40px';
+  vp.style.height = VP_H + 'px';
+
+  const visTop = y, visBot = y + VP_H;
+  const rasTop = visTop - VP_H * ahead, rasBot = visBot + VP_H * ahead;
+
+  let ready = 0;
+  for (const t of tiles) {
+    const inView = t.bottom > visTop && t.top < visBot;
+    const inRas  = t.bottom > rasTop && t.top < rasBot;
+    t.el.className = 'tile ' + (inView ? 'ready' : inRas ? 'soon' : 'evict');
+    if (inView || inRas) ready++;
+  }
+
+  // 타일 하나의 메모리 = 크기 × 크기 × 4 bytes
+  const per = (ts * ts * 4) / 1048576;
+  document.getElementById('mAll').textContent = tiles.length;
+  document.getElementById('mReady').textContent = ready;
+  document.getElementById('mMem').innerHTML = fmt(ready * per, 1) + '<small>MB</small>';
+  document.getElementById('mAllMem').innerHTML = fmt(tiles.length * per, 1) + '<small>MB</small>';
+  const saved = 100 - (ready / tiles.length) * 100;
+  document.getElementById('saveNote').innerHTML =
+    `타일 ${tiles.length}개 중 <b>${ready}개</b>만 메모리를 차지한다 — <b>${saved.toFixed(0)}% 절약</b>.
+     페이지 맨 아래 copyright 는 사용자가 볼 때까지 래스터하지 않는다.`;
+
+  const round = v => Math.ceil(v / 64) * 64;
+  const w = round(LAYER_W % ts || ts), h = round(ts);
+  document.getElementById('calc').innerHTML =
+    `콘텐츠 ${LAYER_W}×${LAYER_H}px<br>` +
+    `타일 <b>${ts}×${ts}</b> → 격자 ${Math.ceil(LAYER_W / ts)} × ${Math.ceil(LAYER_H / ts)}<br>` +
+    `타일 1개 = ${ts}×${ts}×4 = <span class="hl">${fmt(ts * ts * 4 / 1024, 0)} KB</span><br>` +
+    `roundUp(${LAYER_W % ts || ts}, 64) = <b>${w}</b> · roundUp(${ts}, 64) = <b>${h}</b>`;
+}
+
+scrollR.oninput = update;
+tsizeS.onchange = aheadS.onchange = build;
+
+let playing = false;
+document.getElementById('play').onclick = e => {
+  playing = !playing; e.target.dataset.on = playing ? '1' : '0';
+  let dir = 1;
+  (function loop() {
+    if (!playing) return;
+    let v = +scrollR.value + dir * 3.2;
+    if (v >= 1000) { v = 1000; dir = -1; } else if (v <= 0) { v = 0; dir = 1; }
+    scrollR.value = v; update();
+    requestAnimationFrame(loop);
+  })();
+};
+
+window.__DEMO = { play: () => document.getElementById('play').click(),
+                  setScroll: v => { scrollR.value = v; update(); } };
+
+build();
+mountFooter('04', 'A2b · 타일 크기와 메모리 예산', '../../experiments/track-a/a2-gpu-memory/RESULTS-source.md');
+</script>
+</body>
+</html>
