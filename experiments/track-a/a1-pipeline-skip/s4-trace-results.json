@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-09-17T02:05:10.094Z",
+  "browser": "Chrome/152.0.7977.83",
+  "boxes": 1,
+  "blockMs": 1500,
+  "modes": [
+    {
+      "mode": "left",
+      "blockDurMs": 1500,
+      "compositorEvents": 4512,
+      "compositorFrameish": {
+        "BeginImplFrameToSendBeginMainFrame": 362,
+        "Scheduler::ScheduleBeginImplFrameDeadline": 181,
+        "Scheduler::BeginImplFrame": 180,
+        "Scheduler::OnBeginImplFrameDeadline": 179,
+        "SwapEndToPresentationCompositorFrame": 10,
+        "StartDrawToSwapStart": 8
+      },
+      "threads": {
+        "Compositor": 4512,
+        "VizCompositorThread": 1565,
+        "GpuVSyncThread": 180,
+        "CrBrowserMain": 49,
+        "CrGpuMain": 43,
+        "PerfettoTrace": 18
+      }
+    },
+    {
+      "mode": "transform",
+      "blockDurMs": 1500,
+      "compositorEvents": 17948,
+      "compositorFrameish": {
+        "MainFrame.Draw": 536,
+        "BeginImplFrameToSendBeginMainFrame": 361,
+        "Swap": 360,
+        "ProxyImpl::SetNeedsOneBeginImplFrameOnImplThread": 359,
+        "StartDrawToSwapStart": 359,
+        "SwapEndToPresentationCompositorFrame": 359
+      },
+      "threads": {
+        "Compositor": 17948,
+        "VizCompositorThread": 10893,
+        "CrGpuMain": 2331,
+        "GpuVSyncThread": 180,
+        "CrBrowserMain": 118,
+        "PerfettoTrace": 22
+      }
+    },
+    {
+      "mode": "willchange",
+      "blockDurMs": 1500,
+      "compositorEvents": 17941,
+      "compositorFrameish": {
+        "MainFrame.Draw": 536,
+        "BeginImplFrameToSendBeginMainFrame": 361,
+        "SwapEndToPresentationCompositorFrame": 360,
+        "StartDrawToSwapStart": 360,
+        "Swap": 360,
+        "ProxyImpl::SetNeedsOneBeginImplFrameOnImplThread": 359
+      },
+      "threads": {
+        "Compositor": 17941,
+        "VizCompositorThread": 10870,
+        "CrGpuMain": 2342,
+        "GpuVSyncThread": 180,
+        "CrBrowserMain": 102,
+        "PerfettoTrace": 26
+      }
+    }
+  ]
+}

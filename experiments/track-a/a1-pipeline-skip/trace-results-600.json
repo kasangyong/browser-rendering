@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-09-17T01:59:56.225Z",
+  "browser": "Chrome/152.0.7977.83",
+  "url": "http://127.0.0.1:8765/a1-pipeline-skip/",
+  "boxes": 600,
+  "runMs": 4000,
+  "warmupMs": 1500,
+  "modes": [
+    {
+      "mode": "left",
+      "elapsedMs": 7864,
+      "frames": 0,
+      "stages": {
+        "ParseHTML": {
+          "count": 60,
+          "totalMs": 0.74
+        },
+        "UpdateLayoutTree": {
+          "count": 91,
+          "totalMs": 623.66
+        },
+        "Layout": {
+          "count": 91,
+          "totalMs": 176.55
+        },
+        "PrePaint": {
+          "count": 91,
+          "totalMs": 296.66
+        },
+        "Paint": {
+          "count": 44507,
+          "totalMs": 1355.66
+        },
+        "Commit": {
+          "count": 92,
+          "totalMs": 22.73
+        },
+        "UpdateLayerTree": {
+          "count": 0,
+          "totalMs": 0
+        },
+        "RasterTask": {
+          "count": 274,
+          "totalMs": 186.08
+        },
+        "CompositeLayers": {
+          "count": 0,
+          "totalMs": 0
+        }
+      },
+      "rawTopNames": [
+        "Paint:44507",
+        "RunTask:5032",
+        "AsyncTask Scheduled:404",
+        "AnimationFrame:356",
+        "RasterTask:274",
+        "UpdateCounters:200",
+        "AnimationFrame::Render:182",
+        "AnimationFrame::StyleAndLayout:182",
+        "HTMLDocumentParser::PumpTokenizerIfPossible:168",
+        "FunctionCall:138",
+        "AsyncTask Run:137",
+        "FireAnimationFrame:122"
+      ],
+      "raf": {
+        "fps": 22.917285574841905,
+        "avg": 43.6351851851852,
+        "p95": 58.19999999999891,
+        "dropped": 6,
+        "n": 216,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "mode": "transform",
+      "elapsedMs": 4630,
+      "frames": 0,
+      "stages": {
+        "ParseHTML": {
+          "count": 60,
+          "totalMs": 1.14
+        },
+        "UpdateLayoutTree": {
+          "count": 134,
+          "totalMs": 1453.85
+        },
+        "Layout": {
+          "count": 15,
+          "totalMs": 13.22
+        },
+        "PrePaint": {
+          "count": 134,
+          "totalMs": 92.31
+        },
+        "Paint": {
+          "count": 30,
+          "totalMs": 21.65
+        },
+        "Commit": {
+          "count": 134,
+          "totalMs": 133.89
+        },
+        "UpdateLayerTree": {
+          "count": 0,
+          "totalMs": 0
+        },
+        "RasterTask": {
+          "count": 15,
+          "totalMs": 2.62
+        },
+        "CompositeLayers": {
+          "count": 0,
+          "totalMs": 0
+        }
+      },
+      "rawTopNames": [
+        "UpdateLayer:9015",
+        "RunTask:6467",
+        "AnimationFrame:536",
+        "AsyncTask Scheduled:443",
+        "AnimationFrame::Render:268",
+        "AnimationFrame::StyleAndLayout:268",
+        "UpdateCounters:211",
+        "AsyncTask Run:149",
+        "FunctionCall:149",
+        "HTMLDocumentParser::PumpTokenizerIfPossible:148",
+        "WebFrameWidgetImpl::BeginMainFrame:134",
+        "Blink.Animate.UpdateTime:134"
+      ],
+      "raf": {
+        "fps": 36.09990893716665,
+        "avg": 27.700900900900894,
+        "p95": 41.70000000000073,
+        "dropped": 3,
+        "n": 222,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "mode": "willchange",
+      "elapsedMs": 4537,
+      "frames": 0,
+      "stages": {
+        "ParseHTML": {
+          "count": 64,
+          "totalMs": 1
+        },
+        "UpdateLayoutTree": {
+          "count": 134,
+          "totalMs": 1481.23
+        },
+        "Layout": {
+          "count": 16,
+          "totalMs": 15.93
+        },
+        "PrePaint": {
+          "count": 135,
+          "totalMs": 102.67
+        },
+        "Paint": {
+          "count": 32,
+          "totalMs": 26.06
+        },
+        "Commit": {
+          "count": 135,
+          "totalMs": 137.72
+        },
+        "UpdateLayerTree": {
+          "count": 0,
+          "totalMs": 0
+        },
+        "RasterTask": {
+          "count": 16,
+          "totalMs": 2.53
+        },
+        "CompositeLayers": {
+          "count": 0,
+          "totalMs": 0
+        }
+      },
+      "rawTopNames": [
+        "UpdateLayer:9616",
+        "RunTask:6665",
+        "AnimationFrame:536",
+        "AsyncTask Scheduled:446",
+        "AnimationFrame::Render:270",
+        "AnimationFrame::StyleAndLayout:270",
+        "UpdateCounters:216",
+        "HTMLDocumentParser::PumpTokenizerIfPossible:164",
+        "AsyncTask Run:152",
+        "FunctionCall:150",
+        "RootScrollerController::PerformRootScrollerSelection:135",
+        "SetLayerTreeId:135"
+      ],
+      "raf": {
+        "fps": 33.626188867094136,
+        "avg": 29.73872549019608,
+        "p95": 41.70000000000073,
+        "dropped": 3,
+        "n": 204,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    }
+  ]
+}

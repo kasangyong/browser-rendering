@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-09-17T02:02:51.363Z",
+  "browser": "Chrome/152.0.7977.83",
+  "boxes": 1,
+  "blockMs": 1400,
+  "modes": [
+    {
+      "mode": "left",
+      "baselineMoves": true,
+      "shots": [
+        "2ac1f8493236",
+        "70cf091b1440",
+        "d0c9022de307",
+        "7629f62f16d6"
+      ],
+      "uniqueFrames": 4,
+      "movedWhileBlocked": true,
+      "mainBlockedMs": 4
+    },
+    {
+      "mode": "transform",
+      "baselineMoves": true,
+      "shots": [
+        "ebd8219cf557",
+        "b1b68a5081d9",
+        "45bffdf75839",
+        "da0f600afb67"
+      ],
+      "uniqueFrames": 4,
+      "movedWhileBlocked": true,
+      "mainBlockedMs": 2
+    },
+    {
+      "mode": "willchange",
+      "baselineMoves": true,
+      "shots": [
+        "d7e3f627031e",
+        "99ab5656d54e",
+        "29180d08fc3a",
+        "a71e34235ec2"
+      ],
+      "uniqueFrames": 4,
+      "movedWhileBlocked": true,
+      "mainBlockedMs": 2
+    }
+  ]
+}
