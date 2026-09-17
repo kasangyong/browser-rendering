@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>07 · 프레임 예산</title>
+<link rel="stylesheet" href="../lib/demo.css">
+<style>
+  #budget{position:relative;height:120px;background:var(--stage);border:1px solid var(--line);
+          border-radius:10px;overflow:hidden}
+  .seg{position:absolute;top:26px;height:54px;display:flex;align-items:center;justify-content:center;
+       font:600 11px var(--mono);color:#fff;overflow:hidden;white-space:nowrap;
+       transition:width .28s cubic-bezier(.2,.8,.3,1), left .28s cubic-bezier(.2,.8,.3,1)}
+  .seg.js       {background:#7a4fb4}
+  .seg.style    {background:#3c6eb4}
+  .seg.layout   {background:#2f7fb4}
+  .seg.paint    {background:#1f7a4d}
+  .seg.composite{background:#a5761b}
+  .seg.over     {background:repeating-linear-gradient(45deg,var(--accent),var(--accent) 7px,#8d3218 7px,#8d3218 14px)}
+
+  #deadline{position:absolute;top:14px;bottom:14px;width:2px;background:var(--accent)}
+  #dlLabel{position:absolute;top:0;transform:translateX(-50%);font:700 10.5px var(--mono);
+           color:var(--accent);white-space:nowrap}
+  .ticks{position:absolute;left:0;right:0;bottom:6px;height:14px}
+  .tick{position:absolute;bottom:0;width:1px;height:6px;background:var(--line)}
+  .tick span{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);
+             font:9.5px var(--mono);color:var(--muted)}
+
+  #frames{display:flex;gap:2px;height:60px;align-items:flex-end;margin-top:12px}
+  .fbar{flex:1;border-radius:2px 2px 0 0;background:var(--cool);transition:height .2s}
+  .fbar.drop{background:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">DEMO 07</span>
+  <h1>프레임 예산 — 16.7ms 안에 다 못 넣으면 프레임이 죽는다</h1>
+  <p>한 프레임 안에서 JS·Style·Layout·Paint·Composite 가 순서대로 예산을 쓴다.
+     슬라이더를 올리면 막대가 <b>마감선을 넘고</b>, 그 순간 아래 프레임 기록에 빨간 막대가 찍힌다.
+     단계별 비용은 <a href="../../docs/03-track-a-synthesis.md">Track A 실측</a>에서 가져온 값이다.</p>
+</header>
+
+<div class="controls">
+  <label>주사율 <select id="hz">
+    <option value="60" selected>60Hz — 16.7ms</option>
+    <option value="120">120Hz — 8.3ms</option>
+    <option value="144">144Hz — 6.9ms</option>
+  </select></label>
+  <div class="sep"></div>
+  <label>애니메이션 요소 <input type="range" id="els" min="0" max="1000" value="250" style="width:150px"><b id="elsV">250</b></label>
+  <label>JS 작업 <input type="range" id="js" min="0" max="14" step=".5" value="2" style="width:120px"><b id="jsV">2.0ms</b></label>
+  <div class="sep"></div>
+  <button data-p="transform" data-on="1">transform</button>
+  <button data-p="left">left</button>
+</div>
+
+<div id="budget">
+  <div class="ticks" id="ticks"></div>
+  <div id="deadline"><span id="dlLabel">마감</span></div>
+</div>
+
+<div class="grid3" style="margin-top:14px">
+  <div class="card"><div class="metric"><div class="k">프레임 합계</div><div class="v" id="mTot">—<small>ms</small></div></div></div>
+  <div class="card"><div class="metric"><div class="k">예산</div><div class="v" id="mBud">—<small>ms</small></div></div></div>
+  <div class="card"><div class="metric"><div class="k">판정</div><div class="v" id="mVerdict">—</div></div></div>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <h2>프레임 기록 — 이 설정이 계속될 때 · 빨강이 떨군 프레임</h2>
+  <div id="frames"></div>
+  <p class="note" id="fnote">—</p>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <h2>어디서 나온 숫자인가</h2>
+  <table>
+    <thead><tr><th>단계</th><th>요소 1개당</th><th>출처</th></tr></thead>
+    <tbody>
+      <tr><td>Style (애니메이션 서비싱)</td><td class="num">0.0116 ms</td><td>A1b — 1000개에서 11.58ms</td></tr>
+      <tr><td>Layout (<code>left</code> 만)</td><td class="num">0.0098 ms</td><td>A4 — 항목당 9.8µs</td></tr>
+      <tr><td>Paint (<code>left</code> 만)</td><td class="num">0.0037 ms</td><td>A1 — 2,832회 / 482프레임</td></tr>
+      <tr><td>Commit (<code>transform</code>)</td><td class="num">0.0026 ms</td><td>A1b — 1000개에서 2.62ms</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><code>transform</code> 은 Layout·Paint 가 빠지는 대신 <b>Commit 이 요소 수에 비례해</b> 늘어난다 —
+     그래서 요소가 아주 많아지면 이득이 줄어든다.</p>
+</div>
+
+</div>
+
+<script type="module">
+import { mountFooter, fmt } from '../lib/demo.js';
+
+const budget = document.getElementById('budget'), ticks = document.getElementById('ticks');
+const framesEl = document.getElementById('frames');
+let prop = 'transform';
+const hist = new Array(60).fill(0);
+
+// Track A 실측에서 뽑은 요소당 비용 (ms)
+const PER = {
+  style: 0.0116,
+  layoutLeft: 0.0098,
+  paintLeft: 0.0037,
+  commitTf: 0.0026,
+  commitLeft: 0.00037,
+  composite: 0.0004,
+};
+
+function compute() {
+  const n = +document.getElementById('els').value;
+  const js = +document.getElementById('js').value;
+  const segs = [{ k:'js', label:'JavaScript', ms: js }];
+  segs.push({ k:'style', label:'Style', ms: n * PER.style });
+  if (prop === 'left') {
+    segs.push({ k:'layout', label:'Layout', ms: n * PER.layoutLeft });
+    segs.push({ k:'paint',  label:'Paint',  ms: n * PER.paintLeft });
+    segs.push({ k:'composite', label:'Commit+Composite', ms: n * (PER.commitLeft + PER.composite) });
+  } else {
+    segs.push({ k:'layout', label:'Layout', ms: 0 });
+    segs.push({ k:'paint',  label:'Paint',  ms: 0 });
+    segs.push({ k:'composite', label:'Commit+Composite', ms: n * (PER.commitTf + PER.composite) });
+  }
+  return segs.filter(s => s.ms > 0.001);
+}
+
+function render() {
+  const hz = +document.getElementById('hz').value;
+  const bud = 1000 / hz;
+  const segs = compute();
+  const total = segs.reduce((a, s) => a + s.ms, 0);
+  const scaleMax = Math.max(bud * 1.45, total * 1.06);
+  const W = budget.clientWidth;
+  const px = ms => (ms / scaleMax) * (W - 20);
+
+  budget.querySelectorAll('.seg').forEach(n => n.remove());
+  let x = 10;
+  const frag = document.createDocumentFragment();
+  for (const s of segs) {
+    const w = px(s.ms);
+    const d = document.createElement('div');
+    d.className = 'seg ' + (x + w > 10 + px(bud) && x > 10 + px(bud) ? 'over' : s.k);
+    d.style.cssText = `left:${x}px;width:${Math.max(w, 1)}px`;
+    if (w > 46) d.textContent = `${s.label} ${s.ms.toFixed(1)}`;
+    frag.appendChild(d);
+    x += w;
+  }
+  budget.appendChild(frag);
+
+  // 마감선
+  const dl = 10 + px(bud);
+  document.getElementById('deadline').style.left = dl + 'px';
+  document.getElementById('dlLabel').style.left = dl + 'px';
+  document.getElementById('dlLabel').textContent = `마감 ${bud.toFixed(1)}ms`;
+
+  // 눈금
+  ticks.innerHTML = '';
+  for (let t = 0; t <= scaleMax; t += scaleMax > 30 ? 10 : 5) {
+    const d = document.createElement('div');
+    d.className = 'tick';
+    d.style.left = (10 + px(t)) + 'px';
+    d.innerHTML = `<span>${t}</span>`;
+    ticks.appendChild(d);
+  }
+
+  const over = total > bud;
+  document.getElementById('mTot').innerHTML = fmt(total, 1) + '<small>ms</small>';
+  document.getElementById('mBud').innerHTML = bud.toFixed(1) + '<small>ms</small>';
+  const v = document.getElementById('mVerdict');
+  v.textContent = over ? '초과' : '여유';
+  v.style.color = over ? 'var(--accent)' : 'var(--good)';
+
+  // 설정을 바꾸면 그 설정이 계속됐을 때의 프레임 기록을 채운다
+  if (hist.every(v => v === 0)) hist.fill(total / bud);
+  else { hist.shift(); hist.push(total / bud); }
+  framesEl.innerHTML = hist.map(r =>
+    `<div class="fbar${r > 1 ? ' drop' : ''}" style="height:${Math.min(100, r * 62).toFixed(0)}%"></div>`).join('');
+  const drops = hist.filter(r => r > 1).length;
+  document.getElementById('fnote').innerHTML = over
+    ? `프레임당 <b>${(total - bud).toFixed(1)}ms 초과</b> → 실효 ${(1000 / total).toFixed(0)}fps.
+       최근 60프레임 중 <b>${drops}개</b>가 예산을 넘겼다.`
+    : `예산 안에 들어간다. 여유 <b>${(bud - total).toFixed(1)}ms</b>.`;
+
+  document.getElementById('elsV').textContent = document.getElementById('els').value;
+  document.getElementById('jsV').textContent = (+document.getElementById('js').value).toFixed(1) + 'ms';
+}
+
+for (const id of ['hz','els','js']) document.getElementById(id).oninput = render;
+for (const b of document.querySelectorAll('[data-p]')) {
+  b.onclick = () => {
+    prop = b.dataset.p;
+    for (const o of document.querySelectorAll('[data-p]')) o.dataset.on = o === b ? '1' : '0';
+    render();
+  };
+}
+addEventListener('resize', render);
+
+window.__DEMO = {
+  set: (els, js, p) => {
+    document.getElementById('els').value = els;
+    document.getElementById('js').value = js;
+    prop = p || prop;
+    for (const o of document.querySelectorAll('[data-p]')) o.dataset.on = o.dataset.p === prop ? '1' : '0';
+    render();
+  },
+  sweep: async () => {
+    for (let n = 0; n <= 1000; n += 12) {
+      document.getElementById('els').value = n; render();
+      await new Promise(r => requestAnimationFrame(r));
+    }
+  },
+};
+
+render();
+mountFooter('07', 'Track A 종합 — 단계별 실측', '../../docs/03-track-a-synthesis.md');
+</script>
+</body>
+</html>
