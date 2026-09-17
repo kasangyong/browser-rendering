@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A1 · 파이프라인 단계 스킵</title>
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --panel: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e3e0da;
+    --accent: #b4401f;
+    --good: #1f7a4d;
+    --bad: #b4401f;
+    --stage: #f0ede7;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14130f;
+      --panel: #1d1b17;
+      --ink: #eeebe4;
+      --muted: #9a958a;
+      --line: #322e28;
+      --accent: #e8794f;
+      --good: #4fbd86;
+      --bad: #e8794f;
+      --stage: #232019;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14130f; --panel: #1d1b17; --ink: #eeebe4; --muted: #9a958a;
+    --line: #322e28; --accent: #e8794f; --good: #4fbd86; --bad: #e8794f; --stage: #232019;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    padding: 0 16px 64px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  header { padding: 28px 0 18px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
+  h1 { margin: 0 0 6px; font-size: 21px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 14px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; margin-bottom: 14px;
+  }
+  button {
+    font: inherit; font-size: 14px; padding: 7px 13px; border-radius: 6px;
+    border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); }
+  button[data-on="1"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+  button.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 600; }
+  label { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  input[type=number] {
+    font: inherit; font-family: var(--mono); font-size: 13px; width: 72px;
+    padding: 5px 7px; border: 1px solid var(--line); border-radius: 5px;
+    background: var(--bg); color: var(--ink);
+  }
+  .sep { width: 1px; height: 22px; background: var(--line); }
+
+  #stage {
+    position: relative; height: 320px; overflow: hidden;
+    background: var(--stage); border: 1px solid var(--line); border-radius: 8px;
+    margin-bottom: 14px;
+  }
+  .box {
+    position: absolute; width: var(--bw, 38px); height: var(--bh, 15px); left: 0;
+    background: var(--accent); border-radius: 3px;
+    font: 9px/15px var(--mono); color: #fff; text-align: center;
+    will-change: auto;
+  }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 14px;
+  }
+  .card h2 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase;
+             letter-spacing: 0.06em; color: var(--muted); font-weight: 600; }
+
+  .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .metric .k { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .metric .v { font: 600 22px/1.2 var(--mono); font-variant-numeric: tabular-nums; }
+  .metric .v small { font-size: 12px; font-weight: 400; color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 600; }
+  td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  tr.win td { color: var(--good); font-weight: 600; }
+
+  #log {
+    font: 12px/1.6 var(--mono); white-space: pre-wrap; word-break: break-all;
+    max-height: 190px; overflow-y: auto; color: var(--muted);
+  }
+  .note { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+  .badge { display: inline-block; padding: 1px 7px; border-radius: 99px;
+           font-size: 11px; font-family: var(--mono); border: 1px solid var(--line); }
+  .badge.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>A1 · 파이프라인 단계 스킵 증명</h1>
+  <p><code>left</code> 애니메이션과 <code>transform</code> 애니메이션이 Chromium 파이프라인의 어느 단계까지 도는지를 프레임 시간으로 측정한다.</p>
+</header>
+
+<div class="controls">
+  <button id="m-left"      data-mode="left">left</button>
+  <button id="m-transform" data-mode="transform">transform</button>
+  <button id="m-willchange" data-mode="willchange">transform + will-change</button>
+  <div class="sep"></div>
+  <label>박스 <input type="number" id="count" value="600" min="1" max="20000" step="100"></label>
+  <div class="sep"></div>
+  <button id="block">메인 스레드 1.5초 막기</button>
+  <button id="bench" class="primary">자동 벤치마크 (3모드 × 6초)</button>
+  <button id="reset">리셋</button>
+</div>
+
+<div id="stage" aria-label="애니메이션 무대"></div>
+
+<div class="grid">
+  <div class="card">
+    <h2>실시간 측정 <span id="modeBadge" class="badge">-</span></h2>
+    <div class="metrics">
+      <div class="metric"><div class="k">FPS</div><div class="v" id="fps">—</div></div>
+      <div class="metric"><div class="k">평균 프레임</div><div class="v" id="avg">—<small>ms</small></div></div>
+      <div class="metric"><div class="k">p95 프레임</div><div class="v" id="p95">—<small>ms</small></div></div>
+      <div class="metric"><div class="k">지연 프레임</div><div class="v" id="dropped">—</div></div>
+    </div>
+    <p class="note" id="refreshNote">주사율 측정 중…</p>
+  </div>
+
+  <div class="card">
+    <h2>벤치마크 결과</h2>
+    <table id="resultTable">
+      <thead><tr><th>모드</th><th>FPS</th><th>평균</th><th>p95</th><th>지연</th></tr></thead>
+      <tbody><tr><td colspan="5" style="text-align:center;color:var(--muted)">자동 벤치마크를 실행하세요</td></tr></tbody>
+    </table>
+    <p class="note">지연 프레임 = 프레임 간격이 목표의 1.5배를 넘은 횟수</p>
+  </div>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <h2>Long Animation Frames (LoAF)</h2>
+  <div id="log">대기 중… (50ms 넘는 프레임만 기록된다)</div>
+</div>
+
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  const stage = document.getElementById('stage');
+  const $ = id => document.getElementById(id);
+
+  let mode = 'left';
+  let boxes = [];
+  let targetFrame = 16.67;
+
+  // ---------- 무대 구성 ----------
+  function build(n) {
+    stage.innerHTML = '';
+    boxes = [];
+    const h = stage.clientHeight;
+    const dist = stage.clientWidth - 40;
+    for (let i = 0; i < n; i++) {
+      const b = document.createElement('div');
+      b.className = 'box';
+      b.textContent = i % 100;
+      b.style.top = ((i * 7) % (h - 15)) + 'px';
+      b.style.setProperty('--dist', dist + 'px');
+      b.style.animationDelay = (-(i % 40) * 0.05) + 's';
+      stage.appendChild(b);
+      boxes.push(b);
+    }
+    applyMode();
+  }
+
+  function applyMode() {
+    // 'none' = 애니메이션 없는 대조군. 라이프사이클 자체의 바닥 비용을 잰다.
+    const name = mode === 'left' ? 'moveLeft' : 'moveTransform';
+    const wc = mode === 'willchange' ? 'transform' : 'auto';
+    for (const b of boxes) {
+      b.style.animation = mode === 'none' ? 'none' : `${name} 2s linear infinite alternate`;
+      b.style.willChange = wc;
+    }
+    $('modeBadge').textContent = mode;
+    $('modeBadge').className = 'badge on';
+    for (const el of document.querySelectorAll('[data-mode]')) {
+      el.dataset.on = el.dataset.mode === mode ? '1' : '0';
+    }
+  }
+
+  // keyframes는 스타일시트에 한 번만
+  const sheet = document.createElement('style');
+  sheet.textContent = `
+    @keyframes moveLeft      { from { left: 0 }                 to { left: var(--dist) } }
+    @keyframes moveTransform { from { transform: translateX(0) } to { transform: translateX(var(--dist)) } }
+  `;
+  document.head.appendChild(sheet);
+
+  // ---------- 프레임 계측 ----------
+  let samples = [];
+  let last = 0;
+  let collecting = true;
+
+  function tick(now) {
+    if (last) {
+      const dt = now - last;
+      if (collecting && dt < 500) samples.push(dt);   // 탭 전환 등 이상치 제외
+    }
+    last = now;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // durationMs를 주면 "받았어야 할 프레임 수" 대비 실제 수집량으로 유효성을 판정한다.
+  // 브라우저 패널이 가려지면 rAF가 멈춰 샘플이 비는데, 그걸 정상 측정으로 착각하면 안 된다.
+  function stats(arr, durationMs) {
+    if (!arr.length) {
+      return { fps: 0, avg: 0, p95: 0, dropped: 0, n: 0, expected: 0, coverage: 0, valid: false };
+    }
+    const s = [...arr].sort((a, b) => a - b);
+    const avg = s.reduce((a, b) => a + b, 0) / s.length;
+    const p95 = s[Math.floor(s.length * 0.95)];
+    const dropped = s.filter(d => d > targetFrame * 1.5).length;
+    const expected = durationMs ? durationMs / targetFrame : 0;
+    // 커버리지 = 실제 수집 프레임 / 기대 프레임. 0.5 미만이면 렌더가 멈춘 구간이 있었다는 뜻.
+    const coverage = expected ? s.length / expected : 1;
+    return {
+      fps: 1000 / avg, avg, p95, dropped,
+      n: s.length, expected: Math.round(expected),
+      coverage: +coverage.toFixed(2),
+      valid: expected ? coverage >= 0.5 : s.length > 30
+    };
+  }
+
+  function render() {
+    const st = stats(samples.slice(-180));
+    if (st && st.n) {
+      $('fps').textContent = st.fps.toFixed(0);
+      $('avg').innerHTML = st.avg.toFixed(2) + '<small>ms</small>';
+      $('p95').innerHTML = st.p95.toFixed(2) + '<small>ms</small>';
+      $('dropped').textContent = st.dropped;
+    }
+    setTimeout(render, 250);
+  }
+
+  // ---------- 주사율 감지 ----------
+  function detectRefresh() {
+    const probe = [];
+    let prev = 0, frames = 0;
+    function p(now) {
+      if (prev) probe.push(now - prev);
+      prev = now;
+      if (++frames < 90) return requestAnimationFrame(p);
+      probe.sort((a, b) => a - b);
+      targetFrame = probe[Math.floor(probe.length / 2)];
+      $('refreshNote').textContent =
+        `감지된 주사율 ≈ ${(1000 / targetFrame).toFixed(0)}Hz (목표 프레임 ${targetFrame.toFixed(2)}ms)`;
+    }
+    requestAnimationFrame(p);
+  }
+
+  // ---------- LoAF ----------
+  const logEl = $('log');
+  let logLines = [];
+  if (window.PerformanceObserver &&
+      PerformanceObserver.supportedEntryTypes?.includes('long-animation-frame')) {
+    new PerformanceObserver(list => {
+      for (const e of list.getEntries()) {
+        const end = e.startTime + e.duration;
+        const styleLayout = e.styleAndLayoutStart ? end - e.styleAndLayoutStart : 0;
+        const render = e.renderStart ? end - e.renderStart : 0;
+        logLines.unshift(
+          `[${mode.padEnd(11)}] frame ${e.duration.toFixed(1).padStart(7)}ms` +
+          ` | render ${render.toFixed(1).padStart(6)}ms` +
+          ` | style+layout ${styleLayout.toFixed(1).padStart(6)}ms` +
+          ` | blocking ${(e.blockingDuration ?? 0).toFixed(1)}ms`
+        );
+      }
+      logEl.textContent = logLines.slice(0, 40).join('\n');
+    }).observe({ type: 'long-animation-frame', buffered: true });
+  } else {
+    logEl.textContent = 'LoAF 미지원 브라우저. Chrome 123+ 에서 확인하세요.';
+  }
+
+  // ---------- 자동 벤치마크 ----------
+  const results = [];
+  const RUN_MS = 6000;
+
+  async function bench() {
+    const btn = $('bench');
+    btn.disabled = true;
+    results.length = 0;
+    try {
+      for (const m of ['left', 'transform', 'willchange']) {
+        mode = m; applyMode();
+        await sleep(1200);          // 워밍업 · 레이어 승격 안정화
+        samples = []; collecting = true;
+        const t0 = performance.now();
+        await sleep(RUN_MS);
+        const elapsed = performance.now() - t0;   // 스로틀링 대비 실측 경과
+        collecting = false;
+        results.push({ mode: m, elapsedMs: Math.round(elapsed), ...stats(samples, elapsed) });
+        collecting = true;
+      }
+      drawResults();
+    } catch (err) {
+      console.error('bench 실패', err);
+      window.__A1_ERROR__ = String(err && err.stack || err);
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  function drawResults() {
+    const valid = results.filter(r => r.valid);
+    const best = valid.length ? Math.min(...valid.map(r => r.p95)) : null;
+    const tb = $('resultTable').querySelector('tbody');
+    tb.innerHTML = results.map(r => r.valid ? `
+      <tr class="${r.p95 === best ? 'win' : ''}">
+        <td>${r.mode}</td>
+        <td class="num">${r.fps.toFixed(1)}</td>
+        <td class="num">${r.avg.toFixed(2)}</td>
+        <td class="num">${r.p95.toFixed(2)}</td>
+        <td class="num">${r.dropped} / ${r.n}</td>
+      </tr>` : `
+      <tr><td>${r.mode}</td>
+        <td class="num" colspan="4" style="text-align:left;color:var(--bad)">
+          측정 무효 — 프레임 ${r.n}/${r.expected} (커버리지 ${r.coverage}). 창이 가려져 렌더가 멈췄을 가능성.
+        </td></tr>`).join('');
+
+    window.__A1_RESULTS__ = {
+      boxes: boxes.length,
+      targetFrameMs: +targetFrame.toFixed(3),
+      refreshHz: +(1000 / targetFrame).toFixed(1),
+      allValid: results.every(r => r.valid),
+      ua: navigator.userAgent,
+      results
+    };
+    console.log('A1 결과', window.__A1_RESULTS__);
+  }
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  // ---------- 이벤트 ----------
+  for (const el of document.querySelectorAll('[data-mode]')) {
+    el.onclick = () => { mode = el.dataset.mode; applyMode(); samples = []; };
+  }
+  $('count').onchange = e => build(Math.max(1, +e.target.value || 1));
+  $('reset').onclick = () => { samples = []; logLines = []; logEl.textContent = '대기 중…'; };
+  $('block').onclick = () => {
+    const t0 = performance.now();
+    while (performance.now() - t0 < 1500) { /* 메인 스레드 점유 */ }
+  };
+  $('bench').onclick = bench;
+
+  // 자동화용 훅
+  window.__A1 = {
+    setMode: m => { mode = m; applyMode(); samples = []; },
+    setCount: n => build(n),
+    // A2용 — 레이어 하나의 크기를 바꿔 GPU 메모리와의 관계를 본다
+    setBoxSize: (w, h) => {
+      document.documentElement.style.setProperty('--bw', w + 'px');
+      document.documentElement.style.setProperty('--bh', h + 'px');
+      build(boxes.length);
+    },
+    reset: () => { samples = []; },
+    stats: () => stats(samples),
+    bench,
+    blockMain: ms => { const t = performance.now(); while (performance.now() - t < ms); }
+  };
+
+  // ---------- 시작 ----------
+  build(+$('count').value);
+  detectRefresh();
+  render();
+})();
+</script>
+</body>
+</html>
