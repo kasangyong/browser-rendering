@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><style>
+  :root{--bg:#fbfaf8;--panel:#fff;--ink:#1a1a1a;--muted:#6b6b6b;--line:#e3e0da;
+        --accent:#b4401f;--ok:#1f7a4d;--warn:#a5761b;
+        --mono:ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);padding:0 28px 40px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;width:1180px}
+  header{padding:30px 0 18px;border-bottom:2px solid var(--ink);margin-bottom:22px}
+  h1{margin:0 0 6px;font-size:27px;letter-spacing:-.02em}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+     margin:26px 0 12px;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px}
+  .card .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .card .v{font:700 30px/1.1 var(--mono);margin:3px 0 4px}
+  .card .s{font-size:11.5px;color:var(--muted);line-height:1.4}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chart{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px 12px}
+  .chart figcaption{font-size:14px;font-weight:650;margin-bottom:8px}
+  .chart figcaption small{font-weight:400;color:var(--muted);font-size:12px}
+  .logtag{background:var(--line);padding:1px 5px;border-radius:3px;font-family:var(--mono)}
+  svg{width:100%;height:auto;display:block}
+  .ax{stroke:var(--line);stroke-width:1}
+  text.v{font:600 9.5px var(--mono);fill:var(--muted);text-anchor:middle}
+  text.x{font:11px system-ui;fill:var(--muted);text-anchor:middle}
+  .legend{display:flex;gap:14px;margin:6px 0 0;font-size:11.5px;color:var(--muted)}
+  .lg{display:flex;align-items:center;gap:5px}
+  .lg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .note{font-size:12px;line-height:1.55;color:var(--muted);margin:8px 0 0;
+        border-top:1px solid var(--line);padding-top:8px}
+  .note b{color:var(--ink)}
+  code{font:12px var(--mono);background:var(--line);padding:1px 4px;border-radius:3px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+        border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.t{font-weight:650;width:290px}
+  td.t::before{content:"";display:inline-block;width:7px;height:7px;border-radius:99px;margin-right:8px;vertical-align:middle}
+  tr.ok td.t::before{background:var(--ok)} tr.warn td.t::before{background:var(--warn)}
+  footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);
+         font-size:12px;color:var(--muted)}
+</style>
+  <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>
+  </head><body><figure class="chart">
+    <figcaption>A3 · 같은 요소·같은 좌표, DOM 순서만 다르면 <small>(합성 레이어 수)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="A3 · 같은 요소·같은 좌표, DOM 순서만 다르면">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="65.8" y="140.3" width="28.0" height="25.7" fill="#3c6eb4" rx="2"/><text x="79.8" y="137.3" class="v">4.00</text><rect x="95.8" y="166.0" width="28.0" height="1.0" fill="#b4401f" rx="2"/><text x="95.8" y="186" class="x">s1
+plain</text><rect x="141.5" y="133.9" width="28.0" height="32.1" fill="#3c6eb4" rx="2"/><text x="155.5" y="130.9" class="v">5.00</text><rect x="171.5" y="166.0" width="28.0" height="1.0" fill="#b4401f" rx="2"/><text x="171.5" y="186" class="x">s2
+P맨뒤</text><rect x="217.2" y="127.5" width="28.0" height="38.5" fill="#3c6eb4" rx="2"/><text x="231.2" y="124.5" class="v">6.00</text><rect x="247.2" y="159.6" width="28.0" height="6.4" fill="#b4401f" rx="2"/><text x="261.2" y="156.6" class="v">1.00</text><text x="247.2" y="186" class="x">s3
+P앞+겹침</text><rect x="292.8" y="133.9" width="28.0" height="32.1" fill="#3c6eb4" rx="2"/><text x="306.8" y="130.9" class="v">5.00</text><rect x="322.8" y="166.0" width="28.0" height="1.0" fill="#b4401f" rx="2"/><text x="322.8" y="186" class="x">s4
+P앞+안겹침</text><rect x="368.5" y="12.0" width="28.0" height="154.0" fill="#3c6eb4" rx="2"/><text x="382.5" y="9.0" class="v">24</text><rect x="398.5" y="101.8" width="28.0" height="64.2" fill="#b4401f" rx="2"/><text x="412.5" y="98.8" class="v">10</text><text x="398.5" y="186" class="x">s5
+번갈아</text><rect x="444.2" y="69.8" width="28.0" height="96.3" fill="#3c6eb4" rx="2"/><text x="458.2" y="66.8" class="v">15</text><rect x="474.2" y="159.6" width="28.0" height="6.4" fill="#b4401f" rx="2"/><text x="488.2" y="156.6" class="v">1.00</text><text x="474.2" y="186" class="x">s6
+묶음</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>레이어 수</span><span class="lg"><i style="background:#b4401f"></i>Overlap 사유</span></div>
+    <p class="note"><b>s5 와 s6 은 요소 종류·개수·좌표·크기가 완전히 동일.</b> DOM 순서만 다른데 레이어 <b>24 → 15개</b>. 차이 9개가 <code>Overlap</code> 사유 개수 차이(10 vs 1)와 정확히 일치</p>
+  </figure></body></html>
