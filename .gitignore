@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 편집기
+.vscode/
+.idea/
+*.swp
+
+# 실행 중 생기는 것
+node_modules/
+*.log
+.env
+
+# 측정 중 임시로 생기는 Chrome 프로필 / 프레임 (스크래치패드에 생성되므로 보통 여기 안 남는다)
+**/chrome-profile*/
+**/frames-*/
