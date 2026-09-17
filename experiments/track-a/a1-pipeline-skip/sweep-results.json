@@ -1,0 +1,1297 @@
+{
+  "generatedAt": "2026-09-17T02:55:33.651Z",
+  "browser": "Chrome/152.0.7977.83",
+  "runMs": 2500,
+  "warmupMs": 1200,
+  "layerToolBlockedMs": 1130,
+  "rows": [
+    {
+      "boxes": 1,
+      "mode": "none",
+      "frames": 295,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.67,
+          "perFrame": 0.006
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.01,
+          "perFrame": 0.014
+        },
+        "PrePaint": {
+          "n": 295,
+          "ms": 8.7,
+          "perFrame": 0.029
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 9.33,
+          "perFrame": 0.032
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.19,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 295,
+          "ms": 30.38,
+          "perFrame": 0.103
+        }
+      },
+      "animServiceMs": 0.81,
+      "animUpdateMs": 48.48
+    },
+    {
+      "boxes": 1,
+      "mode": "left",
+      "frames": 300,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 300,
+          "ms": 50.91,
+          "perFrame": 0.17
+        },
+        "Layout": {
+          "n": 300,
+          "ms": 47.91,
+          "perFrame": 0.16
+        },
+        "PrePaint": {
+          "n": 300,
+          "ms": 49.66,
+          "perFrame": 0.166
+        },
+        "Paint": {
+          "n": 600,
+          "ms": 175.03,
+          "perFrame": 0.583
+        },
+        "RasterTask": {
+          "n": 310,
+          "ms": 22.45,
+          "perFrame": 0.075
+        },
+        "InvalidateLayout": {
+          "n": 310,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 300,
+          "ms": 45.14,
+          "perFrame": 0.15
+        }
+      },
+      "animServiceMs": 11.56,
+      "animUpdateMs": 65.05
+    },
+    {
+      "boxes": 1,
+      "mode": "transform",
+      "frames": 302,
+      "layers": 6,
+      "layersDrawing": 4,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 302,
+          "ms": 43.76,
+          "perFrame": 0.145
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.88,
+          "perFrame": 0.016
+        },
+        "PrePaint": {
+          "n": 302,
+          "ms": 41.2,
+          "perFrame": 0.136
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 10.93,
+          "perFrame": 0.036
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.45,
+          "perFrame": 0.005
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 302,
+          "ms": 58.72,
+          "perFrame": 0.194
+        }
+      },
+      "animServiceMs": 11.21,
+      "animUpdateMs": 64.08
+    },
+    {
+      "boxes": 1,
+      "mode": "willchange",
+      "frames": 302,
+      "layers": 6,
+      "layersDrawing": 4,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 302,
+          "ms": 44.93,
+          "perFrame": 0.149
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 3.87,
+          "perFrame": 0.013
+        },
+        "PrePaint": {
+          "n": 302,
+          "ms": 41.74,
+          "perFrame": 0.138
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 9.66,
+          "perFrame": 0.032
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 0.92,
+          "perFrame": 0.003
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 302,
+          "ms": 43.58,
+          "perFrame": 0.144
+        }
+      },
+      "animServiceMs": 10.98,
+      "animUpdateMs": 60.79
+    },
+    {
+      "boxes": 10,
+      "mode": "none",
+      "frames": 293,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.66,
+          "perFrame": 0.006
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.36,
+          "perFrame": 0.015
+        },
+        "PrePaint": {
+          "n": 293,
+          "ms": 8.65,
+          "perFrame": 0.03
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 14.15,
+          "perFrame": 0.048
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.13,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 293,
+          "ms": 34,
+          "perFrame": 0.116
+        }
+      },
+      "animServiceMs": 0.8,
+      "animUpdateMs": 48.96
+    },
+    {
+      "boxes": 10,
+      "mode": "left",
+      "frames": 301,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 301,
+          "ms": 83.19,
+          "perFrame": 0.276
+        },
+        "Layout": {
+          "n": 301,
+          "ms": 48.49,
+          "perFrame": 0.161
+        },
+        "PrePaint": {
+          "n": 301,
+          "ms": 63.11,
+          "perFrame": 0.21
+        },
+        "Paint": {
+          "n": 3221,
+          "ms": 338.04,
+          "perFrame": 1.123
+        },
+        "RasterTask": {
+          "n": 612,
+          "ms": 33.14,
+          "perFrame": 0.11
+        },
+        "InvalidateLayout": {
+          "n": 311,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 301,
+          "ms": 61.23,
+          "perFrame": 0.203
+        }
+      },
+      "animServiceMs": 20.15,
+      "animUpdateMs": 74.37
+    },
+    {
+      "boxes": 10,
+      "mode": "transform",
+      "frames": 302,
+      "layers": 15,
+      "layersDrawing": 13,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 302,
+          "ms": 102.74,
+          "perFrame": 0.34
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.9,
+          "perFrame": 0.016
+        },
+        "PrePaint": {
+          "n": 302,
+          "ms": 53.26,
+          "perFrame": 0.176
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 13.55,
+          "perFrame": 0.045
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.37,
+          "perFrame": 0.005
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 302,
+          "ms": 66.47,
+          "perFrame": 0.22
+        }
+      },
+      "animServiceMs": 26.77,
+      "animUpdateMs": 90.44
+    },
+    {
+      "boxes": 10,
+      "mode": "willchange",
+      "frames": 301,
+      "layers": 15,
+      "layersDrawing": 13,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 301,
+          "ms": 72.62,
+          "perFrame": 0.241
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.21,
+          "perFrame": 0.014
+        },
+        "PrePaint": {
+          "n": 301,
+          "ms": 37.62,
+          "perFrame": 0.125
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 10,
+          "perFrame": 0.033
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 0.9,
+          "perFrame": 0.003
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 301,
+          "ms": 39.51,
+          "perFrame": 0.131
+        }
+      },
+      "animServiceMs": 21.69,
+      "animUpdateMs": 67.91
+    },
+    {
+      "boxes": 50,
+      "mode": "none",
+      "frames": 295,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.24,
+          "perFrame": 0.004
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 3.83,
+          "perFrame": 0.013
+        },
+        "PrePaint": {
+          "n": 295,
+          "ms": 10.31,
+          "perFrame": 0.035
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 30.69,
+          "perFrame": 0.104
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 0.94,
+          "perFrame": 0.003
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 295,
+          "ms": 41.83,
+          "perFrame": 0.142
+        }
+      },
+      "animServiceMs": 0.86,
+      "animUpdateMs": 51.34
+    },
+    {
+      "boxes": 50,
+      "mode": "left",
+      "frames": 301,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 301,
+          "ms": 230.91,
+          "perFrame": 0.767
+        },
+        "Layout": {
+          "n": 301,
+          "ms": 78.51,
+          "perFrame": 0.261
+        },
+        "PrePaint": {
+          "n": 301,
+          "ms": 132.05,
+          "perFrame": 0.439
+        },
+        "Paint": {
+          "n": 14822,
+          "ms": 1114.67,
+          "perFrame": 3.703
+        },
+        "RasterTask": {
+          "n": 903,
+          "ms": 85.86,
+          "perFrame": 0.285
+        },
+        "InvalidateLayout": {
+          "n": 311,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 301,
+          "ms": 92.88,
+          "perFrame": 0.309
+        }
+      },
+      "animServiceMs": 62.72,
+      "animUpdateMs": 119.33
+    },
+    {
+      "boxes": 50,
+      "mode": "transform",
+      "frames": 302,
+      "layers": 55,
+      "layersDrawing": 53,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 302,
+          "ms": 224.68,
+          "perFrame": 0.744
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.57,
+          "perFrame": 0.015
+        },
+        "PrePaint": {
+          "n": 302,
+          "ms": 48.96,
+          "perFrame": 0.162
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 13,
+          "perFrame": 0.043
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.16,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 302,
+          "ms": 57.6,
+          "perFrame": 0.191
+        }
+      },
+      "animServiceMs": 60.08,
+      "animUpdateMs": 106.38
+    },
+    {
+      "boxes": 50,
+      "mode": "willchange",
+      "frames": 303,
+      "layers": 55,
+      "layersDrawing": 53,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 303,
+          "ms": 158.87,
+          "perFrame": 0.524
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 2.66,
+          "perFrame": 0.009
+        },
+        "PrePaint": {
+          "n": 303,
+          "ms": 36.51,
+          "perFrame": 0.12
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 8.73,
+          "perFrame": 0.029
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 0.8,
+          "perFrame": 0.003
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 302,
+          "ms": 42.09,
+          "perFrame": 0.139
+        }
+      },
+      "animServiceMs": 43.99,
+      "animUpdateMs": 78.9
+    },
+    {
+      "boxes": 100,
+      "mode": "none",
+      "frames": 298,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.36,
+          "perFrame": 0.005
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 3.65,
+          "perFrame": 0.012
+        },
+        "PrePaint": {
+          "n": 298,
+          "ms": 7.86,
+          "perFrame": 0.026
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 42.36,
+          "perFrame": 0.142
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.25,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 298,
+          "ms": 29.97,
+          "perFrame": 0.101
+        }
+      },
+      "animServiceMs": 0.74,
+      "animUpdateMs": 47.29
+    },
+    {
+      "boxes": 100,
+      "mode": "left",
+      "frames": 294,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 294,
+          "ms": 290.54,
+          "perFrame": 0.988
+        },
+        "Layout": {
+          "n": 294,
+          "ms": 90.45,
+          "perFrame": 0.308
+        },
+        "PrePaint": {
+          "n": 294,
+          "ms": 173.35,
+          "perFrame": 0.59
+        },
+        "Paint": {
+          "n": 28704,
+          "ms": 1824.5,
+          "perFrame": 6.206
+        },
+        "RasterTask": {
+          "n": 882,
+          "ms": 113.91,
+          "perFrame": 0.387
+        },
+        "InvalidateLayout": {
+          "n": 304,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 294,
+          "ms": 55.72,
+          "perFrame": 0.19
+        }
+      },
+      "animServiceMs": 74.99,
+      "animUpdateMs": 114.23
+    },
+    {
+      "boxes": 100,
+      "mode": "transform",
+      "frames": 302,
+      "layers": 105,
+      "layersDrawing": 103,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 302,
+          "ms": 383.61,
+          "perFrame": 1.27
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.19,
+          "perFrame": 0.014
+        },
+        "PrePaint": {
+          "n": 303,
+          "ms": 52.41,
+          "perFrame": 0.174
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 14.45,
+          "perFrame": 0.048
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.07,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 303,
+          "ms": 87.03,
+          "perFrame": 0.288
+        }
+      },
+      "animServiceMs": 96.59,
+      "animUpdateMs": 143.43
+    },
+    {
+      "boxes": 100,
+      "mode": "willchange",
+      "frames": 302,
+      "layers": 105,
+      "layersDrawing": 103,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 302,
+          "ms": 386.96,
+          "perFrame": 1.281
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.04,
+          "perFrame": 0.013
+        },
+        "PrePaint": {
+          "n": 303,
+          "ms": 52.34,
+          "perFrame": 0.173
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 15.5,
+          "perFrame": 0.051
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.13,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 303,
+          "ms": 91.77,
+          "perFrame": 0.304
+        }
+      },
+      "animServiceMs": 97.82,
+      "animUpdateMs": 144.81
+    },
+    {
+      "boxes": 250,
+      "mode": "none",
+      "frames": 300,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.63,
+          "perFrame": 0.005
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 5.16,
+          "perFrame": 0.017
+        },
+        "PrePaint": {
+          "n": 300,
+          "ms": 9.41,
+          "perFrame": 0.031
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 140.84,
+          "perFrame": 0.469
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.3,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 300,
+          "ms": 48.62,
+          "perFrame": 0.162
+        }
+      },
+      "animServiceMs": 1.14,
+      "animUpdateMs": 60.75
+    },
+    {
+      "boxes": 250,
+      "mode": "left",
+      "frames": 132,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 132,
+          "ms": 375.98,
+          "perFrame": 2.848
+        },
+        "Layout": {
+          "n": 132,
+          "ms": 108.25,
+          "perFrame": 0.82
+        },
+        "PrePaint": {
+          "n": 132,
+          "ms": 197.55,
+          "perFrame": 1.497
+        },
+        "Paint": {
+          "n": 30767,
+          "ms": 2191.78,
+          "perFrame": 16.604
+        },
+        "RasterTask": {
+          "n": 393,
+          "ms": 131.85,
+          "perFrame": 0.999
+        },
+        "InvalidateLayout": {
+          "n": 141,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 131,
+          "ms": 30.79,
+          "perFrame": 0.233
+        }
+      },
+      "animServiceMs": 94.08,
+      "animUpdateMs": 116.18
+    },
+    {
+      "boxes": 250,
+      "mode": "transform",
+      "frames": 280,
+      "layers": 255,
+      "layersDrawing": 253,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 281,
+          "ms": 1060.96,
+          "perFrame": 3.789
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 5.68,
+          "perFrame": 0.02
+        },
+        "PrePaint": {
+          "n": 280,
+          "ms": 87.21,
+          "perFrame": 0.311
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 26.35,
+          "perFrame": 0.094
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.24,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 280,
+          "ms": 116.19,
+          "perFrame": 0.415
+        }
+      },
+      "animServiceMs": 228.98,
+      "animUpdateMs": 286.11
+    },
+    {
+      "boxes": 250,
+      "mode": "willchange",
+      "frames": 266,
+      "layers": 255,
+      "layersDrawing": 253,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 266,
+          "ms": 1048.39,
+          "perFrame": 3.941
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 5.88,
+          "perFrame": 0.022
+        },
+        "PrePaint": {
+          "n": 266,
+          "ms": 89.53,
+          "perFrame": 0.337
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 36.12,
+          "perFrame": 0.136
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 2.94,
+          "perFrame": 0.011
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 266,
+          "ms": 123.44,
+          "perFrame": 0.464
+        }
+      },
+      "animServiceMs": 218.79,
+      "animUpdateMs": 273.59
+    },
+    {
+      "boxes": 500,
+      "mode": "none",
+      "frames": 289,
+      "layers": 5,
+      "layersDrawing": 3,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.73,
+          "perFrame": 0.006
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 5.49,
+          "perFrame": 0.019
+        },
+        "PrePaint": {
+          "n": 289,
+          "ms": 9.76,
+          "perFrame": 0.034
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 283.82,
+          "perFrame": 0.982
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.38,
+          "perFrame": 0.005
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 289,
+          "ms": 48.51,
+          "perFrame": 0.168
+        }
+      },
+      "animServiceMs": 1,
+      "animUpdateMs": 48.39
+    },
+    {
+      "boxes": 500,
+      "mode": "left",
+      "frames": 69,
+      "layers": 6,
+      "layersDrawing": 4,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 69,
+          "ms": 401.92,
+          "perFrame": 5.825
+        },
+        "Layout": {
+          "n": 69,
+          "ms": 107,
+          "perFrame": 1.551
+        },
+        "PrePaint": {
+          "n": 69,
+          "ms": 197.64,
+          "perFrame": 2.864
+        },
+        "Paint": {
+          "n": 30080,
+          "ms": 2275.54,
+          "perFrame": 32.979
+        },
+        "RasterTask": {
+          "n": 209,
+          "ms": 119.86,
+          "perFrame": 1.737
+        },
+        "InvalidateLayout": {
+          "n": 78,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 70,
+          "ms": 20.13,
+          "perFrame": 0.292
+        }
+      },
+      "animServiceMs": 99,
+      "animUpdateMs": 112.05
+    },
+    {
+      "boxes": 500,
+      "mode": "transform",
+      "frames": 147,
+      "layers": 506,
+      "layersDrawing": 504,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 146,
+          "ms": 1112.39,
+          "perFrame": 7.567
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 5.61,
+          "perFrame": 0.038
+        },
+        "PrePaint": {
+          "n": 147,
+          "ms": 71.43,
+          "perFrame": 0.486
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 44.38,
+          "perFrame": 0.302
+        },
+        "RasterTask": {
+          "n": 9,
+          "ms": 1.13,
+          "perFrame": 0.008
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 147,
+          "ms": 103.71,
+          "perFrame": 0.706
+        }
+      },
+      "animServiceMs": 236.27,
+      "animUpdateMs": 271.04
+    },
+    {
+      "boxes": 500,
+      "mode": "willchange",
+      "frames": 142,
+      "layers": 506,
+      "layersDrawing": 504,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 143,
+          "ms": 1020.33,
+          "perFrame": 7.185
+        },
+        "Layout": {
+          "n": 11,
+          "ms": 7.76,
+          "perFrame": 0.055
+        },
+        "PrePaint": {
+          "n": 143,
+          "ms": 71.54,
+          "perFrame": 0.504
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 58.99,
+          "perFrame": 0.415
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.15,
+          "perFrame": 0.008
+        },
+        "InvalidateLayout": {
+          "n": 11,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 143,
+          "ms": 96.43,
+          "perFrame": 0.679
+        }
+      },
+      "animServiceMs": 222.27,
+      "animUpdateMs": 245.82
+    },
+    {
+      "boxes": 1000,
+      "mode": "none",
+      "frames": 284,
+      "layers": 6,
+      "layersDrawing": 4,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.05,
+          "perFrame": 0.004
+        },
+        "Layout": {
+          "n": 10,
+          "ms": 4.26,
+          "perFrame": 0.015
+        },
+        "PrePaint": {
+          "n": 284,
+          "ms": 6.67,
+          "perFrame": 0.023
+        },
+        "Paint": {
+          "n": 20,
+          "ms": 404.01,
+          "perFrame": 1.423
+        },
+        "RasterTask": {
+          "n": 10,
+          "ms": 1.16,
+          "perFrame": 0.004
+        },
+        "InvalidateLayout": {
+          "n": 10,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 284,
+          "ms": 30.28,
+          "perFrame": 0.107
+        }
+      },
+      "animServiceMs": 0.75,
+      "animUpdateMs": 69.8
+    },
+    {
+      "boxes": 1000,
+      "mode": "left",
+      "frames": 36,
+      "layers": 6,
+      "layersDrawing": 4,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 36,
+          "ms": 416.79,
+          "perFrame": 11.577
+        },
+        "Layout": {
+          "n": 36,
+          "ms": 111.66,
+          "perFrame": 3.102
+        },
+        "PrePaint": {
+          "n": 36,
+          "ms": 188.72,
+          "perFrame": 5.242
+        },
+        "Paint": {
+          "n": 26046,
+          "ms": 2160.53,
+          "perFrame": 60.015
+        },
+        "RasterTask": {
+          "n": 108,
+          "ms": 103.43,
+          "perFrame": 2.873
+        },
+        "InvalidateLayout": {
+          "n": 46,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 36,
+          "ms": 13.38,
+          "perFrame": 0.372
+        }
+      },
+      "animServiceMs": 99.65,
+      "animUpdateMs": 111.46
+    },
+    {
+      "boxes": 1000,
+      "mode": "transform",
+      "frames": 53,
+      "layers": 1006,
+      "layersDrawing": 1004,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 53,
+          "ms": 792.39,
+          "perFrame": 14.951
+        },
+        "Layout": {
+          "n": 14,
+          "ms": 16.36,
+          "perFrame": 0.309
+        },
+        "PrePaint": {
+          "n": 53,
+          "ms": 55.25,
+          "perFrame": 1.043
+        },
+        "Paint": {
+          "n": 28,
+          "ms": 145.16,
+          "perFrame": 2.739
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 2.32,
+          "perFrame": 0.044
+        },
+        "InvalidateLayout": {
+          "n": 14,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 53,
+          "ms": 138.67,
+          "perFrame": 2.616
+        }
+      },
+      "animServiceMs": 202.16,
+      "animUpdateMs": 213.28
+    },
+    {
+      "boxes": 1000,
+      "mode": "willchange",
+      "frames": 58,
+      "layers": 1006,
+      "layersDrawing": 1004,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 57,
+          "ms": 825.27,
+          "perFrame": 14.229
+        },
+        "Layout": {
+          "n": 13,
+          "ms": 13.44,
+          "perFrame": 0.232
+        },
+        "PrePaint": {
+          "n": 57,
+          "ms": 53.78,
+          "perFrame": 0.927
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 115.83,
+          "perFrame": 1.997
+        },
+        "RasterTask": {
+          "n": 14,
+          "ms": 2.36,
+          "perFrame": 0.041
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0,
+          "perFrame": 0
+        },
+        "Commit": {
+          "n": 57,
+          "ms": 126.87,
+          "perFrame": 2.187
+        }
+      },
+      "animServiceMs": 210.56,
+      "animUpdateMs": 223.16
+    }
+  ]
+}
