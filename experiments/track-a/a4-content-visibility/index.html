@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>A4 · content-visibility</title>
+<style>
+  :root {
+    --bg:#fbfaf8; --panel:#fff; --ink:#1a1a1a; --muted:#6b6b6b; --line:#e3e0da;
+    --accent:#b4401f; --itemW: 760px;
+    --mono: ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#14130f; --panel:#1d1b17; --ink:#eeebe4; --muted:#9a958a;
+      --line:#322e28; --accent:#e8794f;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); padding:0 16px 48px;
+         font:15px/1.5 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif; }
+  .wrap { max-width:840px; margin:0 auto; }
+  header { padding:20px 0 12px; border-bottom:1px solid var(--line); margin-bottom:12px; }
+  h1 { margin:0 0 4px; font-size:19px; }
+  header p { margin:0; color:var(--muted); font-size:14px; }
+  .controls { display:flex; flex-wrap:wrap; gap:8px; padding:10px; background:var(--panel);
+              border:1px solid var(--line); border-radius:8px; margin-bottom:10px; }
+  button { font:inherit; font-size:13px; padding:6px 10px; border-radius:6px;
+           border:1px solid var(--line); background:var(--panel); color:var(--ink); cursor:pointer; }
+  button[data-on="1"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+  #info { font:12px/1.7 var(--mono); color:var(--muted); white-space:pre-wrap;
+          padding:10px; background:var(--panel); border:1px solid var(--line);
+          border-radius:8px; margin-bottom:10px; }
+
+  /* ── 측정 대상 ────────────────────────────────── */
+  #list { width: var(--itemW); }
+
+  .item {
+    border:1px solid var(--line); border-radius:6px; background:var(--panel);
+    padding:12px 14px; margin-bottom:10px;
+  }
+  /* content-visibility 적용은 컨테이너의 클래스로 제어한다 */
+  #list.cv .item            { content-visibility:auto; contain-intrinsic-size:auto 118px; }
+  #list.cv-nosize .item     { content-visibility:auto; }
+  /* A4에서 확인: contain-intrinsic-size 는 content-box 기준.
+     실제 항목 = content 73 + padding 24 + border 2 + margin 10 = 109px → 73px 이 맞다. */
+  #list.cv-exact .item      { content-visibility:auto; contain-intrinsic-size:auto 73px; }
+
+  .item h3   { margin:0 0 6px; font-size:15px; }
+  .item p    { margin:0 0 6px; font-size:13px; color:var(--muted); }
+  .item .row { display:flex; gap:8px; flex-wrap:wrap; }
+  .item .tag { font:11px var(--mono); padding:2px 7px; border-radius:99px;
+               border:1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>A4 · <code>content-visibility</code></h1>
+  <p>오프스크린 콘텐츠의 레이아웃·페인트를 실제로 건너뛰는가. 비용이 항목 수에 비례하는가.</p>
+</header>
+
+<div class="controls" id="ctl"></div>
+<div id="info">—</div>
+<div id="list"></div>
+
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const list = document.getElementById('list');
+  const info = document.getElementById('info');
+  let state = { n: 0, mode: 'plain' };
+
+  const MODES = {
+    'plain':       '',            // 대조군
+    'cv-auto':     'cv',          // content-visibility:auto + contain-intrinsic-size
+    'cv-nosize':   'cv-nosize',   // contain-intrinsic-size 없음
+    'cv-exact':    'cv-exact',    // contain-intrinsic-size 를 정확한 content-box 값(73px)으로
+  };
+
+  const WORDS = ('렌더링 파이프라인 레이아웃 페인트 합성 타일 래스터 프로퍼티 트리 ' +
+                 'display list paint chunk compositor viz blink skia').split(' ');
+  const text = (seed, k) =>
+    Array.from({ length: k }, (_, i) => WORDS[(seed * 7 + i * 3) % WORDS.length]).join(' ');
+
+  function build(n, mode) {
+    if (!(mode in MODES)) throw new Error('알 수 없는 모드: ' + mode);
+    list.className = MODES[mode];
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < n; i++) {
+      const el = document.createElement('div');
+      el.className = 'item';
+      el.innerHTML =
+        `<h3>항목 ${i}</h3>` +
+        `<p>${text(i, 14)}</p>` +
+        `<div class="row">` +
+        `<span class="tag">${text(i + 1, 2)}</span>` +
+        `<span class="tag">${text(i + 2, 2)}</span>` +
+        `<span class="tag">${text(i + 3, 2)}</span>` +
+        `</div>`;
+      frag.appendChild(el);
+    }
+    list.textContent = '';
+    list.appendChild(frag);
+    state = { n, mode };
+    render();
+  }
+
+  /** k회 강제 리레이아웃. 매번 컨테이너 폭을 바꿔 자식 전체의 레이아웃을 무효화한다. */
+  async function relayout(k) {
+    const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    for (let i = 0; i < k; i++) {
+      document.documentElement.style.setProperty('--itemW', (760 - (i % 2) * 40) + 'px');
+      await frame();
+    }
+    document.documentElement.style.setProperty('--itemW', '760px');
+    await frame();
+  }
+
+  function render() {
+    const se = document.scrollingElement;
+    info.textContent =
+      `항목 수      ${state.n}\n` +
+      `모드         ${state.mode}  (list.className="${list.className}")\n` +
+      `scrollHeight ${se.scrollHeight}px   // contain-intrinsic-size 가 없으면 실제보다 작게 잡힌다\n` +
+      `viewport     ${innerWidth}×${innerHeight}`;
+    for (const b of document.querySelectorAll('#ctl button'))
+      b.dataset.on = b.dataset.m === state.mode ? '1' : '0';
+  }
+
+  const ctl = document.getElementById('ctl');
+  for (const m of Object.keys(MODES)) {
+    const b = document.createElement('button');
+    b.textContent = m; b.dataset.m = m;
+    b.onclick = () => build(state.n || 500, m);
+    ctl.appendChild(b);
+  }
+  for (const n of [100, 500, 2000, 8000]) {
+    const b = document.createElement('button');
+    b.textContent = 'n=' + n;
+    b.onclick = () => build(n, state.mode);
+    ctl.appendChild(b);
+  }
+
+  /** 문서 끝까지 k단계로 스크롤한다. content-visibility 의 '대가'를 재는 용도. */
+  async function scrollThrough(k) {
+    const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const se = document.scrollingElement;
+    const max = se.scrollHeight - innerHeight;
+    for (let i = 1; i <= k; i++) {
+      se.scrollTop = Math.round(max * (i / k));
+      await frame();
+    }
+    se.scrollTop = 0;
+    await frame();
+    return { max, finalScrollHeight: se.scrollHeight };
+  }
+
+  /** 현실적인 연속 스크롤: step px 씩 count 번. 점프가 아니라 실제 읽는 속도에 가깝다. */
+  async function scrollLinear(step, count) {
+    const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const se = document.scrollingElement;
+    for (let i = 1; i <= count; i++) { se.scrollTop = i * step; await frame(); }
+    const reached = se.scrollTop;
+    se.scrollTop = 0; await frame();
+    return { reached, step, count };
+  }
+
+  window.__A4 = {
+    build,
+    relayout,
+    scrollThrough,
+    scrollLinear,
+    modes: () => Object.keys(MODES),
+    state: () => ({ ...state,
+                    scrollHeight: document.scrollingElement.scrollHeight,
+                    items: list.children.length }),
+  };
+
+  build(500, 'plain');
+})();
+</script>
+</body>
+</html>
