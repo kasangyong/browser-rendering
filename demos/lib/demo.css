@@ -1,0 +1,78 @@
+/* 데모 공용 스타일 — 10개 데모가 한 벌로 보이도록 */
+:root{
+  --bg:#fbfaf8; --panel:#ffffff; --ink:#191817; --muted:#6e6a63; --line:#e4e0d9;
+  --accent:#b4401f; --good:#1f7a4d; --warn:#a5761b; --cool:#3c6eb4;
+  --stage:#f2efe9; --hotring:rgba(180,64,31,.45);
+  --mono: ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131210; --panel:#1c1a17; --ink:#efece5; --muted:#9b968c; --line:#332f29;
+    --accent:#e8794f; --good:#4fbd86; --warn:#d4a24a; --cool:#6c9ede;
+    --stage:#211f1b; --hotring:rgba(232,121,79,.42);
+  }
+}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);padding:0 20px 44px;
+     font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;
+     -webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto}
+
+header{padding:26px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.kicker{display:inline-block;font:700 10.5px var(--mono);letter-spacing:.14em;
+        color:var(--accent);margin-bottom:7px}
+h1{margin:0 0 6px;font-size:23px;letter-spacing:-.015em;line-height:1.25}
+header p{margin:0;color:var(--muted);font-size:14px;max-width:78ch}
+a{color:var(--accent)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:11px 12px;
+          background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:14px}
+button{font:inherit;font-size:13px;padding:7px 13px;border-radius:7px;
+       border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;
+       transition:background .15s,border-color .15s,color .15s}
+button:hover{border-color:var(--accent)}
+button[data-on="1"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+button.ghost{background:transparent}
+button.primary{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:650}
+label{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
+select,input[type=number],input[type=range]{font:inherit;font-family:var(--mono);font-size:13px;
+       padding:5px 8px;border:1px solid var(--line);border-radius:6px;
+       background:var(--bg);color:var(--ink)}
+input[type=range]{padding:0}
+.sep{width:1px;height:22px;background:var(--line)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h2{margin:0 0 10px;font:700 11px var(--mono);text-transform:uppercase;
+         letter-spacing:.09em;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.stage{position:relative;background:var(--stage);border:1px solid var(--line);
+       border-radius:10px;overflow:hidden}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+tr:last-child td{border-bottom:none}
+th{font:700 10.5px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+code{font:12.5px var(--mono);background:var(--line);padding:1px 5px;border-radius:4px}
+.note{font-size:12.5px;line-height:1.6;color:var(--muted);margin:10px 0 0}
+.note b{color:var(--ink)}
+.tag{display:inline-block;font:11px var(--mono);padding:2px 8px;border-radius:99px;
+     border:1px solid var(--line);color:var(--muted)}
+.tag.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.metric{display:flex;flex-direction:column;gap:2px}
+.metric .k{font:600 10px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.metric .v{font:700 24px/1.15 var(--mono);font-variant-numeric:tabular-nums}
+.metric .v small{font-size:12px;font-weight:400;color:var(--muted)}
+
+footer.demo{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);
+            display:flex;gap:14px;flex-wrap:wrap;align-items:center;
+            font-size:12px;color:var(--muted)}
+footer.demo a{text-decoration:none}
+footer.demo .dot{opacity:.4}
