@@ -1,0 +1,408 @@
+{
+  "generatedAt": "2026-09-17T03:12:58.956Z",
+  "gpu": {
+    "devices": [
+      "Intel(R) Iris(R) Xe Graphics",
+      "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "Microsoft Basic Render Driver"
+    ],
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "enabled_on",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    }
+  },
+  "settleMs": 2500,
+  "isolation": "browser-per-config",
+  "rows": [
+    {
+      "boxes": 200,
+      "mode": "none",
+      "rep": 0,
+      "layers": 5,
+      "first": {
+        "gpuMB": 74.84,
+        "sharedImagesMB": 22.31,
+        "tileMemoryMB": 13.75,
+        "resourceMB": 0,
+        "rendererCount": 11
+      },
+      "second": {
+        "gpuMB": 74.84,
+        "sharedImagesMB": 22.31,
+        "tileMemoryMB": 13.75,
+        "resourceMB": 0,
+        "rendererCount": 11
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "none",
+      "rep": 1,
+      "layers": 5,
+      "first": {
+        "gpuMB": 61.7,
+        "sharedImagesMB": 54.31,
+        "tileMemoryMB": 45.86,
+        "resourceMB": 0,
+        "rendererCount": 13
+      },
+      "second": {
+        "gpuMB": 59.58,
+        "sharedImagesMB": 54.31,
+        "tileMemoryMB": 45.86,
+        "resourceMB": 0,
+        "rendererCount": 15
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "none",
+      "rep": 2,
+      "layers": 5,
+      "first": {
+        "gpuMB": 55.34,
+        "sharedImagesMB": 47.93,
+        "tileMemoryMB": 39.48,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 53.22,
+        "sharedImagesMB": 47.93,
+        "tileMemoryMB": 39.48,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "left",
+      "rep": 0,
+      "layers": 5,
+      "first": {
+        "gpuMB": 42.48,
+        "sharedImagesMB": 22.51,
+        "tileMemoryMB": 13.75,
+        "resourceMB": 0,
+        "rendererCount": 11
+      },
+      "second": {
+        "gpuMB": 42.48,
+        "sharedImagesMB": 22.51,
+        "tileMemoryMB": 13.75,
+        "resourceMB": 0,
+        "rendererCount": 11
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "left",
+      "rep": 1,
+      "layers": 5,
+      "first": {
+        "gpuMB": 80.47,
+        "sharedImagesMB": 58.06,
+        "tileMemoryMB": 49.61,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 78.34,
+        "sharedImagesMB": 58.06,
+        "tileMemoryMB": 49.61,
+        "resourceMB": 0,
+        "rendererCount": 14
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "left",
+      "rep": 2,
+      "layers": 5,
+      "first": {
+        "gpuMB": 80.47,
+        "sharedImagesMB": 58.06,
+        "tileMemoryMB": 49.61,
+        "resourceMB": 0,
+        "rendererCount": 13
+      },
+      "second": {
+        "gpuMB": 78.34,
+        "sharedImagesMB": 58.06,
+        "tileMemoryMB": 49.61,
+        "resourceMB": 0,
+        "rendererCount": 15
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "transform",
+      "rep": 0,
+      "layers": 205,
+      "first": {
+        "gpuMB": 31.66,
+        "sharedImagesMB": 25.65,
+        "tileMemoryMB": 16.88,
+        "resourceMB": 0,
+        "rendererCount": 10
+      },
+      "second": {
+        "gpuMB": 31.66,
+        "sharedImagesMB": 25.65,
+        "tileMemoryMB": 16.88,
+        "resourceMB": 0,
+        "rendererCount": 10
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "transform",
+      "rep": 1,
+      "layers": 205,
+      "first": {
+        "gpuMB": 65.86,
+        "sharedImagesMB": 57.43,
+        "tileMemoryMB": 48.98,
+        "resourceMB": 0,
+        "rendererCount": 13
+      },
+      "second": {
+        "gpuMB": 63.74,
+        "sharedImagesMB": 57.43,
+        "tileMemoryMB": 48.98,
+        "resourceMB": 0,
+        "rendererCount": 15
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 200,
+      "mode": "transform",
+      "rep": 2,
+      "layers": 205,
+      "first": {
+        "gpuMB": 68.36,
+        "sharedImagesMB": 57.93,
+        "tileMemoryMB": 49.48,
+        "resourceMB": 0,
+        "rendererCount": 13
+      },
+      "second": {
+        "gpuMB": 66.24,
+        "sharedImagesMB": 57.93,
+        "tileMemoryMB": 49.48,
+        "resourceMB": 0,
+        "rendererCount": 15
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 4000,
+      "mode": "none",
+      "rep": 0,
+      "layers": 5,
+      "first": {
+        "gpuMB": 25.43,
+        "sharedImagesMB": 17.46,
+        "tileMemoryMB": 10,
+        "resourceMB": 0,
+        "rendererCount": 10
+      },
+      "second": {
+        "gpuMB": 25.43,
+        "sharedImagesMB": 17.46,
+        "tileMemoryMB": 10,
+        "resourceMB": 0,
+        "rendererCount": 10
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 4000,
+      "mode": "none",
+      "rep": 1,
+      "layers": 5,
+      "first": {
+        "gpuMB": 58.34,
+        "sharedImagesMB": 47.93,
+        "tileMemoryMB": 39.48,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 56.22,
+        "sharedImagesMB": 47.93,
+        "tileMemoryMB": 36.98,
+        "resourceMB": 0,
+        "rendererCount": 16
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 4000,
+      "mode": "none",
+      "rep": 2,
+      "layers": 5,
+      "first": {
+        "gpuMB": 64.72,
+        "sharedImagesMB": 54.31,
+        "tileMemoryMB": 45.86,
+        "resourceMB": 0,
+        "rendererCount": 13
+      },
+      "second": {
+        "gpuMB": 62.59,
+        "sharedImagesMB": 54.31,
+        "tileMemoryMB": 45.86,
+        "resourceMB": 0,
+        "rendererCount": 15
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 4000,
+      "mode": "left",
+      "rep": 0,
+      "layers": 5,
+      "first": {
+        "gpuMB": 25.43,
+        "sharedImagesMB": 17.46,
+        "tileMemoryMB": 10,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 29.43,
+        "sharedImagesMB": 17.46,
+        "tileMemoryMB": 10,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "driftMB": 0
+    },
+    {
+      "boxes": 4000,
+      "mode": "left",
+      "rep": 1,
+      "layers": 5,
+      "first": {
+        "gpuMB": 58.34,
+        "sharedImagesMB": 47.93,
+        "tileMemoryMB": 39.48,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 57.7,
+        "sharedImagesMB": 45.42,
+        "tileMemoryMB": 39.48,
+        "resourceMB": 0,
+        "rendererCount": 17
+      },
+      "driftMB": -2.51
+    },
+    {
+      "boxes": 4000,
+      "mode": "left",
+      "rep": 2,
+      "layers": 5,
+      "first": {
+        "gpuMB": 58.34,
+        "sharedImagesMB": 47.93,
+        "tileMemoryMB": 39.48,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 64.18,
+        "sharedImagesMB": 43.9,
+        "tileMemoryMB": 37.97,
+        "resourceMB": 0,
+        "rendererCount": 16
+      },
+      "driftMB": -4.03
+    },
+    {
+      "boxes": 4000,
+      "mode": "transform",
+      "rep": 0,
+      "layers": 4006,
+      "first": {
+        "gpuMB": 103.99,
+        "sharedImagesMB": 84,
+        "tileMemoryMB": 75,
+        "resourceMB": 0,
+        "rendererCount": 11
+      },
+      "second": {
+        "gpuMB": 95.93,
+        "sharedImagesMB": 75.93,
+        "tileMemoryMB": 70,
+        "resourceMB": 0,
+        "rendererCount": 11
+      },
+      "driftMB": -8.07
+    },
+    {
+      "boxes": 4000,
+      "mode": "transform",
+      "rep": 1,
+      "layers": 4006,
+      "first": {
+        "gpuMB": 139.24,
+        "sharedImagesMB": 116.81,
+        "tileMemoryMB": 108.36,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 133.35,
+        "sharedImagesMB": 113.04,
+        "tileMemoryMB": 107.11,
+        "resourceMB": 0,
+        "rendererCount": 16
+      },
+      "driftMB": -3.77
+    },
+    {
+      "boxes": 4000,
+      "mode": "transform",
+      "rep": 2,
+      "layers": 4006,
+      "first": {
+        "gpuMB": 142.99,
+        "sharedImagesMB": 120.56,
+        "tileMemoryMB": 112.11,
+        "resourceMB": 0,
+        "rendererCount": 12
+      },
+      "second": {
+        "gpuMB": 133.35,
+        "sharedImagesMB": 113.04,
+        "tileMemoryMB": 107.11,
+        "resourceMB": 0,
+        "rendererCount": 16
+      },
+      "driftMB": -7.52
+    }
+  ]
+}

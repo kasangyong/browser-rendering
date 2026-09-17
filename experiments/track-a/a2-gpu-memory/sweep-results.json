@@ -1,0 +1,240 @@
+{
+  "generatedAt": "2026-09-17T03:04:39.004Z",
+  "browser": "Chrome/152.0.7977.83",
+  "gpu": {
+    "devices": [
+      "Intel(R) Iris(R) Xe Graphics",
+      "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "Microsoft Basic Render Driver"
+    ],
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    }
+  },
+  "settleMs": 2200,
+  "rows": [
+    {
+      "boxes": 1,
+      "mode": "none",
+      "layers": 5,
+      "gpuTotalMB": 58.31,
+      "gpuSharedImagesMB": 52.53,
+      "ccTileMemoryMB": 86.2,
+      "ccResourceMB": 0,
+      "dumpEvents": 54
+    },
+    {
+      "boxes": 1,
+      "mode": "left",
+      "layers": 5,
+      "gpuTotalMB": 65.2,
+      "gpuSharedImagesMB": 45.15,
+      "ccTileMemoryMB": 75.94,
+      "ccResourceMB": 0,
+      "dumpEvents": 57
+    },
+    {
+      "boxes": 1,
+      "mode": "transform",
+      "layers": 6,
+      "gpuTotalMB": 63.99,
+      "gpuSharedImagesMB": 43.92,
+      "ccTileMemoryMB": 75.97,
+      "ccResourceMB": 0,
+      "dumpEvents": 49
+    },
+    {
+      "boxes": 50,
+      "mode": "none",
+      "layers": 5,
+      "gpuTotalMB": 63.99,
+      "gpuSharedImagesMB": 43.92,
+      "ccTileMemoryMB": 75.97,
+      "ccResourceMB": 0,
+      "dumpEvents": 46
+    },
+    {
+      "boxes": 50,
+      "mode": "left",
+      "layers": 5,
+      "gpuTotalMB": 68.72,
+      "gpuSharedImagesMB": 47.65,
+      "ccTileMemoryMB": 83.44,
+      "ccResourceMB": 0,
+      "dumpEvents": 42
+    },
+    {
+      "boxes": 50,
+      "mode": "transform",
+      "layers": 55,
+      "gpuTotalMB": 67,
+      "gpuSharedImagesMB": 45.93,
+      "ccTileMemoryMB": 77.5,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 200,
+      "mode": "none",
+      "layers": 5,
+      "gpuTotalMB": 68.87,
+      "gpuSharedImagesMB": 47.81,
+      "ccTileMemoryMB": 83.75,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 200,
+      "mode": "left",
+      "layers": 5,
+      "gpuTotalMB": 69.97,
+      "gpuSharedImagesMB": 48.9,
+      "ccTileMemoryMB": 84.69,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 200,
+      "mode": "transform",
+      "layers": 206,
+      "gpuTotalMB": 73.09,
+      "gpuSharedImagesMB": 52.03,
+      "ccTileMemoryMB": 92.19,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 500,
+      "mode": "none",
+      "layers": 6,
+      "gpuTotalMB": 77.16,
+      "gpuSharedImagesMB": 56.09,
+      "ccTileMemoryMB": 100.31,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 500,
+      "mode": "left",
+      "layers": 6,
+      "gpuTotalMB": 69.97,
+      "gpuSharedImagesMB": 48.9,
+      "ccTileMemoryMB": 84.69,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 500,
+      "mode": "transform",
+      "layers": 506,
+      "gpuTotalMB": 77.78,
+      "gpuSharedImagesMB": 56.72,
+      "ccTileMemoryMB": 101.56,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 1000,
+      "mode": "none",
+      "layers": 6,
+      "gpuTotalMB": 89.66,
+      "gpuSharedImagesMB": 68.59,
+      "ccTileMemoryMB": 125.31,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 1000,
+      "mode": "left",
+      "layers": 6,
+      "gpuTotalMB": 66.22,
+      "gpuSharedImagesMB": 45.15,
+      "ccTileMemoryMB": 78.44,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 1000,
+      "mode": "transform",
+      "layers": 1006,
+      "gpuTotalMB": 81.84,
+      "gpuSharedImagesMB": 60.78,
+      "ccTileMemoryMB": 109.69,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 2000,
+      "mode": "none",
+      "layers": 6,
+      "gpuTotalMB": 114.34,
+      "gpuSharedImagesMB": 93.28,
+      "ccTileMemoryMB": 174.69,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 2000,
+      "mode": "left",
+      "layers": 6,
+      "gpuTotalMB": 66.22,
+      "gpuSharedImagesMB": 45.15,
+      "ccTileMemoryMB": 78.44,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 2000,
+      "mode": "transform",
+      "layers": 2006,
+      "gpuTotalMB": 102.47,
+      "gpuSharedImagesMB": 81.4,
+      "ccTileMemoryMB": 142.19,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 4000,
+      "mode": "none",
+      "layers": 6,
+      "gpuTotalMB": 161.22,
+      "gpuSharedImagesMB": 140.15,
+      "ccTileMemoryMB": 268.44,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 4000,
+      "mode": "left",
+      "layers": 6,
+      "gpuTotalMB": 66.22,
+      "gpuSharedImagesMB": 45.15,
+      "ccTileMemoryMB": 78.44,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    },
+    {
+      "boxes": 4000,
+      "mode": "transform",
+      "layers": 4006,
+      "gpuTotalMB": 129.97,
+      "gpuSharedImagesMB": 108.9,
+      "ccTileMemoryMB": 205.94,
+      "ccResourceMB": 0,
+      "dumpEvents": 38
+    }
+  ]
+}
