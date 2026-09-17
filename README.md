@@ -2,11 +2,13 @@
 
 # 브라우저 렌더링 — 강의에서 실측까지
 
-**강의를 듣고 → 원본 영상과 대조하고 → 직접 측정해서 → 틀린 걸 찾아낸 기록**
+**강의를 듣고 → 원본 영상과 대조하고 → 직접 측정해서 → 틀린 걸 찾아내고 → 움직이는 데모로 만든 기록**
 
 `Chrome 152` · `CDP Tracing` · `LayerTree` · `memory-infra` · `Chromium 소스`
 
-실험 **8개** · 사전 등록 주장 **17개**(13 성립 · 3 반증 · 1 부분) · **내가 틀린 것 4개** · 폐기한 측정법 **4개**
+인터랙티브 데모 **10개** · 실험 **8개** · 사전 등록 주장 **17개**(13 성립 · 3 반증 · 1 부분)
+
+**내가 틀린 것 4개** · 폐기한 측정법 **4개**
 
 </div>
 
@@ -39,6 +41,7 @@
 ## 목차
 
 - [이 저장소는 무엇인가](#이-저장소는-무엇인가)
+- [**인터랙티브 데모 10선**](#인터랙티브-데모-10선)
 - [전체 결과 대시보드](#전체-결과-대시보드)
 - [실험 8개](#실험-8개)
   - [A1 · 파이프라인 단계 스킵](#a1--파이프라인-단계-스킵)
@@ -88,6 +91,95 @@
 | 2026 (현재) | **paint → layer** (완료) |
 
 6년에 걸쳐 실제로 뒤집힌 아키텍처를 양쪽에서 본 셈이다. → [상세](docs/video/01-life-of-a-pixel-2020.md#0-가장-중요한-발견--paint--layer-순서-문제가-풀렸다)
+
+---
+
+## 인터랙티브 데모 10선
+
+**전부 움직이고 조작할 수 있다.** 의존성 없는 단일 HTML 파일이고, 표시되는 숫자는
+아래 실험에서 **직접 측정한 값**이다. 각 데모 하단에 근거 실험 링크가 붙어 있다.
+
+> 📂 **[demos/](demos/)** — 저장소를 받아 `python -m http.server` 로 열면 전부 동작한다.
+
+<div align="center">
+  <a href="demos/"><img src="report/images/demos-index.png" width="100%" alt="데모 10선 목록"></a>
+</div>
+
+### 움직이는 것들
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**01 · 파이프라인 라이브**
+CSS 속성을 바꾸면 **어느 단계가 실제로 일하는지** 달라진다.
+테두리가 켜진 단계 = 일하는 단계, 흐린 단계 = 호출되지만 할 일 없음.
+
+<img src="report/images/demo-01-pipeline.gif" width="100%" alt="파이프라인 라이브">
+
+</td>
+<td width="50%" valign="top">
+
+**02 · 스레드 레이스**
+메인 스레드를 점유하면 `left` 는 멈추고 `transform` 은 계속 간다.
+아래 스트립차트는 **실제 프레임 간격** — 막힌 구간이 봉우리로 남는다.
+
+<img src="report/images/demo-02-thread-race.gif" width="100%" alt="스레드 레이스">
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**03 · 레이어 3D 분해**
+DOM 순서만 바꾸면 레이어가 **24개 → 15개**로 갈라졌다 합쳐진다.
+초록 = 승격된 레이어, 파랑 = `Overlap` 때문에 생긴 레이어.
+
+<img src="report/images/demo-03-layers-3d.gif" width="100%" alt="레이어 3D 분해">
+
+</td>
+<td width="50%" valign="top">
+
+**04 · 타일과 뷰포트**
+레이어는 통째로 래스터되지 않는다. 스크롤에 따라
+초록(래스터됨) → 주황(선행) → 회색(버림) 으로 바뀐다.
+
+<img src="report/images/demo-04-tiles.gif" width="100%" alt="타일과 뷰포트">
+
+</td>
+</tr>
+</table>
+
+### 나머지 6개
+
+| 데모 | 무엇을 보여주나 | 근거 |
+|---|---|---|
+| [**05 · paint order**](demos/05-paint-order/) | 요소를 고르고 `z-index`·`opacity`·`transform` 을 켜면 **그리는 순서가 재배열**된다. paint phase 4단계 순회도 애니메이션으로 | A1 |
+| [**06 · 강제 동기 레이아웃**](demos/06-thrash/) | 읽기·쓰기를 번갈아 하면 매번 레이아웃이 강제된다. **실제로 측정한** 작업 순서를 타임라인으로 | — |
+| [**07 · 프레임 예산**](demos/07-frame-budget/) | 요소 수를 올리면 막대가 **마감선을 넘고** 프레임이 죽는다. 단계별 비용은 Track A 실측값 | A1·A1b·A4 |
+| [**08 · 렌더 스킵 뷰어**](demos/08-render-skip/) | 화면 밖 항목이 정말 건너뛰어지는지 **브라우저에 직접 물어본다**(`checkVisibility`) | A4 |
+| [**09 · INP 분해 실험실**](demos/09-inp-lab/) | 클릭하면 input delay / processing / presentation 이 막대로 쌓인다. **INP 와 실제 화면 갱신의 간극**이 핵심 | A5 |
+| [**10 · 무효화 전파**](demos/10-invalidation/) | 노드를 누르면 재계산이 트리에 번진다. `contain` 을 켜면 **경계에서 멈춘다** | Life of a Pixel |
+
+<div align="center">
+  <img src="report/images/demo-07-frame-budget.png" width="49%" alt="프레임 예산">
+  <img src="report/images/demo-10-invalidation.png" width="49%" alt="무효화 전파">
+</div>
+
+<details>
+<summary><b>데모 5~9 스크린샷 펼치기</b></summary>
+
+<img src="report/images/demo-05-paint-order.png" width="100%" alt="paint order">
+<img src="report/images/demo-06-thrash.png" width="100%" alt="강제 동기 레이아웃">
+<img src="report/images/demo-08-render-skip.png" width="100%" alt="렌더 스킵 뷰어">
+<img src="report/images/demo-09-inp-lab.png" width="100%" alt="INP 분해 실험실">
+
+</details>
+
+> **데모가 실측에 기대는 방식** — 애니메이션은 설명을 위한 모형이지만,
+> 표시되는 **숫자는 전부 이 저장소의 측정값**이다. 예를 들어 07의 "요소 1개당 Style 0.0116ms" 는
+> [A1b](experiments/track-a/a1-pipeline-skip/RESULTS-b.md) 에서 1000개 기준 11.58ms 를 잰 값이고,
+> 08의 렌더 여부는 추측이 아니라 `checkVisibility({contentVisibilityAuto:true})` 로 브라우저에 물어본 결과다.
 
 ---
 
@@ -528,6 +620,11 @@ __A5.setStrategy('paint-first+yield')
 │   └── video/
 │       └── 01-life-of-a-pixel-2020.md 자막 전문 + 슬라이드 46장 판독
 │
+├── demos/                             ← 인터랙티브 데모 10선
+│   ├── index.html                     목록 페이지
+│   ├── lib/                           공용 CSS·JS
+│   └── 01-pipeline/ … 10-invalidation/
+│
 ├── experiments/track-a/
 │   ├── a1-pipeline-skip/        index.html · 5개 스크립트 · RESULTS ×2
 │   ├── a2-gpu-memory/           PREDICTION · probe · sweep-isolated · RESULTS ×2
@@ -544,7 +641,7 @@ __A5.setStrategy('paint-first+yield')
     └── images/                  PNG 12 · GIF 1
 ```
 
-**문서 23 · 하네스 7 · 스크립트 16 · 원자료 JSON 20 · 이미지 13**
+**문서 23 · 데모 10 · 하네스 7 · 스크립트 17 · 원자료 JSON 20 · 이미지 24(GIF 5 포함)**
 
 ---
 
