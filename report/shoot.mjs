@@ -47,6 +47,10 @@ const SHOTS = [
 
   { name: '06-c2-harness', url: `${BASE}/experiments/track-c/c2-anomalies/`, w: 1180,
     setup: '__C2.build(500, "cv-auto")', maxH: 980 },
+
+  { name: 'chart-c3-layer-cliff', url: `${BASE}/report/charts/c3-layer-cliff.html`, w: 660 },
+  { name: '07-c3-harness', url: `${BASE}/experiments/track-c/c3-layer-cliff/`, w: 1180,
+    setup: '__C3.build(800, 38, 15)', maxH: 620 },
 ];
 
 class CDP {

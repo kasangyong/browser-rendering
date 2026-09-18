@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><style>
+  :root{--bg:#fbfaf8;--panel:#fff;--ink:#1a1a1a;--muted:#6b6b6b;--line:#e3e0da;
+        --accent:#b4401f;--ok:#1f7a4d;--warn:#a5761b;
+        --mono:ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);padding:0 28px 40px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;width:1180px}
+  header{padding:30px 0 18px;border-bottom:2px solid var(--ink);margin-bottom:22px}
+  h1{margin:0 0 6px;font-size:27px;letter-spacing:-.02em}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+     margin:26px 0 12px;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px}
+  .card .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .card .v{font:700 30px/1.1 var(--mono);margin:3px 0 4px}
+  .card .s{font-size:11.5px;color:var(--muted);line-height:1.4}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chart{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px 12px}
+  .chart figcaption{font-size:14px;font-weight:650;margin-bottom:8px}
+  .chart figcaption small{font-weight:400;color:var(--muted);font-size:12px}
+  .logtag{background:var(--line);padding:1px 5px;border-radius:3px;font-family:var(--mono)}
+  svg{width:100%;height:auto;display:block}
+  .ax{stroke:var(--line);stroke-width:1}
+  text.v{font:600 9.5px var(--mono);fill:var(--muted);text-anchor:middle}
+  text.x{font:11px system-ui;fill:var(--muted);text-anchor:middle}
+  .legend{display:flex;gap:14px;margin:6px 0 0;font-size:11.5px;color:var(--muted)}
+  .lg{display:flex;align-items:center;gap:5px}
+  .lg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .note{font-size:12px;line-height:1.55;color:var(--muted);margin:8px 0 0;
+        border-top:1px solid var(--line);padding-top:8px}
+  .note b{color:var(--ink)}
+  code{font:12px var(--mono);background:var(--line);padding:1px 4px;border-radius:3px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+        border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.t{font-weight:650;width:290px}
+  td.t::before{content:"";display:inline-block;width:7px;height:7px;border-radius:99px;margin-right:8px;vertical-align:middle}
+  tr.ok td.t::before{background:var(--ok)} tr.warn td.t::before{background:var(--warn)}
+  footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);
+         font-size:12px;color:var(--muted)}
+</style>
+  <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>
+  </head><body><figure class="chart">
+    <figcaption>C3 · 2,000 레이어 "절벽" 은 측정 잡음이었다 <small>(토글 1회당 ms · 설정마다 표본 480개)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C3 · 2,000 레이어 "절벽" 은 측정 잡음이었다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="71.4" y="116.3" width="28.0" height="49.7" fill="#3c6eb4" rx="2"/><text x="85.4" y="113.3" class="v">32</text><text x="86.4" y="186" class="x">500</text><rect x="128.1" y="95.3" width="28.0" height="70.7" fill="#3c6eb4" rx="2"/><text x="142.1" y="92.3" class="v">46</text><text x="143.1" y="186" class="x">1k</text><rect x="184.9" y="87.6" width="28.0" height="78.4" fill="#3c6eb4" rx="2"/><text x="198.9" y="84.6" class="v">51</text><text x="199.9" y="186" class="x">1.5k</text><rect x="241.6" y="80.6" width="28.0" height="85.4" fill="#3c6eb4" rx="2"/><text x="255.6" y="77.6" class="v">56</text><text x="256.6" y="186" class="x">1.75k</text><rect x="298.4" y="80.9" width="28.0" height="85.1" fill="#3c6eb4" rx="2"/><text x="312.4" y="77.9" class="v">56</text><text x="313.4" y="186" class="x">2k</text><rect x="355.1" y="57.7" width="28.0" height="108.3" fill="#3c6eb4" rx="2"/><text x="369.1" y="54.7" class="v">71</text><text x="370.1" y="186" class="x">2.25k</text><rect x="411.9" y="17.4" width="28.0" height="148.6" fill="#3c6eb4" rx="2"/><text x="425.9" y="14.4" class="v">97</text><text x="426.9" y="186" class="x">2.5k</text><rect x="468.6" y="12.0" width="28.0" height="154.0" fill="#3c6eb4" rx="2"/><text x="482.6" y="9.0" class="v">100</text><text x="483.6" y="186" class="x">3k</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>토글당 p50</span></div>
+    <p class="note">C2 에서 2,000 레이어의 commit 이 5배로 뛰는 것처럼 보였다. 표본을 <b>49개 → 480개</b>로 늘리니 <b>2,000 이 1,750 과 구별되지 않는다</b> (55.7 vs 55.5ms, 95% 구간이 포개진다). 구간 기울기도 1,750→2,000 이 <b>0.87 로 전 구간에서 가장 완만</b>하다. <br><small>※ 원인은 측정법이었다 — 자유 실행 애니메이션에서는 표본 수가 측정 대상의 함수라 느릴수록 표본이 줄고, 같은 설정 반복 간 편차가 <b>5배</b>까지 났다. 토글 수로 표본을 고정하니 편차가 <b>1.1배</b>가 됐다</small></p>
+  </figure></body></html>

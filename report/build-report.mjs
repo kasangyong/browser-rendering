@@ -281,6 +281,27 @@ if (cc?.rows?.length) {
   }));
 }
 
+// C3 ─ 2,000 레이어 절벽은 없었다
+const c3 = await readC('c3-layer-cliff/results.json');
+if (c3?.partA?.length) {
+  const qq = (a, p) => { const x = [...a].sort((m, n) => m - n); return x[Math.floor(x.length * p)] ?? 0; };
+  const by = new Map();
+  for (const r of c3.partA) { if (!by.has(r.layers)) by.set(r.layers, []); by.get(r.layers).push(...(r.times || [])); }
+  const ns = [...by.keys()].sort((a, b) => a - b);
+  const p50 = ns.map(n => +qq(by.get(n), .5).toFixed(1));
+  out.charts.push(barChart({
+    title: 'C3 · 2,000 레이어 "절벽" 은 측정 잡음이었다',
+    unit: '토글 1회당 ms · 설정마다 표본 480개',
+    labels: ns.map(n => n >= 1000 ? (n / 1000) + 'k' : String(n)),
+    series: [{ name: '토글당 p50', color: '#3c6eb4', values: p50 }],
+    note: 'C2 에서 2,000 레이어의 commit 이 5배로 뛰는 것처럼 보였다. 표본을 <b>49개 → 480개</b>로 늘리니 '
+        + `<b>2,000 이 1,750 과 구별되지 않는다</b> (${p50[ns.indexOf(1750)] ?? '-'} vs ${p50[ns.indexOf(2000)] ?? '-'}ms, 95% 구간이 포개진다). `
+        + '구간 기울기도 1,750→2,000 이 <b>0.87 로 전 구간에서 가장 완만</b>하다. '
+        + '<br><small>※ 원인은 측정법이었다 — 자유 실행 애니메이션에서는 표본 수가 측정 대상의 함수라 느릴수록 표본이 줄고, '
+        + '같은 설정 반복 간 편차가 <b>5배</b>까지 났다. 토글 수로 표본을 고정하니 편차가 <b>1.1배</b>가 됐다</small>',
+  }));
+}
+
 // ── 요약 카드 ─────────────────────────────────────────────
 out.cards = [
   { k: '실험', v: '8', s: 'A1 · A1b · A2 · A2b · A3 · A4 · A4b · A5' },
@@ -375,7 +396,7 @@ await writeFile(path.join(ROOT, 'report', 'index.html'), html);
 const HEAD = html.slice(html.indexOf('<style>'), html.indexOf('</style>') + 8);
 await mkdir(path.join(ROOT, 'report', 'charts'), { recursive: true });
 const names = ['a1-stage-skip', 'a1b-ceiling', 'a2-tile-memory', 'a3-dom-order', 'a4-scaling', 'a5-inp',
-               'c1-initial-load', 'c2-invalidation-kind', 'c2-commit-linearity'];
+               'c1-initial-load', 'c2-invalidation-kind', 'c2-commit-linearity', 'c3-layer-cliff'];
 for (let i = 0; i < out.charts.length; i++) {
   const one = `<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">${HEAD}
   <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>

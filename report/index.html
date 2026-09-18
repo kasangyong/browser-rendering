@@ -136,6 +136,14 @@ first</text><rect x="345.8" y="154.3" width="28.0" height="11.7" fill="#3c6eb4" 
     </svg>
     <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>중앙값</span><span class="lg"><i style="background:#b4401f"></i>p90</span></div>
     <p class="note">중앙값 선형 적합 <code>commit = 1.514µs × 레이어 + -0.541ms</code>, <b>R² = 0.640</b>. <b>중앙값도 선형에서 벗어난다.</b><br><small>※ <b>이 디스플레이가 120Hz</b>라 프레임이 vsync 배수로 양자화되면서, 처음 쓴 (Commit 총합 ÷ 프레임수) 방식은 1,500 레이어에서 값이 거꾸로 꺾였다. 여기는 <b>vsync 를 끄고</b> 개별 이벤트 분위수로 다시 잰 값이다. 250~1,500 구간만 보면 R²=0.845 로 선형에 가깝지만 2,000 에서 레이어당 비용이 5배로 뛴다 — <b>판정 보류</b></small></p>
+  </figure><figure class="chart">
+    <figcaption>C3 · 2,000 레이어 "절벽" 은 측정 잡음이었다 <small>(토글 1회당 ms · 설정마다 표본 480개)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C3 · 2,000 레이어 "절벽" 은 측정 잡음이었다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="71.4" y="116.3" width="28.0" height="49.7" fill="#3c6eb4" rx="2"/><text x="85.4" y="113.3" class="v">32</text><text x="86.4" y="186" class="x">500</text><rect x="128.1" y="95.3" width="28.0" height="70.7" fill="#3c6eb4" rx="2"/><text x="142.1" y="92.3" class="v">46</text><text x="143.1" y="186" class="x">1k</text><rect x="184.9" y="87.6" width="28.0" height="78.4" fill="#3c6eb4" rx="2"/><text x="198.9" y="84.6" class="v">51</text><text x="199.9" y="186" class="x">1.5k</text><rect x="241.6" y="80.6" width="28.0" height="85.4" fill="#3c6eb4" rx="2"/><text x="255.6" y="77.6" class="v">56</text><text x="256.6" y="186" class="x">1.75k</text><rect x="298.4" y="80.9" width="28.0" height="85.1" fill="#3c6eb4" rx="2"/><text x="312.4" y="77.9" class="v">56</text><text x="313.4" y="186" class="x">2k</text><rect x="355.1" y="57.7" width="28.0" height="108.3" fill="#3c6eb4" rx="2"/><text x="369.1" y="54.7" class="v">71</text><text x="370.1" y="186" class="x">2.25k</text><rect x="411.9" y="17.4" width="28.0" height="148.6" fill="#3c6eb4" rx="2"/><text x="425.9" y="14.4" class="v">97</text><text x="426.9" y="186" class="x">2.5k</text><rect x="468.6" y="12.0" width="28.0" height="154.0" fill="#3c6eb4" rx="2"/><text x="482.6" y="9.0" class="v">100</text><text x="483.6" y="186" class="x">3k</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>토글당 p50</span></div>
+    <p class="note">C2 에서 2,000 레이어의 commit 이 5배로 뛰는 것처럼 보였다. 표본을 <b>49개 → 480개</b>로 늘리니 <b>2,000 이 1,750 과 구별되지 않는다</b> (55.7 vs 55.5ms, 95% 구간이 포개진다). 구간 기울기도 1,750→2,000 이 <b>0.87 로 전 구간에서 가장 완만</b>하다. <br><small>※ 원인은 측정법이었다 — 자유 실행 애니메이션에서는 표본 수가 측정 대상의 함수라 느릴수록 표본이 줄고, 같은 설정 반복 간 편차가 <b>5배</b>까지 났다. 토글 수로 표본을 고정하니 편차가 <b>1.1배</b>가 됐다</small></p>
   </figure></div>
 
 <h2>핵심 발견</h2>
