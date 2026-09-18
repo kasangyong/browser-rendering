@@ -1,0 +1,59 @@
+{
+  "note": "안정적인 선택자(.mw-parser-output section > *)로 확정. 모바일 폭 390×844.",
+  "selector": ".mw-parser-output section > *",
+  "viewport": "390x844",
+  "generatedAt": "2026-09-18T12:19:34.952Z",
+  "sites": [
+    {
+      "key": "canyon",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canyon",
+      "lcp": {
+        "t": 1752,
+        "size": 53280,
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Canyon_River_Tree_%28165872763%29.jpeg/330px-Canyon_River_Tree_%28165872763%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "docH": 48963,
+      "dom": 7383,
+      "imgs": 69,
+      "count": 224,
+      "median": 208,
+      "cv": 2.83,
+      "covers": 1.58
+    },
+    {
+      "key": "milky",
+      "url": "https://en.wikipedia.org/wiki/Milky_Way",
+      "lcp": {
+        "t": 2076,
+        "size": 52080,
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/ESO-VLT-Laser-phot-33a-07.jpg/330px-ESO-VLT-Laser-phot-33a-07.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "docH": 71931,
+      "dom": 11237,
+      "imgs": 46,
+      "count": 225,
+      "median": 234,
+      "cv": 4.56,
+      "covers": 1.36
+    },
+    {
+      "key": "everest",
+      "url": "https://en.wikipedia.org/wiki/Mount_Everest",
+      "lcp": {
+        "t": 2752,
+        "size": 55296,
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg/330px-Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "docH": 91810,
+      "dom": 15289,
+      "imgs": 233,
+      "count": 429,
+      "median": 200,
+      "cv": 3.83,
+      "covers": 1.52
+    }
+  ]
+}

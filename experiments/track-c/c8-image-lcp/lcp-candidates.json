@@ -1,0 +1,180 @@
+{
+  "note": "LCP 가 이미지인 페이지를 PerformanceObserver 로 확인하고, cv 를 걸 블록도 같이 찾는다",
+  "generatedAt": "2026-09-18T12:18:32.369Z",
+  "sites": [
+    {
+      "key": "everest-m",
+      "url": "https://en.wikipedia.org/wiki/Mount_Everest",
+      "title": "Mount Everest - Wikipedia",
+      "lcp": {
+        "startTime": 1896,
+        "size": 55296,
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg/330px-Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img",
+        "cls": "mw-file-element"
+      },
+      "lcpErr": null,
+      "docHeight": 91810,
+      "domNodes": 15289,
+      "imgCount": 233,
+      "imgBelowFold": 218,
+      "biggestImg": {
+        "area": 667000,
+        "w": 1000,
+        "h": 667,
+        "top": 15818,
+        "src": ""
+      },
+      "cands": [
+        {
+          "sel": "#mwDe0",
+          "count": 356,
+          "median": 70,
+          "cv": 0.3,
+          "covers": 0.28
+        },
+        {
+          "sel": "div.thumbinner",
+          "count": 199,
+          "median": 21,
+          "cv": 0.81,
+          "covers": 0.05
+        },
+        {
+          "sel": "ul",
+          "count": 77,
+          "median": 18,
+          "cv": 0,
+          "covers": 0.02
+        }
+      ]
+    },
+    {
+      "key": "canyon-m",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canyon",
+      "title": "Grand Canyon - Wikipedia",
+      "lcp": {
+        "startTime": 2156,
+        "size": 53280,
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Canyon_River_Tree_%28165872763%29.jpeg/330px-Canyon_River_Tree_%28165872763%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img",
+        "cls": "mw-file-element"
+      },
+      "lcpErr": null,
+      "docHeight": 48963,
+      "domNodes": 7384,
+      "imgCount": 69,
+      "imgBelowFold": 63,
+      "biggestImg": {
+        "area": 209000,
+        "w": 1000,
+        "h": 209,
+        "top": 33216,
+        "src": ""
+      },
+      "cands": [
+        {
+          "sel": "#mwBoQ",
+          "count": 148,
+          "median": 70,
+          "cv": 0.37,
+          "covers": 0.26
+        },
+        {
+          "sel": "ul",
+          "count": 49,
+          "median": 18,
+          "cv": 0.46,
+          "covers": 0.03
+        }
+      ]
+    },
+    {
+      "key": "milky-m",
+      "url": "https://en.wikipedia.org/wiki/Milky_Way",
+      "title": "Milky Way - Wikipedia",
+      "lcp": {
+        "startTime": 2060,
+        "size": 52080,
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/ESO-VLT-Laser-phot-33a-07.jpg/330px-ESO-VLT-Laser-phot-33a-07.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img",
+        "cls": "mw-file-element mw-file-upright"
+      },
+      "lcpErr": null,
+      "docHeight": 71931,
+      "domNodes": 11235,
+      "imgCount": 46,
+      "imgBelowFold": 41,
+      "biggestImg": {
+        "area": 137780,
+        "w": 332,
+        "h": 415,
+        "top": 32877,
+        "src": ""
+      },
+      "cands": [
+        {
+          "sel": "#mwDBU",
+          "count": 297,
+          "median": 94,
+          "cv": 0.7,
+          "covers": 0.44
+        },
+        {
+          "sel": "#mwAvk",
+          "count": 50,
+          "median": 21,
+          "cv": 0.25,
+          "covers": 0.01
+        },
+        {
+          "sel": "div",
+          "count": 47,
+          "median": 18,
+          "cv": 0.17,
+          "covers": 0.01
+        }
+      ]
+    },
+    {
+      "key": "commonsfp-m",
+      "url": "https://commons.wikimedia.org/wiki/Commons:Featured_pictures/Animals",
+      "title": "Commons:Featured pictures/Animals - Wikimedia Commons",
+      "lcp": {
+        "startTime": 1688,
+        "size": 21573,
+        "url": "",
+        "tag": "p",
+        "cls": ""
+      },
+      "lcpErr": null,
+      "docHeight": 33151,
+      "domNodes": 4556,
+      "imgCount": 347,
+      "imgBelowFold": 340,
+      "biggestImg": {
+        "area": 171900,
+        "w": 573,
+        "h": 300,
+        "top": 18773,
+        "src": ""
+      },
+      "cands": [
+        {
+          "sel": "div",
+          "count": 106,
+          "median": 50,
+          "cv": 2.9,
+          "covers": 0.9
+        },
+        {
+          "sel": "ul.gallery",
+          "count": 52,
+          "median": 240,
+          "cv": 0.14,
+          "covers": 0.39
+        }
+      ]
+    }
+  ]
+}
