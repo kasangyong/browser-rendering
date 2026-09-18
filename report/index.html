@@ -144,6 +144,14 @@ first</text><rect x="345.8" y="154.3" width="28.0" height="11.7" fill="#3c6eb4" 
     </svg>
     <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>토글당 p50</span></div>
     <p class="note">C2 에서 2,000 레이어의 commit 이 5배로 뛰는 것처럼 보였다. 표본을 <b>49개 → 480개</b>로 늘리니 <b>2,000 이 1,750 과 구별되지 않는다</b> (55.7 vs 55.5ms, 95% 구간이 포개진다). 구간 기울기도 1,750→2,000 이 <b>0.87 로 전 구간에서 가장 완만</b>하다. <br><small>※ 원인은 측정법이었다 — 자유 실행 애니메이션에서는 표본 수가 측정 대상의 함수라 느릴수록 표본이 줄고, 같은 설정 반복 간 편차가 <b>5배</b>까지 났다. 토글 수로 표본을 고정하니 편차가 <b>1.1배</b>가 됐다</small></p>
+  </figure><figure class="chart">
+    <figcaption>C4 · Raster 가 "켜지는" 임계점은 렌더러가 아니라 측정 코드에 있었다 <small>(반복 6회 중 Raster 가 관측된 비율 (%))</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C4 · Raster 가 "켜지는" 임계점은 렌더러가 아니라 측정 코드에 있었다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="68.2" y="166.0" width="28.0" height="1.0" fill="#b4401f" rx="2"/><text x="83.2" y="186" class="x">800</text><rect x="118.7" y="134.5" width="28.0" height="31.5" fill="#b4401f" rx="2"/><text x="132.7" y="131.5" class="v">17</text><text x="133.7" y="186" class="x">1k</text><rect x="169.1" y="104.8" width="28.0" height="61.2" fill="#b4401f" rx="2"/><text x="183.1" y="101.8" class="v">33</text><text x="184.1" y="186" class="x">1.1k</text><rect x="219.6" y="134.5" width="28.0" height="31.5" fill="#b4401f" rx="2"/><text x="233.6" y="131.5" class="v">17</text><text x="234.6" y="186" class="x">1.2k</text><rect x="270.0" y="104.8" width="28.0" height="61.2" fill="#b4401f" rx="2"/><text x="284.0" y="101.8" class="v">33</text><text x="285.0" y="186" class="x">1.3k</text><rect x="320.4" y="134.5" width="28.0" height="31.5" fill="#b4401f" rx="2"/><text x="334.4" y="131.5" class="v">17</text><text x="335.4" y="186" class="x">1.4k</text><rect x="370.9" y="41.7" width="28.0" height="124.3" fill="#b4401f" rx="2"/><text x="384.9" y="38.7" class="v">67</text><text x="385.9" y="186" class="x">1.5k</text><rect x="421.3" y="12.0" width="28.0" height="154.0" fill="#b4401f" rx="2"/><text x="435.3" y="9.0" class="v">83</text><text x="436.3" y="186" class="x">1.75k</text><rect x="471.8" y="12.0" width="28.0" height="154.0" fill="#b4401f" rx="2"/><text x="485.8" y="9.0" class="v">83</text><text x="486.8" y="186" class="x">2k</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#b4401f"></i>Raster 켜진 비율</span></div>
+    <p class="note">켜진 실행에서 <code>RasterTask</code> 횟수는 <b>레이어당 정확히 1.01회</b>였다. 매 프레임 재래스터라면 레이어×토글(≈15,000회), 축출이라면 불규칙해야 한다. <b>타일을 처음 만드는 일이 끝나지 않은 것</b>이다 — 하네스가 build 후 기다리는 <b>2초</b>가 레이어가 많아지면 모자란다. <br><small>※ 임계점이 계단이 아니라 <b>완만한 확률 경사</b>(0% → 83%)인 것도 같은 이야기다. 상한값을 넘는 게 아니라 <b>경주</b>라서 매번 이기기도 지기도 한다. 타일 메모리는 가장 심한 조건에서도 예산의 7%였다</small></p>
   </figure></div>
 
 <h2>핵심 발견</h2>
