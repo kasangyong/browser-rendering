@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>C2 · 이상치 판별 하네스</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#fbfaf8;color:#1a1a1a;padding:0 16px 48px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+  #info{font:12px/1.7 ui-monospace,Consolas,monospace;color:#6b6b6b;padding:10px;
+        background:#fff;border:1px solid #e3e0da;border-radius:8px;margin:12px 0}
+
+  /* 무효화 축 1: 폭  (A4 가 쓴 방법) */
+  #list{width:var(--itemW,760px);
+  /* 무효화 축 2: 세로 오프셋 — 폭은 그대로 두고 모든 항목의 위치만 민다 */
+        padding-top:var(--listPad,0px)}
+
+  .item{border:1px solid #e3e0da;border-radius:6px;
+        /* 무효화 축 3: 색 — 레이아웃과 무관한 대조군 */
+        background:var(--itemBg,#fff);
+        padding:12px 14px;margin-bottom:10px}
+  .item h3{margin:0 0 6px;font-size:15px}
+  .item p{margin:0 0 6px;font-size:13px;color:#6b6b6b}
+  .item .row{display:flex;gap:8px;flex-wrap:wrap}
+  .item .tag{font:11px ui-monospace,Consolas,monospace;padding:2px 7px;
+             border-radius:99px;border:1px solid #e3e0da}
+
+  /* 모드 축: auto 키워드가 있느냐 없느냐만 다르다 */
+  #list.cv-auto  .item{content-visibility:auto;contain-intrinsic-size:auto 73px}
+  #list.cv-fixed .item{content-visibility:auto;contain-intrinsic-size:73px}
+  /* ② 용 — 일부러 41% 과대 추정한 값 (A4b 의 cv-auto 와 동일 조건) */
+  #list.cv-over  .item{content-visibility:auto;contain-intrinsic-size:auto 118px}
+</style>
+</head>
+<body>
+<h3 style="margin:16px 0 0">C2 · 이상치 판별 하네스</h3>
+<div id="info">—</div>
+<div id="list"></div>
+
+<script>
+(() => {
+  'use strict';
+  const list = document.getElementById('list'), info = document.getElementById('info');
+  const se = document.scrollingElement;
+  let N = 1000, mode = 'plain';
+
+  // 렌더 상태로 전환된 항목을 브라우저에게 직접 물어본다 (추정이 아니다)
+  let becameVisible = 0;
+  const seen = new Set();
+
+  const WORDS = ('렌더링 파이프라인 레이아웃 페인트 합성 타일 래스터 프로퍼티 트리 ' +
+                 'display list paint chunk compositor viz blink skia').split(' ');
+  const txt = (s, k) => Array.from({ length: k }, (_, i) => WORDS[(s * 7 + i * 3) % WORDS.length]).join(' ');
+
+  function build(n, m) {
+    N = n; mode = m;
+    list.className = m === 'plain' ? '' : m;
+    list.textContent = '';
+    becameVisible = 0; seen.clear();
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < n; i++) {
+      const el = document.createElement('div');
+      el.className = 'item';
+      el.dataset.i = i;
+      el.innerHTML = `<h3>항목 ${i}</h3><p>${txt(i, 14)}</p><div class="row">` +
+        `<span class="tag">${txt(i + 1, 2)}</span><span class="tag">${txt(i + 2, 2)}</span>` +
+        `<span class="tag">${txt(i + 3, 2)}</span></div>`;
+      el.addEventListener('contentvisibilityautostatechange', ev => {
+        if (!ev.skipped && !seen.has(i)) { seen.add(i); becameVisible++; }
+      });
+      frag.appendChild(el);
+    }
+    list.appendChild(frag);
+    render();
+    return { n, mode, className: list.className, scrollHeight: se.scrollHeight };
+  }
+
+  const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  /* ── ① 무효화 세 종류. 값만 다르고 루프 구조는 완전히 같다 ── */
+  const INVALIDATORS = {
+    // 컨테이너 폭이 바뀐다 → 자식의 포함 블록 인라인 크기가 바뀐다
+    width:  i => ['--itemW', (760 - (i % 2) * 40) + 'px'],
+    // 폭은 고정, 전체가 세로로 밀린다 → 위치는 다시 잡아야 하지만 크기는 그대로
+    offset: i => ['--listPad', (i % 2) * 40 + 'px'],
+    // 레이아웃과 무관 — 대조군
+    color:  i => ['--itemBg', i % 2 ? '#fffdf8' : '#ffffff'],
+  };
+  const RESET = { width: '760px', offset: '0px', color: '#ffffff' };
+
+  async function relayout(kind, k) {
+    const f = INVALIDATORS[kind];
+    if (!f) throw new Error('알 수 없는 무효화: ' + kind);
+    for (let i = 0; i < k; i++) {
+      const [prop, val] = f(i);
+      document.documentElement.style.setProperty(prop, val);
+      await frame();
+    }
+    const [prop] = f(0);
+    document.documentElement.style.setProperty(prop, RESET[kind]);
+    await frame();
+    return { kind, k, becameVisible, scrollHeight: se.scrollHeight };
+  }
+
+  /* ── ② 스크롤 패턴. 통과한 항목 수를 함께 돌려준다 ── */
+  async function scrollJump(steps) {
+    const max = se.scrollHeight - innerHeight;
+    for (let i = 1; i <= steps; i++) { se.scrollTop = Math.round(max * (i / steps)); await frame(); }
+    se.scrollTop = 0; await frame();
+    return { kind: 'jump', steps, stepPx: Math.round(max / steps),
+             becameVisible, scrollHeight: se.scrollHeight };
+  }
+  async function scrollLinear(step, count) {
+    for (let i = 1; i <= count; i++) { se.scrollTop = i * step; await frame(); }
+    const reached = se.scrollTop;
+    se.scrollTop = 0; await frame();
+    return { kind: 'linear', step, count, reached, travelled: count * step,
+             becameVisible, scrollHeight: se.scrollHeight };
+  }
+
+  function render() {
+    info.textContent =
+      `항목 ${N} · 모드 ${mode} (class="${list.className}")\n` +
+      `scrollHeight ${se.scrollHeight}\n` +
+      `렌더 상태가 된 항목 누적 ${becameVisible}`;
+  }
+
+  window.__C2 = {
+    build, relayout, scrollJump, scrollLinear,
+    stats: () => ({ n: N, mode, becameVisible, scrollHeight: se.scrollHeight,
+                    innerHeight }),
+    resetCount: () => { becameVisible = 0; seen.clear(); },
+    supportsEvent: () => 'oncontentvisibilityautostatechange' in document.createElement('div'),
+  };
+
+  build(1000, 'plain');
+})();
+</script>
+</body>
+</html>
