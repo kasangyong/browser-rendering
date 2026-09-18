@@ -13,6 +13,8 @@
 
 ## 실험
 
+### Track A — 파이프라인 계측
+
 | 실험 | 상태 | 결과 |
 |---|---|---|
 | [A1 · 파이프라인 단계 스킵](../experiments/track-a/a1-pipeline-skip/README.md) | 완료 (보통) | [RESULTS.md](../experiments/track-a/a1-pipeline-skip/RESULTS.md) — `InvalidateLayout` 497→0, 메인 블록 중 `Swap` 360 vs 0 |
@@ -23,6 +25,15 @@
 | [A4 · `content-visibility`](../experiments/track-a/a4-content-visibility/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-a/a4-content-visibility/RESULTS.md) — **여전히 O(N)**(21.4배 증가). 항목당 7.8배 싸질 뿐. **Paint 는 원래도 컬링**되고 있었다(절감 14%) |
 | [A4b · `content-visibility` 의 대가](../experiments/track-a/a4-content-visibility/PREDICTION-scroll.md) | 완료 (통과) | [RESULTS-scroll.md](../experiments/track-a/a4-content-visibility/RESULTS-scroll.md) — 스크롤 총량은 **7.4배 더 비싸다**. 다만 프레임당 6.7ms로 **분산**된다 |
 | [A5 · INP와 LoAF](../experiments/track-a/a5-inp-loaf/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-a/a5-inp-loaf/RESULTS.md) — **INP는 "결과가 보이는 시점"이 아니다.** 양보만 하면 INP<16ms인데 화면은 210ms 뒤 |
+
+### Track C — Track A 의 결론을 되짚는다
+
+Track A 를 끝내고 나서 **설명 못 한 채로 닫은 것들**이 남았다. 그걸 판별하는 트랙이다.
+
+| 실험 | 상태 | 결과 |
+|---|---|---|
+| [C1 · 초기 로드 비용](../experiments/track-c/c1-initial-load/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c1-initial-load/RESULTS.md) — **A4 의 "여전히 O(N)" 은 리레이아웃에 한한 이야기였다.** 초기 로드에서 `cv-auto` 의 Layout 은 **0.96배(평탄)**, LCP 는 **36~39% 단축**. 사전 등록 5개 중 **2개 반증** |
+| [C2 · 남겨둔 이상치 3개](../experiments/track-c/c2-anomalies/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c2-anomalies/RESULTS.md) — **`content-visibility` 는 Layout 을 늘린다.** 이득은 전부 **Style**(−71~76%). 레이아웃 패스가 세로 이동에서 8→17회, 색 변경에서 0→9회. `auto` 키워드는 **차이 없음**(H1 반증). 덤으로 **이 화면이 120Hz** 라 A1b 의 "commit 7.0배"가 vsync 양자화 때문임을 확인 |
 
 ---
 
