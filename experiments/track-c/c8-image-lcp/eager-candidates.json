@@ -1,0 +1,248 @@
+{
+  "note": "LCP 이미지가 실제로 lazy 가 아닌 사이트를 찾는다 (C8b 의 eager 는 내가 만든 조건이었다)",
+  "generatedAt": "2026-09-18T16:02:55.844Z",
+  "sites": [
+    {
+      "key": "wikivoyage",
+      "url": "https://en.wikivoyage.org/wiki/Paris",
+      "title": "Paris – Travel guide at Wikivoyage",
+      "lcp": {
+        "t": 1744,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Paris_banner.jpg/960px-Paris_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 315
+      },
+      "docHeight": 82189,
+      "domNodes": 7920,
+      "imgTotal": 246,
+      "imgLazy": 179,
+      "cands": [
+        {
+          "sel": "g",
+          "count": 80,
+          "median": 152,
+          "cv": 0.82,
+          "covers": 0.18
+        },
+        {
+          "sel": "td.regionlistitem-textholder",
+          "count": 46,
+          "median": 21,
+          "cv": 0.37,
+          "covers": 0.01
+        }
+      ]
+    },
+    {
+      "key": "britannica",
+      "url": "https://www.britannica.com/place/Grand-Canyon",
+      "title": "잠시만 기다리십시오…",
+      "lcp": {
+        "t": 2009.3,
+        "size": 34017,
+        "u": "",
+        "tag": "p"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 744,
+      "domNodes": 47,
+      "imgTotal": 1,
+      "imgLazy": 0,
+      "cands": []
+    },
+    {
+      "key": "nps",
+      "url": "https://www.nps.gov/grca/planyourvisit/index.htm",
+      "title": "Plan Your Visit - Grand Canyon National Park ",
+      "lcp": {
+        "t": 1952,
+        "size": 169510,
+        "u": "https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1300&maxheight=1300&autorotate=false&format=webp",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 512
+      },
+      "docHeight": 9590,
+      "domNodes": 2522,
+      "imgTotal": 22,
+      "imgLazy": 2,
+      "cands": []
+    },
+    {
+      "key": "smashing",
+      "url": "https://www.smashingmagazine.com/2023/09/webassembly-guide/",
+      "title": "404 Page not found — Smashing Magazine",
+      "lcp": {
+        "t": 1148,
+        "size": 119310,
+        "u": "https://www.smashingmagazine.com/images/smashing-cat/404-cat.svg",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 324
+      },
+      "docHeight": 2403,
+      "domNodes": 293,
+      "imgTotal": 2,
+      "imgLazy": 0,
+      "cands": []
+    },
+    {
+      "key": "webdev",
+      "url": "https://web.dev/articles/lcp",
+      "title": "최대 콘텐츠 렌더링 시간(LCP)  |  Articles  |  web.dev",
+      "lcp": {
+        "t": 2952,
+        "size": 59148,
+        "u": "",
+        "tag": "article"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 12937,
+      "domNodes": 1109,
+      "imgTotal": 14,
+      "imgLazy": 2,
+      "cands": [
+        {
+          "sel": "div.devsite-article-body",
+          "count": 95,
+          "median": 84,
+          "cv": 0.76,
+          "covers": 0.67
+        },
+        {
+          "sel": "code",
+          "count": 57,
+          "median": 19,
+          "cv": 0,
+          "covers": 0.08
+        }
+      ]
+    },
+    {
+      "key": "mdn",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility",
+      "title": "content-visibility CSS property - CSS | MDN",
+      "lcp": {
+        "t": 856,
+        "size": 88830,
+        "u": "",
+        "tag": "p"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 14924,
+      "domNodes": 5081,
+      "imgTotal": 0,
+      "imgLazy": 0,
+      "cands": []
+    },
+    {
+      "key": "wikihow",
+      "url": "https://www.wikihow.com/Tie-a-Tie",
+      "title": "4 Ways to Tie a Tie - wikiHow",
+      "lcp": {
+        "t": 348,
+        "size": 59400,
+        "u": "",
+        "tag": "p"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 29332,
+      "domNodes": 2494,
+      "imgTotal": 112,
+      "imgLazy": 79,
+      "cands": []
+    },
+    {
+      "key": "nasa",
+      "url": "https://science.nasa.gov/mars/",
+      "title": "Mars - NASA Science",
+      "lcp": {
+        "t": 2380,
+        "size": 309538,
+        "u": "https://science.nasa.gov/wp-content/uploads/2024/03/pia04304-mars.jpg?resize=600,569",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "top": 138
+      },
+      "docHeight": 23680,
+      "domNodes": 3170,
+      "imgTotal": 74,
+      "imgLazy": 71,
+      "cands": []
+    },
+    {
+      "key": "archdaily",
+      "url": "https://www.archdaily.com/office",
+      "title": "Architecture Offices | ArchDaily",
+      "lcp": {
+        "t": 5608,
+        "size": 7980,
+        "u": "",
+        "tag": "h3"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 617326,
+      "domNodes": 55536,
+      "imgTotal": 4,
+      "imgLazy": 0,
+      "cands": [
+        {
+          "sel": "ul.nrd-listing-pages",
+          "count": 27517,
+          "median": 22,
+          "cv": 0,
+          "covers": 1
+        }
+      ]
+    },
+    {
+      "key": "cssTricks",
+      "url": "https://css-tricks.com/snippets/css/complete-guide-grid/",
+      "title": "A Complete Guide to CSS Grid Layout | CSS-Tri",
+      "lcp": {
+        "t": 2680,
+        "size": 35471,
+        "u": "",
+        "tag": "p"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 13697,
+      "domNodes": 2037,
+      "imgTotal": 79,
+      "imgLazy": 5,
+      "cands": [
+        {
+          "sel": "div.article-content",
+          "count": 58,
+          "median": 58,
+          "cv": 1.89,
+          "covers": 0.73
+        }
+      ]
+    }
+  ]
+}

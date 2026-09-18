@@ -1,0 +1,275 @@
+{
+  "note": "LCP 이미지가 실제로 lazy 가 아닌 사이트를 찾는다 (C8b 의 eager 는 내가 만든 조건이었다)",
+  "generatedAt": "2026-09-18T16:05:03.903Z",
+  "sites": [
+    {
+      "key": "wv-paris",
+      "url": "https://en.wikivoyage.org/wiki/Paris",
+      "sel": ".mw-parser-output section > *",
+      "given": {
+        "sel": ".mw-parser-output section > *",
+        "count": 461,
+        "median": 182,
+        "cv": 2.09,
+        "covers": 1.95
+      },
+      "title": "Paris – Travel guide at Wikivoyage",
+      "lcp": {
+        "t": 2928,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Paris_banner.jpg/960px-Paris_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 315
+      },
+      "docHeight": 82189,
+      "domNodes": 7932,
+      "imgTotal": 246,
+      "imgLazy": 179,
+      "cands": [
+        {
+          "sel": "g",
+          "count": 86,
+          "median": 141,
+          "cv": 0.82,
+          "covers": 0.19
+        },
+        {
+          "sel": "td.regionlistitem-textholder",
+          "count": 46,
+          "median": 21,
+          "cv": 0.37,
+          "covers": 0.01
+        }
+      ]
+    },
+    {
+      "key": "wv-rome",
+      "url": "https://en.wikivoyage.org/wiki/Rome",
+      "sel": ".mw-parser-output section > *",
+      "given": {
+        "sel": ".mw-parser-output section > *",
+        "count": 414,
+        "median": 182,
+        "cv": 1.59,
+        "covers": 1.79
+      },
+      "title": "Rome – Travel guide at Wikivoyage",
+      "lcp": {
+        "t": 1932,
+        "size": 85801,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Rome_banner_cropped_to_dimensions.jpg/960px-Rome_banner_cropped_to_dimensions.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 338
+      },
+      "docHeight": 66411,
+      "domNodes": 6543,
+      "imgTotal": 121,
+      "imgLazy": 86,
+      "cands": [
+        {
+          "sel": "#mwBCA",
+          "count": 40,
+          "median": 78,
+          "cv": 0.34,
+          "covers": 0.04
+        }
+      ]
+    },
+    {
+      "key": "wv-tokyo",
+      "url": "https://en.wikivoyage.org/wiki/Tokyo",
+      "sel": ".mw-parser-output section > *",
+      "given": {
+        "sel": ".mw-parser-output section > *",
+        "count": 355,
+        "median": 156,
+        "cv": 1.62,
+        "covers": 1.66
+      },
+      "title": "Tokyo – Travel guide at Wikivoyage",
+      "lcp": {
+        "t": 2816,
+        "size": 54720,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/TokyoTocho.jpg/250px-TokyoTocho.jpg?utm_source=en.wikivoyage.org&utm_campaign=parser&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "top": 515
+      },
+      "docHeight": 54121,
+      "domNodes": 7495,
+      "imgTotal": 231,
+      "imgLazy": 183,
+      "cands": [
+        {
+          "sel": "g",
+          "count": 47,
+          "median": 210,
+          "cv": 0.48,
+          "covers": 0.23
+        },
+        {
+          "sel": "g",
+          "count": 47,
+          "median": 155,
+          "cv": 0.45,
+          "covers": 0.15
+        },
+        {
+          "sel": "#mwsA",
+          "count": 42,
+          "median": 21,
+          "cv": 0.18,
+          "covers": 0.02
+        }
+      ]
+    },
+    {
+      "key": "wv-london",
+      "url": "https://en.wikivoyage.org/wiki/London",
+      "sel": ".mw-parser-output section > *",
+      "given": {
+        "sel": ".mw-parser-output section > *",
+        "count": 746,
+        "median": 182,
+        "cv": 1.97,
+        "covers": 2.29
+      },
+      "title": "London – Travel guide at Wikivoyage",
+      "lcp": {
+        "t": 1820,
+        "size": 85801,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/960px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 338
+      },
+      "docHeight": 124619,
+      "domNodes": 15415,
+      "imgTotal": 689,
+      "imgLazy": 658,
+      "cands": [
+        {
+          "sel": "#mwCAA",
+          "count": 89,
+          "median": 104,
+          "cv": 0.15,
+          "covers": 0.07
+        },
+        {
+          "sel": "#mwCW8",
+          "count": 89,
+          "median": 104,
+          "cv": 0.15,
+          "covers": 0.08
+        },
+        {
+          "sel": "g",
+          "count": 57,
+          "median": 42,
+          "cv": 0.72,
+          "covers": 0.02
+        }
+      ]
+    },
+    {
+      "key": "wv-nyc",
+      "url": "https://en.wikivoyage.org/wiki/New_York_City",
+      "sel": ".mw-parser-output section > *",
+      "given": {
+        "sel": ".mw-parser-output section > *",
+        "count": 501,
+        "median": 208,
+        "cv": 2.23,
+        "covers": 2.34
+      },
+      "title": "New York City – Travel guide at Wikivoyage",
+      "lcp": {
+        "t": 2048,
+        "size": 85801,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Manhattan_Wikivoyage_Banner.jpg/960px-Manhattan_Wikivoyage_Banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpErr": null,
+      "lcpImg": {
+        "loading": null,
+        "fetchpriority": null,
+        "top": 338
+      },
+      "docHeight": 102689,
+      "domNodes": 8443,
+      "imgTotal": 145,
+      "imgLazy": 141,
+      "cands": []
+    },
+    {
+      "key": "seriouseats",
+      "url": "https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak",
+      "given": null,
+      "title": "잠시만 기다리십시오…",
+      "lcp": null,
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 744,
+      "domNodes": 33,
+      "imgTotal": 0,
+      "imgLazy": 0,
+      "cands": []
+    },
+    {
+      "key": "dpreview",
+      "url": "https://www.dpreview.com/reviews/fujifilm-x-t5-review",
+      "given": null,
+      "title": "잠시만 기다리십시오…",
+      "lcp": {
+        "t": 2766.5,
+        "size": 34017,
+        "u": "",
+        "tag": "p"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 744,
+      "domNodes": 47,
+      "imgTotal": 1,
+      "imgLazy": 0,
+      "cands": []
+    },
+    {
+      "key": "nps-long",
+      "url": "https://www.nps.gov/yell/planyourvisit/things-to-do.htm",
+      "given": null,
+      "title": "Requested Page Not Found (404)",
+      "lcp": {
+        "t": 2116,
+        "size": 41412,
+        "u": "",
+        "tag": "p"
+      },
+      "lcpErr": null,
+      "lcpImg": null,
+      "docHeight": 1837,
+      "domNodes": 280,
+      "imgTotal": 6,
+      "imgLazy": 0,
+      "cands": []
+    }
+  ]
+}

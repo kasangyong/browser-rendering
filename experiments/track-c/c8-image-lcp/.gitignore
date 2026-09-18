@@ -1,4 +1,6 @@
 run.log
 run-lazy.log
+run-eager.log
 .measure.lock
 .measure-lazy.lock
+.measure-eager.lock
