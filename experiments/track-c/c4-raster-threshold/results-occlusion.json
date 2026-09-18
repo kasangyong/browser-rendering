@@ -1,0 +1,69 @@
+{
+  "note": "박스 크기가 타일 바이트만 바꾸는 게 아니라 실제로 래스터하는 타일 수도 바꾸는지 확인",
+  "generatedAt": "2026-09-18T06:02:14.142Z",
+  "layers": 1000,
+  "windowMs": 6000,
+  "repeat": 3,
+  "rows": [
+    {
+      "layers": 1000,
+      "bw": 38,
+      "bh": 15,
+      "rep": 0,
+      "layerCount": 1004,
+      "rasterN": 1467,
+      "rasterMs": 1123.9,
+      "rasterLayers": 1463
+    },
+    {
+      "layers": 1000,
+      "bw": 38,
+      "bh": 15,
+      "rep": 1,
+      "layerCount": 1004,
+      "rasterN": 1484,
+      "rasterMs": 1262.6,
+      "rasterLayers": 1386
+    },
+    {
+      "layers": 1000,
+      "bw": 38,
+      "bh": 15,
+      "rep": 2,
+      "layerCount": 1004,
+      "rasterN": 1172,
+      "rasterMs": 84.4,
+      "rasterLayers": 1002
+    },
+    {
+      "layers": 1000,
+      "bw": 100,
+      "bh": 100,
+      "rep": 0,
+      "layerCount": 1004,
+      "rasterN": 1465,
+      "rasterMs": 1798.1,
+      "rasterLayers": 1463
+    },
+    {
+      "layers": 1000,
+      "bw": 100,
+      "bh": 100,
+      "rep": 1,
+      "layerCount": 1004,
+      "rasterN": 1046,
+      "rasterMs": 1060.9,
+      "rasterLayers": 1003
+    },
+    {
+      "layers": 1000,
+      "bw": 100,
+      "bh": 100,
+      "rep": 2,
+      "layerCount": 1004,
+      "rasterN": 1103,
+      "rasterMs": 441.3,
+      "rasterLayers": 1003
+    }
+  ]
+}

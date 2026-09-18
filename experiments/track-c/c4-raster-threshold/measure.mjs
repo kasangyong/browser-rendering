@@ -204,10 +204,23 @@ async function once({ port, tag, layers, bw, bh }) {
   }
 }
 
+/**
+ * 중복 실행 방지.
+ * 락 파일만 있으면 "실행 중" 으로 보던 첫 버전은 쓸모가 없었다 —
+ * 크래시한 프로세스가 락을 남기면 내가 손으로 지우게 되고,
+ * 그때 원래 프로세스가 아직 살아 있으면 두 개가 같은 결과 파일을 덮어쓴다. 실제로 당했다.
+ * 그래서 락에 적힌 PID 가 정말 살아 있는지 확인한다.
+ */
 const LOCK = path.join(import.meta.dirname, '.measure.lock');
 if (existsSync(LOCK)) {
-  console.error(`이미 실행 중인 것 같다 (${LOCK}). 아니라면 그 파일을 지우고 다시 실행한다.`);
-  process.exit(1);
+  const pid = Number((await readFile(LOCK, 'utf8')).trim());
+  let alive = false;
+  try { process.kill(pid, 0); alive = true; } catch { alive = false; }
+  if (alive) {
+    console.error(`이미 실행 중이다 (pid ${pid}). 그 프로세스를 먼저 끝내라.`);
+    process.exit(1);
+  }
+  console.error(`↻ 죽은 프로세스의 락 발견 (pid ${pid}) — 무시하고 진행한다.`);
 }
 await writeFile(LOCK, String(process.pid));
 const unlock = () => { try { unlinkSync(LOCK); } catch {} };
