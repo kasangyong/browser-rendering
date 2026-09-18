@@ -24,12 +24,24 @@ const KICKS = Number(arg('kicks', '8'));
 const SEED = Number(arg('seed', '20260918'));
 const SCRATCH = 'C:/Users/SSAFY/AppData/Local/Temp/claude/C--Users-SSAFY-Desktop-ka---------/98619a68-f164-4f9c-b502-a270a38bb41e/scratchpad';
 
-const SITE = {
-  url: 'https://en.wikipedia.org/wiki/List_of_Unicode_characters',
-  container: '.mw-parser-output',
-  blocks: '.mw-parser-output section > *',
-  intrinsic: 81,                 // 사전 조사에서 관측한 중앙값
+/**
+ * 사이트별 설정. container 는 폭을 바꿀 대상, blocks 는 content-visibility 를 걸 대상.
+ * intrinsic 은 사전 조사에서 관측한 블록 높이 중앙값이다 (probe-candidates.mjs).
+ */
+const SITES = {
+  'wiki-uni': {
+    url: 'https://en.wikipedia.org/wiki/List_of_Unicode_characters',
+    container: '.mw-parser-output', blocks: '.mw-parser-output section > *', intrinsic: 81 },
+  'whatwg-dom': {
+    url: 'https://html.spec.whatwg.org/multipage/dom.html',
+    container: 'body', blocks: 'body > *', intrinsic: 48 },
+  'py-func': {
+    url: 'https://docs.python.org/3/library/functions.html',
+    container: '#built-in-functions', blocks: '#built-in-functions > *', intrinsic: 310 },
 };
+const SITE_KEY = arg('site', 'wiki-uni');
+const SITE = SITES[SITE_KEY];
+if (!SITE) { console.error('알 수 없는 사이트: ' + SITE_KEY + ' (' + Object.keys(SITES).join(', ') + ')'); process.exit(1); }
 const MODES = ['plain', 'cv-auto'];
 const INVS = ['width-inline', 'item-color', 'root-var'];
 const STAGES = ['UpdateLayoutTree', 'Layout', 'PrePaint', 'Paint'];
@@ -199,7 +211,7 @@ async function once({ port, tag, mode, inv }) {
   }
 }
 
-const LOCK = path.join(import.meta.dirname, '.measure.lock');
+const LOCK = path.join(import.meta.dirname, `.measure-${SITE_KEY}.lock`);
 if (existsSync(LOCK)) {
   const pid = Number((await readFile(LOCK, 'utf8')).trim());
   let alive = false; try { process.kill(pid, 0); alive = true; } catch {}
@@ -210,8 +222,8 @@ const unlock = () => { try { unlinkSync(LOCK); } catch {} };
 process.on('exit', unlock);
 for (const s of ['SIGINT', 'SIGTERM']) process.on(s, () => { unlock(); process.exit(1); });
 
-const OUT = path.join(import.meta.dirname, 'results.json');
-const out = { experiment: 'c6-real-sites', generatedAt: new Date().toISOString(),
+const OUT = path.join(import.meta.dirname, SITE_KEY === 'wiki-uni' ? 'results.json' : `results-${SITE_KEY}.json`);
+const out = { experiment: 'c6-real-sites', siteKey: SITE_KEY, generatedAt: new Date().toISOString(),
               site: SITE, repeat: REPEAT, kicks: KICKS,
               isolation: 'strict', order: 'shuffled', rows: [] };
 const save = () => writeFile(OUT, JSON.stringify(out, null, 2));

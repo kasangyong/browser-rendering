@@ -1,0 +1,217 @@
+{
+  "note": "DOM 을 훑어 content-visibility 를 걸 수 있는 컨테이너를 자동으로 찾는다. 테이블 내부는 제외.",
+  "generatedAt": "2026-09-18T08:26:39.437Z",
+  "sites": [
+    {
+      "key": "mdn-http",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers",
+      "title": "HTTP headers - HTTP | MDN",
+      "docHeight": 24870,
+      "domNodes": 3211,
+      "tableRows": 0,
+      "cands": [
+        {
+          "sel": "ol > li > details > ol",
+          "tag": "ol",
+          "count": 171,
+          "withHeight": 171,
+          "inTable": false,
+          "median": 32,
+          "min": 32,
+          "max": 80,
+          "cv": 0.32,
+          "covers": 0.27
+        },
+        {
+          "sel": "ol > li > details > ol",
+          "tag": "ol",
+          "count": 60,
+          "withHeight": 60,
+          "inTable": false,
+          "median": 32,
+          "min": 32,
+          "max": 80,
+          "cv": 0.32,
+          "covers": 0.1
+        },
+        {
+          "sel": "ol > li > details > ol",
+          "tag": "ol",
+          "count": 51,
+          "withHeight": 51,
+          "inTable": false,
+          "median": 32,
+          "min": 32,
+          "max": 56,
+          "cv": 0.27,
+          "covers": 0.08
+        }
+      ],
+      "tableCands": []
+    },
+    {
+      "key": "whatwg-dom",
+      "url": "https://html.spec.whatwg.org/multipage/dom.html",
+      "title": "HTML Standard",
+      "docHeight": 64120,
+      "domNodes": 9318,
+      "tableRows": 7,
+      "cands": [
+        {
+          "sel": "html.split > body",
+          "tag": "body",
+          "count": 410,
+          "withHeight": 377,
+          "inTable": false,
+          "median": 48,
+          "min": 21,
+          "max": 3323,
+          "cv": 1.9,
+          "covers": 0.81
+        },
+        {
+          "sel": "html.split > body > pre > code.idl",
+          "tag": "code",
+          "count": 220,
+          "withHeight": 220,
+          "inTable": false,
+          "median": 16,
+          "min": 16,
+          "max": 16,
+          "cv": 0,
+          "covers": 0.05
+        },
+        {
+          "sel": "html.split > body > pre > code.idl",
+          "tag": "code",
+          "count": 140,
+          "withHeight": 140,
+          "inTable": false,
+          "median": 16,
+          "min": 16,
+          "max": 16,
+          "cv": 0,
+          "covers": 0.03
+        },
+        {
+          "sel": "body > div.example > pre > code.html",
+          "tag": "code",
+          "count": 132,
+          "withHeight": 132,
+          "inTable": false,
+          "median": 16,
+          "min": 16,
+          "max": 16,
+          "cv": 0,
+          "covers": 0.03
+        }
+      ],
+      "tableCands": []
+    },
+    {
+      "key": "py-func",
+      "url": "https://docs.python.org/3/library/functions.html",
+      "title": "Built-in Functions — Python 3.14.7 documentation",
+      "docHeight": 37059,
+      "domNodes": 7009,
+      "tableRows": 10,
+      "cands": [
+        {
+          "sel": "#built-in-functions",
+          "tag": "section",
+          "count": 77,
+          "withHeight": 76,
+          "inTable": false,
+          "median": 310,
+          "min": 26,
+          "max": 3664,
+          "cv": 1.16,
+          "covers": 0.96
+        },
+        {
+          "sel": "dd > div.highlight-python3 > div.highlight > pre",
+          "tag": "pre",
+          "count": 75,
+          "withHeight": 75,
+          "inTable": false,
+          "median": 18,
+          "min": 18,
+          "max": 18,
+          "cv": 0,
+          "covers": 0.04
+        },
+        {
+          "sel": "dd > div.doctest > div.highlight > pre",
+          "tag": "pre",
+          "count": 68,
+          "withHeight": 68,
+          "inTable": false,
+          "median": 18,
+          "min": 18,
+          "max": 18,
+          "cv": 0,
+          "covers": 0.03
+        },
+        {
+          "sel": "dd > div.highlight-python3 > div.highlight > pre",
+          "tag": "pre",
+          "count": 61,
+          "withHeight": 61,
+          "inTable": false,
+          "median": 18,
+          "min": 18,
+          "max": 18,
+          "cv": 0,
+          "covers": 0.03
+        }
+      ],
+      "tableCands": []
+    },
+    {
+      "key": "wiki-elem",
+      "url": "https://en.wikipedia.org/wiki/List_of_chemical_elements",
+      "title": "List of chemical elements - Wikipedia",
+      "docHeight": 12305,
+      "domNodes": 7490,
+      "tableRows": 151,
+      "cands": [
+        {
+          "sel": "#mwApA",
+          "tag": "ol",
+          "count": 130,
+          "withHeight": 130,
+          "inTable": false,
+          "median": 23,
+          "min": 23,
+          "max": 76,
+          "cv": 0.29,
+          "covers": 0.26
+        }
+      ],
+      "tableCands": [
+        {
+          "sel": "#mwHw > table.wikitable > tbody",
+          "tag": "tbody",
+          "count": 118,
+          "withHeight": 118,
+          "inTable": true,
+          "median": 59,
+          "min": 59,
+          "max": 59,
+          "cv": 0,
+          "covers": 0.57
+        }
+      ]
+    },
+    {
+      "key": "mdn-events",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Events",
+      "title": "DOM events - Web APIs | MDN",
+      "docHeight": 18250,
+      "domNodes": 1295,
+      "tableRows": 41,
+      "cands": [],
+      "tableCands": []
+    }
+  ]
+}
