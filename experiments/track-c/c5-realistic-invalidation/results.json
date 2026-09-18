@@ -1,0 +1,2763 @@
+{
+  "experiment": "c5-realistic-invalidation",
+  "generatedAt": "2026-09-18T07:23:06.196Z",
+  "repeat": 4,
+  "kicks": 8,
+  "seed": 20260918,
+  "isolation": "strict (이전 브라우저 완전 종료 + 3초)",
+  "order": "shuffled",
+  "rows": [
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 48,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 32.632
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 9.398
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 8.188
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.022
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 48,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 10.949
+        },
+        "Layout": {
+          "n": 4,
+          "ms": 19.189
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 3.205
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 3.485
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.084
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 49,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 56.761
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 10.515
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 6.496
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.049
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 1.888
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.555
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 1.997
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.353
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.261
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 77.306
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 37.289
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.707
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.551
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 1.928
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 2.666
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 6.713
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 1.41
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 3.421
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 1.12
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 9.767
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 2.089
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 1.762
+        },
+        "RasterTask": {
+          "n": 55,
+          "ms": 0.935
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 2.044
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 3.149
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 6.286
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 1.447
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.486
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 6.189
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 8.298
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 7.516
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.236
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.508
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 13.292
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.844
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 1.86
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.607
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 5.138
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.013
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 2.504
+        },
+        "RasterTask": {
+          "n": 52,
+          "ms": 0.918
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 11.662
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 2.084
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.777
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.523
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 16.167
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 4.789
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.969
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.988
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54704
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 1.722
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 1.31
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 1.711
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 0.761
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.323
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436204
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 21.349
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 10.744
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 13.972
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 2.598
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.69
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.151
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 14.045
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 6.76
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.28
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.803
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 150.071
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 4.585
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 6.767
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.031
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 23.303
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 34.029
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 67.002
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 3.609
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.912
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.117
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 1.844
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 1.501
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 0.988
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.409
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 2.325
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 1.3
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.35
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 1.031
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.542
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 14.207
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 82.329
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 13.566
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 4.668
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.956
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 2.774
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 4.46
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 7.245
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 2.376
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.022
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436204
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 75.811
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 36.659
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 39.758
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 7.344
+        },
+        "RasterTask": {
+          "n": 121,
+          "ms": 3.348
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 49,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 9.471
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 17.419
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 2.138
+        },
+        "Paint": {
+          "n": 379,
+          "ms": 4.447
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.017
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 31.325
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 4.882
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 7.756
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.225
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 49,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54704
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 4.952
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 10.319
+        },
+        "PrePaint": {
+          "n": 23,
+          "ms": 4.27
+        },
+        "Paint": {
+          "n": 57,
+          "ms": 1.794
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.033
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 53.508
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 103.544
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 8.928
+        },
+        "Paint": {
+          "n": 379,
+          "ms": 5.014
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.022
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 55,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 24.687
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 47.336
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 93.244
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 3.653
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.16
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 16.239
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 109.665
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 19.662
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.601
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.053
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.517
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 28.894
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 28.251
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 6.576
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.212
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 80.115
+        },
+        "Layout": {
+          "n": 2,
+          "ms": 124.257
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 20.428
+        },
+        "Paint": {
+          "n": 379,
+          "ms": 4.944
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 5.52
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 5.046
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.96
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 4.73
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.046
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.274
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 22.925
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 9.971
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.021
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.856
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.449
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 139.472
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 70.365
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.515
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.02
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436204
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 31.224
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 28.555
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 30.806
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 8.49
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.294
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 53,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 40.024
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 65.54
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 105.04
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 3.644
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.158
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 4.475
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.632
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.235
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.058
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.275
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 8.153
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 7.154
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.467
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.234
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 59.102
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 9.642
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 7.732
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.499
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 53,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 42.273
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 3.079
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 11.955
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.899
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 114.16
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 148.523
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 17.445
+        },
+        "Paint": {
+          "n": 379,
+          "ms": 7.511
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.299
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 52,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 46.575
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 8.658
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 6.495
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.137
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 26.191
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.896
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.769
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.037
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.227
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 29.821
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 15.454
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 4.329
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.04
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 7.334
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.411
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 4.13
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.228
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 3.965
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.688
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 2.235
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.02
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 212.354
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 6.351
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 12.561
+        },
+        "RasterTask": {
+          "n": 100,
+          "ms": 3.293
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54704
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 2.885
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 2.237
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 2.657
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 1.349
+        },
+        "RasterTask": {
+          "n": 52,
+          "ms": 1.221
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 8.47
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 2.436
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 3.927
+        },
+        "RasterTask": {
+          "n": 55,
+          "ms": 1.641
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 54,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 119.544
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 3.807
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 6.209
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.836
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.251
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 3.946
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 3.473
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.361
+        },
+        "RasterTask": {
+          "n": 52,
+          "ms": 1.515
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 4.156
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.71
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.311
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.057
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.379
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 153.46
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 64.181
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.404
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.185
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54704
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 4.333
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 2.859
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 3.583
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 1.613
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.257
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 43.005
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 5.42
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 5.263
+        },
+        "RasterTask": {
+          "n": 63,
+          "ms": 1.996
+        }
+      },
+      "rep": 2
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.543
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 292.844
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 109.481
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 7.063
+        },
+        "RasterTask": {
+          "n": 132,
+          "ms": 4.265
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 4.737
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 7.838
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 37.277
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 6.142
+        },
+        "RasterTask": {
+          "n": 61,
+          "ms": 1.946
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 54678
+      },
+      "state": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 54703
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 8.038
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.588
+        },
+        "Paint": {
+          "n": 352,
+          "ms": 4.23
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.756
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436203
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 10,
+          "ms": 59.458
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 65.058
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 5.69
+        },
+        "Paint": {
+          "n": 379,
+          "ms": 3.805
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.561
+        }
+      },
+      "rep": 3
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 25.258
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.06
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.692
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.884
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 70.77
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 5.009
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.602
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.764
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "plain",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 47,
+      "built": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441740
+      },
+      "state": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 441740
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 17.897
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 31.473
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 68.109
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 2.697
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.529
+        }
+      },
+      "rep": 0
+    },
+    {
+      "n": 4000,
+      "mode": "cv-auto",
+      "inv": "theme-padding",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "scrollHeight": 436178
+      },
+      "state": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv",
+        "width": "760px",
+        "scrollHeight": 436204
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 19.768
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 71.839
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 11.498
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 2.768
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.277
+        }
+      },
+      "rep": 1
+    },
+    {
+      "n": 500,
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 46,
+      "built": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55373
+      },
+      "state": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "width": "760px",
+        "scrollHeight": 55373
+      },
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 0.082
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 11.774
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 5.629
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 1.5
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 0.343
+        }
+      },
+      "rep": 2
+    }
+  ]
+}

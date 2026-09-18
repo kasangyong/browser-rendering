@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>C5 · 현실적인 무효화 하네스</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#fbfaf8;color:#1a1a1a;padding:0 16px 48px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+  #info{font:12px/1.7 ui-monospace,Consolas,monospace;color:#6b6b6b;padding:10px;
+        background:#fff;border:1px solid #e3e0da;border-radius:8px;margin:12px 0;white-space:pre-wrap}
+
+  #list{width:760px}
+
+  .item{border:1px solid #e3e0da;border-radius:6px;background:#fff;
+        padding:12px 14px;margin-bottom:10px}
+  .item h3{margin:0 0 6px;font-size:15px}
+  .item p{margin:0 0 6px;font-size:13px;color:#6b6b6b}
+  .item .row{display:flex;gap:8px;flex-wrap:wrap}
+  .item .tag{font:11px ui-monospace,Consolas,monospace;padding:2px 7px;
+             border-radius:99px;border:1px solid #e3e0da}
+
+  /* ── 무효화 방법들 ──────────────────────────────────────
+     핵심은 '무엇의 스타일을 다시 계산하게 만드는가' 다.
+     C2 는 전부 :root 커스텀 프로퍼티라 트리 전체를 무효화했다 — 최악 경우.
+     여기서는 무효화 범위가 다른 세 가지를 따로 둔다. */
+
+  /* ① 컨테이너만. 항목 스타일은 건드리지 않는다 (JS 로 인라인 width 를 준다) */
+
+  /* ② 항목 N개의 스타일 + 레이아웃 — 테마 전환 같은 변경 */
+  #list.compact .item{padding:8px 14px}
+
+  /* ③ 항목 N개의 스타일, 레이아웃 없음 */
+  #list.alt .item{background:#fffdf8}
+
+  /* ④ 대조군: C2 가 쓰던 방식. 상속되는 커스텀 프로퍼티 */
+  .item{background:var(--itemBg,#fff)}
+
+  /* 모드 */
+  #list.cv .item{content-visibility:auto;contain-intrinsic-size:auto 73px}
+</style>
+</head>
+<body>
+<h3 style="margin:16px 0 0">C5 · 현실적인 무효화 하네스</h3>
+<div id="info">—</div>
+<div id="list"></div>
+
+<script>
+(() => {
+  'use strict';
+  const list = document.getElementById('list'), info = document.getElementById('info');
+  const root = document.documentElement;
+  let N = 0, mode = 'plain';
+
+  const WORDS = ('렌더링 파이프라인 레이아웃 페인트 합성 타일 래스터 프로퍼티 트리 ' +
+                 'display list paint chunk compositor viz blink skia').split(' ');
+  const txt = (s, k) => Array.from({ length: k }, (_, i) => WORDS[(s * 7 + i * 3) % WORDS.length]).join(' ');
+
+  function build(n, m) {
+    N = n; mode = m;
+    // 모드 클래스만 남기고 무효화 클래스는 지운다
+    list.className = (m === 'cv-auto') ? 'cv' : '';
+    list.style.width = '';
+    root.style.removeProperty('--itemBg');
+    list.textContent = '';
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < n; i++) {
+      const el = document.createElement('div');
+      el.className = 'item';
+      el.innerHTML = `<h3>항목 ${i}</h3><p>${txt(i, 14)}</p><div class="row">` +
+        `<span class="tag">${txt(i + 1, 2)}</span><span class="tag">${txt(i + 2, 2)}</span>` +
+        `<span class="tag">${txt(i + 3, 2)}</span></div>`;
+      frag.appendChild(el);
+    }
+    list.appendChild(frag);
+    render();
+    return { n, mode: m, className: list.className, scrollHeight: document.scrollingElement.scrollHeight };
+  }
+
+  const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  /**
+   * 무효화 네 가지. 루프 구조는 완전히 같고 '무엇을 바꾸는가' 만 다르다.
+   * 앞의 셋은 커스텀 프로퍼티를 쓰지 않는다 — 그게 이 실험의 요점이다.
+   */
+  const INVALIDATORS = {
+    // ① 컨테이너 레이아웃만. 항목의 스타일 재계산은 필요 없다
+    'width-inline': i => { list.style.width = (i % 2 ? 720 : 760) + 'px'; },
+    // ② 항목 N개의 스타일이 바뀌고 레이아웃도 바뀐다
+    'theme-padding': i => { list.classList.toggle('compact', i % 2 === 1); },
+    // ③ 항목 N개의 스타일만 바뀐다 (레이아웃 없음)
+    'item-color': i => { list.classList.toggle('alt', i % 2 === 1); },
+    // ④ 대조군 — C2 가 쓰던 상속 커스텀 프로퍼티. 트리 전체 무효화
+    'root-var': i => { root.style.setProperty('--itemBg', i % 2 ? '#fffdf8' : '#ffffff'); },
+  };
+  const RESET = {
+    'width-inline': () => { list.style.width = ''; },
+    'theme-padding': () => list.classList.remove('compact'),
+    'item-color': () => list.classList.remove('alt'),
+    'root-var': () => root.style.removeProperty('--itemBg'),
+  };
+
+  async function invalidate(kind, k) {
+    const f = INVALIDATORS[kind];
+    if (!f) throw new Error('알 수 없는 무효화: ' + kind);
+    for (let i = 0; i < k; i++) { f(i); await frame(); }
+    RESET[kind]();
+    await frame();
+    return { kind, k, n: N, mode };
+  }
+
+  function render() {
+    info.textContent =
+      `항목 ${N} · 모드 ${mode} (class="${list.className}")\n` +
+      `scrollHeight ${document.scrollingElement.scrollHeight}`;
+  }
+
+  window.__C5 = {
+    build, invalidate,
+    kinds: () => Object.keys(INVALIDATORS),
+    state: () => ({ n: N, mode, className: list.className,
+                    width: getComputedStyle(list).width,
+                    scrollHeight: document.scrollingElement.scrollHeight }),
+  };
+
+  build(500, 'plain');
+})();
+</script>
+</body>
+</html>
