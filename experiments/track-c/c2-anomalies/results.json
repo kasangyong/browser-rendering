@@ -1,0 +1,5524 @@
+{
+  "experiment": "c2-anomalies",
+  "generatedAt": "2026-09-17T23:50:14.225Z",
+  "repeat": 3,
+  "isolation": "browser-per-config",
+  "part1": [
+    {
+      "invalidation": "width",
+      "mode": "plain",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 39.67
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 42.63
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 20.73
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 6.54
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.46
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.61
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "plain",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 59.59
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 54.68
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 26.07
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 7.38
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.41
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.01
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "plain",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 28.83
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 32.24
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 19.57
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.97
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.65
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.46
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 233.02
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 253.21
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 133.23
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 12.66
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.22
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.8
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 207.41
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 242.49
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 131.04
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 12.55
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.15
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.81
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 226.8
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 301.97
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 140.69
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 13.96
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.32
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.01
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 14.41
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 8.83
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 9.41
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 5.88
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.45
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.19
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 14.96
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 9.16
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 9.47
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 4.55
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.3
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 13.81
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 8.9
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 10.92
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 5.83
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.84
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.34
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 57.64
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 32.26
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 34.76
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 10.9
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.37
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.47
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 50.79
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 29.68
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 33.67
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 9.12
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.16
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.2
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 54.42
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 35.23
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 36.47
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 10.2
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.4
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.73
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 15.82
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 10.27
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 10.72
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 5.72
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.78
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.33
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 18.08
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 10.75
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 11.9
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 6.29
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.7
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.51
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 14.44
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 7.75
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 7.67
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 4.61
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.27
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.63
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 53.46
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 30.63
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 36.07
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 10.09
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.43
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.15
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 58.39
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 32.2
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 34.8
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 10.37
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.26
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.1
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "width",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 54.82
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 37.65
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 43.07
+        },
+        "Paint": {
+          "n": 42,
+          "ms": 11.4
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.58
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.91
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "width",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "plain",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 44.51
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 4.35
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 16.29
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 5.12
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.14
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.12
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "plain",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 44.74
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 4.92
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 19.72
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 4.55
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.21
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.05
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "plain",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 29.51
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 2.84
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 13.97
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 4.04
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.07
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 0.97
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 237.43
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 21.81
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 118.5
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 10.34
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.4
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.59
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 222.36
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 23.18
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 115.39
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 9.04
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.22
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.43
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 219.29
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 25.13
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 123.43
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 11.34
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.23
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.38
+        },
+        "InvalidateLayout": {
+          "n": 8,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 14.06
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 9.14
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 11.12
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 3.63
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.86
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.18
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 1,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 16.84
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 8.86
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 11.07
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 4.35
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.91
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.43
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 1,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 11.19
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 7.35
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 8.03
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 2.68
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.12
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.78
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 1,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 65.25
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 44.75
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 51.76
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 10.25
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.48
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6.44
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 1,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 66
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 43.49
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 51.26
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 10.24
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.21
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6.7
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 1,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 65.19
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 46.69
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 58.01
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 9.39
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.55
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6.84
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 1,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 13.38
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 7.37
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 8.24
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 3.17
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.31
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.98
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 1,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 12.78
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 6.8
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 8.2
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 3.26
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.46
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.79
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 1,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 10.4
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 6.54
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 8.58
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 2.74
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.39
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.71
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 1,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 57.94
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 43.61
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 49.87
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 11.1
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.44
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6.5
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 1,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 58.69
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 41.07
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 51.57
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 8.23
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.12
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.81
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 1,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "offset",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 17,
+          "ms": 56.14
+        },
+        "Layout": {
+          "n": 17,
+          "ms": 41.78
+        },
+        "PrePaint": {
+          "n": 22,
+          "ms": 50.82
+        },
+        "Paint": {
+          "n": 50,
+          "ms": 8.46
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.36
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 5.61
+        },
+        "InvalidateLayout": {
+          "n": 17,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "offset",
+        "k": 8,
+        "becameVisible": 1,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 1,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "plain",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 46.02
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.66
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 6.48
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.64
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.26
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "plain",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 41.99
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 2.02
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 7.73
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.82
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.4
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "plain",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 30.17
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 1.47
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 4.31
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.22
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.23
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 55353
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 55353
+      },
+      "stats": {
+        "n": 500,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 55353,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 214.85
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 9.96
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 12.92
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.24
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.45
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 231.41
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 10.41
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 12.57
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.2
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.44
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "plain",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 219.49
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 9.93
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 12.75
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.16
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.31
+        },
+        "InvalidateLayout": {
+          "n": 0,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "plain",
+        "className": "",
+        "scrollHeight": 441720
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 441720
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "plain",
+        "becameVisible": 0,
+        "scrollHeight": 441720,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 10.51
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 4.9
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 6.1
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 4.32
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.19
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.85
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 11.96
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 5.84
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 6.6
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 5.03
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.43
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.02
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-auto",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 15.5
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 8.09
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 11.25
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 7.5
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 2.56
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 2.48
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 61
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 37.58
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 43.42
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 8.58
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.87
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 7.84
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 57.41
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 35.17
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 36.43
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 7.77
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.12
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-auto",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 56.42
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 31.68
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 36.88
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 7.9
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.49
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6.24
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 9.12
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 4.26
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 5.63
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 3.75
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.05
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.62
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 12.53
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 6.48
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 8.14
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 4.62
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.28
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.83
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-fixed",
+      "n": 500,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 9.55
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 4.32
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 5.44
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 3.93
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.26
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 1.82
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 54658
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 54683
+      },
+      "stats": {
+        "n": 500,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 54683,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 0,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 50.76
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 30.03
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 33.93
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 6.89
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.22
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 4.73
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 1,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 61.05
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 35.95
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 39.1
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 8.39
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.44
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 6.78
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    },
+    {
+      "invalidation": "color",
+      "mode": "cv-fixed",
+      "n": 4000,
+      "rep": 2,
+      "kicks": 8,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 76.22
+        },
+        "Layout": {
+          "n": 9,
+          "ms": 47.1
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 61.25
+        },
+        "Paint": {
+          "n": 378,
+          "ms": 12.21
+        },
+        "RasterTask": {
+          "n": 32,
+          "ms": 1.93
+        },
+        "Commit": {
+          "n": 18,
+          "ms": 9.31
+        },
+        "InvalidateLayout": {
+          "n": 9,
+          "ms": 0
+        }
+      },
+      "frames": 18,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "className": "cv-fixed",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "color",
+        "k": 8,
+        "becameVisible": 0,
+        "scrollHeight": 436183
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-fixed",
+        "becameVisible": 0,
+        "scrollHeight": 436183,
+        "innerHeight": 800
+      }
+    }
+  ],
+  "part2": [
+    {
+      "mode": "cv-over",
+      "pattern": "jump",
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 77,
+          "ms": 46.13
+        },
+        "Layout": {
+          "n": 77,
+          "ms": 387.82
+        },
+        "PrePaint": {
+          "n": 158,
+          "ms": 244.47
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 68.25
+        },
+        "RasterTask": {
+          "n": 666,
+          "ms": 13.05
+        },
+        "Commit": {
+          "n": 82,
+          "ms": 37.57
+        },
+        "InvalidateLayout": {
+          "n": 77,
+          "ms": 0
+        }
+      },
+      "frames": 82,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 616158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 15364,
+        "becameVisible": 1039,
+        "scrollHeight": 570847
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-over",
+        "becameVisible": 1039,
+        "scrollHeight": 570847,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "jump",
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 77,
+          "ms": 66.33
+        },
+        "Layout": {
+          "n": 77,
+          "ms": 440.98
+        },
+        "PrePaint": {
+          "n": 158,
+          "ms": 296.94
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 80.87
+        },
+        "RasterTask": {
+          "n": 664,
+          "ms": 15.3
+        },
+        "Commit": {
+          "n": 85,
+          "ms": 42.67
+        },
+        "InvalidateLayout": {
+          "n": 77,
+          "ms": 0
+        }
+      },
+      "frames": 85,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 616158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 15364,
+        "becameVisible": 1042,
+        "scrollHeight": 570717
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-over",
+        "becameVisible": 1042,
+        "scrollHeight": 570717,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "jump",
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 77,
+          "ms": 70.52
+        },
+        "Layout": {
+          "n": 77,
+          "ms": 498.52
+        },
+        "PrePaint": {
+          "n": 158,
+          "ms": 322.8
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 92.41
+        },
+        "RasterTask": {
+          "n": 663,
+          "ms": 16.65
+        },
+        "Commit": {
+          "n": 86,
+          "ms": 47.04
+        },
+        "InvalidateLayout": {
+          "n": 77,
+          "ms": 0
+        }
+      },
+      "frames": 86,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 616158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 15364,
+        "becameVisible": 1042,
+        "scrollHeight": 570717
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-over",
+        "becameVisible": 1042,
+        "scrollHeight": 570717,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "linear",
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 105,
+          "ms": 61.83
+        },
+        "Layout": {
+          "n": 105,
+          "ms": 560.59
+        },
+        "PrePaint": {
+          "n": 226,
+          "ms": 480.71
+        },
+        "Paint": {
+          "n": 122,
+          "ms": 120.25
+        },
+        "RasterTask": {
+          "n": 129,
+          "ms": 10.99
+        },
+        "Commit": {
+          "n": 125,
+          "ms": 63.15
+        },
+        "InvalidateLayout": {
+          "n": 105,
+          "ms": 0
+        }
+      },
+      "frames": 125,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 616158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 608264
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-over",
+        "becameVisible": 181,
+        "scrollHeight": 608264,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "linear",
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 105,
+          "ms": 57.45
+        },
+        "Layout": {
+          "n": 105,
+          "ms": 555.69
+        },
+        "PrePaint": {
+          "n": 226,
+          "ms": 532.31
+        },
+        "Paint": {
+          "n": 122,
+          "ms": 134.9
+        },
+        "RasterTask": {
+          "n": 112,
+          "ms": 12.9
+        },
+        "Commit": {
+          "n": 125,
+          "ms": 64.59
+        },
+        "InvalidateLayout": {
+          "n": 105,
+          "ms": 0
+        }
+      },
+      "frames": 125,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 616158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 608264
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-over",
+        "becameVisible": 181,
+        "scrollHeight": 608264,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "linear",
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 105,
+          "ms": 87.76
+        },
+        "Layout": {
+          "n": 105,
+          "ms": 987.83
+        },
+        "PrePaint": {
+          "n": 226,
+          "ms": 910.7
+        },
+        "Paint": {
+          "n": 122,
+          "ms": 221.51
+        },
+        "RasterTask": {
+          "n": 89,
+          "ms": 11.63
+        },
+        "Commit": {
+          "n": 126,
+          "ms": 143.92
+        },
+        "InvalidateLayout": {
+          "n": 105,
+          "ms": 0
+        }
+      },
+      "frames": 126,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 616158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 608264
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-over",
+        "becameVisible": 181,
+        "scrollHeight": 608264,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "jump",
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 56,
+          "ms": 86.08
+        },
+        "Layout": {
+          "n": 56,
+          "ms": 768.5
+        },
+        "PrePaint": {
+          "n": 123,
+          "ms": 238.47
+        },
+        "Paint": {
+          "n": 124,
+          "ms": 106.5
+        },
+        "RasterTask": {
+          "n": 703,
+          "ms": 24.9
+        },
+        "Commit": {
+          "n": 86,
+          "ms": 66.59
+        },
+        "InvalidateLayout": {
+          "n": 56,
+          "ms": 0
+        }
+      },
+      "frames": 86,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 10885,
+        "becameVisible": 1227,
+        "scrollHeight": 437864
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 1227,
+        "scrollHeight": 437864,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "jump",
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 56,
+          "ms": 91.2
+        },
+        "Layout": {
+          "n": 56,
+          "ms": 184.71
+        },
+        "PrePaint": {
+          "n": 123,
+          "ms": 174.36
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 87.32
+        },
+        "RasterTask": {
+          "n": 703,
+          "ms": 18.83
+        },
+        "Commit": {
+          "n": 82,
+          "ms": 44.99
+        },
+        "InvalidateLayout": {
+          "n": 56,
+          "ms": 0
+        }
+      },
+      "frames": 82,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 10885,
+        "becameVisible": 1227,
+        "scrollHeight": 437864
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 1227,
+        "scrollHeight": 437864,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "jump",
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 56,
+          "ms": 89.17
+        },
+        "Layout": {
+          "n": 56,
+          "ms": 192.61
+        },
+        "PrePaint": {
+          "n": 123,
+          "ms": 188.15
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 97.19
+        },
+        "RasterTask": {
+          "n": 703,
+          "ms": 21.96
+        },
+        "Commit": {
+          "n": 82,
+          "ms": 54.46
+        },
+        "InvalidateLayout": {
+          "n": 56,
+          "ms": 0
+        }
+      },
+      "frames": 82,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 10885,
+        "becameVisible": 1227,
+        "scrollHeight": 437864
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 1227,
+        "scrollHeight": 437864,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "linear",
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 64,
+          "ms": 108.35
+        },
+        "Layout": {
+          "n": 64,
+          "ms": 776.7
+        },
+        "PrePaint": {
+          "n": 183,
+          "ms": 351.22
+        },
+        "Paint": {
+          "n": 82,
+          "ms": 76.99
+        },
+        "RasterTask": {
+          "n": 134,
+          "ms": 11.15
+        },
+        "Commit": {
+          "n": 125,
+          "ms": 65.14
+        },
+        "InvalidateLayout": {
+          "n": 64,
+          "ms": 0
+        }
+      },
+      "frames": 125,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 436409
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 181,
+        "scrollHeight": 436409,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "linear",
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 64,
+          "ms": 84.16
+        },
+        "Layout": {
+          "n": 64,
+          "ms": 644.12
+        },
+        "PrePaint": {
+          "n": 183,
+          "ms": 290.12
+        },
+        "Paint": {
+          "n": 82,
+          "ms": 70.67
+        },
+        "RasterTask": {
+          "n": 137,
+          "ms": 9.57
+        },
+        "Commit": {
+          "n": 125,
+          "ms": 63.21
+        },
+        "InvalidateLayout": {
+          "n": 64,
+          "ms": 0
+        }
+      },
+      "frames": 125,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 436409
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 181,
+        "scrollHeight": 436409,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "linear",
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 64,
+          "ms": 105.58
+        },
+        "Layout": {
+          "n": 64,
+          "ms": 775.97
+        },
+        "PrePaint": {
+          "n": 183,
+          "ms": 332.44
+        },
+        "Paint": {
+          "n": 82,
+          "ms": 80.84
+        },
+        "RasterTask": {
+          "n": 137,
+          "ms": 10.75
+        },
+        "Commit": {
+          "n": 126,
+          "ms": 69.47
+        },
+        "InvalidateLayout": {
+          "n": 64,
+          "ms": 0
+        }
+      },
+      "frames": 126,
+      "setupResult": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 436158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 436409
+      },
+      "stats": {
+        "n": 4000,
+        "mode": "cv-auto",
+        "becameVisible": 181,
+        "scrollHeight": 436409,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "jump",
+      "n": 8000,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 80,
+          "ms": 150.9
+        },
+        "Layout": {
+          "n": 80,
+          "ms": 1826.45
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 1334.18
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 295.92
+        },
+        "RasterTask": {
+          "n": 694,
+          "ms": 33.11
+        },
+        "Commit": {
+          "n": 85,
+          "ms": 144.96
+        },
+        "InvalidateLayout": {
+          "n": 80,
+          "ms": 0
+        }
+      },
+      "frames": 85,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 1232158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 30764,
+        "becameVisible": 1084,
+        "scrollHeight": 1184885
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-over",
+        "becameVisible": 1084,
+        "scrollHeight": 1184885,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "jump",
+      "n": 8000,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 80,
+          "ms": 161.13
+        },
+        "Layout": {
+          "n": 80,
+          "ms": 2635.24
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 1970.15
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 476.97
+        },
+        "RasterTask": {
+          "n": 686,
+          "ms": 50.33
+        },
+        "Commit": {
+          "n": 85,
+          "ms": 342.65
+        },
+        "InvalidateLayout": {
+          "n": 80,
+          "ms": 0
+        }
+      },
+      "frames": 85,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 1232158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 30764,
+        "becameVisible": 1089,
+        "scrollHeight": 1184667
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-over",
+        "becameVisible": 1089,
+        "scrollHeight": 1184667,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "jump",
+      "n": 8000,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 79,
+          "ms": 76.39
+        },
+        "Layout": {
+          "n": 79,
+          "ms": 1412.67
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 2068.61
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 532.54
+        },
+        "RasterTask": {
+          "n": 686,
+          "ms": 48.98
+        },
+        "Commit": {
+          "n": 85,
+          "ms": 408.31
+        },
+        "InvalidateLayout": {
+          "n": 79,
+          "ms": 0
+        }
+      },
+      "frames": 85,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 1232158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 30764,
+        "becameVisible": 1090,
+        "scrollHeight": 1184623
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-over",
+        "becameVisible": 1090,
+        "scrollHeight": 1184623,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "linear",
+      "n": 8000,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 105,
+          "ms": 239.68
+        },
+        "Layout": {
+          "n": 105,
+          "ms": 2771.19
+        },
+        "PrePaint": {
+          "n": 226,
+          "ms": 2355.98
+        },
+        "Paint": {
+          "n": 122,
+          "ms": 489.17
+        },
+        "RasterTask": {
+          "n": 80,
+          "ms": 15.06
+        },
+        "Commit": {
+          "n": 126,
+          "ms": 325.69
+        },
+        "InvalidateLayout": {
+          "n": 105,
+          "ms": 0
+        }
+      },
+      "frames": 126,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 1232158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 1224264
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-over",
+        "becameVisible": 181,
+        "scrollHeight": 1224264,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "linear",
+      "n": 8000,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 105,
+          "ms": 159.34
+        },
+        "Layout": {
+          "n": 105,
+          "ms": 1607.77
+        },
+        "PrePaint": {
+          "n": 226,
+          "ms": 1800.2
+        },
+        "Paint": {
+          "n": 122,
+          "ms": 472.29
+        },
+        "RasterTask": {
+          "n": 79,
+          "ms": 13.8
+        },
+        "Commit": {
+          "n": 126,
+          "ms": 324.92
+        },
+        "InvalidateLayout": {
+          "n": 105,
+          "ms": 0
+        }
+      },
+      "frames": 126,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 1232158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 1224264
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-over",
+        "becameVisible": 181,
+        "scrollHeight": 1224264,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-over",
+      "pattern": "linear",
+      "n": 8000,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 105,
+          "ms": 150.74
+        },
+        "Layout": {
+          "n": 105,
+          "ms": 1828.64
+        },
+        "PrePaint": {
+          "n": 226,
+          "ms": 1922.56
+        },
+        "Paint": {
+          "n": 123,
+          "ms": 528.19
+        },
+        "RasterTask": {
+          "n": 80,
+          "ms": 12.95
+        },
+        "Commit": {
+          "n": 124,
+          "ms": 348.51
+        },
+        "InvalidateLayout": {
+          "n": 105,
+          "ms": 0
+        }
+      },
+      "frames": 124,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-over",
+        "className": "cv-over",
+        "scrollHeight": 1232158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 1224264
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-over",
+        "becameVisible": 181,
+        "scrollHeight": 1224264,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "jump",
+      "n": 8000,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 53,
+          "ms": 142.77
+        },
+        "Layout": {
+          "n": 53,
+          "ms": 1013.6
+        },
+        "PrePaint": {
+          "n": 123,
+          "ms": 534.93
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 283.48
+        },
+        "RasterTask": {
+          "n": 703,
+          "ms": 43.49
+        },
+        "Commit": {
+          "n": 85,
+          "ms": 132.15
+        },
+        "InvalidateLayout": {
+          "n": 53,
+          "ms": 0
+        }
+      },
+      "frames": 85,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 872158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 21785,
+        "becameVisible": 1227,
+        "scrollHeight": 873864
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "becameVisible": 1227,
+        "scrollHeight": 873864,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "jump",
+      "n": 8000,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 53,
+          "ms": 188.53
+        },
+        "Layout": {
+          "n": 53,
+          "ms": 1936.42
+        },
+        "PrePaint": {
+          "n": 123,
+          "ms": 980.44
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 410.25
+        },
+        "RasterTask": {
+          "n": 702,
+          "ms": 45.27
+        },
+        "Commit": {
+          "n": 86,
+          "ms": 224.29
+        },
+        "InvalidateLayout": {
+          "n": 53,
+          "ms": 0
+        }
+      },
+      "frames": 86,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 872158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 21785,
+        "becameVisible": 1227,
+        "scrollHeight": 873864
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "becameVisible": 1227,
+        "scrollHeight": 873864,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "jump",
+      "n": 8000,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 53,
+          "ms": 177.46
+        },
+        "Layout": {
+          "n": 53,
+          "ms": 1203.65
+        },
+        "PrePaint": {
+          "n": 123,
+          "ms": 763.48
+        },
+        "Paint": {
+          "n": 99,
+          "ms": 304.3
+        },
+        "RasterTask": {
+          "n": 703,
+          "ms": 61.09
+        },
+        "Commit": {
+          "n": 84,
+          "ms": 197.21
+        },
+        "InvalidateLayout": {
+          "n": 53,
+          "ms": 0
+        }
+      },
+      "frames": 84,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 872158
+      },
+      "phaseResult": {
+        "kind": "jump",
+        "steps": 40,
+        "stepPx": 21785,
+        "becameVisible": 1227,
+        "scrollHeight": 873864
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "becameVisible": 1227,
+        "scrollHeight": 873864,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "linear",
+      "n": 8000,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 64,
+          "ms": 177.64
+        },
+        "Layout": {
+          "n": 64,
+          "ms": 1611.83
+        },
+        "PrePaint": {
+          "n": 183,
+          "ms": 1363.67
+        },
+        "Paint": {
+          "n": 82,
+          "ms": 302.26
+        },
+        "RasterTask": {
+          "n": 120,
+          "ms": 16.5
+        },
+        "Commit": {
+          "n": 165,
+          "ms": 272.4
+        },
+        "InvalidateLayout": {
+          "n": 64,
+          "ms": 0
+        }
+      },
+      "frames": 165,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 872158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 872409
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "becameVisible": 181,
+        "scrollHeight": 872409,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "linear",
+      "n": 8000,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 64,
+          "ms": 183.16
+        },
+        "Layout": {
+          "n": 64,
+          "ms": 1975.48
+        },
+        "PrePaint": {
+          "n": 183,
+          "ms": 1641.07
+        },
+        "Paint": {
+          "n": 82,
+          "ms": 385.11
+        },
+        "RasterTask": {
+          "n": 80,
+          "ms": 14.49
+        },
+        "Commit": {
+          "n": 125,
+          "ms": 376.27
+        },
+        "InvalidateLayout": {
+          "n": 64,
+          "ms": 0
+        }
+      },
+      "frames": 125,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 872158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 872409
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "becameVisible": 181,
+        "scrollHeight": 872409,
+        "innerHeight": 800
+      }
+    },
+    {
+      "mode": "cv-auto",
+      "pattern": "linear",
+      "n": 8000,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 64,
+          "ms": 138.28
+        },
+        "Layout": {
+          "n": 64,
+          "ms": 1724.53
+        },
+        "PrePaint": {
+          "n": 183,
+          "ms": 1181.33
+        },
+        "Paint": {
+          "n": 82,
+          "ms": 288.04
+        },
+        "RasterTask": {
+          "n": 94,
+          "ms": 14.06
+        },
+        "Commit": {
+          "n": 126,
+          "ms": 304.48
+        },
+        "InvalidateLayout": {
+          "n": 64,
+          "ms": 0
+        }
+      },
+      "frames": 126,
+      "setupResult": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "className": "cv-auto",
+        "scrollHeight": 872158
+      },
+      "phaseResult": {
+        "kind": "linear",
+        "step": 300,
+        "count": 60,
+        "reached": 18000,
+        "travelled": 18000,
+        "becameVisible": 181,
+        "scrollHeight": 872409
+      },
+      "stats": {
+        "n": 8000,
+        "mode": "cv-auto",
+        "becameVisible": 181,
+        "scrollHeight": 872409,
+        "innerHeight": 800
+      }
+    }
+  ],
+  "part3": [
+    {
+      "layers": 100,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 376,
+          "ms": 404.59
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 3.45
+        },
+        "PrePaint": {
+          "n": 376,
+          "ms": 55.51
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 4.67
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.29
+        },
+        "Commit": {
+          "n": 379,
+          "ms": 81.83
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 379,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 116.84855356608658,
+        "avg": 8.558086253369199,
+        "p95": 8.5,
+        "dropped": 6,
+        "n": 742,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 100,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 361,
+          "ms": 317.31
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 3.4
+        },
+        "PrePaint": {
+          "n": 361,
+          "ms": 47.82
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 3.56
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 0.99
+        },
+        "Commit": {
+          "n": 364,
+          "ms": 46.16
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 364,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 116.92822461857467,
+        "avg": 8.552255054432296,
+        "p95": 8.5,
+        "dropped": 3,
+        "n": 643,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 100,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 363,
+          "ms": 310.66
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 3.17
+        },
+        "PrePaint": {
+          "n": 363,
+          "ms": 46.59
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 3.36
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.03
+        },
+        "Commit": {
+          "n": 366,
+          "ms": 44.83
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 366,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 116.73293030517675,
+        "avg": 8.566562986003042,
+        "p95": 8.5,
+        "dropped": 4,
+        "n": 643,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 250,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 361,
+          "ms": 706.59
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 3.95
+        },
+        "PrePaint": {
+          "n": 361,
+          "ms": 69.04
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 4.58
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 0.97
+        },
+        "Commit": {
+          "n": 364,
+          "ms": 70.65
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 364,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 116.56231392432541,
+        "avg": 8.579102167182612,
+        "p95": 8.5,
+        "dropped": 3,
+        "n": 646,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 250,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 352,
+          "ms": 1005.29
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 4.92
+        },
+        "PrePaint": {
+          "n": 352,
+          "ms": 84.45
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 4.95
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.28
+        },
+        "Commit": {
+          "n": 355,
+          "ms": 91.49
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 355,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 114.79569818225816,
+        "avg": 8.711127819548828,
+        "p95": 8.5,
+        "dropped": 15,
+        "n": 665,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 250,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 354,
+          "ms": 961.34
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 5.25
+        },
+        "PrePaint": {
+          "n": 354,
+          "ms": 83.65
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 5.42
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.22
+        },
+        "Commit": {
+          "n": 357,
+          "ms": 86.72
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 357,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 96.20529869183613,
+        "avg": 10.394437869822433,
+        "p95": 19.599999999999454,
+        "dropped": 71,
+        "n": 845,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 500,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 224,
+          "ms": 1264.35
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 6.69
+        },
+        "PrePaint": {
+          "n": 223,
+          "ms": 92.7
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 8.6
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.45
+        },
+        "Commit": {
+          "n": 227,
+          "ms": 104.22
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 227,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 75.27980656579503,
+        "avg": 13.283774834437091,
+        "p95": 25.100000000000364,
+        "dropped": 215,
+        "n": 604,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 500,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 263,
+          "ms": 1366.4
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 5.89
+        },
+        "PrePaint": {
+          "n": 263,
+          "ms": 94.3
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 6.65
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.21
+        },
+        "Commit": {
+          "n": 266,
+          "ms": 105.07
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 266,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 77.30640691713934,
+        "avg": 12.935538461538476,
+        "p95": 25.200000000000273,
+        "dropped": 172,
+        "n": 650,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 500,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 214,
+          "ms": 1203.66
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 6.78
+        },
+        "PrePaint": {
+          "n": 213,
+          "ms": 88.43
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 9.19
+        },
+        "RasterTask": {
+          "n": 11,
+          "ms": 1.26
+        },
+        "Commit": {
+          "n": 216,
+          "ms": 99.12
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 216,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 81.12626196407494,
+        "avg": 12.326464646464654,
+        "p95": 25,
+        "dropped": 158,
+        "n": 495,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 750,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 155,
+          "ms": 1125.91
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 9.45
+        },
+        "PrePaint": {
+          "n": 155,
+          "ms": 84.49
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 13.86
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.85
+        },
+        "Commit": {
+          "n": 159,
+          "ms": 102.22
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 159,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 64.59298033689016,
+        "avg": 15.481558441558438,
+        "p95": 33.400000000000546,
+        "dropped": 131,
+        "n": 385,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 750,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 148,
+          "ms": 1166.56
+        },
+        "Layout": {
+          "n": 11,
+          "ms": 8.6
+        },
+        "PrePaint": {
+          "n": 147,
+          "ms": 83.34
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 12.71
+        },
+        "RasterTask": {
+          "n": 11,
+          "ms": 1.21
+        },
+        "Commit": {
+          "n": 150,
+          "ms": 97.89
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 150,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 63.65131578947369,
+        "avg": 15.710594315245476,
+        "p95": 33.59999999999991,
+        "dropped": 132,
+        "n": 387,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 750,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 143,
+          "ms": 1125.45
+        },
+        "Layout": {
+          "n": 11,
+          "ms": 9.02
+        },
+        "PrePaint": {
+          "n": 143,
+          "ms": 82.99
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 12.69
+        },
+        "RasterTask": {
+          "n": 11,
+          "ms": 1.33
+        },
+        "Commit": {
+          "n": 146,
+          "ms": 101.43
+        },
+        "InvalidateLayout": {
+          "n": 11,
+          "ms": 0
+        }
+      },
+      "frames": 146,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 63.506865172513564,
+        "avg": 15.746329113924055,
+        "p95": 41.5,
+        "dropped": 123,
+        "n": 395,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 1000,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 95,
+          "ms": 1074.76
+        },
+        "Layout": {
+          "n": 20,
+          "ms": 22.02
+        },
+        "PrePaint": {
+          "n": 95,
+          "ms": 77.43
+        },
+        "Paint": {
+          "n": 34,
+          "ms": 27.17
+        },
+        "RasterTask": {
+          "n": 27,
+          "ms": 5.57
+        },
+        "Commit": {
+          "n": 98,
+          "ms": 126.08
+        },
+        "InvalidateLayout": {
+          "n": 20,
+          "ms": 0
+        }
+      },
+      "frames": 98,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 48.15634448150113,
+        "avg": 20.765695792880248,
+        "p95": 58.20000000000073,
+        "dropped": 141,
+        "n": 309,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 1000,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 104,
+          "ms": 1119.29
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 13.73
+        },
+        "PrePaint": {
+          "n": 104,
+          "ms": 79.89
+        },
+        "Paint": {
+          "n": 28,
+          "ms": 17.81
+        },
+        "RasterTask": {
+          "n": 19,
+          "ms": 3.15
+        },
+        "Commit": {
+          "n": 107,
+          "ms": 112.99
+        },
+        "InvalidateLayout": {
+          "n": 16,
+          "ms": 0
+        }
+      },
+      "frames": 107,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 44.28341384863123,
+        "avg": 22.58181818181819,
+        "p95": 50.30000000000018,
+        "dropped": 97,
+        "n": 286,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 1000,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 114,
+          "ms": 1105.52
+        },
+        "Layout": {
+          "n": 15,
+          "ms": 15.54
+        },
+        "PrePaint": {
+          "n": 113,
+          "ms": 78.19
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 18.93
+        },
+        "RasterTask": {
+          "n": 19,
+          "ms": 2.73
+        },
+        "Commit": {
+          "n": 116,
+          "ms": 123.02
+        },
+        "InvalidateLayout": {
+          "n": 15,
+          "ms": 0
+        }
+      },
+      "frames": 116,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 52.88376788833512,
+        "avg": 18.90939393939394,
+        "p95": 50.099999999999454,
+        "dropped": 138,
+        "n": 330,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 1500,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 148,
+          "ms": 1271.65
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 5.13
+        },
+        "PrePaint": {
+          "n": 148,
+          "ms": 103.93
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 8.57
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1
+        },
+        "Commit": {
+          "n": 150,
+          "ms": 103.88
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 150,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 48.73585539828966,
+        "avg": 20.51877394636012,
+        "p95": 33.40000000000009,
+        "dropped": 41,
+        "n": 261,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 1500,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 161,
+          "ms": 1297.22
+        },
+        "Layout": {
+          "n": 12,
+          "ms": 5.67
+        },
+        "PrePaint": {
+          "n": 161,
+          "ms": 104.34
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 8.8
+        },
+        "RasterTask": {
+          "n": 12,
+          "ms": 1.05
+        },
+        "Commit": {
+          "n": 164,
+          "ms": 103.25
+        },
+        "InvalidateLayout": {
+          "n": 12,
+          "ms": 0
+        }
+      },
+      "frames": 164,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 50.26430492441814,
+        "avg": 19.894833948339453,
+        "p95": 33.30000000000018,
+        "dropped": 29,
+        "n": 271,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 1500,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 145,
+          "ms": 1239.33
+        },
+        "Layout": {
+          "n": 13,
+          "ms": 9.93
+        },
+        "PrePaint": {
+          "n": 145,
+          "ms": 109.39
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 9.62
+        },
+        "RasterTask": {
+          "n": 13,
+          "ms": 0.93
+        },
+        "Commit": {
+          "n": 149,
+          "ms": 103.49
+        },
+        "InvalidateLayout": {
+          "n": 13,
+          "ms": 0
+        }
+      },
+      "frames": 149,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 44.38356164383565,
+        "avg": 22.53086419753085,
+        "p95": 33.40000000000009,
+        "dropped": 51,
+        "n": 243,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 2000,
+      "rep": 0,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 89,
+          "ms": 1066.18
+        },
+        "Layout": {
+          "n": 14,
+          "ms": 13.42
+        },
+        "PrePaint": {
+          "n": 89,
+          "ms": 105.22
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 13.97
+        },
+        "RasterTask": {
+          "n": 16,
+          "ms": 2.07
+        },
+        "Commit": {
+          "n": 93,
+          "ms": 118.21
+        },
+        "InvalidateLayout": {
+          "n": 14,
+          "ms": 0
+        }
+      },
+      "frames": 93,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 27.1604061634595,
+        "avg": 36.81830065359476,
+        "p95": 58.19999999999982,
+        "dropped": 15,
+        "n": 153,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 2000,
+      "rep": 1,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 84,
+          "ms": 949.09
+        },
+        "Layout": {
+          "n": 15,
+          "ms": 14.87
+        },
+        "PrePaint": {
+          "n": 84,
+          "ms": 86.32
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 14.57
+        },
+        "RasterTask": {
+          "n": 19,
+          "ms": 2.49
+        },
+        "Commit": {
+          "n": 87,
+          "ms": 121.61
+        },
+        "InvalidateLayout": {
+          "n": 15,
+          "ms": 0
+        }
+      },
+      "frames": 87,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 26.504459375289905,
+        "avg": 37.72949999999998,
+        "p95": 66.69999999999982,
+        "dropped": 38,
+        "n": 200,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    },
+    {
+      "layers": 2000,
+      "rep": 2,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 93,
+          "ms": 1112.06
+        },
+        "Layout": {
+          "n": 14,
+          "ms": 11.59
+        },
+        "PrePaint": {
+          "n": 92,
+          "ms": 105.24
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 13.59
+        },
+        "RasterTask": {
+          "n": 15,
+          "ms": 2.03
+        },
+        "Commit": {
+          "n": 96,
+          "ms": 111.74
+        },
+        "InvalidateLayout": {
+          "n": 14,
+          "ms": 0
+        }
+      },
+      "frames": 96,
+      "setupResult": 1,
+      "phaseResult": {
+        "ok": 1
+      },
+      "stats": {
+        "fps": 27.526897196934264,
+        "avg": 36.328104575163394,
+        "p95": 50,
+        "dropped": 35,
+        "n": 153,
+        "expected": 0,
+        "coverage": 1,
+        "valid": true
+      }
+    }
+  ],
+  "fits": {
+    "commit": {
+      "layers": [
+        100,
+        250,
+        500,
+        750,
+        1000,
+        1500,
+        2000
+      ],
+      "msPerFrame": [
+        0.15583408476104596,
+        0.23128252788104087,
+        0.43499294781382225,
+        0.6627252747252748,
+        1.128006230529595,
+        0.6708855291576674,
+        1.273768115942029
+      ],
+      "slope": 0.000531441036224363,
+      "intercept": 0.1879577699774087,
+      "r2": 0.7346025284108502
+    }
+  }
+}
