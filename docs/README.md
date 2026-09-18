@@ -34,6 +34,7 @@ Track A 를 끝내고 나서 **설명 못 한 채로 닫은 것들**이 남았�
 |---|---|---|
 | [C1 · 초기 로드 비용](../experiments/track-c/c1-initial-load/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c1-initial-load/RESULTS.md) — **A4 의 "여전히 O(N)" 은 리레이아웃에 한한 이야기였다.** 초기 로드에서 `cv-auto` 의 Layout 은 **0.96배(평탄)**, LCP 는 **36~39% 단축**. 사전 등록 5개 중 **2개 반증** |
 | [C2 · 남겨둔 이상치 3개](../experiments/track-c/c2-anomalies/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c2-anomalies/RESULTS.md) — **`content-visibility` 는 Layout 을 늘린다.** 이득은 전부 **Style**(−71~76%). 레이아웃 패스가 세로 이동에서 8→17회, 색 변경에서 0→9회. `auto` 키워드는 **차이 없음**(H1 반증). 덤으로 **이 화면이 120Hz** 라 A1b 의 "commit 7.0배"가 vsync 양자화 때문임을 확인 |
+| [C3 · 2,000 레이어 절벽](../experiments/track-c/c3-layer-cliff/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c3-layer-cliff/RESULTS.md) — **절벽은 없었다.** 표본을 49→480개로 늘리니 2,000이 1,750과 구별되지 않는다(95% 구간 포개짐). 타일 메모리는 예산의 6%라 산수로도 기각. 덤으로 **commit 이 레이어당 14.5µs 로 선형**임을 확인해 C2 의 ③을 닫았다 |
 
 ---
 
