@@ -41,7 +41,9 @@
   /**
    * opts.text=false 면 박스에 글자를 넣지 않는다.
    * 타일 래스터 비용에서 글리프가 차지하는 몫을 가리려고 넣었다 (C4b).
-   * opts.spread=true 면 박스를 겹치지 않게 가로로도 흩는다 (가림 효과 판별용).
+   * opts.cols=k 면 박스를 k개 열에 나눠 배치한다 — 겹침 깊이를 연속으로 바꾸는 손잡이 (C4c).
+   *   cols=1 이면 전부 같은 자리에 쌓이고(깊이 N), 커질수록 얕아진다.
+   * opts.spread=true 는 cols 를 화면이 허용하는 최대치로 두는 단축형.
    */
   function build(n, bw, bh, opts) {
     const o = opts || {};
@@ -51,20 +53,22 @@
     stage.textContent = '';
     const h = stage.clientHeight, w = stage.clientWidth;
     const boxW = bw || 38, boxH = bh || 15;
-    const cols = Math.max(Math.floor(w / boxW), 1);
+    const maxCols = Math.max(Math.floor(w / boxW), 1);
+    // cols 를 직접 주면 그 값, spread 면 최대치, 아무것도 없으면 1(전부 쌓임)
+    const nCols = o.cols ? Math.min(o.cols, maxCols) : (o.spread ? maxCols : 1);
     const frag = document.createDocumentFragment();
     for (let i = 0; i < n; i++) {
       const b = document.createElement('div');
       b.className = 'box';
       if (o.text !== false) b.textContent = i % 100;
       b.style.top = ((i * 7) % Math.max(h - boxH, 1)) + 'px';
-      if (o.spread) b.style.left = ((i % cols) * boxW) + 'px';
+      if (nCols > 1) b.style.left = ((i % nCols) * boxW) + 'px';
       frag.appendChild(b);
     }
     stage.appendChild(frag);
     render();
-    return { n, bw: boxW, bh: boxH, text: o.text !== false, spread: !!o.spread,
-             boxes: stage.children.length };
+    return { n, bw: boxW, bh: boxH, text: o.text !== false, cols: nCols, maxCols,
+             depth: Math.ceil(n / nCols), boxes: stage.children.length };
   }
 
   const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
