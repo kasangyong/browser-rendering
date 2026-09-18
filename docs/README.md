@@ -38,6 +38,7 @@ Track A 를 끝내고 나서 **설명 못 한 채로 닫은 것들**이 남았�
 | [C4 · Raster 110배의 정체](../experiments/track-c/c4-raster-threshold/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c4-raster-threshold/RESULTS.md) — **렌더러의 임계점이 아니라 내가 하네스에 박아둔 `sleep(2000)`.** `RasterTask` 가 레이어당 정확히 1.00회(매 프레임이면 15,000회), 한 덩어리로 몰렸다 끝나고, 레이어 고정한 채 4초만 기다리면 사라진다. 소스에서 개수 상한 `kDefaultNumResourcesLimit = 10,000,000` 확인해 내 가설 E1 도 기각 |
 | [C5 · 현실적인 무효화](../experiments/track-c/c5-realistic-invalidation/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c5-realistic-invalidation/RESULTS.md) — **C2 의 "이득은 Style" 이 뒤집혔다.** C2 의 세 무효화가 전부 `:root` 커스텀 프로퍼티(최악 경우)였다. 컨테이너 폭만 바꾸는 흔한 경우엔 이득이 **Layout** 에서 나오고(Style 은 0.41 → 9.29ms 로 **증가**), 항목 스타일만 바뀌면 **4.5배 손해**. `plain` 의 Style 이 무효화 방식에 따라 **337배** 차이 |
 | [C6 · 실제 웹사이트 3곳](../experiments/track-c/c6-real-sites/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c6-real-sites/RESULTS.md) — **합성 하네스가 양쪽으로 틀렸다.** 실제 3곳(MediaWiki·WHATWG 스펙·Sphinx)에서 성능은 **손해 보는 경우가 없고**(폭 변경 5.9~11.3배 이득, 최악도 무승부), **이득의 출처는 Style 이 아니라 Layout**. 반면 `contain-intrinsic-size` 오차가 블록 높이 **변동계수를 그대로 따라간다**(1.16→32% · 1.90→47% · 3.72→89%) — 가장 균일한 곳도 32% 틀린다 |
+| [C7 · 초기 로드의 실제판](../experiments/track-c/c7-real-initial-load/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c7-real-initial-load/RESULTS.md) — **C1 의 "LCP 36~39% 단축" 은 조건부였다.** 초기 Layout 은 실제 3곳 모두 **84~99% 절감**되는데, LCP 가 움직인 건 **1곳뿐**(Wikipedia 24초 → 2.2초). 나머지 둘은 분포가 겹쳐 차이 없음. **레이아웃이 첫 페인트의 병목일 때만** 사용자에게 보인다 |
 
 ---
 

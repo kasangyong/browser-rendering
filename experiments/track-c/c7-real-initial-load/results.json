@@ -1,0 +1,1757 @@
+{
+  "experiment": "c7-real-initial-load",
+  "generatedAt": "2026-09-18T10:50:17.420Z",
+  "repeat": 6,
+  "sites": {
+    "wiki-uni": {
+      "url": "https://en.wikipedia.org/wiki/List_of_Unicode_characters",
+      "blocks": ".mw-parser-output section > *",
+      "intrinsic": 81
+    },
+    "whatwg-dom": {
+      "url": "https://html.spec.whatwg.org/multipage/dom.html",
+      "blocks": "body > *",
+      "intrinsic": 48
+    },
+    "py-func": {
+      "url": "https://docs.python.org/3/library/functions.html",
+      "blocks": "#built-in-functions > *",
+      "intrinsic": 310
+    }
+  },
+  "method": "캐시 데운 뒤 2차 로드 측정 · cv 는 문서 시작 시점 주입",
+  "isolation": "strict",
+  "order": "shuffled",
+  "rows": [
+    {
+      "siteKey": "py-func",
+      "mode": "cv-auto",
+      "rep": 0,
+      "order": 1,
+      "fcpMs": 1243.6,
+      "lcpMs": 1243.6,
+      "stage": {
+        "Layout": {
+          "ms": 12.48
+        },
+        "UpdateLayoutTree": {
+          "ms": 57.17
+        },
+        "ParseHTML": {
+          "n": 15,
+          "ms": 252.93,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 12,
+          "ms": 6.73,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 5,
+          "ms": 4.98,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 221,
+          "ms": 56.81,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 24213,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "cv-auto",
+      "rep": 0,
+      "order": 2,
+      "fcpMs": 514.3,
+      "lcpMs": 514.3,
+      "stage": {
+        "Layout": {
+          "ms": 18.3
+        },
+        "UpdateLayoutTree": {
+          "ms": 22.74
+        },
+        "ParseHTML": {
+          "n": 12,
+          "ms": 92.12,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 17,
+          "ms": 8.82,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 10,
+          "ms": 14.53,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 32.29,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 36059,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "plain",
+      "rep": 0,
+      "order": 3,
+      "fcpMs": 899.7,
+      "lcpMs": 899.7,
+      "stage": {
+        "Layout": {
+          "ms": 201.84
+        },
+        "UpdateLayoutTree": {
+          "ms": 86.63
+        },
+        "ParseHTML": {
+          "n": 9,
+          "ms": 53.46,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 46.27,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 9.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 105,
+          "ms": 20.62,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 64120,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "plain",
+      "rep": 0,
+      "order": 4,
+      "fcpMs": 399.4,
+      "lcpMs": 449.4,
+      "stage": {
+        "Layout": {
+          "ms": 118.36
+        },
+        "UpdateLayoutTree": {
+          "ms": 59.77
+        },
+        "ParseHTML": {
+          "n": 13,
+          "ms": 57.71,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 8,
+          "ms": 46.29,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 21.92,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 202,
+          "ms": 42.35,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 37059,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "plain",
+      "rep": 1,
+      "order": 5,
+      "fcpMs": 773.7,
+      "lcpMs": 773.7,
+      "stage": {
+        "Layout": {
+          "ms": 80.58
+        },
+        "UpdateLayoutTree": {
+          "ms": 52.74
+        },
+        "ParseHTML": {
+          "n": 13,
+          "ms": 57.71,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 8,
+          "ms": 46.29,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 21.92,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 202,
+          "ms": 42.35,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 37059,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "plain",
+      "rep": 1,
+      "order": 6,
+      "fcpMs": 1752.2,
+      "lcpMs": 1752.2,
+      "stage": {
+        "Layout": {
+          "ms": 161.24
+        },
+        "UpdateLayoutTree": {
+          "ms": 29.52
+        },
+        "ParseHTML": {
+          "n": 9,
+          "ms": 53.46,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 46.27,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 9.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 105,
+          "ms": 20.62,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 64120,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "cv-auto",
+      "rep": 1,
+      "order": 7,
+      "fcpMs": 513.8,
+      "lcpMs": 513.8,
+      "stage": {
+        "Layout": {
+          "ms": 22.28
+        },
+        "UpdateLayoutTree": {
+          "ms": 28.51
+        },
+        "ParseHTML": {
+          "n": 15,
+          "ms": 252.93,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 12,
+          "ms": 6.73,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 5,
+          "ms": 4.98,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 221,
+          "ms": 56.81,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 24213,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "cv-auto",
+      "rep": 2,
+      "order": 8,
+      "fcpMs": 580.9,
+      "lcpMs": 580.9,
+      "stage": {
+        "Layout": {
+          "ms": 13.22
+        },
+        "UpdateLayoutTree": {
+          "ms": 15.37
+        },
+        "ParseHTML": {
+          "n": 15,
+          "ms": 252.93,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 12,
+          "ms": 6.73,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 5,
+          "ms": 4.98,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 221,
+          "ms": 56.81,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 24213,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "plain",
+      "rep": 0,
+      "order": 9,
+      "fcpMs": 30430.2,
+      "lcpMs": 30430.2,
+      "stage": {
+        "Layout": {
+          "ms": 30508.09
+        },
+        "UpdateLayoutTree": {
+          "ms": 1222.03
+        },
+        "ParseHTML": {
+          "n": 90,
+          "ms": 634.32,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 325.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 25,
+          "ms": 54.33,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 950,
+          "ms": 210.52,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 152571,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "plain",
+      "rep": 2,
+      "order": 10,
+      "fcpMs": 488.3,
+      "lcpMs": 555,
+      "stage": {
+        "Layout": {
+          "ms": 111.27
+        },
+        "UpdateLayoutTree": {
+          "ms": 59.89
+        },
+        "ParseHTML": {
+          "n": 13,
+          "ms": 57.71,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 8,
+          "ms": 46.29,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 21.92,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 202,
+          "ms": 42.35,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 37059,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "cv-auto",
+      "rep": 0,
+      "order": 11,
+      "fcpMs": 1644.4,
+      "lcpMs": 1644.4,
+      "stage": {
+        "Layout": {
+          "ms": 47.09
+        },
+        "UpdateLayoutTree": {
+          "ms": 114.38
+        },
+        "ParseHTML": {
+          "n": 91,
+          "ms": 234.24,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 41.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 71.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 52.06,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 16346,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "cv-auto",
+      "rep": 1,
+      "order": 12,
+      "fcpMs": 318.4,
+      "lcpMs": 318.4,
+      "stage": {
+        "Layout": {
+          "ms": 16.72
+        },
+        "UpdateLayoutTree": {
+          "ms": 20.15
+        },
+        "ParseHTML": {
+          "n": 12,
+          "ms": 92.12,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 17,
+          "ms": 8.82,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 10,
+          "ms": 14.53,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 32.29,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 36059,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "cv-auto",
+      "rep": 1,
+      "order": 13,
+      "fcpMs": 2169.2,
+      "lcpMs": 2169.2,
+      "stage": {
+        "Layout": {
+          "ms": 249.13
+        },
+        "UpdateLayoutTree": {
+          "ms": 141.87
+        },
+        "ParseHTML": {
+          "n": 91,
+          "ms": 234.24,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 41.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 71.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 52.06,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 16346,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "plain",
+      "rep": 3,
+      "order": 14,
+      "fcpMs": 651.7,
+      "lcpMs": 651.7,
+      "stage": {
+        "Layout": {
+          "ms": 80.87
+        },
+        "UpdateLayoutTree": {
+          "ms": 56.95
+        },
+        "ParseHTML": {
+          "n": 13,
+          "ms": 57.71,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 8,
+          "ms": 46.29,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 21.92,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 202,
+          "ms": 42.35,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 37059,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "plain",
+      "rep": 1,
+      "order": 15,
+      "fcpMs": 19194.4,
+      "lcpMs": 19194.4,
+      "stage": {
+        "Layout": {
+          "ms": 17325.98
+        },
+        "UpdateLayoutTree": {
+          "ms": 1085.47
+        },
+        "ParseHTML": {
+          "n": 90,
+          "ms": 634.32,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 325.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 25,
+          "ms": 54.33,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 950,
+          "ms": 210.52,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 152571,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "plain",
+      "rep": 2,
+      "order": 16,
+      "fcpMs": 24219.8,
+      "lcpMs": 24219.8,
+      "stage": {
+        "Layout": {
+          "ms": 22058.51
+        },
+        "UpdateLayoutTree": {
+          "ms": 1201.98
+        },
+        "ParseHTML": {
+          "n": 90,
+          "ms": 634.32,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 325.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 25,
+          "ms": 54.33,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 950,
+          "ms": 210.52,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 152571,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "plain",
+      "rep": 4,
+      "order": 17,
+      "fcpMs": 947.9,
+      "lcpMs": 947.9,
+      "stage": {
+        "Layout": {
+          "ms": 108.72
+        },
+        "UpdateLayoutTree": {
+          "ms": 75.58
+        },
+        "ParseHTML": {
+          "n": 13,
+          "ms": 57.71,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 8,
+          "ms": 46.29,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 21.92,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 202,
+          "ms": 42.35,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 37059,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "cv-auto",
+      "rep": 2,
+      "order": 18,
+      "fcpMs": 2311.8,
+      "lcpMs": 2311.8,
+      "stage": {
+        "Layout": {
+          "ms": 256.98
+        },
+        "UpdateLayoutTree": {
+          "ms": 192.17
+        },
+        "ParseHTML": {
+          "n": 91,
+          "ms": 234.24,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 41.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 71.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 52.06,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 16346,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "cv-auto",
+      "rep": 3,
+      "order": 19,
+      "fcpMs": 1019.1,
+      "lcpMs": 1019.1,
+      "stage": {
+        "Layout": {
+          "ms": 72.45
+        },
+        "UpdateLayoutTree": {
+          "ms": 49.82
+        },
+        "ParseHTML": {
+          "n": 15,
+          "ms": 252.93,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 12,
+          "ms": 6.73,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 5,
+          "ms": 4.98,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 221,
+          "ms": 56.81,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 24213,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "cv-auto",
+      "rep": 2,
+      "order": 20,
+      "fcpMs": 335,
+      "lcpMs": 335,
+      "stage": {
+        "Layout": {
+          "ms": 5.7
+        },
+        "UpdateLayoutTree": {
+          "ms": 15.58
+        },
+        "ParseHTML": {
+          "n": 12,
+          "ms": 92.12,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 17,
+          "ms": 8.82,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 10,
+          "ms": 14.53,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 32.29,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 36059,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "plain",
+      "rep": 2,
+      "order": 21,
+      "fcpMs": 401.6,
+      "lcpMs": 401.6,
+      "stage": {
+        "Layout": {
+          "ms": 137.44
+        },
+        "UpdateLayoutTree": {
+          "ms": 106.1
+        },
+        "ParseHTML": {
+          "n": 9,
+          "ms": 53.46,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 46.27,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 9.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 105,
+          "ms": 20.62,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 64120,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "cv-auto",
+      "rep": 3,
+      "order": 22,
+      "fcpMs": 568.2,
+      "lcpMs": 568.2,
+      "stage": {
+        "Layout": {
+          "ms": 19.76
+        },
+        "UpdateLayoutTree": {
+          "ms": 21
+        },
+        "ParseHTML": {
+          "n": 12,
+          "ms": 92.12,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 17,
+          "ms": 8.82,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 10,
+          "ms": 14.53,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 32.29,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 36059,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "cv-auto",
+      "rep": 3,
+      "order": 23,
+      "fcpMs": 1231.1,
+      "lcpMs": 1231.1,
+      "stage": {
+        "Layout": {
+          "ms": 176.45
+        },
+        "UpdateLayoutTree": {
+          "ms": 107.95
+        },
+        "ParseHTML": {
+          "n": 91,
+          "ms": 234.24,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 41.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 71.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 52.06,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 16346,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "plain",
+      "rep": 3,
+      "order": 24,
+      "fcpMs": 23217.7,
+      "lcpMs": 23217.7,
+      "stage": {
+        "Layout": {
+          "ms": 21364.49
+        },
+        "UpdateLayoutTree": {
+          "ms": 868.81
+        },
+        "ParseHTML": {
+          "n": 90,
+          "ms": 634.32,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 325.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 25,
+          "ms": 54.33,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 950,
+          "ms": 210.52,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 152571,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "plain",
+      "rep": 3,
+      "order": 25,
+      "fcpMs": 570.3,
+      "lcpMs": 570.3,
+      "stage": {
+        "Layout": {
+          "ms": 113.42
+        },
+        "UpdateLayoutTree": {
+          "ms": 77.03
+        },
+        "ParseHTML": {
+          "n": 9,
+          "ms": 53.46,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 46.27,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 9.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 105,
+          "ms": 20.62,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 64120,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "cv-auto",
+      "rep": 4,
+      "order": 26,
+      "fcpMs": 1819.7,
+      "lcpMs": 1819.7,
+      "stage": {
+        "Layout": {
+          "ms": 203.43
+        },
+        "UpdateLayoutTree": {
+          "ms": 139.21
+        },
+        "ParseHTML": {
+          "n": 91,
+          "ms": 234.24,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 41.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 71.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 52.06,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 16346,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "cv-auto",
+      "rep": 4,
+      "order": 27,
+      "fcpMs": 1217.6,
+      "lcpMs": 1217.6,
+      "stage": {
+        "Layout": {
+          "ms": 17.39
+        },
+        "UpdateLayoutTree": {
+          "ms": 20.2
+        },
+        "ParseHTML": {
+          "n": 15,
+          "ms": 252.93,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 12,
+          "ms": 6.73,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 5,
+          "ms": 4.98,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 221,
+          "ms": 56.81,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 24213,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "plain",
+      "rep": 4,
+      "order": 28,
+      "fcpMs": 727.9,
+      "lcpMs": 727.9,
+      "stage": {
+        "Layout": {
+          "ms": 165.81
+        },
+        "UpdateLayoutTree": {
+          "ms": 94.73
+        },
+        "ParseHTML": {
+          "n": 9,
+          "ms": 53.46,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 46.27,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 9.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 105,
+          "ms": 20.62,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 64120,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "plain",
+      "rep": 4,
+      "order": 29,
+      "fcpMs": 24048.6,
+      "lcpMs": 24048.6,
+      "stage": {
+        "Layout": {
+          "ms": 22217.96
+        },
+        "UpdateLayoutTree": {
+          "ms": 943.01
+        },
+        "ParseHTML": {
+          "n": 90,
+          "ms": 634.32,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 325.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 25,
+          "ms": 54.33,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 950,
+          "ms": 210.52,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 152571,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "plain",
+      "rep": 5,
+      "order": 30,
+      "fcpMs": 599.6,
+      "lcpMs": 599.6,
+      "stage": {
+        "Layout": {
+          "ms": 152.42
+        },
+        "UpdateLayoutTree": {
+          "ms": 62.82
+        },
+        "ParseHTML": {
+          "n": 9,
+          "ms": 53.46,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 5,
+          "ms": 46.27,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 2,
+          "ms": 9.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 105,
+          "ms": 20.62,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 64120,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "cv-auto",
+      "rep": 5,
+      "order": 31,
+      "fcpMs": 419.1,
+      "lcpMs": 419.1,
+      "stage": {
+        "Layout": {
+          "ms": 14.55
+        },
+        "UpdateLayoutTree": {
+          "ms": 16.93
+        },
+        "ParseHTML": {
+          "n": 15,
+          "ms": 252.93,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 12,
+          "ms": 6.73,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 5,
+          "ms": 4.98,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 221,
+          "ms": 56.81,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 24213,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "cv-auto",
+      "rep": 5,
+      "order": 32,
+      "fcpMs": 2705.2,
+      "lcpMs": 2705.2,
+      "stage": {
+        "Layout": {
+          "ms": 85.32
+        },
+        "UpdateLayoutTree": {
+          "ms": 195.54
+        },
+        "ParseHTML": {
+          "n": 91,
+          "ms": 234.24,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 41.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 71.04,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 52.06,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 16346,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "cv-auto",
+      "rep": 4,
+      "order": 33,
+      "fcpMs": 197.1,
+      "lcpMs": 197.1,
+      "stage": {
+        "Layout": {
+          "ms": 13.02
+        },
+        "UpdateLayoutTree": {
+          "ms": 15.98
+        },
+        "ParseHTML": {
+          "n": 12,
+          "ms": 92.12,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 17,
+          "ms": 8.82,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 10,
+          "ms": 14.53,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 32.29,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 36059,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "whatwg-dom",
+      "mode": "cv-auto",
+      "rep": 5,
+      "order": 34,
+      "fcpMs": 427.4,
+      "lcpMs": 427.4,
+      "stage": {
+        "Layout": {
+          "ms": 14.77
+        },
+        "UpdateLayoutTree": {
+          "ms": 24.32
+        },
+        "ParseHTML": {
+          "n": 12,
+          "ms": 92.12,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 17,
+          "ms": 8.82,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 10,
+          "ms": 14.53,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 32.29,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 36059,
+        "blocks": 410,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 410,
+        "h": 64120,
+        "dom": 9318
+      },
+      "cvApplied": true
+    },
+    {
+      "siteKey": "py-func",
+      "mode": "plain",
+      "rep": 5,
+      "order": 35,
+      "fcpMs": 550.2,
+      "lcpMs": 550.2,
+      "stage": {
+        "Layout": {
+          "ms": 98.08
+        },
+        "UpdateLayoutTree": {
+          "ms": 73.43
+        },
+        "ParseHTML": {
+          "n": 13,
+          "ms": 57.71,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 8,
+          "ms": 46.29,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 21.92,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 202,
+          "ms": 42.35,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 37059,
+        "blocks": 77,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 77,
+        "h": 37059,
+        "dom": 7009
+      },
+      "cvApplied": null
+    },
+    {
+      "siteKey": "wiki-uni",
+      "mode": "plain",
+      "rep": 5,
+      "order": 36,
+      "fcpMs": 2422.2,
+      "lcpMs": 2422.2,
+      "stage": {
+        "Layout": {
+          "ms": 16795.28
+        },
+        "UpdateLayoutTree": {
+          "ms": 746.21
+        },
+        "ParseHTML": {
+          "n": 90,
+          "ms": 634.32,
+          "fromRepresentative": true
+        },
+        "PrePaint": {
+          "n": 116,
+          "ms": 325.13,
+          "fromRepresentative": true
+        },
+        "Paint": {
+          "n": 25,
+          "ms": 54.33,
+          "fromRepresentative": true
+        },
+        "RasterTask": {
+          "n": 950,
+          "ms": 210.52,
+          "fromRepresentative": true
+        }
+      },
+      "recovered": true,
+      "after": {
+        "h": 152571,
+        "blocks": 698,
+        "applied": true
+      },
+      "probe": {
+        "blocks": 698,
+        "h": 152571,
+        "dom": 47922
+      },
+      "cvApplied": null
+    }
+  ],
+  "note": "FCP·LCP·Layout·Style 은 36건 전부 stdout 로그에서 복구. ParseHTML·PrePaint·Paint·높이는 살아남은 12건의 설정별 대표값이라 참고용.",
+  "recoveredFromLog": true
+}
