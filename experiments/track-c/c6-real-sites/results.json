@@ -1,0 +1,538 @@
+{
+  "experiment": "c6-real-sites",
+  "generatedAt": "2026-09-18T07:58:52.472Z",
+  "site": {
+    "url": "https://en.wikipedia.org/wiki/List_of_Unicode_characters",
+    "container": ".mw-parser-output",
+    "blocks": ".mw-parser-output section > *",
+    "intrinsic": 81
+  },
+  "repeat": 3,
+  "kicks": 8,
+  "isolation": "strict",
+  "order": "shuffled",
+  "rows": [
+    {
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 76.328
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 101.173
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 88.484
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 7.506
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 36.609
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.752
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.386
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 52,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 73.188
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 0.185
+        },
+        "PrePaint": {
+          "n": 84,
+          "ms": 2.332
+        },
+        "Paint": {
+          "n": 44,
+          "ms": 6.311
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 53,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 438.956
+        },
+        "Layout": {
+          "n": 5,
+          "ms": 8.659
+        },
+        "PrePaint": {
+          "n": 47,
+          "ms": 8.957
+        },
+        "Paint": {
+          "n": 32,
+          "ms": 5.512
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 72.001
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 0.22
+        },
+        "PrePaint": {
+          "n": 85,
+          "ms": 2.27
+        },
+        "Paint": {
+          "n": 44,
+          "ms": 5.588
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 503.679
+        },
+        "Layout": {
+          "n": 6,
+          "ms": 6.275
+        },
+        "PrePaint": {
+          "n": 84,
+          "ms": 13.315
+        },
+        "Paint": {
+          "n": 44,
+          "ms": 7.249
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 33.326
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.716
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.776
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 36.287
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 2.645
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.82
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 40.926
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 3.012
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.613
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 52,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 14.9
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 8.859
+        },
+        "PrePaint": {
+          "n": 79,
+          "ms": 7.663
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 5.894
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 104.285
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 101.557
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 102.838
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 6.477
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 559.692
+        },
+        "Layout": {
+          "n": 5,
+          "ms": 12.879
+        },
+        "PrePaint": {
+          "n": 47,
+          "ms": 13.289
+        },
+        "Paint": {
+          "n": 32,
+          "ms": 9.081
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 110.987
+        },
+        "Layout": {
+          "n": 3,
+          "ms": 0.221
+        },
+        "PrePaint": {
+          "n": 84,
+          "ms": 3.034
+        },
+        "Paint": {
+          "n": 44,
+          "ms": 7.54
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 55,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 40.638
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.645
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 5.849
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 5.387
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 3.198
+        },
+        "PrePaint": {
+          "n": 79,
+          "ms": 4.08
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 2.249
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 53,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 16,
+          "ms": 5.29
+        },
+        "Layout": {
+          "n": 16,
+          "ms": 3.945
+        },
+        "PrePaint": {
+          "n": 79,
+          "ms": 4.207
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 3.919
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 152571,
+      "heightMode": 16303,
+      "blocks": 698,
+      "domNodes": 47925,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 27.933
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 1.673
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 4.233
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 57,
+      "heightPlain": 152571,
+      "heightMode": 152571,
+      "blocks": 698,
+      "domNodes": 47924,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 50.438
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 68.636
+        },
+        "PrePaint": {
+          "n": 82,
+          "ms": 75.499
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 3.438
+        }
+      },
+      "rep": 0
+    }
+  ]
+}

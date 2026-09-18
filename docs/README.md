@@ -37,6 +37,7 @@ Track A 를 끝내고 나서 **설명 못 한 채로 닫은 것들**이 남았�
 | [C3 · 2,000 레이어 절벽](../experiments/track-c/c3-layer-cliff/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c3-layer-cliff/RESULTS.md) — **절벽은 없었다.** 표본을 49→480개로 늘리니 2,000이 1,750과 구별되지 않는다(95% 구간 포개짐). 타일 메모리는 예산의 6%라 산수로도 기각. 덤으로 **commit 이 레이어당 14.5µs 로 선형**임을 확인해 C2 의 ③을 닫았다 |
 | [C4 · Raster 110배의 정체](../experiments/track-c/c4-raster-threshold/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c4-raster-threshold/RESULTS.md) — **렌더러의 임계점이 아니라 내가 하네스에 박아둔 `sleep(2000)`.** `RasterTask` 가 레이어당 정확히 1.00회(매 프레임이면 15,000회), 한 덩어리로 몰렸다 끝나고, 레이어 고정한 채 4초만 기다리면 사라진다. 소스에서 개수 상한 `kDefaultNumResourcesLimit = 10,000,000` 확인해 내 가설 E1 도 기각 |
 | [C5 · 현실적인 무효화](../experiments/track-c/c5-realistic-invalidation/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c5-realistic-invalidation/RESULTS.md) — **C2 의 "이득은 Style" 이 뒤집혔다.** C2 의 세 무효화가 전부 `:root` 커스텀 프로퍼티(최악 경우)였다. 컨테이너 폭만 바꾸는 흔한 경우엔 이득이 **Layout** 에서 나오고(Style 은 0.41 → 9.29ms 로 **증가**), 항목 스타일만 바뀌면 **4.5배 손해**. `plain` 의 Style 이 무효화 방식에 따라 **337배** 차이 |
+| [C6 · 실제 웹사이트](../experiments/track-c/c6-real-sites/PREDICTION.md) | 완료 (통과) | [RESULTS.md](../experiments/track-c/c6-real-sites/RESULTS.md) — **합성 하네스가 양쪽으로 틀렸다.** 실제 Wikipedia(DOM 47,925·152,571px·블록 698)에서 성능은 합성보다 **훨씬 유리**(폭 변경 11.3배 이득, C5 는 2.73배), 그러나 `contain-intrinsic-size` 오차가 **89.3%** 로 스크롤바가 깨진다(합성은 1.3%). 조사한 4곳 중 **1곳만** 적용 가능 — 반복 단위가 `tr` 이면 `contain: size` 가 안 붙는다 |
 
 ---
 
