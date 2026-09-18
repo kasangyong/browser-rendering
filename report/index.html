@@ -46,7 +46,7 @@
 </style></head><body>
 
 <header>
-  <h1>Track A — 브라우저 렌더링 파이프라인 계측</h1>
+  <h1>Track A + C — 브라우저 렌더링 파이프라인 계측</h1>
   <p>Chrome 152.0.7977.83 (headless=new, GPU 가속 · RTX 4050 / Intel Iris Xe) ·
      CDP Tracing / LayerTree / memory-infra · 설정마다 브라우저 새로 기동 · 반복 3회 · 2026-09-17</p>
 </header>
@@ -112,13 +112,37 @@ first</text><rect x="345.8" y="154.3" width="28.0" height="11.7" fill="#3c6eb4" 
     </svg>
     <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>INP p75  (yield 는 상한선)</span><span class="lg"><i style="background:#b4401f"></i>실제 화면 갱신</span></div>
     <p class="note"><b>yield 는 INP 16ms 미만인데 화면은 210ms 뒤에 바뀐다.</b> 핸들러가 아무것도 안 바꾸고 양보하면 브라우저는 빈 프레임을 내고 INP 는 초록불이 된다. <br><small>※ paint-first 의 화면갱신 207ms 는 무효값 — rAF 콜백이 메인 블로킹에 걸렸다. 실제는 INP 와 같은 16ms</small></p>
+  </figure><figure class="chart">
+    <figcaption>C1 · 초기 로드에서는 이야기가 다르다 <small>(최초 Layout 총 ms)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C1 · 초기 로드에서는 이야기가 다르다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="103.7" y="139.2" width="28.0" height="26.8" fill="#b4401f" rx="2"/><text x="117.7" y="136.2" class="v">29</text><rect x="133.7" y="137.6" width="28.0" height="28.4" fill="#1f7a4d" rx="2"/><text x="147.7" y="134.6" class="v">31</text><text x="133.7" y="186" class="x">200</text><rect x="255.0" y="111.2" width="28.0" height="54.8" fill="#b4401f" rx="2"/><text x="269.0" y="108.2" class="v">59</text><rect x="285.0" y="141.7" width="28.0" height="24.3" fill="#1f7a4d" rx="2"/><text x="299.0" y="138.7" class="v">26</text><text x="285.0" y="186" class="x">1000</text><rect x="406.3" y="12.0" width="28.0" height="154.0" fill="#b4401f" rx="2"/><text x="420.3" y="9.0" class="v">166</text><rect x="436.3" y="138.6" width="28.0" height="27.4" fill="#1f7a4d" rx="2"/><text x="450.3" y="135.6" class="v">29</text><text x="436.3" y="186" class="x">4000</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#b4401f"></i>plain</span><span class="lg"><i style="background:#1f7a4d"></i>cv-auto</span></div>
+    <p class="note">A4 의 리레이아웃에서는 <b>21.4배</b>였는데, 초기 로드에서 cv-auto 는 <b>0.96배 — 평탄</b>하다. LCP 도 실제로 빨라진다 (N=4,000 에서 130ms → <b>83ms</b>). <b>"content-visibility 는 O(N)이라 별로"는 리레이아웃에 한한 이야기였다</b> (가로축 = 항목 수)</p>
+  </figure><figure class="chart">
+    <figcaption>C2 · content-visibility 는 Layout 을 줄이지 않는다 — 오히려 늘린다 <small>(리레이아웃 1회당 Layout ms · N=4,000)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C2 · content-visibility 는 Layout 을 줄이지 않는다 — 오히려 늘린다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="88.7" y="12.0" width="28.0" height="154.0" fill="#b4401f" rx="2"/><text x="102.7" y="9.0" class="v">33</text><rect x="118.7" y="147.2" width="28.0" height="18.8" fill="#1f7a4d" rx="2"/><text x="132.7" y="144.2" class="v">4.05</text><rect x="148.7" y="146.6" width="28.0" height="19.4" fill="#3c6eb4" rx="2"/><text x="162.7" y="143.6" class="v">4.19</text><text x="133.7" y="186" class="x">폭 변경</text><rect x="240.0" y="152.5" width="28.0" height="13.5" fill="#b4401f" rx="2"/><text x="254.0" y="149.5" class="v">2.92</text><rect x="270.0" y="140.0" width="28.0" height="26.0" fill="#1f7a4d" rx="2"/><text x="284.0" y="137.0" class="v">5.62</text><rect x="300.0" y="141.6" width="28.0" height="24.4" fill="#3c6eb4" rx="2"/><text x="314.0" y="138.6" class="v">5.27</text><text x="285.0" y="186" class="x">세로 이동</text><rect x="391.3" y="166.0" width="28.0" height="1.0" fill="#b4401f" rx="2"/><rect x="421.3" y="145.8" width="28.0" height="20.2" fill="#1f7a4d" rx="2"/><text x="435.3" y="142.8" class="v">4.35</text><rect x="451.3" y="144.2" width="28.0" height="21.8" fill="#3c6eb4" rx="2"/><text x="465.3" y="141.2" class="v">4.71</text><text x="436.3" y="186" class="x">색 변경</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#b4401f"></i>plain</span><span class="lg"><i style="background:#1f7a4d"></i>cv-auto (auto 73px)</span><span class="lg"><i style="background:#3c6eb4"></i>cv-fixed (73px)</span></div>
+    <p class="note">같은 CSS·같은 DOM 인데 <b>무효화 종류가 부호를 뒤집는다.</b> 폭이 바뀌면 Layout 이 8배 싸지지만, 세로로 밀기만 하면 <b>오히려 2배 비싸고</b>, 색만 바꾸면 <b>0ms 이던 Layout 이 생겨난다.</b> 레이아웃 패스 횟수가 8회 → 세로 이동 <b>17회</b> · 색 변경 <b>9회</b>로 늘기 때문이다. <code>auto</code> 키워드 유무(초록 vs 파랑)는 <b>차이가 없다</b> — 사전 등록 가설 H1 은 반증됐다. <br><small>※ 파이프라인 <b>전체</b>로는 cv 가 세 경우 모두 이긴다(4.8배·2.2배·1.8배). 이득이 Layout 이 아니라 <b>Style</b> 에서 나오기 때문 — 본문 참조</small></p>
+  </figure><figure class="chart">
+    <figcaption>C2 · transform 의 commit 은 레이어 수에 선형이다 <small>(Commit 이벤트 1건의 지속시간 ms)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C2 · transform 의 commit 은 레이어 수에 선형이다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="63.0" y="164.6" width="25.4" height="1.4" fill="#3c6eb4" rx="2"/><text x="75.7" y="161.6" class="v">0.08</text><rect x="90.4" y="163.7" width="25.4" height="2.3" fill="#b4401f" rx="2"/><text x="103.1" y="160.7" class="v">0.14</text><text x="90.4" y="186" class="x">100</text><rect x="127.9" y="164.2" width="25.4" height="1.8" fill="#3c6eb4" rx="2"/><text x="140.6" y="161.2" class="v">0.11</text><rect x="155.3" y="163.3" width="25.4" height="2.7" fill="#b4401f" rx="2"/><text x="168.0" y="160.3" class="v">0.16</text><text x="155.3" y="186" class="x">250</text><rect x="192.7" y="161.1" width="25.4" height="4.9" fill="#3c6eb4" rx="2"/><text x="205.4" y="158.1" class="v">0.30</text><rect x="220.1" y="152.0" width="25.4" height="14.0" fill="#b4401f" rx="2"/><text x="232.9" y="149.0" class="v">0.84</text><text x="220.1" y="186" class="x">500</text><rect x="257.6" y="159.5" width="25.4" height="6.5" fill="#3c6eb4" rx="2"/><text x="270.3" y="156.5" class="v">0.39</text><rect x="285.0" y="148.4" width="25.4" height="17.6" fill="#b4401f" rx="2"/><text x="297.7" y="145.4" class="v">1.06</text><text x="285.0" y="186" class="x">750</text><rect x="322.4" y="160.4" width="25.4" height="5.6" fill="#3c6eb4" rx="2"/><text x="335.1" y="157.4" class="v">0.34</text><rect x="349.9" y="154.9" width="25.4" height="11.1" fill="#b4401f" rx="2"/><text x="362.6" y="151.9" class="v">0.67</text><text x="349.9" y="186" class="x">1k</text><rect x="387.3" y="157.0" width="25.4" height="9.0" fill="#3c6eb4" rx="2"/><text x="400.0" y="154.0" class="v">0.54</text><rect x="414.7" y="135.2" width="25.4" height="30.8" fill="#b4401f" rx="2"/><text x="427.4" y="132.2" class="v">1.85</text><text x="414.7" y="186" class="x">1.5k</text><rect x="452.1" y="104.4" width="25.4" height="61.6" fill="#3c6eb4" rx="2"/><text x="464.9" y="101.4" class="v">3.70</text><rect x="479.6" y="12.0" width="25.4" height="154.0" fill="#b4401f" rx="2"/><text x="492.3" y="9.0" class="v">9.25</text><text x="479.6" y="186" class="x">2k</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>중앙값</span><span class="lg"><i style="background:#b4401f"></i>p90</span></div>
+    <p class="note">중앙값 선형 적합 <code>commit = 1.514µs × 레이어 + -0.541ms</code>, <b>R² = 0.640</b>. <b>중앙값도 선형에서 벗어난다.</b><br><small>※ <b>이 디스플레이가 120Hz</b>라 프레임이 vsync 배수로 양자화되면서, 처음 쓴 (Commit 총합 ÷ 프레임수) 방식은 1,500 레이어에서 값이 거꾸로 꺾였다. 여기는 <b>vsync 를 끄고</b> 개별 이벤트 분위수로 다시 잰 값이다. 250~1,500 구간만 보면 R²=0.845 로 선형에 가깝지만 2,000 에서 레이어당 비용이 5배로 뛴다 — <b>판정 보류</b></small></p>
   </figure></div>
 
 <h2>핵심 발견</h2>
 <table><tr class="ok"><td class="t">transform 은 Layout·Paint 를 건너뛴다</td><td><code>InvalidateLayout</code> 497 → <b>0회</b>. 메인 스레드를 1.5초 막아도 <b>360프레임 제출</b>(left 는 0)</td></tr><tr class="warn"><td class="t">하지만 메인 스레드를 벗어나진 않는다</td><td>Style·PrePaint·Commit 은 매 프레임 그대로. 1000개에서 commit 이 <b>7배 폭발</b>해 이득이 1.5배로 줄어든다</td></tr><tr class="ok"><td class="t">레이어는 공짜가 아니다</td><td>텍스처 = <code>roundUp(크기, 64)</code> 타일. 38×15 박스가 <b>16KB</b>(필요량의 7.2배). 예산 상한 <b>512MB</b>(Android 256 / 저사양 96)</td></tr><tr class="ok"><td class="t">DOM 순서만으로 레이어가 바뀐다</td><td>요소·좌표가 완전히 같은데 순서만 달라 <b>24 → 15개</b>. 코드 한 줄 안 지우고 37% 감소</td></tr><tr class="warn"><td class="t">content-visibility 는 O(N) 이다</td><td>"공짜"가 아니라 항목당 <b>7.8배 싸지는 것</b>. Paint 는 <b>원래도 컬링</b>되고 있어 절감 14%뿐</td></tr><tr class="warn"><td class="t">contain-intrinsic-size 는 정확성용</td><td>CPU 비용은 없어도 거의 같다. <b>content-box 기준</b>이라 padding·border 를 빼야 한다</td></tr><tr class="warn"><td class="t">INP 통과가 빠른 체감은 아니다</td><td>양보만 하면 INP &lt;16ms 인데 사용자는 <b>210ms</b> 기다린다. 화면부터 갱신해야 둘 다 잡힌다</td></tr></table>
 
 <footer>
-  원자료 <code>experiments/track-a/*/results*.json</code> · 이 리포트는
+  원자료 <code>experiments/track-{a,c}/*/results*.json</code> · 이 리포트는
   <code>report/build-report.mjs</code> 가 원자료에서 직접 생성 — 숫자를 손으로 옮기지 않았다
 </footer>
 </body></html>

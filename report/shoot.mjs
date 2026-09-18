@@ -39,6 +39,14 @@ const SHOTS = [
     setup: '__A5.setStrategy("paint-first+yield")',
     // 합성 클릭(isTrusted=false)은 Event Timing 에 안 잡힌다. 진짜 마우스 이벤트를 보낸다.
     clicks: { selector: '#target', n: 8, gapMs: 560 } },
+
+  // ── Track C ──
+  { name: 'chart-c1-initial-load',      url: `${BASE}/report/charts/c1-initial-load.html`,      w: 660 },
+  { name: 'chart-c2-invalidation-kind', url: `${BASE}/report/charts/c2-invalidation-kind.html`, w: 660 },
+  { name: 'chart-c2-commit-linearity',  url: `${BASE}/report/charts/c2-commit-linearity.html`,  w: 660 },
+
+  { name: '06-c2-harness', url: `${BASE}/experiments/track-c/c2-anomalies/`, w: 1180,
+    setup: '__C2.build(500, "cv-auto")', maxH: 980 },
 ];
 
 class CDP {

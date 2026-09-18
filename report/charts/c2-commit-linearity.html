@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><style>
+  :root{--bg:#fbfaf8;--panel:#fff;--ink:#1a1a1a;--muted:#6b6b6b;--line:#e3e0da;
+        --accent:#b4401f;--ok:#1f7a4d;--warn:#a5761b;
+        --mono:ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);padding:0 28px 40px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;width:1180px}
+  header{padding:30px 0 18px;border-bottom:2px solid var(--ink);margin-bottom:22px}
+  h1{margin:0 0 6px;font-size:27px;letter-spacing:-.02em}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+     margin:26px 0 12px;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px}
+  .card .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .card .v{font:700 30px/1.1 var(--mono);margin:3px 0 4px}
+  .card .s{font-size:11.5px;color:var(--muted);line-height:1.4}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chart{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px 12px}
+  .chart figcaption{font-size:14px;font-weight:650;margin-bottom:8px}
+  .chart figcaption small{font-weight:400;color:var(--muted);font-size:12px}
+  .logtag{background:var(--line);padding:1px 5px;border-radius:3px;font-family:var(--mono)}
+  svg{width:100%;height:auto;display:block}
+  .ax{stroke:var(--line);stroke-width:1}
+  text.v{font:600 9.5px var(--mono);fill:var(--muted);text-anchor:middle}
+  text.x{font:11px system-ui;fill:var(--muted);text-anchor:middle}
+  .legend{display:flex;gap:14px;margin:6px 0 0;font-size:11.5px;color:var(--muted)}
+  .lg{display:flex;align-items:center;gap:5px}
+  .lg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .note{font-size:12px;line-height:1.55;color:var(--muted);margin:8px 0 0;
+        border-top:1px solid var(--line);padding-top:8px}
+  .note b{color:var(--ink)}
+  code{font:12px var(--mono);background:var(--line);padding:1px 4px;border-radius:3px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+        border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.t{font-weight:650;width:290px}
+  td.t::before{content:"";display:inline-block;width:7px;height:7px;border-radius:99px;margin-right:8px;vertical-align:middle}
+  tr.ok td.t::before{background:var(--ok)} tr.warn td.t::before{background:var(--warn)}
+  footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);
+         font-size:12px;color:var(--muted)}
+</style>
+  <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>
+  </head><body><figure class="chart">
+    <figcaption>C2 · transform 의 commit 은 레이어 수에 선형이다 <small>(Commit 이벤트 1건의 지속시간 ms)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C2 · transform 의 commit 은 레이어 수에 선형이다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="63.0" y="164.6" width="25.4" height="1.4" fill="#3c6eb4" rx="2"/><text x="75.7" y="161.6" class="v">0.08</text><rect x="90.4" y="163.7" width="25.4" height="2.3" fill="#b4401f" rx="2"/><text x="103.1" y="160.7" class="v">0.14</text><text x="90.4" y="186" class="x">100</text><rect x="127.9" y="164.2" width="25.4" height="1.8" fill="#3c6eb4" rx="2"/><text x="140.6" y="161.2" class="v">0.11</text><rect x="155.3" y="163.3" width="25.4" height="2.7" fill="#b4401f" rx="2"/><text x="168.0" y="160.3" class="v">0.16</text><text x="155.3" y="186" class="x">250</text><rect x="192.7" y="161.1" width="25.4" height="4.9" fill="#3c6eb4" rx="2"/><text x="205.4" y="158.1" class="v">0.30</text><rect x="220.1" y="152.0" width="25.4" height="14.0" fill="#b4401f" rx="2"/><text x="232.9" y="149.0" class="v">0.84</text><text x="220.1" y="186" class="x">500</text><rect x="257.6" y="159.5" width="25.4" height="6.5" fill="#3c6eb4" rx="2"/><text x="270.3" y="156.5" class="v">0.39</text><rect x="285.0" y="148.4" width="25.4" height="17.6" fill="#b4401f" rx="2"/><text x="297.7" y="145.4" class="v">1.06</text><text x="285.0" y="186" class="x">750</text><rect x="322.4" y="160.4" width="25.4" height="5.6" fill="#3c6eb4" rx="2"/><text x="335.1" y="157.4" class="v">0.34</text><rect x="349.9" y="154.9" width="25.4" height="11.1" fill="#b4401f" rx="2"/><text x="362.6" y="151.9" class="v">0.67</text><text x="349.9" y="186" class="x">1k</text><rect x="387.3" y="157.0" width="25.4" height="9.0" fill="#3c6eb4" rx="2"/><text x="400.0" y="154.0" class="v">0.54</text><rect x="414.7" y="135.2" width="25.4" height="30.8" fill="#b4401f" rx="2"/><text x="427.4" y="132.2" class="v">1.85</text><text x="414.7" y="186" class="x">1.5k</text><rect x="452.1" y="104.4" width="25.4" height="61.6" fill="#3c6eb4" rx="2"/><text x="464.9" y="101.4" class="v">3.70</text><rect x="479.6" y="12.0" width="25.4" height="154.0" fill="#b4401f" rx="2"/><text x="492.3" y="9.0" class="v">9.25</text><text x="479.6" y="186" class="x">2k</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#3c6eb4"></i>중앙값</span><span class="lg"><i style="background:#b4401f"></i>p90</span></div>
+    <p class="note">중앙값 선형 적합 <code>commit = 1.514µs × 레이어 + -0.541ms</code>, <b>R² = 0.640</b>. <b>중앙값도 선형에서 벗어난다.</b><br><small>※ <b>이 디스플레이가 120Hz</b>라 프레임이 vsync 배수로 양자화되면서, 처음 쓴 (Commit 총합 ÷ 프레임수) 방식은 1,500 레이어에서 값이 거꾸로 꺾였다. 여기는 <b>vsync 를 끄고</b> 개별 이벤트 분위수로 다시 잰 값이다. 250~1,500 구간만 보면 R²=0.845 로 선형에 가깝지만 2,000 에서 레이어당 비용이 5배로 뛴다 — <b>판정 보류</b></small></p>
+  </figure></body></html>

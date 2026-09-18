@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><style>
+  :root{--bg:#fbfaf8;--panel:#fff;--ink:#1a1a1a;--muted:#6b6b6b;--line:#e3e0da;
+        --accent:#b4401f;--ok:#1f7a4d;--warn:#a5761b;
+        --mono:ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);padding:0 28px 40px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif;width:1180px}
+  header{padding:30px 0 18px;border-bottom:2px solid var(--ink);margin-bottom:22px}
+  h1{margin:0 0 6px;font-size:27px;letter-spacing:-.02em}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+     margin:26px 0 12px;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px}
+  .card .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .card .v{font:700 30px/1.1 var(--mono);margin:3px 0 4px}
+  .card .s{font-size:11.5px;color:var(--muted);line-height:1.4}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chart{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px 12px}
+  .chart figcaption{font-size:14px;font-weight:650;margin-bottom:8px}
+  .chart figcaption small{font-weight:400;color:var(--muted);font-size:12px}
+  .logtag{background:var(--line);padding:1px 5px;border-radius:3px;font-family:var(--mono)}
+  svg{width:100%;height:auto;display:block}
+  .ax{stroke:var(--line);stroke-width:1}
+  text.v{font:600 9.5px var(--mono);fill:var(--muted);text-anchor:middle}
+  text.x{font:11px system-ui;fill:var(--muted);text-anchor:middle}
+  .legend{display:flex;gap:14px;margin:6px 0 0;font-size:11.5px;color:var(--muted)}
+  .lg{display:flex;align-items:center;gap:5px}
+  .lg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .note{font-size:12px;line-height:1.55;color:var(--muted);margin:8px 0 0;
+        border-top:1px solid var(--line);padding-top:8px}
+  .note b{color:var(--ink)}
+  code{font:12px var(--mono);background:var(--line);padding:1px 4px;border-radius:3px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+        border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.t{font-weight:650;width:290px}
+  td.t::before{content:"";display:inline-block;width:7px;height:7px;border-radius:99px;margin-right:8px;vertical-align:middle}
+  tr.ok td.t::before{background:var(--ok)} tr.warn td.t::before{background:var(--warn)}
+  footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);
+         font-size:12px;color:var(--muted)}
+</style>
+  <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>
+  </head><body><figure class="chart">
+    <figcaption>C2 · content-visibility 는 Layout 을 줄이지 않는다 — 오히려 늘린다 <small>(리레이아웃 1회당 Layout ms · N=4,000)</small></figcaption>
+    <svg viewBox="0 0 520 200" role="img" aria-label="C2 · content-visibility 는 Layout 을 줄이지 않는다 — 오히려 늘린다">
+      <line x1="58" y1="166" x2="512" y2="166" class="ax"/>
+      <rect x="88.7" y="12.0" width="28.0" height="154.0" fill="#b4401f" rx="2"/><text x="102.7" y="9.0" class="v">33</text><rect x="118.7" y="147.2" width="28.0" height="18.8" fill="#1f7a4d" rx="2"/><text x="132.7" y="144.2" class="v">4.05</text><rect x="148.7" y="146.6" width="28.0" height="19.4" fill="#3c6eb4" rx="2"/><text x="162.7" y="143.6" class="v">4.19</text><text x="133.7" y="186" class="x">폭 변경</text><rect x="240.0" y="152.5" width="28.0" height="13.5" fill="#b4401f" rx="2"/><text x="254.0" y="149.5" class="v">2.92</text><rect x="270.0" y="140.0" width="28.0" height="26.0" fill="#1f7a4d" rx="2"/><text x="284.0" y="137.0" class="v">5.62</text><rect x="300.0" y="141.6" width="28.0" height="24.4" fill="#3c6eb4" rx="2"/><text x="314.0" y="138.6" class="v">5.27</text><text x="285.0" y="186" class="x">세로 이동</text><rect x="391.3" y="166.0" width="28.0" height="1.0" fill="#b4401f" rx="2"/><rect x="421.3" y="145.8" width="28.0" height="20.2" fill="#1f7a4d" rx="2"/><text x="435.3" y="142.8" class="v">4.35</text><rect x="451.3" y="144.2" width="28.0" height="21.8" fill="#3c6eb4" rx="2"/><text x="465.3" y="141.2" class="v">4.71</text><text x="436.3" y="186" class="x">색 변경</text>
+    </svg>
+    <div class="legend"><span class="lg"><i style="background:#b4401f"></i>plain</span><span class="lg"><i style="background:#1f7a4d"></i>cv-auto (auto 73px)</span><span class="lg"><i style="background:#3c6eb4"></i>cv-fixed (73px)</span></div>
+    <p class="note">같은 CSS·같은 DOM 인데 <b>무효화 종류가 부호를 뒤집는다.</b> 폭이 바뀌면 Layout 이 8배 싸지지만, 세로로 밀기만 하면 <b>오히려 2배 비싸고</b>, 색만 바꾸면 <b>0ms 이던 Layout 이 생겨난다.</b> 레이아웃 패스 횟수가 8회 → 세로 이동 <b>17회</b> · 색 변경 <b>9회</b>로 늘기 때문이다. <code>auto</code> 키워드 유무(초록 vs 파랑)는 <b>차이가 없다</b> — 사전 등록 가설 H1 은 반증됐다. <br><small>※ 파이프라인 <b>전체</b>로는 cv 가 세 경우 모두 이긴다(4.8배·2.2배·1.8배). 이득이 Layout 이 아니라 <b>Style</b> 에서 나오기 때문 — 본문 참조</small></p>
+  </figure></body></html>

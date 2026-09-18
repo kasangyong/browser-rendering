@@ -13,6 +13,15 @@ import path from 'node:path';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EX = path.join(ROOT, 'experiments', 'track-a');
 
+const EC = path.join(ROOT, 'experiments', 'track-c');
+
+const readIn = base => async p => {
+  const f = path.join(base, p);
+  if (!existsSync(f)) return null;
+  try { return JSON.parse(await readFile(f, 'utf8')); } catch { return null; }
+};
+const readC = readIn(EC);
+
 const read = async p => {
   const f = path.join(EX, p);
   if (!existsSync(f)) return null;
@@ -195,6 +204,83 @@ if (a5a) {
   }));
 }
 
+// ── Track C ──────────────────────────────────────────────
+
+// C1 ─ 초기 로드에서는 평탄해진다
+const c1 = await readC('c1-initial-load/results.json');
+if (c1) {
+  const ns = [200, 1000, 4000];
+  const v = (n, m) => +mean(c1.rows.filter(r => r.boxes === n && r.mode === m && !r.error)
+                              .map(r => r.stage.Layout.ms)).toFixed(2);
+  const lcp = (n, m) => +mean(c1.rows.filter(r => r.boxes === n && r.mode === m && !r.error && r.lcpMs)
+                                .map(r => r.lcpMs)).toFixed(0);
+  out.charts.push(barChart({
+    title: 'C1 · 초기 로드에서는 이야기가 다르다',
+    unit: '최초 Layout 총 ms',
+    labels: ns.map(String),
+    series: [
+      { name: 'plain', color: '#b4401f', values: ns.map(n => v(n, 'plain')) },
+      { name: 'cv-auto', color: '#1f7a4d', values: ns.map(n => v(n, 'cv-auto')) },
+    ],
+    note: 'A4 의 리레이아웃에서는 <b>21.4배</b>였는데, 초기 로드에서 cv-auto 는 <b>0.96배 — 평탄</b>하다. '
+        + `LCP 도 실제로 빨라진다 (N=4,000 에서 ${lcp(4000, 'plain')}ms → <b>${lcp(4000, 'cv-auto')}ms</b>). `
+        + '<b>"content-visibility 는 O(N)이라 별로"는 리레이아웃에 한한 이야기였다</b> (가로축 = 항목 수)',
+  }));
+}
+
+// C2 ─ 무효화 종류가 부호를 뒤집는다
+const c2 = await readC('c2-anomalies/results.json');
+if (c2 && c2.part1?.length) {
+  const per = (inv, m, n) => {
+    const r = c2.part1.filter(x => x.invalidation === inv && x.mode === m && x.n === n);
+    return +(mean(r.map(x => x.stage.Layout.ms)) / (r[0]?.kicks || 8)).toFixed(2);
+  };
+  const passes = (inv, m) => {
+    const r = c2.part1.filter(x => x.invalidation === inv && x.mode === m && x.n === 4000);
+    return Math.round(mean(r.map(x => x.stage.Layout.n)));
+  };
+  out.charts.push(barChart({
+    title: 'C2 · content-visibility 는 Layout 을 줄이지 않는다 — 오히려 늘린다',
+    unit: '리레이아웃 1회당 Layout ms · N=4,000',
+    labels: ['폭 변경', '세로 이동', '색 변경'],
+    series: [
+      { name: 'plain', color: '#b4401f', values: ['width','offset','color'].map(i => per(i, 'plain', 4000)) },
+      { name: 'cv-auto (auto 73px)', color: '#1f7a4d', values: ['width','offset','color'].map(i => per(i, 'cv-auto', 4000)) },
+      { name: 'cv-fixed (73px)', color: '#3c6eb4', values: ['width','offset','color'].map(i => per(i, 'cv-fixed', 4000)) },
+    ],
+    note: '같은 CSS·같은 DOM 인데 <b>무효화 종류가 부호를 뒤집는다.</b> 폭이 바뀌면 Layout 이 8배 싸지지만, '
+        + `세로로 밀기만 하면 <b>오히려 2배 비싸고</b>, 색만 바꾸면 <b>0ms 이던 Layout 이 생겨난다.</b> `
+        + `레이아웃 패스 횟수가 8회 → 세로 이동 <b>${passes('offset','cv-auto')}회</b> · 색 변경 <b>${passes('color','cv-auto')}회</b>로 늘기 때문이다. `
+        + '<code>auto</code> 키워드 유무(초록 vs 파랑)는 <b>차이가 없다</b> — 사전 등록 가설 H1 은 반증됐다. '
+        + '<br><small>※ 파이프라인 <b>전체</b>로는 cv 가 세 경우 모두 이긴다(4.8배·2.2배·1.8배). 이득이 Layout 이 아니라 <b>Style</b> 에서 나오기 때문 — 본문 참조</small>',
+  }));
+}
+
+// vsync 를 끈 쪽이 유효한 측정이다. 켠 쪽(results-commit.json)은 프레임이 양자화돼 R²=0.16 이었다.
+const cc = await readC('c2-anomalies/results-commit-novsync.json')
+        || await readC('c2-anomalies/results-commit.json');
+if (cc?.rows?.length) {
+  const f = cc.fits.p50;
+  out.charts.push(barChart({
+    title: 'C2 · transform 의 commit 은 레이어 수에 선형이다',
+    unit: 'Commit 이벤트 1건의 지속시간 ms',
+    labels: cc.rows.map(r => r.n >= 1000 ? (r.n / 1000) + 'k' : String(r.n)),
+    series: [
+      { name: '중앙값', color: '#3c6eb4', values: cc.rows.map(r => +r.p50.toFixed(3)) },
+      { name: 'p90', color: '#b4401f', values: cc.rows.map(r => +r.p90.toFixed(3)) },
+    ],
+    note: `중앙값 선형 적합 <code>commit = ${(f.slope * 1000).toFixed(3)}µs × 레이어 + ${f.intercept.toFixed(3)}ms</code>, `
+        + `<b>R² = ${f.r2.toFixed(3)}</b>. `
+        + (f.r2 >= 0.95
+            ? 'A1b 에서 본 <b>7배 폭발에 임계점은 없다</b> — 고정비에 묻혀 있다가 드러났을 뿐이다.'
+            : '<b>중앙값도 선형에서 벗어난다.</b>')
+        + '<br><small>※ <b>이 디스플레이가 120Hz</b>라 프레임이 vsync 배수로 양자화되면서, 처음 쓴 '
+        + '(Commit 총합 ÷ 프레임수) 방식은 1,500 레이어에서 값이 거꾸로 꺾였다. 여기는 <b>vsync 를 끄고</b> '
+        + `개별 이벤트 분위수로 다시 잰 값이다. 250~1,500 구간만 보면 R²=0.845 로 선형에 가깝지만 `
+        + '2,000 에서 레이어당 비용이 5배로 뛴다 — <b>판정 보류</b></small>',
+  }));
+}
+
 // ── 요약 카드 ─────────────────────────────────────────────
 out.cards = [
   { k: '실험', v: '8', s: 'A1 · A1b · A2 · A2b · A3 · A4 · A4b · A5' },
@@ -261,7 +347,7 @@ const html = `<!DOCTYPE html>
 </style></head><body>
 
 <header>
-  <h1>Track A — 브라우저 렌더링 파이프라인 계측</h1>
+  <h1>Track A + C — 브라우저 렌더링 파이프라인 계측</h1>
   <p>Chrome 152.0.7977.83 (headless=new, GPU 가속 · RTX 4050 / Intel Iris Xe) ·
      CDP Tracing / LayerTree / memory-infra · 설정마다 브라우저 새로 기동 · 반복 3회 · 2026-09-17</p>
 </header>
@@ -277,7 +363,7 @@ ${out.cards.map(c => `<div class="card"><div class="k">${esc(c.k)}</div><div cla
 <table>${findings.map(([t, d, cls]) => `<tr class="${cls}"><td class="t">${t}</td><td>${d}</td></tr>`).join('')}</table>
 
 <footer>
-  원자료 <code>experiments/track-a/*/results*.json</code> · 이 리포트는
+  원자료 <code>experiments/track-{a,c}/*/results*.json</code> · 이 리포트는
   <code>report/build-report.mjs</code> 가 원자료에서 직접 생성 — 숫자를 손으로 옮기지 않았다
 </footer>
 </body></html>`;
@@ -288,7 +374,8 @@ await writeFile(path.join(ROOT, 'report', 'index.html'), html);
 // README 에 개별로 끼워 넣을 수 있게 차트마다 독립 파일도 만든다
 const HEAD = html.slice(html.indexOf('<style>'), html.indexOf('</style>') + 8);
 await mkdir(path.join(ROOT, 'report', 'charts'), { recursive: true });
-const names = ['a1-stage-skip', 'a1b-ceiling', 'a2-tile-memory', 'a3-dom-order', 'a4-scaling', 'a5-inp'];
+const names = ['a1-stage-skip', 'a1b-ceiling', 'a2-tile-memory', 'a3-dom-order', 'a4-scaling', 'a5-inp',
+               'c1-initial-load', 'c2-invalidation-kind', 'c2-commit-linearity'];
 for (let i = 0; i < out.charts.length; i++) {
   const one = `<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">${HEAD}
   <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>
