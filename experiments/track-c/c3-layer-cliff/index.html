@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>C3 · commit 고정 표본 하네스</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#fbfaf8;color:#1a1a1a;padding:0 16px 24px;
+       font:15px/1.55 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+  #info{font:12px/1.7 ui-monospace,Consolas,monospace;color:#6b6b6b;padding:10px;
+        background:#fff;border:1px solid #e3e0da;border-radius:8px;margin:12px 0}
+  #stage{position:relative;height:320px;overflow:hidden;
+         background:#fff;border:1px solid #e3e0da;border-radius:8px}
+
+  /* 핵심: 모든 박스가 같은 커스텀 프로퍼티 하나를 transform 에 쓴다.
+     --tx 를 한 번 바꾸면 N개 레이어가 전부 새 transform 을 받고 commit 이 정확히 1회 발생한다.
+     애니메이션을 쓰면 프레임 수에 측정이 끌려다니는데(C2 §4), 이 방식은 표본 수를 내가 정한다. */
+  .box{position:absolute;left:0;
+       width:var(--bw,38px);height:var(--bh,15px);
+       background:#1f7a4d;border-radius:3px;
+       font:9px/15px ui-monospace,Consolas,monospace;color:#fff;text-align:center;
+       transform:translateX(var(--tx,0px));
+       /* 정적 transform 만으로는 합성 레이어가 안 생긴다.
+          이걸 빼면 박스 500개가 레이어 1개에 그려져서, 재는 게 commit 이 아니라 repaint 가 된다.
+          (처음에 빼먹고 측정했다가 layerCount 가 4로 나와서 잡았다.) */
+       will-change:transform}
+</style>
+</head>
+<body>
+<h3 style="margin:16px 0 0">C3 · commit 고정 표본 하네스</h3>
+<div id="info">—</div>
+<div id="stage"></div>
+
+<script>
+(() => {
+  'use strict';
+  const stage = document.getElementById('stage'), info = document.getElementById('info');
+  const root = document.documentElement;
+  let N = 0;
+
+  function build(n, bw, bh) {
+    N = n;
+    if (bw) root.style.setProperty('--bw', bw + 'px');
+    if (bh) root.style.setProperty('--bh', bh + 'px');
+    stage.textContent = '';
+    const h = stage.clientHeight, boxH = bh || 15;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < n; i++) {
+      const b = document.createElement('div');
+      b.className = 'box';
+      b.textContent = i % 100;
+      b.style.top = ((i * 7) % Math.max(h - boxH, 1)) + 'px';
+      frag.appendChild(b);
+    }
+    stage.appendChild(frag);
+    render();
+    return { n, bw: bw || 38, bh: bh || 15, boxes: stage.children.length };
+  }
+
+  const frame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  /**
+   * --tx 를 k번 토글한다. 토글 1회 = 레이어 N개 전부 새 transform = commit 1회.
+   * 프레임이 빠르든 느리든 표본 수는 정확히 k다.
+   */
+  async function pump(k, dist) {
+    const d = dist || 240;
+    const warm = 10;                       // 첫 몇 번은 캐시가 차오르는 구간이라 버린다
+    const times = [];
+    await frame();
+    for (let i = 0; i < k + warm; i++) {
+      const t0 = performance.now();
+      root.style.setProperty('--tx', (i % 2 ? d : 0) + 'px');
+      await frame();
+      if (i >= warm) times.push(performance.now() - t0);
+    }
+    root.style.setProperty('--tx', '0px');
+    await frame();
+    render();
+    const s = [...times].sort((a, b) => a - b);
+    const qt = p => +(s[Math.floor(s.length * p)] ?? 0).toFixed(3);
+    return {
+      k, dist: d, warmup: warm, n: times.length,
+      times: times.map(v => +v.toFixed(3)),   // 원시값을 남겨 반복 전체를 합쳐 분위수를 낼 수 있게
+      p10: qt(.1), p50: qt(.5), p90: qt(.9),
+      mean: +(times.reduce((a, b) => a + b, 0) / times.length).toFixed(3),
+    };
+  }
+
+  function render() {
+    info.textContent =
+      `박스 ${N} · 크기 ${getComputedStyle(root).getPropertyValue('--bw').trim() || '38px'}` +
+      ` × ${getComputedStyle(root).getPropertyValue('--bh').trim() || '15px'}\n` +
+      `stage ${stage.clientWidth}×${stage.clientHeight}`;
+  }
+
+  window.__C3 = {
+    build, pump,
+    state: () => ({ n: N, boxes: stage.children.length }),
+  };
+
+  build(500);
+})();
+</script>
+</body>
+</html>
