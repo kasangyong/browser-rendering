@@ -19,3 +19,6 @@ node_modules/
 
 # C1 이 gen.mjs 로 만들어내는 정적 페이지 (합계 4.7MB) — `node gen.mjs` 로 재생성
 experiments/track-c/c1-initial-load/pages/
+
+# 측정 중복 실행 방지용 락
+**/.measure.lock
