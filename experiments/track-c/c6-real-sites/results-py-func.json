@@ -1,0 +1,539 @@
+{
+  "experiment": "c6-real-sites",
+  "siteKey": "py-func",
+  "generatedAt": "2026-09-18T08:37:56.947Z",
+  "site": {
+    "url": "https://docs.python.org/3/library/functions.html",
+    "container": "#built-in-functions",
+    "blocks": "#built-in-functions > *",
+    "intrinsic": 310
+  },
+  "repeat": 3,
+  "kicks": 8,
+  "isolation": "strict",
+  "order": "shuffled",
+  "rows": [
+    {
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 60,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 0.672
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 32.877
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 28.076
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 5.347
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 52,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 6.5
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.198
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 4.228
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 55,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 24.776
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 0.155
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.483
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 4.925
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 61,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 46.295
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.185
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 3.49
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 64,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 15.928
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 0.097
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.369
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 3.245
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 49,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 70.178
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.456
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 7.075
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 6.635
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.176
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 6.278
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 5.833
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 18,
+          "ms": 0.256
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.29
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 2.987
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.131
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 1.408
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 0.451
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 0.947
+        },
+        "PrePaint": {
+          "n": 27,
+          "ms": 1.075
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 1.104
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 0.345
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 10.395
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 8.135
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 2.048
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "plain",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 35.022
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.271
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 3.575
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "root-var",
+      "kicks": 8,
+      "procsAtStart": 53,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 9,
+          "ms": 55.698
+        },
+        "Layout": {
+          "n": 1,
+          "ms": 0.122
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 1.143
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 10.364
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 2.895
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.097
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 2.043
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 52,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 0.785
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 1.985
+        },
+        "PrePaint": {
+          "n": 26,
+          "ms": 2.305
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 2.4
+        }
+      },
+      "rep": 1
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 50,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 0.79
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 2.132
+        },
+        "PrePaint": {
+          "n": 27,
+          "ms": 2.364
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 2.582
+        }
+      },
+      "rep": 0
+    },
+    {
+      "mode": "cv-auto",
+      "inv": "item-color",
+      "kicks": 8,
+      "procsAtStart": 49,
+      "heightPlain": 37059,
+      "heightMode": 25149,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 6.389
+        },
+        "Layout": {
+          "n": 0,
+          "ms": 0
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 0.243
+        },
+        "Paint": {
+          "n": 16,
+          "ms": 3.071
+        }
+      },
+      "rep": 2
+    },
+    {
+      "mode": "plain",
+      "inv": "width-inline",
+      "kicks": 8,
+      "procsAtStart": 51,
+      "heightPlain": 37059,
+      "heightMode": 37059,
+      "blocks": 77,
+      "domNodes": 7011,
+      "stage": {
+        "UpdateLayoutTree": {
+          "n": 8,
+          "ms": 0.423
+        },
+        "Layout": {
+          "n": 8,
+          "ms": 13.577
+        },
+        "PrePaint": {
+          "n": 19,
+          "ms": 11.261
+        },
+        "Paint": {
+          "n": 8,
+          "ms": 3.007
+        }
+      },
+      "rep": 0
+    }
+  ]
+}
