@@ -1,0 +1,154 @@
+{
+  "note": "실제 사이트의 긴 반복 구조 후보. 사이트당 1회만 로드했다.",
+  "generatedAt": "2026-09-18T07:52:36.773Z",
+  "sites": [
+    {
+      "key": "mdn-css",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference",
+      "title": "CSS reference - CSS | MDN",
+      "domNodes": 8321,
+      "scrollHeight": 25464,
+      "candidates": [
+        {
+          "parentSel": "ol",
+          "childTag": "li",
+          "count": 179,
+          "sampleH": 32,
+          "medianH": 32,
+          "parentText": "-moz-*-moz-float-edge-moz-force-broken-i"
+        },
+        {
+          "parentSel": "ol",
+          "childTag": "li",
+          "count": 111,
+          "sampleH": 32,
+          "medianH": 32,
+          "parentText": "-moz-image-rect()abs()acos()alpha()ancho"
+        },
+        {
+          "parentSel": "ul",
+          "childTag": "li",
+          "count": 109,
+          "sampleH": 29,
+          "medianH": 29,
+          "parentText": "::backdrop CSS pseudo-elementbackdrop-fi"
+        },
+        {
+          "parentSel": "ul",
+          "childTag": "li",
+          "count": 98,
+          "sampleH": 28,
+          "medianH": 29,
+          "parentText": "Selector listsaturate() CSS functionscal"
+        },
+        {
+          "parentSel": "ul",
+          "childTag": "li",
+          "count": 96,
+          "sampleH": 28,
+          "medianH": 29,
+          "parentText": "Class selectorsCustom properties (--*): "
+        }
+      ]
+    },
+    {
+      "key": "wiki-http",
+      "url": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+      "title": "List of HTTP status codes - Wikipedia",
+      "domNodes": 3422,
+      "scrollHeight": 17865,
+      "candidates": [
+        {
+          "parentSel": "#mwA3M",
+          "childTag": "li",
+          "count": 76,
+          "sampleH": 46.8,
+          "medianH": 46.8,
+          "parentText": "Jump up to: 1 2 3 \"Hypertext Transfer Pr"
+        },
+        {
+          "parentSel": "#mw9Q",
+          "childTag": "dd",
+          "count": 33,
+          "sampleH": 78,
+          "medianH": 52,
+          "parentText": "400 Bad Request\nThe server cannot or wil"
+        },
+        {
+          "parentSel": "ul.vector-menu-content-list",
+          "childTag": "li",
+          "count": 31,
+          "sampleH": 0,
+          "medianH": 0,
+          "parentText": "العربيةবাংলাBrezhonegČeštinaDeutschEspañ"
+        }
+      ]
+    },
+    {
+      "key": "wiki-uni",
+      "url": "https://en.wikipedia.org/wiki/List_of_Unicode_characters",
+      "title": "List of Unicode characters - Wikipedia",
+      "domNodes": 47752,
+      "scrollHeight": 153105,
+      "candidates": [
+        {
+          "parentSel": "#mwE8k",
+          "childTag": "tr",
+          "count": 258,
+          "sampleH": 33.4,
+          "medianH": 59.4,
+          "parentText": "Code\nGlyph\nDescription\n#\nMES-2 Rationale"
+        },
+        {
+          "parentSel": "#mwIw0",
+          "childTag": "tr",
+          "count": 258,
+          "sampleH": 33.4,
+          "medianH": 33.4,
+          "parentText": "Code\nGlyph\nDescription\n#\n\nU+0400\nЀ\nCyril"
+        },
+        {
+          "parentSel": "#mwDio",
+          "childTag": "tr",
+          "count": 210,
+          "sampleH": 59.4,
+          "medianH": 59.4,
+          "parentText": "Code\nGlyph\nDecimal\nDescription\n#\nMES-2 R"
+        },
+        {
+          "parentSel": "#mwLno",
+          "childTag": "tr",
+          "count": 193,
+          "sampleH": 33.4,
+          "medianH": 33.4,
+          "parentText": "Code\nResult\nDescription\n\nU+2700\n✀\nBlack "
+        },
+        {
+          "parentSel": "#mwH-M",
+          "childTag": "tr",
+          "count": 137,
+          "sampleH": 33.4,
+          "medianH": 33.4,
+          "parentText": "Code\nGlyph\nDecimal\nDescription\n#\n\nU+0370"
+        }
+      ]
+    },
+    {
+      "key": "whatwg",
+      "url": "https://html.spec.whatwg.org/multipage/semantics.html",
+      "title": "HTML Standard",
+      "domNodes": 6377,
+      "scrollHeight": 47907,
+      "candidates": [
+        {
+          "parentSel": "dl.element",
+          "childTag": "dd",
+          "count": 30,
+          "sampleH": 23.2,
+          "medianH": 24.2,
+          "parentText": "Categories:Metadata content.If the eleme"
+        }
+      ]
+    }
+  ]
+}

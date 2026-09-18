@@ -1,0 +1,110 @@
+{
+  "note": "실제 페이지에서 content-visibility 를 걸 단위 후보. 변동계수가 작을수록 균일해서 다루기 쉽다.",
+  "generatedAt": "2026-09-18T07:56:47.039Z",
+  "sites": [
+    {
+      "key": "wiki-uni",
+      "url": "https://en.wikipedia.org/wiki/List_of_Unicode_characters",
+      "sels": [
+        ".mw-parser-output > *",
+        ".mw-parser-output section > *",
+        ".mw-parser-output table",
+        ".mw-parser-output section > table",
+        ".mw-parser-output p, .mw-parser-output table, .mw-parser-output h3"
+      ],
+      "docHeight": 153105,
+      "rows": [
+        {
+          "sel": ".mw-parser-output > *",
+          "count": 19,
+          "median": 2559,
+          "mean": 8021,
+          "min": 412,
+          "max": 73738,
+          "cv": 2.09,
+          "total": 152390
+        },
+        {
+          "sel": ".mw-parser-output section > *",
+          "count": 698,
+          "median": 81,
+          "mean": 629,
+          "min": 26,
+          "max": 43220,
+          "cv": 3.72,
+          "total": 373864
+        },
+        {
+          "sel": ".mw-parser-output table",
+          "count": 146,
+          "median": 359,
+          "mean": 902,
+          "min": 28,
+          "max": 14748,
+          "cv": 2.17,
+          "total": 130825
+        },
+        {
+          "sel": ".mw-parser-output section > table",
+          "count": 129,
+          "median": 381,
+          "mean": 985,
+          "min": 34,
+          "max": 14748,
+          "cv": 2.09,
+          "total": 127064
+        },
+        {
+          "sel": ".mw-parser-output p, .mw-parser-output table, .mw-parser-output h3",
+          "count": 259,
+          "median": 194,
+          "mean": 529,
+          "min": 21,
+          "max": 14748,
+          "cv": 2.89,
+          "total": 135868
+        }
+      ]
+    },
+    {
+      "key": "mdn-css",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference",
+      "sels": [
+        "main > *",
+        ".main-page-content > *",
+        ".main-page-content section",
+        ".main-page-content ul",
+        ".main-page-content li"
+      ],
+      "docHeight": 25464,
+      "rows": [
+        {
+          "sel": "main > *",
+          "count": 3,
+          "median": 702,
+          "mean": 8488,
+          "min": 210,
+          "max": 24551,
+          "cv": 1.34,
+          "total": 25463
+        },
+        {
+          "sel": ".main-page-content > *",
+          "count": 0
+        },
+        {
+          "sel": ".main-page-content section",
+          "count": 0
+        },
+        {
+          "sel": ".main-page-content ul",
+          "count": 0
+        },
+        {
+          "sel": ".main-page-content li",
+          "count": 0
+        }
+      ]
+    }
+  ]
+}

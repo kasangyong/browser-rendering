@@ -1,0 +1,76 @@
+{
+  "note": "실제 페이지에서 content-visibility 를 걸 지점과, 실제로 걸리는지 확인",
+  "generatedAt": "2026-09-18T07:54:38.854Z",
+  "sites": [
+    {
+      "key": "wiki-uni",
+      "url": "https://en.wikipedia.org/wiki/List_of_Unicode_characters",
+      "main": [
+        ".mw-parser-output",
+        "#mw-content-text",
+        "main"
+      ],
+      "usedSel": ".mw-parser-output",
+      "childCount": 19,
+      "tagCount": {
+        "section": 19
+      },
+      "medianChildH": 2558.9,
+      "maxChildH": 74180.5,
+      "before": 152571,
+      "afterNoSize": 1157,
+      "afterSized": 49160,
+      "shrinkNoSize": 0.992,
+      "shrinkSized": 0.678,
+      "tableRows": 3134,
+      "domNodes": 47916
+    },
+    {
+      "key": "mdn-css",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference",
+      "main": [
+        ".main-page-content",
+        "article",
+        "main"
+      ],
+      "usedSel": "main",
+      "childCount": 3,
+      "tagCount": {
+        "div": 2,
+        "aside": 1
+      },
+      "medianChildH": 702,
+      "maxChildH": 24551,
+      "before": 25464,
+      "afterNoSize": 1405,
+      "afterSized": 2155,
+      "shrinkNoSize": 0.945,
+      "shrinkSized": 0.915,
+      "tableRows": 0,
+      "domNodes": 8321
+    },
+    {
+      "key": "whatwg",
+      "url": "https://html.spec.whatwg.org/multipage/semantics.html",
+      "main": [
+        "body > .head ~ *",
+        "main",
+        "body"
+      ],
+      "usedSel": "body > .head ~ *",
+      "childCount": 3,
+      "tagCount": {
+        "a": 3
+      },
+      "medianChildH": 21,
+      "maxChildH": 21,
+      "before": 47907,
+      "afterNoSize": 17267,
+      "afterSized": 23966,
+      "shrinkNoSize": 0.64,
+      "shrinkSized": 0.5,
+      "tableRows": 0,
+      "domNodes": 6377
+    }
+  ]
+}
