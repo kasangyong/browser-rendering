@@ -1,0 +1,249 @@
+{
+  "note": "같은 설정만 반복하고 격리 조건만 바꿔 흩어짐 자체를 잰다",
+  "generatedAt": "2026-09-18T07:04:30.815Z",
+  "layers": 600,
+  "repeat": 10,
+  "baselineChrome": 29,
+  "rows": [
+    {
+      "rep": 0,
+      "procsAtStart": 41,
+      "rasterN": 601,
+      "meanUs": 166,
+      "p50Us": 49,
+      "cond": "A"
+    },
+    {
+      "rep": 1,
+      "procsAtStart": 53,
+      "rasterN": 601,
+      "meanUs": 75,
+      "p50Us": 42,
+      "cond": "A"
+    },
+    {
+      "rep": 2,
+      "procsAtStart": 61,
+      "rasterN": 601,
+      "meanUs": 197,
+      "p50Us": 10,
+      "cond": "A"
+    },
+    {
+      "rep": 3,
+      "procsAtStart": 71,
+      "rasterN": 601,
+      "meanUs": 16,
+      "p50Us": 12,
+      "cond": "A"
+    },
+    {
+      "rep": 4,
+      "procsAtStart": 81,
+      "rasterN": 765,
+      "meanUs": 46,
+      "p50Us": 10,
+      "cond": "A"
+    },
+    {
+      "rep": 5,
+      "procsAtStart": 72,
+      "rasterN": 601,
+      "meanUs": 71,
+      "p50Us": 37,
+      "cond": "A"
+    },
+    {
+      "rep": 6,
+      "procsAtStart": 70,
+      "rasterN": 601,
+      "meanUs": 34,
+      "p50Us": 28,
+      "cond": "A"
+    },
+    {
+      "rep": 7,
+      "procsAtStart": 45,
+      "rasterN": 778,
+      "meanUs": 50,
+      "p50Us": 17,
+      "cond": "A"
+    },
+    {
+      "rep": 8,
+      "procsAtStart": 40,
+      "rasterN": 677,
+      "meanUs": 48,
+      "p50Us": 31,
+      "cond": "A"
+    },
+    {
+      "rep": 9,
+      "procsAtStart": 52,
+      "rasterN": 601,
+      "meanUs": 10,
+      "p50Us": 8,
+      "cond": "A"
+    },
+    {
+      "rep": 0,
+      "procsAtStart": 42,
+      "rasterN": 601,
+      "meanUs": 79,
+      "p50Us": 32,
+      "cond": "B"
+    },
+    {
+      "rep": 1,
+      "procsAtStart": 41,
+      "rasterN": 601,
+      "meanUs": 52,
+      "p50Us": 39,
+      "cond": "B"
+    },
+    {
+      "rep": 2,
+      "procsAtStart": 41,
+      "rasterN": 678,
+      "meanUs": 65,
+      "p50Us": 41,
+      "cond": "B"
+    },
+    {
+      "rep": 3,
+      "procsAtStart": 40,
+      "rasterN": 601,
+      "meanUs": 57,
+      "p50Us": 43,
+      "cond": "B"
+    },
+    {
+      "rep": 4,
+      "procsAtStart": 40,
+      "rasterN": 601,
+      "meanUs": 55,
+      "p50Us": 42,
+      "cond": "B"
+    },
+    {
+      "rep": 5,
+      "procsAtStart": 41,
+      "rasterN": 601,
+      "meanUs": 68,
+      "p50Us": 44,
+      "cond": "B"
+    },
+    {
+      "rep": 6,
+      "procsAtStart": 41,
+      "rasterN": 601,
+      "meanUs": 47,
+      "p50Us": 35,
+      "cond": "B"
+    },
+    {
+      "rep": 7,
+      "procsAtStart": 40,
+      "rasterN": 601,
+      "meanUs": 50,
+      "p50Us": 37,
+      "cond": "B"
+    },
+    {
+      "rep": 8,
+      "procsAtStart": 41,
+      "rasterN": 601,
+      "meanUs": 32,
+      "p50Us": 28,
+      "cond": "B"
+    },
+    {
+      "rep": 9,
+      "procsAtStart": 41,
+      "rasterN": 639,
+      "meanUs": 58,
+      "p50Us": 40,
+      "cond": "B"
+    },
+    {
+      "rep": 0,
+      "procsAtStart": 48,
+      "rasterN": 601,
+      "meanUs": 49,
+      "p50Us": 41,
+      "cond": "C"
+    },
+    {
+      "rep": 1,
+      "procsAtStart": 46,
+      "rasterN": 601,
+      "meanUs": 54,
+      "p50Us": 40,
+      "cond": "C"
+    },
+    {
+      "rep": 2,
+      "procsAtStart": 40,
+      "rasterN": 633,
+      "meanUs": 105,
+      "p50Us": 48,
+      "cond": "C"
+    },
+    {
+      "rep": 3,
+      "procsAtStart": 50,
+      "rasterN": 601,
+      "meanUs": 56,
+      "p50Us": 43,
+      "cond": "C"
+    },
+    {
+      "rep": 4,
+      "procsAtStart": 51,
+      "rasterN": 601,
+      "meanUs": 55,
+      "p50Us": 42,
+      "cond": "C"
+    },
+    {
+      "rep": 5,
+      "procsAtStart": 41,
+      "rasterN": 757,
+      "meanUs": 166,
+      "p50Us": 38,
+      "cond": "C"
+    },
+    {
+      "rep": 6,
+      "procsAtStart": 45,
+      "rasterN": 601,
+      "meanUs": 75,
+      "p50Us": 49,
+      "cond": "C"
+    },
+    {
+      "rep": 7,
+      "procsAtStart": 43,
+      "rasterN": 750,
+      "meanUs": 120,
+      "p50Us": 51,
+      "cond": "C"
+    },
+    {
+      "rep": 8,
+      "procsAtStart": 41,
+      "rasterN": 601,
+      "meanUs": 60,
+      "p50Us": 44,
+      "cond": "C"
+    },
+    {
+      "rep": 9,
+      "procsAtStart": 41,
+      "rasterN": 701,
+      "meanUs": 88,
+      "p50Us": 50,
+      "cond": "C"
+    }
+  ]
+}
