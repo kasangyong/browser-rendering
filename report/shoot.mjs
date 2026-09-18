@@ -51,6 +51,8 @@ const SHOTS = [
   { name: 'chart-c3-layer-cliff', url: `${BASE}/report/charts/c3-layer-cliff.html`, w: 660 },
   { name: '07-c3-harness', url: `${BASE}/experiments/track-c/c3-layer-cliff/`, w: 1180,
     setup: '__C3.build(800, 38, 15)', maxH: 620 },
+
+  { name: 'chart-c4-raster-threshold', url: `${BASE}/report/charts/c4-raster-threshold.html`, w: 660 },
 ];
 
 class CDP {

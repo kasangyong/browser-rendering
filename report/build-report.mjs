@@ -302,6 +302,34 @@ if (c3?.partA?.length) {
   }));
 }
 
+// C4 ─ Raster 임계점은 내 settle 상수였다
+const c4 = await readC('c4-raster-threshold/results.json');
+if (c4?.partA?.length) {
+  const by = new Map();
+  for (const r of c4.partA) { if (!by.has(r.layers)) by.set(r.layers, []); by.get(r.layers).push(r); }
+  const ns = [...by.keys()].sort((a, b) => a - b);
+  const rate = ns.map(n => {
+    const v = by.get(n);
+    return +(v.filter(x => x.on).length / v.length * 100).toFixed(0);
+  });
+  const onRuns = c4.partA.filter(x => x.on);
+  const perLayer = onRuns.length
+    ? (onRuns.reduce((a, b) => a + b.rasterN / b.layers, 0) / onRuns.length).toFixed(2) : '-';
+  out.charts.push(barChart({
+    title: 'C4 · Raster 가 "켜지는" 임계점은 렌더러가 아니라 측정 코드에 있었다',
+    unit: '반복 6회 중 Raster 가 관측된 비율 (%)',
+    labels: ns.map(n => n >= 1000 ? (n / 1000) + 'k' : String(n)),
+    series: [{ name: 'Raster 켜진 비율', color: '#b4401f', values: rate }],
+    note: `켜진 실행에서 <code>RasterTask</code> 횟수는 <b>레이어당 정확히 ${perLayer}회</b>였다. `
+        + '매 프레임 재래스터라면 레이어×토글(≈15,000회), 축출이라면 불규칙해야 한다. '
+        + '<b>타일을 처음 만드는 일이 끝나지 않은 것</b>이다 — 하네스가 build 후 기다리는 <b>2초</b>가 '
+        + '레이어가 많아지면 모자란다. '
+        + '<br><small>※ 임계점이 계단이 아니라 <b>완만한 확률 경사</b>(0% → 83%)인 것도 같은 이야기다. '
+        + '상한값을 넘는 게 아니라 <b>경주</b>라서 매번 이기기도 지기도 한다. '
+        + '타일 메모리는 가장 심한 조건에서도 예산의 7%였다</small>',
+  }));
+}
+
 // ── 요약 카드 ─────────────────────────────────────────────
 out.cards = [
   { k: '실험', v: '8', s: 'A1 · A1b · A2 · A2b · A3 · A4 · A4b · A5' },
@@ -396,7 +424,7 @@ await writeFile(path.join(ROOT, 'report', 'index.html'), html);
 const HEAD = html.slice(html.indexOf('<style>'), html.indexOf('</style>') + 8);
 await mkdir(path.join(ROOT, 'report', 'charts'), { recursive: true });
 const names = ['a1-stage-skip', 'a1b-ceiling', 'a2-tile-memory', 'a3-dom-order', 'a4-scaling', 'a5-inp',
-               'c1-initial-load', 'c2-invalidation-kind', 'c2-commit-linearity', 'c3-layer-cliff'];
+               'c1-initial-load', 'c2-invalidation-kind', 'c2-commit-linearity', 'c3-layer-cliff', 'c4-raster-threshold'];
 for (let i = 0; i < out.charts.length; i++) {
   const one = `<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">${HEAD}
   <style>body{width:660px;padding:16px}.chart{border:none;padding:0}</style>
