@@ -1,0 +1,138 @@
+{
+  "note": "LCP 가 cv 로 빨라진 이유 — 요청 시작이 앞당겨진 원인을 찾는다",
+  "generatedAt": "2026-09-18T12:49:00.392Z",
+  "rows": [
+    {
+      "key": "canyon",
+      "mode": "plain",
+      "lcp": {
+        "t": 2324,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Canyon_River_Tree_%28165872763%29.jpeg/330px-Canyon_River_Tree_%28165872763%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "size": 53280
+      },
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "decoding": "async",
+        "cls": "mw-file-element",
+        "top": 369,
+        "h": 185
+      },
+      "imgTotal": 69,
+      "imgLazy": 63,
+      "imgRequested": 10,
+      "imgBytes": 112458,
+      "docHeight": 48963
+    },
+    {
+      "key": "canyon",
+      "mode": "cv-auto",
+      "lcp": {
+        "t": 9412,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Canyon_River_Tree_%28165872763%29.jpeg/330px-Canyon_River_Tree_%28165872763%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "size": 53280
+      },
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "decoding": "async",
+        "cls": "mw-file-element",
+        "top": 369,
+        "h": 185
+      },
+      "imgTotal": 69,
+      "imgLazy": 63,
+      "imgRequested": 10,
+      "imgBytes": 112458,
+      "docHeight": 22086
+    },
+    {
+      "key": "milky",
+      "mode": "plain",
+      "lcp": {
+        "t": 5696,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/ESO-VLT-Laser-phot-33a-07.jpg/330px-ESO-VLT-Laser-phot-33a-07.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "size": 52080
+      },
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "decoding": "async",
+        "cls": "mw-file-element mw-file-upright",
+        "top": 340,
+        "h": 186
+      },
+      "imgTotal": 46,
+      "imgLazy": 43,
+      "imgRequested": 6,
+      "imgBytes": 82664,
+      "docHeight": 71931
+    },
+    {
+      "key": "milky",
+      "mode": "cv-auto",
+      "lcp": {
+        "t": 2912,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/ESO-VLT-Laser-phot-33a-07.jpg/330px-ESO-VLT-Laser-phot-33a-07.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "size": 52080
+      },
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "decoding": "async",
+        "cls": "mw-file-element mw-file-upright",
+        "top": 340,
+        "h": 186
+      },
+      "imgTotal": 46,
+      "imgLazy": 43,
+      "imgRequested": 6,
+      "imgBytes": 82664,
+      "docHeight": 21866
+    },
+    {
+      "key": "everest",
+      "mode": "plain",
+      "lcp": {
+        "t": 3792,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg/330px-Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "size": 55296
+      },
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "decoding": "async",
+        "cls": "mw-file-element",
+        "top": 465,
+        "h": 192
+      },
+      "imgTotal": 233,
+      "imgLazy": 226,
+      "imgRequested": 18,
+      "imgBytes": 88820,
+      "docHeight": 91810
+    },
+    {
+      "key": "everest",
+      "mode": "cv-auto",
+      "lcp": {
+        "t": 6504,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg/330px-Mt._Everest_from_Gokyo_Ri_November_5%2C_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "size": 55296
+      },
+      "lcpImg": {
+        "loading": "lazy",
+        "fetchpriority": null,
+        "decoding": "async",
+        "cls": "mw-file-element",
+        "top": 465,
+        "h": 192
+      },
+      "imgTotal": 233,
+      "imgLazy": 226,
+      "imgRequested": 18,
+      "imgBytes": 88820,
+      "docHeight": 28403
+    }
+  ]
+}
