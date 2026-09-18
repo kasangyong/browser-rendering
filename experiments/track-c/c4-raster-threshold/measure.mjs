@@ -227,7 +227,18 @@ if (arg('resume', '0') === '1' && existsSync(OUT)) {
 }
 
 let port = 22000 + Math.floor(Math.random() * 400);
-const reps = async (n, fn) => { const v = []; for (let i = 0; i < n; i++) v.push(await fn(i)); return v; };
+/**
+ * 반복 하나가 실패해도 설정 전체를 죽이지 않는다.
+ * 2,000 레이어에서 렌더러가 죽어 build 가 던졌는데 그것 때문에 남은 설정이 전부 날아갔다.
+ */
+const reps = async (n, fn) => {
+  const v = [];
+  for (let i = 0; i < n; i++) {
+    try { v.push(await fn(i)); }
+    catch (e) { console.error(`    ↻ rep${i} 실패, 건너뜀: ${e.message}`); }
+  }
+  return v;
+};
 
 const summarize = rows => {
   const on = rows.filter(r => r.on);
@@ -255,6 +266,7 @@ if (PART === 'all' || PART === 'a') {
       const v = await once({ port, tag: `a-${n}-${r}`, layers: n, bw: 38, bh: 15 });
       out.partA.push({ ...v, rep: r }); await save(); return v;
     });
+    if (!rows.length) { console.log(`  ${String(n).padStart(6)}   — 전부 실패`); continue; }
     const s = summarize(rows);
     console.log(`  ${String(n).padStart(6)}${String(s.layerCount).padStart(12)}   ` +
       `${bar(s.onRate)} ${s.onN}/${s.total}`.padEnd(20) +
@@ -281,6 +293,7 @@ if (PART === 'all' || PART === 'b') {
         const v = await once({ port, tag: `b-${s.bw}-${n}-${r}`, layers: n, bw: s.bw, bh: s.bh });
         out.partB.push({ ...v, rep: r }); await save(); return v;
       });
+      if (!rows.length) { console.log(`  ${s.label.padEnd(22)}${String(n).padStart(6)}   — 전부 실패`); continue; }
       const g = summarize(rows);
       console.log(`  ${s.label.padEnd(22)}${String(n).padStart(6)}   ` +
         `${bar(g.onRate)} ${g.onN}/${g.total}`.padEnd(20) +
