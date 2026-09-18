@@ -133,6 +133,14 @@ CSS `transform` 애니메이션은 그 자체로 컴포지터 승격을 유발�
 - ~~**headless + GPU 없음** 환경이다~~ → ❌ **이 서술은 틀렸다.** [A2 사전 검증](../a2-gpu-memory/README.md#사전-검증--계측기부터-a1-교훈-2)에서 확인한 결과 `--headless=new` 는 **실제 GPU(RTX 4050 / Intel Iris Xe)로 합성·래스터**한다 (`gpu_compositing: enabled`). 확인하지 않고 단정한 것이었다.
   레이어 1000개의 **GPU 메모리** 영향은 [A2](../a2-gpu-memory/RESULTS.md)에서 측정했다
 - 프레임 상한이 ≈120fps로 보이나 vsync에 묶인 건 아니다 ([S4에서 1.5초에 360 swap ≈ 240fps](RESULTS.md#3-s4--메인-스레드를-막아도-움직이는가))
+
+> 🔄 **후속 ([C2 §4](../../track-c/c2-anomalies/RESULTS.md#4--commit-은-선형이었다--vsync-가-가린-것))** —
+> rAF 프레임 간격을 직접 재보니 **정확히 8.3ms(=120Hz)** 로, 메인 스레드 rAF 는 **vsync 에 묶여 있다.**
+> (컴포지터의 swap 이 240/s 인 것과는 별개다.)
+> 그래서 위 **"1000개에서 commit 7배"** 는 `Commit 총합 ÷ 프레임 수` 로 구한 값인데,
+> 프레임 수가 vsync 배수로 양자화되는 탓에 **배율이 과장돼 있다.**
+> `--disable-gpu-vsync` 로 다시 재면 commit 은 레이어 수에 깔끔하게 비례한다.
+> "레이어가 늘면 commit 이 비싸진다"는 방향은 맞지만, **7.0배라는 숫자는 쓰지 말 것.**
 - 박스는 모두 같은 크기·같은 애니메이션이다. 크기가 제각각이면 타일링과 raster 비용이 달라질 수 있다
 
 ## 자가 평가
