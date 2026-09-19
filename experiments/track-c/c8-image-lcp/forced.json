@@ -1,0 +1,583 @@
+{
+  "note": "A 구간 안 Layout 을 JS 강제 레이아웃과 수명주기 레이아웃으로 가른다",
+  "generatedAt": "2026-09-19T16:40:16.416Z",
+  "reps": 3,
+  "rows": [
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "rep": 0,
+      "A": 1016.2,
+      "layoutN": 35,
+      "paintN": 8,
+      "forced": 6,
+      "forcedMs": 79.1,
+      "lifecycle": 29,
+      "lifecycleMs": 381.8,
+      "paintsWrapped": 0,
+      "painted": 16,
+      "unpainted": 19,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 13
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 4
+        },
+        {
+          "k": "페인트○ EventDispatch",
+          "n": 1
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 6,
+      "longTaskMs": 807.8,
+      "maxTask": 211.8,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 79.1
+        }
+      ]
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "rep": 0,
+      "A": 298.6,
+      "layoutN": 31,
+      "paintN": 6,
+      "forced": 6,
+      "forcedMs": 3.4,
+      "lifecycle": 25,
+      "lifecycleMs": 63.7,
+      "paintsWrapped": 0,
+      "painted": 14,
+      "unpainted": 17,
+      "trig": [
+        {
+          "k": "페인트○ (없음)",
+          "n": 11
+        },
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 11
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 2
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 1,
+      "longTaskMs": 82.5,
+      "maxTask": 82.5,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 3.4
+        }
+      ]
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "rep": 2,
+      "A": 417.7,
+      "layoutN": 28,
+      "paintN": 4,
+      "forced": 6,
+      "forcedMs": 3.1,
+      "lifecycle": 22,
+      "lifecycleMs": 134.9,
+      "paintsWrapped": 0,
+      "painted": 11,
+      "unpainted": 17,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 11
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 9
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 1
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 3,
+      "longTaskMs": 255.7,
+      "maxTask": 98.9,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 3.1
+        }
+      ]
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "rep": 2,
+      "A": 1110.5,
+      "layoutN": 34,
+      "paintN": 6,
+      "forced": 6,
+      "forcedMs": 64.4,
+      "lifecycle": 28,
+      "lifecycleMs": 405.1,
+      "paintsWrapped": 0,
+      "painted": 16,
+      "unpainted": 18,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 12
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 3
+        },
+        {
+          "k": "페인트○ EventDispatch",
+          "n": 2
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 6,
+      "longTaskMs": 890.2,
+      "maxTask": 246.5,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 64.4
+        }
+      ]
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "rep": 1,
+      "A": 1193.6,
+      "layoutN": 31,
+      "paintN": 9,
+      "forced": 6,
+      "forcedMs": 8.3,
+      "lifecycle": 25,
+      "lifecycleMs": 552.7,
+      "paintsWrapped": 0,
+      "painted": 14,
+      "unpainted": 17,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 11
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 7
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 6
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 6,
+      "longTaskMs": 999.9,
+      "maxTask": 388.3,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 8.3
+        }
+      ]
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "rep": 2,
+      "A": 487.6,
+      "layoutN": 31,
+      "paintN": 6,
+      "forced": 6,
+      "forcedMs": 8.8,
+      "lifecycle": 25,
+      "lifecycleMs": 100.5,
+      "paintsWrapped": 0,
+      "painted": 15,
+      "unpainted": 16,
+      "trig": [
+        {
+          "k": "페인트○ (없음)",
+          "n": 11
+        },
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 3
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 2,
+      "longTaskMs": 242.5,
+      "maxTask": 166.3,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 8.8
+        }
+      ]
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "rep": 2,
+      "A": 704.2,
+      "layoutN": 36,
+      "paintN": 9,
+      "forced": 6,
+      "forcedMs": 6.5,
+      "lifecycle": 30,
+      "lifecycleMs": 101.9,
+      "paintsWrapped": 0,
+      "painted": 18,
+      "unpainted": 18,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 12
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 11
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 5
+        },
+        {
+          "k": "페인트○ EventDispatch",
+          "n": 1
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 3,
+      "longTaskMs": 320.6,
+      "maxTask": 168.7,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 6.5
+        }
+      ]
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "rep": 1,
+      "A": 749.2,
+      "layoutN": 33,
+      "paintN": 8,
+      "forced": 6,
+      "forcedMs": 10.2,
+      "lifecycle": 27,
+      "lifecycleMs": 69.6,
+      "paintsWrapped": 0,
+      "painted": 16,
+      "unpainted": 17,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 11
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 4
+        },
+        {
+          "k": "페인트○ EventDispatch",
+          "n": 1
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 3,
+      "longTaskMs": 339.7,
+      "maxTask": 156.9,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 10.2
+        }
+      ]
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "rep": 0,
+      "A": 536.5,
+      "layoutN": 29,
+      "paintN": 5,
+      "forced": 6,
+      "forcedMs": 3.5,
+      "lifecycle": 23,
+      "lifecycleMs": 177.1,
+      "paintsWrapped": 0,
+      "painted": 12,
+      "unpainted": 17,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 11
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 1
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 2,
+      "longTaskMs": 233.2,
+      "maxTask": 120.4,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 3.5
+        }
+      ]
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "rep": 1,
+      "A": 332.5,
+      "layoutN": 28,
+      "paintN": 7,
+      "forced": 6,
+      "forcedMs": 3.6,
+      "lifecycle": 22,
+      "lifecycleMs": 26,
+      "paintsWrapped": 0,
+      "painted": 11,
+      "unpainted": 17,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 11
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 1,
+      "longTaskMs": 90.4,
+      "maxTask": 90.4,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 3.6
+        }
+      ]
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "rep": 1,
+      "A": 1115.6,
+      "layoutN": 35,
+      "paintN": 7,
+      "forced": 6,
+      "forcedMs": 76.4,
+      "lifecycle": 29,
+      "lifecycleMs": 391.1,
+      "paintsWrapped": 0,
+      "painted": 16,
+      "unpainted": 19,
+      "trig": [
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 13
+        },
+        {
+          "k": "페인트○ (없음)",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ ParseHTML",
+          "n": 3
+        },
+        {
+          "k": "페인트○ EventDispatch",
+          "n": 2
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 6,
+      "longTaskMs": 908.8,
+      "maxTask": 301.6,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 76.4
+        }
+      ]
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "rep": 0,
+      "A": 609.1,
+      "layoutN": 28,
+      "paintN": 10,
+      "forced": 6,
+      "forcedMs": 12,
+      "lifecycle": 22,
+      "lifecycleMs": 39.1,
+      "paintsWrapped": 0,
+      "painted": 12,
+      "unpainted": 16,
+      "trig": [
+        {
+          "k": "페인트○ (없음)",
+          "n": 11
+        },
+        {
+          "k": "페인트✗ ParseHTML",
+          "n": 10
+        },
+        {
+          "k": "페인트✗ FireIdleCallback",
+          "n": 6
+        },
+        {
+          "k": "페인트○ FireAnimationFrame",
+          "n": 1
+        }
+      ],
+      "longTaskN": 2,
+      "longTaskMs": 359.5,
+      "maxTask": 189.6,
+      "callers": [
+        {
+          "who": "FireIdleCallback",
+          "n": 6,
+          "ms": 12
+        }
+      ]
+    }
+  ]
+}
