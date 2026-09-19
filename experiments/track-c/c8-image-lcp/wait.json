@@ -1,0 +1,448 @@
+{
+  "note": "응답 끝 → LCP 사이 735ms 를 창으로 잡고 그 안을 이름별로 쪼갠다",
+  "generatedAt": "2026-09-19T05:51:13.996Z",
+  "reps": 1,
+  "rows": [
+    {
+      "site": "turku",
+      "rep": 0,
+      "win": 502.5,
+      "W0": 945.5,
+      "W1": 1448,
+      "fcp": 956,
+      "fp": 956,
+      "mainBusy": 500.7,
+      "img": {
+        "natW": 789,
+        "natH": 112,
+        "dispW": 478,
+        "dispH": 180,
+        "decoding": null,
+        "loading": "none",
+        "type": "org&utm_"
+      },
+      "bytes": 68326,
+      "candidates": [
+        {
+          "t": 956,
+          "size": 3000,
+          "u": "https://en.wikivoyage.org/static/images/mobile/copyright/wikivoyage-wordmark-en.svg",
+          "tag": "img",
+          "cls": "mw-logo-wordmark",
+          "w": 120,
+          "h": 25
+        },
+        {
+          "t": 1092,
+          "size": 83190,
+          "u": "",
+          "tag": "p",
+          "cls": "",
+          "w": 478,
+          "h": 182
+        },
+        {
+          "t": 1448,
+          "size": 85801,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img",
+          "cls": "wpb-banner-image",
+          "w": 478,
+          "h": 180
+        }
+      ],
+      "main": [
+        {
+          "name": "FunctionCall",
+          "ms": 188.8,
+          "n": 26
+        },
+        {
+          "name": "Layout",
+          "ms": 173.1,
+          "n": 64
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 62.8,
+          "n": 58
+        },
+        {
+          "name": "FireIdleCallback",
+          "ms": 57.4,
+          "n": 4
+        },
+        {
+          "name": "ParseHTML",
+          "ms": 47.2,
+          "n": 29
+        },
+        {
+          "name": "TimerFire",
+          "ms": 46.6,
+          "n": 15
+        },
+        {
+          "name": "PrePaint",
+          "ms": 33.1,
+          "n": 56
+        },
+        {
+          "name": "FireAnimationFrame",
+          "ms": 32.5,
+          "n": 1
+        },
+        {
+          "name": "EvaluateScript",
+          "ms": 14.2,
+          "n": 7
+        },
+        {
+          "name": "Paint",
+          "ms": 7.3,
+          "n": 11
+        }
+      ],
+      "off": [
+        {
+          "name": "RunTask",
+          "ms": 827.4,
+          "n": 2341
+        },
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "ms": 818.4,
+          "n": 2302
+        },
+        {
+          "name": "ThreadPool_RunTask",
+          "ms": 401.9,
+          "n": 496
+        },
+        {
+          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
+          "ms": 172,
+          "n": 5
+        },
+        {
+          "name": "v8.parseOnBackground",
+          "ms": 172,
+          "n": 5
+        },
+        {
+          "name": "ANGLEPlatformImpl::RunWorkerTask",
+          "ms": 157.4,
+          "n": 78
+        },
+        {
+          "name": "v8.parseOnBackgroundWaiting",
+          "ms": 136,
+          "n": 18
+        },
+        {
+          "name": "GPUTask",
+          "ms": 129.9,
+          "n": 72
+        },
+        {
+          "name": "SimpleWatcher::OnHandleReady",
+          "ms": 81.1,
+          "n": 1121
+        },
+        {
+          "name": "Receive mojo message",
+          "ms": 59.5,
+          "n": 814
+        }
+      ]
+    },
+    {
+      "site": "uk",
+      "rep": 0,
+      "win": 992.3,
+      "W0": 875.7,
+      "W1": 1868,
+      "fcp": 984,
+      "fp": 860,
+      "mainBusy": 399.8,
+      "img": {
+        "natW": 789,
+        "natH": 112,
+        "dispW": 478,
+        "dispH": 180,
+        "decoding": null,
+        "loading": "none",
+        "type": "org&utm_"
+      },
+      "bytes": 49811,
+      "candidates": [
+        {
+          "t": 984,
+          "size": 70970,
+          "u": "",
+          "tag": "p",
+          "cls": "",
+          "w": 478,
+          "h": 156
+        },
+        {
+          "t": 1868,
+          "size": 85920,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img",
+          "cls": "wpb-banner-image",
+          "w": 478,
+          "h": 180
+        }
+      ],
+      "main": [
+        {
+          "name": "Layout",
+          "ms": 158.2,
+          "n": 49
+        },
+        {
+          "name": "FunctionCall",
+          "ms": 117.3,
+          "n": 30
+        },
+        {
+          "name": "FireIdleCallback",
+          "ms": 56.4,
+          "n": 5
+        },
+        {
+          "name": "TimerFire",
+          "ms": 33.7,
+          "n": 19
+        },
+        {
+          "name": "FireAnimationFrame",
+          "ms": 28.1,
+          "n": 1
+        },
+        {
+          "name": "PrePaint",
+          "ms": 23.7,
+          "n": 70
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 21.2,
+          "n": 48
+        },
+        {
+          "name": "EvaluateScript",
+          "ms": 13.7,
+          "n": 6
+        },
+        {
+          "name": "ParseHTML",
+          "ms": 11.5,
+          "n": 23
+        },
+        {
+          "name": "Paint",
+          "ms": 8.3,
+          "n": 21
+        }
+      ],
+      "off": [
+        {
+          "name": "RunTask",
+          "ms": 1339.7,
+          "n": 3432
+        },
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "ms": 1325.2,
+          "n": 3400
+        },
+        {
+          "name": "ThreadPool_RunTask",
+          "ms": 726.6,
+          "n": 468
+        },
+        {
+          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
+          "ms": 442.9,
+          "n": 4
+        },
+        {
+          "name": "v8.parseOnBackground",
+          "ms": 442.9,
+          "n": 4
+        },
+        {
+          "name": "v8.parseOnBackgroundWaiting",
+          "ms": 407.7,
+          "n": 23
+        },
+        {
+          "name": "ANGLEPlatformImpl::RunWorkerTask",
+          "ms": 166.6,
+          "n": 84
+        },
+        {
+          "name": "GPUTask",
+          "ms": 148.7,
+          "n": 123
+        },
+        {
+          "name": "SimpleWatcher::OnHandleReady",
+          "ms": 107.6,
+          "n": 1365
+        },
+        {
+          "name": "Receive mojo message",
+          "ms": 70.3,
+          "n": 1147
+        }
+      ]
+    },
+    {
+      "site": "philippines",
+      "rep": 0,
+      "win": 480.1,
+      "W0": 831.9,
+      "W1": 1312,
+      "fcp": 968,
+      "fp": 844,
+      "mainBusy": 385.3,
+      "img": {
+        "natW": 789,
+        "natH": 113,
+        "dispW": 478,
+        "dispH": 180,
+        "decoding": null,
+        "loading": "none",
+        "type": "org&utm_"
+      },
+      "bytes": 70437,
+      "candidates": [
+        {
+          "t": 968,
+          "size": 84783,
+          "u": "",
+          "tag": "p",
+          "cls": "",
+          "w": 478,
+          "h": 182
+        },
+        {
+          "t": 1312,
+          "size": 85920,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img",
+          "cls": "wpb-banner-image",
+          "w": 478,
+          "h": 180
+        }
+      ],
+      "main": [
+        {
+          "name": "Layout",
+          "ms": 164.4,
+          "n": 56
+        },
+        {
+          "name": "FunctionCall",
+          "ms": 93.5,
+          "n": 25
+        },
+        {
+          "name": "FireIdleCallback",
+          "ms": 52.6,
+          "n": 3
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 32.2,
+          "n": 55
+        },
+        {
+          "name": "TimerFire",
+          "ms": 32.1,
+          "n": 16
+        },
+        {
+          "name": "PrePaint",
+          "ms": 23.1,
+          "n": 54
+        },
+        {
+          "name": "ParseHTML",
+          "ms": 21.8,
+          "n": 25
+        },
+        {
+          "name": "EvaluateScript",
+          "ms": 13,
+          "n": 6
+        },
+        {
+          "name": "FireAnimationFrame",
+          "ms": 8.8,
+          "n": 1
+        },
+        {
+          "name": "Paint",
+          "ms": 6.2,
+          "n": 4
+        }
+      ],
+      "off": [
+        {
+          "name": "RunTask",
+          "ms": 863.2,
+          "n": 2046
+        },
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "ms": 854.4,
+          "n": 2027
+        },
+        {
+          "name": "ThreadPool_RunTask",
+          "ms": 359.3,
+          "n": 427
+        },
+        {
+          "name": "ANGLEPlatformImpl::RunWorkerTask",
+          "ms": 180.4,
+          "n": 89
+        },
+        {
+          "name": "GPUTask",
+          "ms": 141.9,
+          "n": 61
+        },
+        {
+          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
+          "ms": 107,
+          "n": 4
+        },
+        {
+          "name": "v8.parseOnBackground",
+          "ms": 107,
+          "n": 4
+        },
+        {
+          "name": "SimpleWatcher::OnHandleReady",
+          "ms": 86.9,
+          "n": 813
+        },
+        {
+          "name": "Receive mojo message",
+          "ms": 83.4,
+          "n": 803
+        },
+        {
+          "name": "v8.parseOnBackgroundWaiting",
+          "ms": 78,
+          "n": 15
+        }
+      ]
+    }
+  ]
+}
