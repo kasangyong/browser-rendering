@@ -92,8 +92,12 @@ async function once({ port, tag, siteKey, mode }) {
     `--user-data-dir=${profile}`, '--no-first-run', '--no-default-browser-check',
     '--disable-background-timer-throttling', '--disable-renderer-backgrounding',
     '--hide-scrollbars', '--window-size=390,844', 'about:blank'], { stdio: 'ignore' });
-  for (let i = 0; i < 60; i++) { await sleep(300);
-    try { if ((await fetch(`http://127.0.0.1:${port}/json/version`)).ok) break; } catch {} }
+  // C2 에서 겪은 것: 기동이 가끔 안 붙는다. 여기 처음 돌렸을 때 60회 중 24회가
+  // 'fetch failed' 로 날아갔다(한 셀은 2/10). 기다리는 시간을 늘리고 한 번 더 띄운다.
+  let up = false;
+  for (let i = 0; i < 100; i++) { await sleep(300);
+    try { if ((await fetch(`http://127.0.0.1:${port}/json/version`)).ok) { up = true; break; } } catch {} }
+  if (!up) throw new Error(`Chrome 기동 실패 (port ${port})`);
   try {
     const t = await (await fetch(`http://127.0.0.1:${port}/json/new?about:blank`, { method: 'PUT' })).json();
     const ws = new WebSocket(t.webSocketDebuggerUrl);
@@ -279,7 +283,7 @@ const BASELINE = await chromeCount();
 console.log(`\nC8l auto 키워드 비용 — ${keys.length}곳 × ${MODES.length}모드 × ${REPEAT}회 = ${order.length}회`);
 console.log(`기준선 chrome ${BASELINE}개 · 순서 섞음 · ${WARM ? '캐시 데운 뒤 2차 로드' : '콜드 캐시'}\n`);
 
-let port = 57000 + Math.floor(Math.random() * 300);
+let port = 39500 + Math.floor(Math.random() * 200);   // 임시 포트 범위(49152+)를 피한다
 let i = 0, fail = 0;
 for (const job of order) {
   i++;
@@ -298,8 +302,19 @@ for (const job of order) {
       `  전Style ${String(v.pre.UpdateLayoutTree).padStart(6)}  전Layout ${String(v.pre.Layout).padStart(6)}` +
       `  전JS ${String((v.pre.EvaluateScript + v.pre.FunctionCall).toFixed(1)).padStart(6)}`);
   } catch (e) {
-    fail++;
-    console.error(`  ${i}/${order.length} 실패 (${key}): ${e.message}`);
+    console.error(`  ${i}/${order.length} 1차 실패 (${key}): ${e.message} — 한 번 더`);
+    await waitQuiet(BASELINE);
+    port += 7;
+    try {
+      const v = await once({ port, tag: `${job.siteKey}-${job.mode}-${job.rep}r`, ...job });
+      out.rows.push({ ...v, rep: job.rep, retried: true });
+      await save();
+      console.log(`  ${String(i).padStart(3)}/${order.length}  ${job.siteKey.padEnd(12)}${job.mode.padEnd(10)}` +
+        `재시도 성공  FCP ${String(v.fcpMs).padStart(6)}  전Layout ${String(v.pre.Layout).padStart(6)}`);
+    } catch (e2) {
+      fail++;
+      console.error(`  ${i}/${order.length} 재시도도 실패 (${key}): ${e2.message}`);
+    }
   }
 }
 await save();
