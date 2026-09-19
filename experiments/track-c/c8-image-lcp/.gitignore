@@ -2,7 +2,9 @@ run.log
 run-lazy.log
 run-eager.log
 run-heavy.log
+run-paintwait.log
 .measure.lock
 .measure-lazy.lock
 .measure-eager.lock
 .measure-heavy.lock
+.paintwait.lock
