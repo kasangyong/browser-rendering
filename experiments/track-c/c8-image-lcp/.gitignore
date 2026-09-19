@@ -1,6 +1,8 @@
 run.log
 run-lazy.log
 run-eager.log
+run-heavy.log
 .measure.lock
 .measure-lazy.lock
 .measure-eager.lock
+.measure-heavy.lock
