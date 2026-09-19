@@ -1386,7 +1386,7 @@ FCP 이전 구간만 잘라 보면 어디서 쓰는지 나온다:
 [C7 의 결론](#c7--초기-로드의-실제판--lcp-3639-단축-은-조건부였다)과 같은 모양이다 —
 렌더링 일이 줄어도 **사용자에게 보이려면 그 일이 병목이어야 한다.**
 
-<sub>사전 등록 [PREDICTION.md](experiments/track-c/c8-image-lcp/PREDICTION.md) · 전체 결과 [RESULTS.md](experiments/track-c/c8-image-lcp/RESULTS.md) — 총 **206회** 측정 · 주장 14개 중 **2개 반증 · 3개 부분 · 2개 판정 불가**</sub>
+<sub>사전 등록 [PREDICTION.md](experiments/track-c/c8-image-lcp/PREDICTION.md) · 전체 결과 [RESULTS.md](experiments/track-c/c8-image-lcp/RESULTS.md) — 결과 파일에 남은 측정 **679행** · 사전 등록 주장 30개 중 **7 반증 · 14 성립 · 6 부분 · 3 판정 불가**</sub>
 
 ---
 
