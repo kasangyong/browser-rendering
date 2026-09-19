@@ -1,0 +1,1992 @@
+{
+  "note": "배너가 준비된 뒤 LCP 까지의 426ms 안에서 무슨 일이 일어나는지 센다",
+  "generatedAt": "2026-09-19T15:49:06.044Z",
+  "reps": 3,
+  "rows": [
+    {
+      "site": "uk",
+      "mode": "cv-auto",
+      "rep": 0,
+      "lcp": {
+        "t": 2368,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1388,
+      "bannerEnd": 1343,
+      "paintImageT": 2186,
+      "candT": 2368.5,
+      "A": 741.9,
+      "B": 182.5,
+      "layoutMs": 483.6,
+      "ready": 1444.1,
+      "win": 923.9,
+      "token": "Stonehenge_banner_distant_",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1138.2,
+          "dur": null,
+          "tid": 45592,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1334.3,
+          "dur": 0.15,
+          "tid": 33896,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1334.3,
+          "dur": 0.11,
+          "tid": 33896,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1376.4,
+          "dur": null,
+          "tid": 45592,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 2186,
+          "dur": 0.08,
+          "tid": 45592,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 2186.1,
+          "dur": null,
+          "tid": 45592,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 2368.5,
+          "dur": null,
+          "tid": 45592,
+          "ph": "R"
+        }
+      ],
+      "events": 87002,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 158.0980000000004,
+          "n": 80,
+          "first": 1435.7,
+          "last": 2356.4
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 105.41200000000072,
+          "n": 75,
+          "first": 1445.6,
+          "last": 2345.2
+        },
+        {
+          "name": "RasterTask",
+          "ms": 13.93300000000022,
+          "n": 55,
+          "first": 1463.4,
+          "last": 2237.1
+        },
+        {
+          "name": "Commit",
+          "ms": 11.99499999999989,
+          "n": 92,
+          "first": 1462.7,
+          "last": 2267.9
+        },
+        {
+          "name": "PrePaint",
+          "ms": 9.98599999999874,
+          "n": 73,
+          "first": 1444.9,
+          "last": 2353.7
+        },
+        {
+          "name": "Paint",
+          "ms": 9.634000000000242,
+          "n": 7,
+          "first": 1469.3,
+          "last": 2184.9
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 7.670999999999822,
+          "n": 2,
+          "first": 1770.4,
+          "last": 2189.3
+        },
+        {
+          "name": "Decode Image",
+          "ms": 5.939000000000078,
+          "n": 2,
+          "first": 1771.7,
+          "last": 2189.6
+        },
+        {
+          "name": "PaintImage",
+          "ms": 3.8200000000006185,
+          "n": 19,
+          "first": 1470.6,
+          "last": 2187
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 27,
+          "first": 1444.7,
+          "last": 2285.6
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 7,
+          "first": 1476.2,
+          "last": 2196.3
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 7,
+          "first": 1477.5,
+          "last": 2272
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 8,
+          "first": 1496.8,
+          "last": 2298
+        }
+      ],
+      "frames": 8
+    },
+    {
+      "site": "philippines",
+      "mode": "plain",
+      "rep": 2,
+      "lcp": {
+        "t": 2388,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1364,
+      "bannerEnd": 1325.7,
+      "paintImageT": 2241.2,
+      "candT": 2386.6,
+      "A": 804.8,
+      "B": 145.4,
+      "layoutMs": 524.9,
+      "ready": 1436.4,
+      "win": 951.6,
+      "token": "Banaue_Wikivoyage_banner.j",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 998.6,
+          "dur": null,
+          "tid": 45904,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1296.4,
+          "dur": 0.14,
+          "tid": 46624,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1296.4,
+          "dur": 0.09,
+          "tid": 46624,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1360.1,
+          "dur": null,
+          "tid": 45904,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 2241.2,
+          "dur": 0.15,
+          "tid": 45904,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 2241.3,
+          "dur": null,
+          "tid": 45904,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 2386.6,
+          "dur": null,
+          "tid": 45904,
+          "ph": "R"
+        }
+      ],
+      "events": 92089,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 396.82399999999984,
+          "n": 33,
+          "first": 1383.2,
+          "last": 2367.9
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 104.99600000000032,
+          "n": 3,
+          "first": 1744.7,
+          "last": 2268
+        },
+        {
+          "name": "Decode Image",
+          "ms": 103.13100000000031,
+          "n": 3,
+          "first": 1746.1,
+          "last": 2268.2
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 80.53600000000029,
+          "n": 26,
+          "first": 1455.2,
+          "last": 2365
+        },
+        {
+          "name": "PrePaint",
+          "ms": 52.82400000000143,
+          "n": 71,
+          "first": 1437.5,
+          "last": 2375.6
+        },
+        {
+          "name": "Paint",
+          "ms": 26.148000000000593,
+          "n": 10,
+          "first": 1438.6,
+          "last": 2375.4
+        },
+        {
+          "name": "RasterTask",
+          "ms": 13.826999999998861,
+          "n": 51,
+          "first": 1443,
+          "last": 2387.5
+        },
+        {
+          "name": "Commit",
+          "ms": 13.162999999999329,
+          "n": 108,
+          "first": 1441.9,
+          "last": 2387.3
+        },
+        {
+          "name": "PaintImage",
+          "ms": 6.739000000000033,
+          "n": 24,
+          "first": 1439.7,
+          "last": 2375.5
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 8,
+          "first": 1447.8,
+          "last": 2387.7
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1448.7,
+          "last": 2370.4
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1454.8,
+          "last": 2338.6
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 54,
+          "first": 1498.2,
+          "last": 2385.1
+        }
+      ],
+      "frames": 6
+    },
+    {
+      "site": "philippines",
+      "mode": "plain",
+      "rep": 0,
+      "lcp": {
+        "t": 2988,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1872,
+      "bannerEnd": 1752.7,
+      "paintImageT": 2902,
+      "candT": 2988.5,
+      "A": 955.1,
+      "B": 86.5,
+      "layoutMs": 801.6,
+      "ready": 1946.9,
+      "win": 1041.1,
+      "token": "Banaue_Wikivoyage_banner.j",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1321.8,
+          "dur": null,
+          "tid": 37812,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1754.4,
+          "dur": 0.2,
+          "tid": 9248,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1754.5,
+          "dur": 0.15,
+          "tid": 9248,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1774.2,
+          "dur": null,
+          "tid": 37812,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 2902,
+          "dur": 0.15,
+          "tid": 37812,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 2902.1,
+          "dur": null,
+          "tid": 37812,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 2988.5,
+          "dur": null,
+          "tid": 37812,
+          "ph": "R"
+        }
+      ],
+      "events": 87840,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 411.42200000000093,
+          "n": 30,
+          "first": 1932.1,
+          "last": 2842.2
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 119.39699999999857,
+          "n": 25,
+          "first": 1968,
+          "last": 2951.8
+        },
+        {
+          "name": "PrePaint",
+          "ms": 51.075000000000045,
+          "n": 46,
+          "first": 1949.2,
+          "last": 2903.7
+        },
+        {
+          "name": "Paint",
+          "ms": 26.577999999999975,
+          "n": 7,
+          "first": 1950.5,
+          "last": 2898.2
+        },
+        {
+          "name": "RasterTask",
+          "ms": 20.388999999999214,
+          "n": 52,
+          "first": 1953.8,
+          "last": 2982.1
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 20.380999999999858,
+          "n": 3,
+          "first": 2536,
+          "last": 2906.4
+        },
+        {
+          "name": "Decode Image",
+          "ms": 18.29300000000012,
+          "n": 3,
+          "first": 2537.3,
+          "last": 2906.7
+        },
+        {
+          "name": "Commit",
+          "ms": 10.360000000000127,
+          "n": 105,
+          "first": 1953,
+          "last": 2981.6
+        },
+        {
+          "name": "PaintImage",
+          "ms": 5.597999999999956,
+          "n": 22,
+          "first": 2362.6,
+          "last": 2903.6
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 7,
+          "first": 1955.3,
+          "last": 2911.9
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 54,
+          "first": 1955.8,
+          "last": 2915.5
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1956.1,
+          "last": 2912.8
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1967.5,
+          "last": 2950.7
+        }
+      ],
+      "frames": 6
+    },
+    {
+      "site": "philippines",
+      "mode": "cv-auto",
+      "rep": 1,
+      "lcp": {
+        "t": 2372,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1588,
+      "bannerEnd": 1423.1,
+      "paintImageT": 2120.5,
+      "candT": 2371.5,
+      "A": 609.8,
+      "B": 251,
+      "layoutMs": 395.6,
+      "ready": 1510.7,
+      "win": 861.3,
+      "token": "Banaue_Wikivoyage_banner.j",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1243.9,
+          "dur": null,
+          "tid": 3820,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1429.7,
+          "dur": 0.11,
+          "tid": 6104,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1429.7,
+          "dur": 0.07,
+          "tid": 6104,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1461.5,
+          "dur": null,
+          "tid": 3820,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 2120.5,
+          "dur": 0.14,
+          "tid": 3820,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 2120.6,
+          "dur": null,
+          "tid": 3820,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 2371.5,
+          "dur": null,
+          "tid": 3820,
+          "ph": "R"
+        }
+      ],
+      "events": 68205,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 164.19100000000049,
+          "n": 99,
+          "first": 1500.6,
+          "last": 2337.5
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 98.74599999999873,
+          "n": 103,
+          "first": 1512.2,
+          "last": 2328.6
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 36.988000000000056,
+          "n": 5,
+          "first": 1740.2,
+          "last": 2361.2
+        },
+        {
+          "name": "Decode Image",
+          "ms": 29.991999999999734,
+          "n": 5,
+          "first": 1741.5,
+          "last": 2361.3
+        },
+        {
+          "name": "RasterTask",
+          "ms": 16.13500000000022,
+          "n": 49,
+          "first": 1534.4,
+          "last": 2361.7
+        },
+        {
+          "name": "PrePaint",
+          "ms": 14.818999999998823,
+          "n": 78,
+          "first": 1511.4,
+          "last": 2357.8
+        },
+        {
+          "name": "Paint",
+          "ms": 14.046999999999798,
+          "n": 11,
+          "first": 1535.7,
+          "last": 2357.6
+        },
+        {
+          "name": "Commit",
+          "ms": 13.346999999999525,
+          "n": 80,
+          "first": 1533.8,
+          "last": 2370.7
+        },
+        {
+          "name": "PaintImage",
+          "ms": 4.385000000000446,
+          "n": 24,
+          "first": 1537.1,
+          "last": 2357.7
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 21,
+          "first": 1514,
+          "last": 1924.4
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 7,
+          "first": 1543.1,
+          "last": 2362.2
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 7,
+          "first": 1543.8,
+          "last": 2370.2
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 8,
+          "first": 1578.4,
+          "last": 2270.2
+        }
+      ],
+      "frames": 8
+    },
+    {
+      "site": "uk",
+      "mode": "plain",
+      "rep": 1,
+      "lcp": {
+        "t": 3376,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1428,
+      "bannerEnd": 1232,
+      "paintImageT": 3239.9,
+      "candT": 3375.4,
+      "A": 1735.9,
+      "B": 135.5,
+      "layoutMs": 894.9,
+      "ready": 1504,
+      "win": 1872,
+      "token": "Stonehenge_banner_distant_",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1029.3,
+          "dur": null,
+          "tid": 39668,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1247.2,
+          "dur": 1.13,
+          "tid": 41908,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1247.2,
+          "dur": 1.08,
+          "tid": 41908,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1356.6,
+          "dur": null,
+          "tid": 39668,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 3239.9,
+          "dur": 0.13,
+          "tid": 39668,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 3240,
+          "dur": null,
+          "tid": 39668,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 3375.4,
+          "dur": null,
+          "tid": 39668,
+          "ph": "R"
+        }
+      ],
+      "events": 100088,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 686.0080000000012,
+          "n": 22,
+          "first": 1507.1,
+          "last": 2761.8
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 172.82000000000085,
+          "n": 20,
+          "first": 1525.2,
+          "last": 3364.6
+        },
+        {
+          "name": "PrePaint",
+          "ms": 86.70999999999867,
+          "n": 41,
+          "first": 1504.3,
+          "last": 3282
+        },
+        {
+          "name": "RasterTask",
+          "ms": 59.75900000000024,
+          "n": 74,
+          "first": 1510.1,
+          "last": 3288
+        },
+        {
+          "name": "Commit",
+          "ms": 20.94300000000021,
+          "n": 175,
+          "first": 1508.7,
+          "last": 3287.7
+        },
+        {
+          "name": "Paint",
+          "ms": 20.29899999999975,
+          "n": 7,
+          "first": 1506.2,
+          "last": 3237.1
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 11.957999999999856,
+          "n": 2,
+          "first": 2000.2,
+          "last": 3253.2
+        },
+        {
+          "name": "Decode Image",
+          "ms": 9.17100000000005,
+          "n": 2,
+          "first": 2002.1,
+          "last": 3254
+        },
+        {
+          "name": "PaintImage",
+          "ms": 6.730000000001155,
+          "n": 27,
+          "first": 1507,
+          "last": 3240.9
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 6,
+          "first": 1513.2,
+          "last": 3295.5
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1514.3,
+          "last": 3296.2
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 103,
+          "first": 1518.3,
+          "last": 3373
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1524.8,
+          "last": 3280.9
+        }
+      ],
+      "frames": 6
+    },
+    {
+      "site": "uk",
+      "mode": "cv-auto",
+      "rep": 1,
+      "lcp": {
+        "t": 3572,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 2072,
+      "bannerEnd": 1845.1,
+      "paintImageT": 3522.7,
+      "candT": 3570.7,
+      "A": 1364.4,
+      "B": 48,
+      "layoutMs": 721.9,
+      "ready": 2158.3,
+      "win": 1413.7,
+      "token": "Stonehenge_banner_distant_",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1152.7,
+          "dur": null,
+          "tid": 19504,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1687.6,
+          "dur": 0.17,
+          "tid": 33904,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1687.6,
+          "dur": 0.1,
+          "tid": 33904,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1687.8,
+          "dur": null,
+          "tid": 19504,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 3522.7,
+          "dur": 0.03,
+          "tid": 19504,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 3522.7,
+          "dur": null,
+          "tid": 19504,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 3570.7,
+          "dur": null,
+          "tid": 19504,
+          "ph": "R"
+        }
+      ],
+      "events": 97541,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 221.98000000000047,
+          "n": 77,
+          "first": 2143.3,
+          "last": 3533
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 84.86899999999878,
+          "n": 73,
+          "first": 2160.5,
+          "last": 3563.8
+        },
+        {
+          "name": "RasterTask",
+          "ms": 49.42399999999816,
+          "n": 78,
+          "first": 2172.5,
+          "last": 3526.4
+        },
+        {
+          "name": "Commit",
+          "ms": 28.104000000001633,
+          "n": 186,
+          "first": 2171.9,
+          "last": 3524.1
+        },
+        {
+          "name": "PrePaint",
+          "ms": 10.114000000001852,
+          "n": 72,
+          "first": 2159.5,
+          "last": 3533.6
+        },
+        {
+          "name": "Paint",
+          "ms": 9.156999999999698,
+          "n": 9,
+          "first": 2188.9,
+          "last": 3534.9
+        },
+        {
+          "name": "PaintImage",
+          "ms": 4.223999999999705,
+          "n": 18,
+          "first": 2190,
+          "last": 3522.9
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 2.0149999999998727,
+          "n": 2,
+          "first": 2489.3,
+          "last": 3524.9
+        },
+        {
+          "name": "Decode Image",
+          "ms": 1.1749999999997272,
+          "n": 2,
+          "first": 2490,
+          "last": 3525
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 43,
+          "first": 2162.8,
+          "last": 3504.2
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 7,
+          "first": 2203.3,
+          "last": 3526.5
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 7,
+          "first": 2204.1,
+          "last": 3528.7
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 29,
+          "first": 2247.8,
+          "last": 3532.1
+        }
+      ],
+      "frames": 29
+    },
+    {
+      "site": "philippines",
+      "mode": "plain",
+      "rep": 1,
+      "lcp": {
+        "t": 3684,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 2292,
+      "bannerEnd": 2027.5,
+      "paintImageT": 3602.5,
+      "candT": 3680.3,
+      "A": 1368.9,
+      "B": 77.8,
+      "layoutMs": 608.4,
+      "ready": 2233.6,
+      "win": 1450.4,
+      "token": "Banaue_Wikivoyage_banner.j",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1682.6,
+          "dur": null,
+          "tid": 43644,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 2040.3,
+          "dur": 0.13,
+          "tid": 21332,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 2040.4,
+          "dur": 0.1,
+          "tid": 21332,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 2136,
+          "dur": null,
+          "tid": 43644,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 3602.5,
+          "dur": 0.14,
+          "tid": 43644,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 3602.6,
+          "dur": null,
+          "tid": 43644,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 3680.3,
+          "dur": null,
+          "tid": 43644,
+          "ph": "R"
+        }
+      ],
+      "events": 80245,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 435.0899999999997,
+          "n": 38,
+          "first": 2235.9,
+          "last": 3683.9
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 106.55299999999897,
+          "n": 38,
+          "first": 2263,
+          "last": 3683.7
+        },
+        {
+          "name": "PrePaint",
+          "ms": 83.28099999999995,
+          "n": 79,
+          "first": 2234,
+          "last": 3619.9
+        },
+        {
+          "name": "RasterTask",
+          "ms": 34.15400000000227,
+          "n": 81,
+          "first": 2128.2,
+          "last": 3636.9
+        },
+        {
+          "name": "Paint",
+          "ms": 20.415999999999713,
+          "n": 11,
+          "first": 2235,
+          "last": 3598.5
+        },
+        {
+          "name": "Commit",
+          "ms": 18.81400000000167,
+          "n": 224,
+          "first": 2247,
+          "last": 3636.4
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 16.420000000000073,
+          "n": 3,
+          "first": 2947.8,
+          "last": 3612.1
+        },
+        {
+          "name": "Decode Image",
+          "ms": 15.749999999999545,
+          "n": 3,
+          "first": 2948.2,
+          "last": 3612.2
+        },
+        {
+          "name": "PaintImage",
+          "ms": 3.3410000000003492,
+          "n": 24,
+          "first": 2235.8,
+          "last": 3604
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 8,
+          "first": 2258.3,
+          "last": 3619.1
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 7,
+          "first": 2258.9,
+          "last": 3619.9
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 33,
+          "first": 2262.7,
+          "last": 3618.9
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 42,
+          "first": 2264.4,
+          "last": 3412.1
+        }
+      ],
+      "frames": 33
+    },
+    {
+      "site": "philippines",
+      "mode": "cv-auto",
+      "rep": 2,
+      "lcp": {
+        "t": 2376,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1560,
+      "bannerEnd": 1488.7,
+      "paintImageT": 2288.6,
+      "candT": 2375.9,
+      "A": 687.3,
+      "B": 87.3,
+      "layoutMs": 688.3,
+      "ready": 1601.3,
+      "win": 774.7,
+      "token": "Banaue_Wikivoyage_banner.j",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1262.7,
+          "dur": null,
+          "tid": 45796,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1485.6,
+          "dur": 0.1,
+          "tid": 38896,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1485.7,
+          "dur": 0.07,
+          "tid": 38896,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1489.9,
+          "dur": null,
+          "tid": 45796,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 2288.6,
+          "dur": 0.11,
+          "tid": 45796,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 2288.6,
+          "dur": null,
+          "tid": 45796,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 2375.9,
+          "dur": null,
+          "tid": 45796,
+          "ph": "R"
+        }
+      ],
+      "events": 79397,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 225.3739999999998,
+          "n": 68,
+          "first": 1601.3,
+          "last": 2338.6
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 81.60100000000034,
+          "n": 64,
+          "first": 1603.3,
+          "last": 2338
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 21.585000000000036,
+          "n": 3,
+          "first": 1914.8,
+          "last": 2293.6
+        },
+        {
+          "name": "Decode Image",
+          "ms": 19.48299999999972,
+          "n": 3,
+          "first": 1916.1,
+          "last": 2293.9
+        },
+        {
+          "name": "RasterTask",
+          "ms": 16.823999999998478,
+          "n": 53,
+          "first": 1605.1,
+          "last": 2346.9
+        },
+        {
+          "name": "Paint",
+          "ms": 14.516000000000304,
+          "n": 7,
+          "first": 1636.4,
+          "last": 2343.2
+        },
+        {
+          "name": "PrePaint",
+          "ms": 9.85200000000009,
+          "n": 52,
+          "first": 1602.3,
+          "last": 2340.2
+        },
+        {
+          "name": "Commit",
+          "ms": 9.749999999999545,
+          "n": 96,
+          "first": 1604.5,
+          "last": 2375.6
+        },
+        {
+          "name": "PaintImage",
+          "ms": 5.711999999999534,
+          "n": 20,
+          "first": 1637.2,
+          "last": 2289.6
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 44,
+          "first": 1618,
+          "last": 2321.2
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 8,
+          "first": 1642.3,
+          "last": 2374.8
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1643.5,
+          "last": 2300.3
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 1663.3,
+          "last": 2325.5
+        }
+      ],
+      "frames": 6
+    },
+    {
+      "site": "uk",
+      "mode": "cv-auto",
+      "rep": 2,
+      "lcp": {
+        "t": 4884,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 3356,
+      "bannerEnd": 3206.2,
+      "paintImageT": 4763.1,
+      "candT": 4880.5,
+      "A": 1331.3,
+      "B": 117.4,
+      "layoutMs": 782.5,
+      "ready": 3431.8,
+      "win": 1452.2,
+      "token": "Stonehenge_banner_distant_",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 2079.9,
+          "dur": null,
+          "tid": 5124,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 3151,
+          "dur": 0.43,
+          "tid": 36884,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 3151.2,
+          "dur": 0.26,
+          "tid": 36884,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 3151.6,
+          "dur": null,
+          "tid": 5124,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 4763.1,
+          "dur": 0.13,
+          "tid": 5124,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 4763.1,
+          "dur": null,
+          "tid": 5124,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 4880.5,
+          "dur": null,
+          "tid": 5124,
+          "ph": "R"
+        }
+      ],
+      "events": 126361,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 273.6700000000001,
+          "n": 87,
+          "first": 3456.7,
+          "last": 4883.6
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 118.03199999999788,
+          "n": 89,
+          "first": 3451.2,
+          "last": 4883.4
+        },
+        {
+          "name": "RasterTask",
+          "ms": 41.2529999999997,
+          "n": 106,
+          "first": 3437.4,
+          "last": 4881.5
+        },
+        {
+          "name": "Commit",
+          "ms": 24.702999999999975,
+          "n": 178,
+          "first": 3436.3,
+          "last": 4880.4
+        },
+        {
+          "name": "Paint",
+          "ms": 20.152999999998883,
+          "n": 16,
+          "first": 3433.8,
+          "last": 4791.8
+        },
+        {
+          "name": "PrePaint",
+          "ms": 14.001000000000658,
+          "n": 60,
+          "first": 3432.2,
+          "last": 4788.9
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 8.101000000000568,
+          "n": 2,
+          "first": 4078.8,
+          "last": 4770.6
+        },
+        {
+          "name": "Decode Image",
+          "ms": 6.298999999999978,
+          "n": 2,
+          "first": 4080.2,
+          "last": 4770.8
+        },
+        {
+          "name": "PaintImage",
+          "ms": 6.1030000000000655,
+          "n": 18,
+          "first": 3760.3,
+          "last": 4764.7
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 8,
+          "first": 3440.6,
+          "last": 4778.1
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 8,
+          "first": 3441.6,
+          "last": 4779
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 45,
+          "first": 3450.6,
+          "last": 4812.4
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 19,
+          "first": 3450.6,
+          "last": 4785.4
+        }
+      ],
+      "frames": 19
+    },
+    {
+      "site": "uk",
+      "mode": "plain",
+      "rep": 2,
+      "lcp": {
+        "t": 1996,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 1252,
+      "bannerEnd": 1098.3,
+      "paintImageT": 1873.7,
+      "candT": 1993.6,
+      "A": 657.7,
+      "B": 119.9,
+      "layoutMs": 421.9,
+      "ready": 1216,
+      "win": 780,
+      "token": "Stonehenge_banner_distant_",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 901.8,
+          "dur": null,
+          "tid": 23272,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 1120.3,
+          "dur": 0.11,
+          "tid": 47060,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 1120.3,
+          "dur": 0.08,
+          "tid": 47060,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 1154.1,
+          "dur": null,
+          "tid": 23272,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 1873.7,
+          "dur": 0.06,
+          "tid": 23272,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 1873.7,
+          "dur": null,
+          "tid": 23272,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 1993.6,
+          "dur": null,
+          "tid": 23272,
+          "ph": "R"
+        }
+      ],
+      "events": 82109,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 276.14400000000023,
+          "n": 32,
+          "first": 1218.9,
+          "last": 1807.7
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 62.358999999999924,
+          "n": 25,
+          "first": 1248.8,
+          "last": 1859.9
+        },
+        {
+          "name": "PrePaint",
+          "ms": 38.34099999999853,
+          "n": 53,
+          "first": 1216.4,
+          "last": 1891.8
+        },
+        {
+          "name": "RasterTask",
+          "ms": 11.900000000000318,
+          "n": 63,
+          "first": 1221.6,
+          "last": 1955.3
+        },
+        {
+          "name": "Commit",
+          "ms": 9.88099999999963,
+          "n": 106,
+          "first": 1221.1,
+          "last": 1954.2
+        },
+        {
+          "name": "Paint",
+          "ms": 9.855999999999995,
+          "n": 7,
+          "first": 1217.9,
+          "last": 1872.4
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 3.22199999999998,
+          "n": 2,
+          "first": 1667.6,
+          "last": 1887.5
+        },
+        {
+          "name": "PaintImage",
+          "ms": 3.115999999999758,
+          "n": 30,
+          "first": 1218.8,
+          "last": 1874.2
+        },
+        {
+          "name": "Decode Image",
+          "ms": 2.0729999999998654,
+          "n": 2,
+          "first": 1668.6,
+          "last": 1887.6
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 7,
+          "first": 1224.1,
+          "last": 1890.3
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 7,
+          "first": 1224.7,
+          "last": 1890.7
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 7,
+          "first": 1248.6,
+          "last": 1891.2
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 29,
+          "first": 1255.4,
+          "last": 1945
+        }
+      ],
+      "frames": 7
+    },
+    {
+      "site": "philippines",
+      "mode": "cv-auto",
+      "rep": 0,
+      "lcp": {
+        "t": 3332,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 2568,
+      "bannerEnd": 2450.3,
+      "paintImageT": 3245.8,
+      "candT": 3333.1,
+      "A": 528.3,
+      "B": 87.3,
+      "layoutMs": 650.2,
+      "ready": 2717.5,
+      "win": 614.5,
+      "token": "Banaue_Wikivoyage_banner.j",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 1621.5,
+          "dur": null,
+          "tid": 35344,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 2468,
+          "dur": 0.25,
+          "tid": 11328,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 2468,
+          "dur": 0.19,
+          "tid": 11328,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 2553.1,
+          "dur": null,
+          "tid": 35344,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 3245.8,
+          "dur": 0.1,
+          "tid": 35344,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 3245.8,
+          "dur": null,
+          "tid": 35344,
+          "ph": "I"
+        },
+        {
+          "name": "LargestImagePaint::Candidate",
+          "t": 3333.1,
+          "dur": null,
+          "tid": 35344,
+          "ph": "R"
+        }
+      ],
+      "events": 89174,
+      "stages": [
+        {
+          "name": "Layout",
+          "ms": 175.09100000000126,
+          "n": 48,
+          "first": 2691.8,
+          "last": 3302.7
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 54.41599999999971,
+          "n": 42,
+          "first": 2720.9,
+          "last": 3301.1
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 18.717999999999847,
+          "n": 3,
+          "first": 2975.1,
+          "last": 3248.9
+        },
+        {
+          "name": "RasterTask",
+          "ms": 16.87899999999854,
+          "n": 43,
+          "first": 2753.8,
+          "last": 3328.9
+        },
+        {
+          "name": "Decode Image",
+          "ms": 16.610000000000582,
+          "n": 3,
+          "first": 2976.7,
+          "last": 3249.1
+        },
+        {
+          "name": "Paint",
+          "ms": 13.399999999999636,
+          "n": 6,
+          "first": 2765,
+          "last": 3310.9
+        },
+        {
+          "name": "PrePaint",
+          "ms": 8.531999999999243,
+          "n": 47,
+          "first": 2719.6,
+          "last": 3308.8
+        },
+        {
+          "name": "Commit",
+          "ms": 6.148000000000138,
+          "n": 72,
+          "first": 2753.2,
+          "last": 3328.4
+        },
+        {
+          "name": "PaintImage",
+          "ms": 4.708000000000084,
+          "n": 19,
+          "first": 2768.5,
+          "last": 3246.7
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 34,
+          "first": 2726.1,
+          "last": 3284
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 7,
+          "first": 2801.1,
+          "last": 3316
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 6,
+          "first": 2801.8,
+          "last": 3326.7
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 5,
+          "first": 2823.2,
+          "last": 3271.7
+        }
+      ],
+      "frames": 5
+    },
+    {
+      "site": "uk",
+      "mode": "plain",
+      "rep": 0,
+      "lcp": {
+        "t": 17804,
+        "size": 85920,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail"
+      },
+      "fcp": 12544,
+      "bannerEnd": 6824.2,
+      "paintImageT": 10428.7,
+      "candT": null,
+      "A": 2410.7,
+      "B": null,
+      "layoutMs": 878.3,
+      "ready": 8018,
+      "win": 9786,
+      "token": "Stonehenge_banner_distant_",
+      "mentions": [
+        {
+          "name": "ResourceSendRequest",
+          "t": 6459.8,
+          "dur": null,
+          "tid": 3020,
+          "ph": "I"
+        },
+        {
+          "name": "ThrottlingURLLoader::OnReceiveResponse",
+          "t": 6873.4,
+          "dur": 0.51,
+          "tid": 38624,
+          "ph": "X"
+        },
+        {
+          "name": "MojoURLLoaderClient::OnReceiveResponse",
+          "t": 6873.5,
+          "dur": 0.46,
+          "tid": 38624,
+          "ph": "X"
+        },
+        {
+          "name": "ResourceReceiveResponse",
+          "t": 6883.4,
+          "dur": null,
+          "tid": 3020,
+          "ph": "I"
+        },
+        {
+          "name": "PaintImage",
+          "t": 10428.7,
+          "dur": 0.18,
+          "tid": 3020,
+          "ph": "X"
+        },
+        {
+          "name": "PaintTimingVisualizer::LayoutObjectPainted",
+          "t": 10428.8,
+          "dur": null,
+          "tid": 3020,
+          "ph": "I"
+        }
+      ],
+      "events": 60162,
+      "stages": [
+        {
+          "name": "PrePaint",
+          "ms": 117.48399999997855,
+          "n": 80,
+          "first": 8018.8,
+          "last": 14785.9
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 86.3430000000044,
+          "n": 53,
+          "first": 9332.6,
+          "last": 14738.5
+        },
+        {
+          "name": "Layout",
+          "ms": 58.13799999999901,
+          "n": 50,
+          "first": 8073.1,
+          "last": 14773.4
+        },
+        {
+          "name": "RasterTask",
+          "ms": 50.552999999995336,
+          "n": 33,
+          "first": 8118.7,
+          "last": 14780.8
+        },
+        {
+          "name": "Paint",
+          "ms": 26.77400000000216,
+          "n": 9,
+          "first": 8072.2,
+          "last": 14773.8
+        },
+        {
+          "name": "Commit",
+          "ms": 8.892000000004373,
+          "n": 26,
+          "first": 8117.8,
+          "last": 11288.1
+        },
+        {
+          "name": "PaintImage",
+          "ms": 8.733000000000175,
+          "n": 34,
+          "first": 8057.8,
+          "last": 14773.2
+        },
+        {
+          "name": "ImageDecodeTask",
+          "ms": 7.5569999999988795,
+          "n": 4,
+          "first": 9210.6,
+          "last": 12737.5
+        },
+        {
+          "name": "Decode Image",
+          "ms": 6.338999999999942,
+          "n": 10,
+          "first": 9211.7,
+          "last": 12737.5
+        },
+        {
+          "name": "NeedsBeginFrameChanged",
+          "ms": 0,
+          "n": 2,
+          "first": 8206.3,
+          "last": 15733
+        },
+        {
+          "name": "ActivateLayerTree",
+          "ms": 0,
+          "n": 5,
+          "first": 9177.9,
+          "last": 14781.3
+        },
+        {
+          "name": "DrawFrame",
+          "ms": 0,
+          "n": 4,
+          "first": 9182,
+          "last": 14722.2
+        },
+        {
+          "name": "BeginMainThreadFrame",
+          "ms": 0,
+          "n": 4,
+          "first": 9184.6,
+          "last": 14718.4
+        }
+      ],
+      "frames": 0
+    }
+  ]
+}
