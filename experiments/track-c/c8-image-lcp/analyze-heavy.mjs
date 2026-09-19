@@ -63,7 +63,8 @@ for (const k of KEYS) {
       s.toFixed(0).padStart(9) + e.toFixed(0).padStart(10) + (L - e).toFixed(0).padStart(12) + L.toFixed(0).padStart(9));
   }
   const b = seg[k + '|plain'], v = seg[k + '|cv-auto'];
-  if (b && v) console.log(`  ${''.padEnd(16)}→ 요청 시작 ${(b.s - v.s >= 0 ? '−' : '+') + Math.abs(b.s - v.s).toFixed(0)}ms` +
+  // 앞당김 = plain 요청시작 − cv 요청시작. 양수면 cv 가 더 일찍 요청했다는 뜻.
+  if (b && v) console.log(`  ${''.padEnd(16)}→ 요청 앞당김 ${((b.s - v.s >= 0 ? '+' : '−') + Math.abs(b.s - v.s).toFixed(0)).padStart(5)}ms` +
     `   ·   응답끝→LCP 대기 ${b.wait.toFixed(0)} → ${v.wait.toFixed(0)}ms (${pct((v.wait - b.wait) / b.wait * 100)})`);
   console.log('  ' + '·'.repeat(70));
 }

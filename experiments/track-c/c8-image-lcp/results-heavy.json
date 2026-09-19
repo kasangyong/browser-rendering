@@ -1,0 +1,2593 @@
+{
+  "experiment": "c8d-heavy-eager",
+  "generatedAt": "2026-09-19T05:02:17.442Z",
+  "repeat": 6,
+  "sites": {
+    "turku": {
+      "url": "https://en.wikivoyage.org/wiki/Turku",
+      "blocks": ".mw-parser-output section > *",
+      "intrinsic": 202
+    },
+    "uk": {
+      "url": "https://en.wikivoyage.org/wiki/United_Kingdom",
+      "blocks": ".mw-parser-output section > *",
+      "intrinsic": 182
+    },
+    "philippines": {
+      "url": "https://en.wikivoyage.org/wiki/Philippines",
+      "blocks": ".mw-parser-output section > *",
+      "intrinsic": 182
+    }
+  },
+  "viewport": {
+    "w": 390,
+    "h": 844
+  },
+  "caches": [
+    "cold"
+  ],
+  "lazys": [
+    "asis"
+  ],
+  "method": "warm=캐시 데운 뒤 2차 로드 / cold=빈 프로필 첫 로드 · cv 는 HTML 파싱 시점 주입 · LCP 요소·다운로드 시각 동시 기록",
+  "isolation": "strict",
+  "order": "shuffled",
+  "rows": [
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1336.5,
+      "lcpMs": 2419.9,
+      "lcpEl": {
+        "t": 2420,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1012.6,
+        "end": 1265.7,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 115,
+          "ms": 99.51
+        },
+        "UpdateLayoutTree": {
+          "n": 116,
+          "ms": 208.89
+        },
+        "Layout": {
+          "n": 74,
+          "ms": 580.02
+        },
+        "PrePaint": {
+          "n": 134,
+          "ms": 92.67
+        },
+        "Paint": {
+          "n": 19,
+          "ms": 28.16
+        },
+        "RasterTask": {
+          "n": 152,
+          "ms": 39.99
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 138175,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2420,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1012.6,
+          "end": 1265.7,
+          "size": 49811
+        }
+      },
+      "cvApplied": null,
+      "rep": 1
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1096,
+      "lcpMs": 1821,
+      "lcpEl": {
+        "t": 1824,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 796.8,
+        "end": 1039.4,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 111,
+          "ms": 45.62
+        },
+        "UpdateLayoutTree": {
+          "n": 117,
+          "ms": 138.18
+        },
+        "Layout": {
+          "n": 73,
+          "ms": 304.04
+        },
+        "PrePaint": {
+          "n": 138,
+          "ms": 60.68
+        },
+        "Paint": {
+          "n": 23,
+          "ms": 16.53
+        },
+        "RasterTask": {
+          "n": 111,
+          "ms": 21.51
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 138175,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1824,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 796.8,
+          "end": 1039.4,
+          "size": 49811
+        }
+      },
+      "cvApplied": null,
+      "rep": 0
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1385,
+      "lcpMs": 2293.3,
+      "lcpEl": {
+        "t": 2296,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1048.3,
+        "end": 1309.9,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 114,
+          "ms": 84.04
+        },
+        "UpdateLayoutTree": {
+          "n": 118,
+          "ms": 152.57
+        },
+        "Layout": {
+          "n": 74,
+          "ms": 470.87
+        },
+        "PrePaint": {
+          "n": 142,
+          "ms": 75.68
+        },
+        "Paint": {
+          "n": 23,
+          "ms": 28.55
+        },
+        "RasterTask": {
+          "n": 159,
+          "ms": 28.55
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 138175,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2296,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1048.3,
+          "end": 1309.9,
+          "size": 49811
+        }
+      },
+      "cvApplied": null,
+      "rep": 2
+    },
+    {
+      "siteKey": "turku",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1234.8,
+      "lcpMs": 2209.7,
+      "lcpEl": {
+        "t": 2212,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 989.6,
+        "end": 1188.4,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 106.29
+        },
+        "UpdateLayoutTree": {
+          "n": 368,
+          "ms": 276.24
+        },
+        "Layout": {
+          "n": 337,
+          "ms": 621.97
+        },
+        "PrePaint": {
+          "n": 150,
+          "ms": 125.65
+        },
+        "Paint": {
+          "n": 58,
+          "ms": 38.83
+        },
+        "RasterTask": {
+          "n": 131,
+          "ms": 25.45
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 124362,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2212,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 989.6,
+          "end": 1188.4,
+          "size": 68326
+        }
+      },
+      "cvApplied": null,
+      "rep": 1
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1776.1,
+      "lcpMs": 2292.8,
+      "lcpEl": {
+        "t": 2296,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1446.9,
+        "end": 1618.8,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 53,
+          "ms": 65.24
+        },
+        "UpdateLayoutTree": {
+          "n": 73,
+          "ms": 89.33
+        },
+        "Layout": {
+          "n": 77,
+          "ms": 186.12
+        },
+        "PrePaint": {
+          "n": 93,
+          "ms": 12.65
+        },
+        "Paint": {
+          "n": 28,
+          "ms": 19.11
+        },
+        "RasterTask": {
+          "n": 143,
+          "ms": 23.02
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37977,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2296,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1446.9,
+          "end": 1618.8,
+          "size": 70437
+        }
+      },
+      "cvApplied": true,
+      "rep": 5
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1200.2,
+      "lcpMs": 1958.5,
+      "lcpEl": {
+        "t": 1960,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 993.6,
+        "end": 1167.8,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 51,
+          "ms": 38.94
+        },
+        "UpdateLayoutTree": {
+          "n": 72,
+          "ms": 140.76
+        },
+        "Layout": {
+          "n": 70,
+          "ms": 339.18
+        },
+        "PrePaint": {
+          "n": 92,
+          "ms": 51.36
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 20.08
+        },
+        "RasterTask": {
+          "n": 127,
+          "ms": 20.43
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 132372,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1960,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 993.6,
+          "end": 1167.8,
+          "size": 70437
+        }
+      },
+      "cvApplied": null,
+      "rep": 0
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1298.3,
+      "lcpMs": 2006.7,
+      "lcpEl": {
+        "t": 2008,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1074.8,
+        "end": 1265.2,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 111,
+          "ms": 50.25
+        },
+        "UpdateLayoutTree": {
+          "n": 117,
+          "ms": 129.22
+        },
+        "Layout": {
+          "n": 74,
+          "ms": 293
+        },
+        "PrePaint": {
+          "n": 136,
+          "ms": 77.07
+        },
+        "Paint": {
+          "n": 24,
+          "ms": 24.4
+        },
+        "RasterTask": {
+          "n": 172,
+          "ms": 24.61
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 138175,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2008,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1074.8,
+          "end": 1265.2,
+          "size": 49811
+        }
+      },
+      "cvApplied": null,
+      "rep": 5
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1037.4,
+      "lcpMs": 1679,
+      "lcpEl": {
+        "t": 1680,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 791.9,
+        "end": 1100.4,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 52,
+          "ms": 53.05
+        },
+        "UpdateLayoutTree": {
+          "n": 70,
+          "ms": 89.47
+        },
+        "Layout": {
+          "n": 71,
+          "ms": 290.37
+        },
+        "PrePaint": {
+          "n": 86,
+          "ms": 39.16
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 16.86
+        },
+        "RasterTask": {
+          "n": 151,
+          "ms": 22.03
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 132372,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1680,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 791.9,
+          "end": 1100.4,
+          "size": 70437
+        }
+      },
+      "cvApplied": null,
+      "rep": 4
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1573.5,
+      "lcpMs": 2290.1,
+      "lcpEl": {
+        "t": 2292,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 876.4,
+        "end": 1476.2,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 51,
+          "ms": 43.31
+        },
+        "UpdateLayoutTree": {
+          "n": 70,
+          "ms": 154.15
+        },
+        "Layout": {
+          "n": 70,
+          "ms": 331.17
+        },
+        "PrePaint": {
+          "n": 92,
+          "ms": 55.93
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 26.69
+        },
+        "RasterTask": {
+          "n": 141,
+          "ms": 22.51
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 132372,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2292,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 876.4,
+          "end": 1476.2,
+          "size": 70437
+        }
+      },
+      "cvApplied": null,
+      "rep": 3
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1169,
+      "lcpMs": 1827.3,
+      "lcpEl": {
+        "t": 1828,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 876.1,
+        "end": 1072.4,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 53,
+          "ms": 65.22
+        },
+        "UpdateLayoutTree": {
+          "n": 71,
+          "ms": 120.67
+        },
+        "Layout": {
+          "n": 72,
+          "ms": 389.77
+        },
+        "PrePaint": {
+          "n": 90,
+          "ms": 50.82
+        },
+        "Paint": {
+          "n": 28,
+          "ms": 23.03
+        },
+        "RasterTask": {
+          "n": 123,
+          "ms": 24.55
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 132372,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1828,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 876.1,
+          "end": 1072.4,
+          "size": 70437
+        }
+      },
+      "cvApplied": null,
+      "rep": 2
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1320.3,
+      "lcpMs": 1978.6,
+      "lcpEl": {
+        "t": 1980,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1037.7,
+        "end": 1220.3,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 55,
+          "ms": 89.32
+        },
+        "UpdateLayoutTree": {
+          "n": 76,
+          "ms": 123.64
+        },
+        "Layout": {
+          "n": 77,
+          "ms": 256.99
+        },
+        "PrePaint": {
+          "n": 99,
+          "ms": 18.36
+        },
+        "Paint": {
+          "n": 31,
+          "ms": 24.6
+        },
+        "RasterTask": {
+          "n": 215,
+          "ms": 42.56
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37925,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1980,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1037.7,
+          "end": 1220.3,
+          "size": 70437
+        }
+      },
+      "cvApplied": true,
+      "rep": 0
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1204,
+      "lcpMs": 1762.3,
+      "lcpEl": {
+        "t": 1764,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 897.2,
+        "end": 1078,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 112,
+          "ms": 57.79
+        },
+        "UpdateLayoutTree": {
+          "n": 118,
+          "ms": 102.32
+        },
+        "Layout": {
+          "n": 75,
+          "ms": 144.52
+        },
+        "PrePaint": {
+          "n": 140,
+          "ms": 12.52
+        },
+        "Paint": {
+          "n": 29,
+          "ms": 13.75
+        },
+        "RasterTask": {
+          "n": 115,
+          "ms": 22.77
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37560,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1764,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 897.2,
+          "end": 1078,
+          "size": 49811
+        }
+      },
+      "cvApplied": true,
+      "rep": 5
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1089.1,
+      "lcpMs": 1564.2,
+      "lcpEl": {
+        "t": 1564,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 814.8,
+        "end": 1059.1,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 52,
+          "ms": 59.21
+        },
+        "UpdateLayoutTree": {
+          "n": 73,
+          "ms": 64.99
+        },
+        "Layout": {
+          "n": 76,
+          "ms": 164.43
+        },
+        "PrePaint": {
+          "n": 103,
+          "ms": 10.56
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 12.7
+        },
+        "RasterTask": {
+          "n": 204,
+          "ms": 32.03
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37925,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1564,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 814.8,
+          "end": 1059.1,
+          "size": 70437
+        }
+      },
+      "cvApplied": true,
+      "rep": 1
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1322,
+      "lcpMs": 1971.9,
+      "lcpEl": {
+        "t": 1972,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 838.9,
+        "end": 1427.9,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 52,
+          "ms": 52.07
+        },
+        "UpdateLayoutTree": {
+          "n": 73,
+          "ms": 59.43
+        },
+        "Layout": {
+          "n": 75,
+          "ms": 129
+        },
+        "PrePaint": {
+          "n": 95,
+          "ms": 9.82
+        },
+        "Paint": {
+          "n": 32,
+          "ms": 15.37
+        },
+        "RasterTask": {
+          "n": 159,
+          "ms": 22.58
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37925,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1972,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 838.9,
+          "end": 1427.9,
+          "size": 70437
+        }
+      },
+      "cvApplied": true,
+      "rep": 2
+    },
+    {
+      "siteKey": "turku",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1168.3,
+      "lcpMs": 1601.7,
+      "lcpEl": {
+        "t": 1604,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 958.8,
+        "end": 1147.3,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 416,
+          "ms": 81.41
+        },
+        "UpdateLayoutTree": {
+          "n": 398,
+          "ms": 169.88
+        },
+        "Layout": {
+          "n": 341,
+          "ms": 237.48
+        },
+        "PrePaint": {
+          "n": 177,
+          "ms": 21.32
+        },
+        "Paint": {
+          "n": 55,
+          "ms": 17.36
+        },
+        "RasterTask": {
+          "n": 177,
+          "ms": 20.3
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 27830,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1604,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 958.8,
+          "end": 1147.3,
+          "size": 68326
+        }
+      },
+      "cvApplied": true,
+      "rep": 3
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 983.1,
+      "lcpMs": 1391.4,
+      "lcpEl": {
+        "t": 1392,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 755.5,
+        "end": 914.1,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 110,
+          "ms": 32.13
+        },
+        "UpdateLayoutTree": {
+          "n": 122,
+          "ms": 59.48
+        },
+        "Layout": {
+          "n": 73,
+          "ms": 84.64
+        },
+        "PrePaint": {
+          "n": 143,
+          "ms": 7.78
+        },
+        "Paint": {
+          "n": 39,
+          "ms": 8.24
+        },
+        "RasterTask": {
+          "n": 146,
+          "ms": 15.94
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37560,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1392,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 755.5,
+          "end": 914.1,
+          "size": 49811
+        }
+      },
+      "cvApplied": true,
+      "rep": 0
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1274.4,
+      "lcpMs": 1649.4,
+      "lcpEl": {
+        "t": 1652,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1036.7,
+        "end": 1218.2,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 50,
+          "ms": 35.71
+        },
+        "UpdateLayoutTree": {
+          "n": 72,
+          "ms": 44.75
+        },
+        "Layout": {
+          "n": 74,
+          "ms": 96.47
+        },
+        "PrePaint": {
+          "n": 95,
+          "ms": 7.41
+        },
+        "Paint": {
+          "n": 36,
+          "ms": 10.6
+        },
+        "RasterTask": {
+          "n": 140,
+          "ms": 17.12
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37925,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1652,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1036.7,
+          "end": 1218.2,
+          "size": 70437
+        }
+      },
+      "cvApplied": true,
+      "rep": 4
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1096.3,
+      "lcpMs": 1788,
+      "lcpEl": {
+        "t": 1788,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 867.9,
+        "end": 1053.5,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 53,
+          "ms": 76.99
+        },
+        "UpdateLayoutTree": {
+          "n": 72,
+          "ms": 93.91
+        },
+        "Layout": {
+          "n": 76,
+          "ms": 181.18
+        },
+        "PrePaint": {
+          "n": 91,
+          "ms": 12.76
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 15.19
+        },
+        "RasterTask": {
+          "n": 142,
+          "ms": 34.16
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37977,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1788,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 867.9,
+          "end": 1053.5,
+          "size": 70437
+        }
+      },
+      "cvApplied": true,
+      "rep": 3
+    },
+    {
+      "siteKey": "turku",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1416.9,
+      "lcpMs": 2267,
+      "lcpEl": {
+        "t": 2268,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1054.2,
+        "end": 1219.6,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 115.11
+        },
+        "UpdateLayoutTree": {
+          "n": 335,
+          "ms": 492.07
+        },
+        "Layout": {
+          "n": 337,
+          "ms": 876.39
+        },
+        "PrePaint": {
+          "n": 93,
+          "ms": 187.92
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 25.36
+        },
+        "RasterTask": {
+          "n": 131,
+          "ms": 25.49
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 124362,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2268,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1054.2,
+          "end": 1219.6,
+          "size": 68326
+        }
+      },
+      "cvApplied": null,
+      "rep": 3
+    },
+    {
+      "siteKey": "turku",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1332.6,
+      "lcpMs": 2207.5,
+      "lcpEl": {
+        "t": 2208,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1092.2,
+        "end": 1249.4,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 182.24
+        },
+        "UpdateLayoutTree": {
+          "n": 338,
+          "ms": 331.24
+        },
+        "Layout": {
+          "n": 340,
+          "ms": 547.46
+        },
+        "PrePaint": {
+          "n": 95,
+          "ms": 18.86
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 20.11
+        },
+        "RasterTask": {
+          "n": 175,
+          "ms": 35.81
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 27830,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2208,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1092.2,
+          "end": 1249.4,
+          "size": 68326
+        }
+      },
+      "cvApplied": true,
+      "rep": 4
+    },
+    {
+      "siteKey": "turku",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1542.4,
+      "lcpMs": 2983.8,
+      "lcpEl": {
+        "t": 2984,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1294.7,
+        "end": 1471.4,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 189.65
+        },
+        "UpdateLayoutTree": {
+          "n": 335,
+          "ms": 412.23
+        },
+        "Layout": {
+          "n": 336,
+          "ms": 1016.1
+        },
+        "PrePaint": {
+          "n": 91,
+          "ms": 146.66
+        },
+        "Paint": {
+          "n": 26,
+          "ms": 27.21
+        },
+        "RasterTask": {
+          "n": 164,
+          "ms": 47.44
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 124362,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2984,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1294.7,
+          "end": 1471.4,
+          "size": 68326
+        }
+      },
+      "cvApplied": null,
+      "rep": 2
+    },
+    {
+      "siteKey": "turku",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1360.8,
+      "lcpMs": 2235.7,
+      "lcpEl": {
+        "t": 2236,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1134.9,
+        "end": 1286.5,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 165.6
+        },
+        "UpdateLayoutTree": {
+          "n": 397,
+          "ms": 255.83
+        },
+        "Layout": {
+          "n": 343,
+          "ms": 451.79
+        },
+        "PrePaint": {
+          "n": 157,
+          "ms": 23.65
+        },
+        "Paint": {
+          "n": 43,
+          "ms": 19.74
+        },
+        "RasterTask": {
+          "n": 125,
+          "ms": 34.98
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 27830,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2236,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1134.9,
+          "end": 1286.5,
+          "size": 68326
+        }
+      },
+      "cvApplied": true,
+      "rep": 5
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1066.2,
+      "lcpMs": 1591.2,
+      "lcpEl": {
+        "t": 1592,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 787.9,
+        "end": 933.6,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 112,
+          "ms": 53.99
+        },
+        "UpdateLayoutTree": {
+          "n": 116,
+          "ms": 96.66
+        },
+        "Layout": {
+          "n": 75,
+          "ms": 160.03
+        },
+        "PrePaint": {
+          "n": 139,
+          "ms": 12.53
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 13.6
+        },
+        "RasterTask": {
+          "n": 119,
+          "ms": 21.08
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37560,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1592,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 787.9,
+          "end": 933.6,
+          "size": 49811
+        }
+      },
+      "cvApplied": true,
+      "rep": 2
+    },
+    {
+      "siteKey": "turku",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1115.9,
+      "lcpMs": 1715.8,
+      "lcpEl": {
+        "t": 1716,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 892.3,
+        "end": 1093.6,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 112.4
+        },
+        "UpdateLayoutTree": {
+          "n": 389,
+          "ms": 252.4
+        },
+        "Layout": {
+          "n": 336,
+          "ms": 565.12
+        },
+        "PrePaint": {
+          "n": 162,
+          "ms": 116.75
+        },
+        "Paint": {
+          "n": 52,
+          "ms": 41.47
+        },
+        "RasterTask": {
+          "n": 215,
+          "ms": 28.74
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 124362,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1716,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 892.3,
+          "end": 1093.6,
+          "size": 68326
+        }
+      },
+      "cvApplied": null,
+      "rep": 4
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1493.3,
+      "lcpMs": 2126.6,
+      "lcpEl": {
+        "t": 2128,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 852.5,
+        "end": 1477.5,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 51,
+          "ms": 64.42
+        },
+        "UpdateLayoutTree": {
+          "n": 70,
+          "ms": 93.96
+        },
+        "Layout": {
+          "n": 70,
+          "ms": 256.52
+        },
+        "PrePaint": {
+          "n": 88,
+          "ms": 39.73
+        },
+        "Paint": {
+          "n": 31,
+          "ms": 21.18
+        },
+        "RasterTask": {
+          "n": 143,
+          "ms": 20.77
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 132372,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2128,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 852.5,
+          "end": 1477.5,
+          "size": 70437
+        }
+      },
+      "cvApplied": null,
+      "rep": 1
+    },
+    {
+      "siteKey": "philippines",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1017.7,
+      "lcpMs": 1667.6,
+      "lcpEl": {
+        "t": 1668,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 812.4,
+        "end": 973.7,
+        "size": 70437
+      },
+      "imgLazy": 70,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 51,
+          "ms": 41.09
+        },
+        "UpdateLayoutTree": {
+          "n": 70,
+          "ms": 104.27
+        },
+        "Layout": {
+          "n": 71,
+          "ms": 284.05
+        },
+        "PrePaint": {
+          "n": 85,
+          "ms": 43.03
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 25.05
+        },
+        "RasterTask": {
+          "n": 115,
+          "ms": 19.3
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 132372,
+        "blocks": 822,
+        "applied": true,
+        "imgLazy": 70,
+        "imgTotal": 74,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1668,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Banaue_Wikivoyage_banner.jpg/960px-Banaue_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 812.4,
+          "end": 973.7,
+          "size": 70437
+        }
+      },
+      "cvApplied": null,
+      "rep": 5
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1105.5,
+      "lcpMs": 1788.8,
+      "lcpEl": {
+        "t": 1792,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 761.5,
+        "end": 1030.6,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 112,
+          "ms": 52.88
+        },
+        "UpdateLayoutTree": {
+          "n": 116,
+          "ms": 119.93
+        },
+        "Layout": {
+          "n": 72,
+          "ms": 300.37
+        },
+        "PrePaint": {
+          "n": 133,
+          "ms": 54.11
+        },
+        "Paint": {
+          "n": 18,
+          "ms": 15.75
+        },
+        "RasterTask": {
+          "n": 102,
+          "ms": 15.65
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 138175,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1792,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 761.5,
+          "end": 1030.6,
+          "size": 49811
+        }
+      },
+      "cvApplied": null,
+      "rep": 3
+    },
+    {
+      "siteKey": "turku",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1298.8,
+      "lcpMs": 1965.5,
+      "lcpEl": {
+        "t": 1964,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1080.2,
+        "end": 1261.1,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 145.18
+        },
+        "UpdateLayoutTree": {
+          "n": 371,
+          "ms": 286.75
+        },
+        "Layout": {
+          "n": 343,
+          "ms": 438.74
+        },
+        "PrePaint": {
+          "n": 129,
+          "ms": 20.78
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 21.19
+        },
+        "RasterTask": {
+          "n": 114,
+          "ms": 22.27
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 27830,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1964,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1080.2,
+          "end": 1261.1,
+          "size": 68326
+        }
+      },
+      "cvApplied": true,
+      "rep": 2
+    },
+    {
+      "siteKey": "turku",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1703.5,
+      "lcpMs": 2445.2,
+      "lcpEl": {
+        "t": 2448,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1450.4,
+        "end": 1634.7,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 158.99
+        },
+        "UpdateLayoutTree": {
+          "n": 376,
+          "ms": 442.47
+        },
+        "Layout": {
+          "n": 336,
+          "ms": 1045.17
+        },
+        "PrePaint": {
+          "n": 140,
+          "ms": 182.53
+        },
+        "Paint": {
+          "n": 46,
+          "ms": 39.48
+        },
+        "RasterTask": {
+          "n": 240,
+          "ms": 43.76
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 124362,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2448,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1450.4,
+          "end": 1634.7,
+          "size": 68326
+        }
+      },
+      "cvApplied": null,
+      "rep": 0
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1232.6,
+      "lcpMs": 1990.9,
+      "lcpEl": {
+        "t": 1992,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 973,
+        "end": 1148.9,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 114,
+          "ms": 81.08
+        },
+        "UpdateLayoutTree": {
+          "n": 119,
+          "ms": 131.43
+        },
+        "Layout": {
+          "n": 78,
+          "ms": 230.6
+        },
+        "PrePaint": {
+          "n": 143,
+          "ms": 18.09
+        },
+        "Paint": {
+          "n": 30,
+          "ms": 20.2
+        },
+        "RasterTask": {
+          "n": 109,
+          "ms": 24.88
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37560,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1992,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 973,
+          "end": 1148.9,
+          "size": 49811
+        }
+      },
+      "cvApplied": true,
+      "rep": 1
+    },
+    {
+      "siteKey": "turku",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1328,
+      "lcpMs": 1878.2,
+      "lcpEl": {
+        "t": 1880,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 984.2,
+        "end": 1161.1,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 127.23
+        },
+        "UpdateLayoutTree": {
+          "n": 339,
+          "ms": 256.62
+        },
+        "Layout": {
+          "n": 342,
+          "ms": 404.95
+        },
+        "PrePaint": {
+          "n": 98,
+          "ms": 15.42
+        },
+        "Paint": {
+          "n": 35,
+          "ms": 14.23
+        },
+        "RasterTask": {
+          "n": 140,
+          "ms": 24.1
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 27830,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1880,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 984.2,
+          "end": 1161.1,
+          "size": 68326
+        }
+      },
+      "cvApplied": true,
+      "rep": 1
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1124.7,
+      "lcpMs": 1733.1,
+      "lcpEl": {
+        "t": 1732,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 827.8,
+        "end": 1031.7,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 111,
+          "ms": 48.84
+        },
+        "UpdateLayoutTree": {
+          "n": 119,
+          "ms": 77.73
+        },
+        "Layout": {
+          "n": 73,
+          "ms": 131.44
+        },
+        "PrePaint": {
+          "n": 140,
+          "ms": 10.31
+        },
+        "Paint": {
+          "n": 32,
+          "ms": 12.17
+        },
+        "RasterTask": {
+          "n": 126,
+          "ms": 19.85
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37560,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1732,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 827.8,
+          "end": 1031.7,
+          "size": 49811
+        }
+      },
+      "cvApplied": true,
+      "rep": 4
+    },
+    {
+      "siteKey": "uk",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1510.8,
+      "lcpMs": 2194.3,
+      "lcpEl": {
+        "t": 2196,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 815.1,
+        "end": 1476.1,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 112,
+          "ms": 49.34
+        },
+        "UpdateLayoutTree": {
+          "n": 119,
+          "ms": 84.37
+        },
+        "Layout": {
+          "n": 74,
+          "ms": 128.64
+        },
+        "PrePaint": {
+          "n": 138,
+          "ms": 10.53
+        },
+        "Paint": {
+          "n": 27,
+          "ms": 11.43
+        },
+        "RasterTask": {
+          "n": 140,
+          "ms": 20.13
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 37560,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2196,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 815.1,
+          "end": 1476.1,
+          "size": 49811
+        }
+      },
+      "cvApplied": true,
+      "rep": 3
+    },
+    {
+      "siteKey": "turku",
+      "mode": "cv-auto",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1459.2,
+      "lcpMs": 2350.9,
+      "lcpEl": {
+        "t": 2352,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 1141.1,
+        "end": 1356.6,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 186.12
+        },
+        "UpdateLayoutTree": {
+          "n": 379,
+          "ms": 296.19
+        },
+        "Layout": {
+          "n": 341,
+          "ms": 463.92
+        },
+        "PrePaint": {
+          "n": 143,
+          "ms": 25.51
+        },
+        "Paint": {
+          "n": 41,
+          "ms": 23
+        },
+        "RasterTask": {
+          "n": 118,
+          "ms": 23.79
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 27830,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 2352,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 1141.1,
+          "end": 1356.6,
+          "size": 68326
+        }
+      },
+      "cvApplied": true,
+      "rep": 0
+    },
+    {
+      "siteKey": "uk",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1087.5,
+      "lcpMs": 1695.8,
+      "lcpEl": {
+        "t": 1696,
+        "size": 85920,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 841.7,
+        "end": 1002.9,
+        "size": 49811
+      },
+      "imgLazy": 68,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 111,
+          "ms": 44.57
+        },
+        "UpdateLayoutTree": {
+          "n": 120,
+          "ms": 134.51
+        },
+        "Layout": {
+          "n": 73,
+          "ms": 295.42
+        },
+        "PrePaint": {
+          "n": 140,
+          "ms": 64.8
+        },
+        "Paint": {
+          "n": 22,
+          "ms": 19.97
+        },
+        "RasterTask": {
+          "n": 113,
+          "ms": 17.72
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 138175,
+        "blocks": 865,
+        "applied": true,
+        "imgLazy": 68,
+        "imgTotal": 103,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1696,
+          "size": 85920,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Stonehenge_banner_distant_from_the_north_east.jpg/960px-Stonehenge_banner_distant_from_the_north_east.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 841.7,
+          "end": 1002.9,
+          "size": 49811
+        }
+      },
+      "cvApplied": null,
+      "rep": 4
+    },
+    {
+      "siteKey": "turku",
+      "mode": "plain",
+      "cache": "cold",
+      "lazy": "asis",
+      "fcpMs": 1191.8,
+      "lcpMs": 1808.5,
+      "lcpEl": {
+        "t": 1812,
+        "size": 85801,
+        "isImg": true,
+        "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+        "tag": "img"
+      },
+      "lcpRes": {
+        "start": 948.3,
+        "end": 1145.6,
+        "size": 68326
+      },
+      "imgLazy": 448,
+      "lcpLoading": "none",
+      "stage": {
+        "ParseHTML": {
+          "n": 417,
+          "ms": 119.06
+        },
+        "UpdateLayoutTree": {
+          "n": 389,
+          "ms": 297.31
+        },
+        "Layout": {
+          "n": 335,
+          "ms": 579.66
+        },
+        "PrePaint": {
+          "n": 157,
+          "ms": 124.69
+        },
+        "Paint": {
+          "n": 48,
+          "ms": 47.11
+        },
+        "RasterTask": {
+          "n": 205,
+          "ms": 32.85
+        }
+      },
+      "probe": null,
+      "after": {
+        "h": 124362,
+        "blocks": 506,
+        "applied": true,
+        "imgLazy": 448,
+        "imgTotal": 740,
+        "lcpLoading": "none",
+        "lcp": {
+          "t": 1812,
+          "size": 85801,
+          "isImg": true,
+          "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Turku_Wikivoyage_banner.jpg/960px-Turku_Wikivoyage_banner.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+          "tag": "img"
+        },
+        "lcpRes": {
+          "start": 948.3,
+          "end": 1145.6,
+          "size": 68326
+        }
+      },
+      "cvApplied": null,
+      "rep": 5
+    }
+  ]
+}
