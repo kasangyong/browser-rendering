@@ -1,23 +1,28 @@
 /**
- * C8g — A 를 제대로 잰다
+ * C8l — FCP 이전 200ms 는 cv 자체인가, contain-intrinsic-size:auto 인가
  *
- * C8f 는 셀당 3회였고, '준비' 를 rAF 폴링으로 잡았다.
- * 그 창에 프레임이 7개뿐이라 폴링 해상도가 100ms 를 넘어 A 를 과소평가한다.
+ * C8k(40회)가 밝힌 것 — warm 에서 FCP 이전 구간:
+ *   ParseHTML   13 → 13ms    (변화 없음)
+ *   Layout       1 → 198ms   ★유의
+ *   Style       10 →  61ms   ★유의
+ *   Layout 횟수  5 →   5회    (변화 없음)
  *
- * 여기서는 전부 트레이스 타임스탬프로 잡는다:
+ * 같은 양의 HTML 을 파싱했는데 레이아웃만 200배 비싸다.
+ * ParseHTML 이 안 변한 것이 "FCP 가 늦어져 창이 길어졌을 뿐" 이라는 설명을 배제한다.
  *
- *   ResourceFinish(배너) → PaintImage(배너) → LargestImagePaint::Candidate
- *          └────────── A ──────────┘└──────── B ────────┘
+ * 남은 갈림길: content-visibility 자체인가, contain-intrinsic-size 의 auto 인가.
+ * auto 키워드는 '마지막으로 기억한 크기' 를 유지해야 해서 따로 장부를 쓴다.
+ * [C2 는 리레이아웃에서 auto 가 3~8% 차이라고 봤는데](../c2-anomalies/RESULTS.md),
+ * 첫 페인트 전에는 다를 수 있다.
  *
- * 그리고 시간과 함께 횟수를 센다 — A 구간 안의 Paint 횟수 · Layout 횟수 ·
- * 메인 스레드 점유 ms. C8f 에서 Paint 가 Layout 의 1/5 밖에 안 돈다는 걸
- * 횟수로 봐서 알았다.
+ * 세 팔로 가른다:
+ *   plain     아무것도 안 건다
+ *   cv-auto   content-visibility:auto · contain-intrinsic-size:auto 182px
+ *   cv-fixed  content-visibility:auto · contain-intrinsic-size:182px   ← auto 키워드만 뺀다
  *
- * 배너는 파일명 토큰으로 args 를 훑어 찾는다 — 선택자를 추측하지 않는다.
- * 콜드 캐시 · 순서 섞음 · 엄격 격리 · 체크포인트.
+ * warm 캐시 · 2곳 × 3모드 × 10회 = 60회.
  *
- * 사전 등록: PREDICTION.md 부칙 5 (V1~V4) · 부칙 6 (W1~W3, --warm=1)
- * 사용: node measure-paintwait.mjs [--repeat=20] [--site=all|uk|philippines] [--resume=1]
+ * 사용: node probe-intrinsic.mjs [--repeat=10]
  */
 import { spawn, execFile } from 'node:child_process';
 import { writeFile, readFile, mkdir, rm } from 'node:fs/promises';
@@ -28,10 +33,10 @@ const arg = (n, d) => {
   const m = process.argv.find(a => a.startsWith(`--${n}=`));
   return m ? m.split('=')[1] : d;
 };
-const REPEAT = Number(arg('repeat', '20'));
+const REPEAT = Number(arg('repeat', '10'));
 const SEED = Number(arg('seed', '20260920'));
 const ONLY = arg('site', 'all');
-const WARM = arg('warm', '0') === '1';   // 캐시를 데운 뒤 2차 로드를 잰다
+const WARM = true;   // 이 실험은 항상 warm — 네트워크를 빼야 선행 비용이 보인다
 const SCRATCH = 'C:/Users/SSAFY/AppData/Local/Temp/claude/C--Users-SSAFY-Desktop-ka---------/98619a68-f164-4f9c-b502-a270a38bb41e/scratchpad';
 
 const SITES = {
@@ -39,7 +44,7 @@ const SITES = {
   philippines: { url: 'https://en.wikivoyage.org/wiki/Philippines', intrinsic: 182 },
 };
 const BLOCKS = '.mw-parser-output section > *';
-const MODES = ['plain', 'cv-auto'];
+const MODES = ['plain', 'cv-auto', 'cv-fixed'];
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 function shuffled(arr, seed) {
@@ -74,13 +79,13 @@ const REPORT = `(() => {
   const r = L && L.u ? performance.getEntriesByType('resource').find(x => x.name === L.u) : null;
   return { lcp: L,
     res: r ? { start: +r.startTime.toFixed(1), end: +r.responseEnd.toFixed(1) } : null,
-    applied: !!document.getElementById('__c8g'),
+    applied: !!document.getElementById('__c8k'),
     fcp: (performance.getEntriesByType('paint').find(x => x.name === 'first-contentful-paint') || {}).startTime ?? null };
 })()`;
 
 async function once({ port, tag, siteKey, mode }) {
   const S = SITES[siteKey];
-  const profile = path.join(SCRATCH, `c8g-${tag}`);
+  const profile = path.join(SCRATCH, `c8l-${tag}`);
   await mkdir(profile, { recursive: true });
   const proc = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe', [
     '--headless=new', `--remote-debugging-port=${port}`, '--remote-allow-origins=*',
@@ -114,9 +119,12 @@ async function once({ port, tag, siteKey, mode }) {
       try {
         const body = await send('Fetch.getResponseBody', { requestId: p.requestId });
         let html = body.base64Encoded ? Buffer.from(body.body, 'base64').toString('utf8') : body.body;
-        const css = mode === 'cv-auto'
-          ? `<style id="__c8g">${BLOCKS}{content-visibility:auto;contain-intrinsic-size:auto ${S.intrinsic}px}</style>`
-          : '<style id="__c8g"></style>';
+        const rule = mode === 'cv-auto'
+          ? `${BLOCKS}{content-visibility:auto;contain-intrinsic-size:auto ${S.intrinsic}px}`
+          : mode === 'cv-fixed'
+          ? `${BLOCKS}{content-visibility:auto;contain-intrinsic-size:${S.intrinsic}px}`
+          : '';
+        const css = `<style id="__c8k">${rule}</style>`;
         const m = html.match(/<head[^>]*>/i);
         html = m ? html.replace(m[0], m[0] + css + OBS) : css + OBS + html;
         await send('Fetch.fulfillRequest', { requestId: p.requestId,
@@ -191,6 +199,19 @@ async function once({ port, tag, siteKey, mode }) {
       return Math.max(0, Math.min(en, W1) - Math.max(s, W0)); };
     const inside = e => { const s = rel(e); return s >= W0 && s <= W1; };
 
+    // FCP 이전 구간의 단계별 합계 — 이 실험의 본체
+    const pre = { ParseHTML: 0, UpdateLayoutTree: 0, Layout: 0, PrePaint: 0, Paint: 0,
+                  EvaluateScript: 0, FunctionCall: 0, ParseAuthorStyleSheet: 0 };
+    const preN = { ParseHTML: 0, UpdateLayoutTree: 0, Layout: 0, PrePaint: 0, Paint: 0 };
+    const FCP = v.fcp ?? 0;
+    for (const e of evs) {
+      if (e.pid + ':' + e.tid !== mainTid || typeof e.dur !== 'number') continue;
+      if (rel(e) > FCP) continue;
+      if (pre[e.name] !== undefined) pre[e.name] += e.dur / 1000;
+      if (preN[e.name] !== undefined) preN[e.name]++;
+    }
+    for (const k of Object.keys(pre)) pre[k] = +pre[k].toFixed(1);
+
     let busy = 0, paintN = 0, layoutN = 0, layoutMs = 0, styleMs = 0, rasterN = 0;
     let loadLayoutMs = 0;                       // 로드 전체(navigationStart → LCP)의 Layout
     for (const e of evs) {
@@ -217,8 +238,8 @@ async function once({ port, tag, siteKey, mode }) {
       paintN, layoutN, rasterN,
       layoutMs: +layoutMs.toFixed(1), styleMs: +styleMs.toFixed(1),
       mainBusy: +busy.toFixed(1), busyPct: A > 0 ? +(100 * busy / A).toFixed(0) : null,
-      loadLayoutMs: +loadLayoutMs.toFixed(1),
-      cvApplied: mode === 'cv-auto' ? !!v.applied : null,
+      loadLayoutMs: +loadLayoutMs.toFixed(1), pre, preN,
+      cvApplied: mode === 'plain' ? null : !!v.applied,
       events: evs.length,
     };
   } finally {
@@ -227,7 +248,7 @@ async function once({ port, tag, siteKey, mode }) {
   }
 }
 
-const LOCK = path.join(import.meta.dirname, '.paintwait.lock');   // warm/cold 가 같은 락을 쓴다 — 동시에 돌면 안 된다
+const LOCK = path.join(import.meta.dirname, '.intrinsic.lock');
 if (existsSync(LOCK)) {
   const pid = Number((await readFile(LOCK, 'utf8')).trim());
   let alive = false; try { process.kill(pid, 0); alive = true; } catch {}
@@ -238,8 +259,8 @@ const unlock = () => { try { unlinkSync(LOCK); } catch {} };
 process.on('exit', unlock);
 for (const s of ['SIGINT', 'SIGTERM']) process.on(s, () => { unlock(); process.exit(1); });
 
-const OUT = path.join(import.meta.dirname, WARM ? 'results-paintwarm.json' : 'results-paintwait.json');
-const out = { experiment: 'c8g-paint-wait', generatedAt: new Date().toISOString(),
+const OUT = path.join(import.meta.dirname, 'results-intrinsic.json');
+const out = { experiment: 'c8l-intrinsic-auto', generatedAt: new Date().toISOString(),
               repeat: REPEAT, sites: SITES,
               warm: WARM,
               method: '트레이스 타임스탬프로 ResourceFinish → PaintImage → LCP후보 를 잡고, A 구간 안의 횟수와 메인 스레드 점유를 같이 센다',
@@ -255,10 +276,10 @@ const plan = [];
 for (const k of keys) for (const m of MODES) for (let r = 0; r < REPEAT; r++) plan.push({ siteKey: k, mode: m, rep: r });
 const order = shuffled(plan, SEED);
 const BASELINE = await chromeCount();
-console.log(`\n${WARM ? 'C8j warm' : 'C8g cold'} A 측정 — ${keys.length}곳 × ${MODES.length}모드 × ${REPEAT}회 = ${order.length}회`);
+console.log(`\nC8l auto 키워드 비용 — ${keys.length}곳 × ${MODES.length}모드 × ${REPEAT}회 = ${order.length}회`);
 console.log(`기준선 chrome ${BASELINE}개 · 순서 섞음 · ${WARM ? '캐시 데운 뒤 2차 로드' : '콜드 캐시'}\n`);
 
-let port = 53000 + Math.floor(Math.random() * 300);
+let port = 57000 + Math.floor(Math.random() * 300);
 let i = 0, fail = 0;
 for (const job of order) {
   i++;
@@ -270,10 +291,12 @@ for (const job of order) {
     const v = await once({ port, tag: `${job.siteKey}-${job.mode}-${job.rep}`, ...job });
     out.rows.push({ ...v, rep: job.rep });
     await save();
-    console.log(`  ${String(i).padStart(3)}/${order.length}  ${job.siteKey.padEnd(12)}${job.mode.padEnd(9)}` +
+    console.log(`  ${String(i).padStart(3)}/${order.length}  ${job.siteKey.padEnd(12)}${job.mode.padEnd(10)}` +
       `A ${String(v.A).padStart(7)}  B ${String(v.B ?? '-').padStart(6)}  │ Paint ${String(v.paintN).padStart(3)}회` +
       `  Layout ${String(v.layoutN).padStart(3)}회 ${String(v.layoutMs).padStart(6)}ms` +
-      `  메인점유 ${String(v.busyPct ?? '-').padStart(3)}%  │ LCP ${String(v.lcpMs).padStart(7)}`);
+      `  │ FCP ${String(v.fcpMs).padStart(6)}  전Parse ${String(v.pre.ParseHTML).padStart(6)}` +
+      `  전Style ${String(v.pre.UpdateLayoutTree).padStart(6)}  전Layout ${String(v.pre.Layout).padStart(6)}` +
+      `  전JS ${String((v.pre.EvaluateScript + v.pre.FunctionCall).toFixed(1)).padStart(6)}`);
   } catch (e) {
     fail++;
     console.error(`  ${i}/${order.length} 실패 (${key}): ${e.message}`);
